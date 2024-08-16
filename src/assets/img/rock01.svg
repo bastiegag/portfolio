@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 50.9 19">
+  <defs>
+    <style>
+      .rock-back {
+        fill: url(#rock01-back-gradient);
+      }
+      .rock-top {
+        fill: url(#rock01-top-gradient);
+      }
+      .rock-edge {
+        fill: #ffb565;
+      }
+      .rock-shade {
+        fill: url(#rock01-shade-gradient);
+        mix-blend-mode: multiply;
+      }
+    </style>
+    <linearGradient id="rock01-back-gradient" x1="25.5" y1="19" x2="25.5" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b87251"/>
+      <stop offset=".2" stop-color="#a76656"/>
+      <stop offset=".7" stop-color="#8b535f"/>
+      <stop offset="1" stop-color="#814c63"/>
+    </linearGradient>
+    <linearGradient id="rock01-top-gradient" x1="25.7" y1="9.5" x2="25.7" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b87251"/>
+      <stop offset=".6" stop-color="#d2875d"/>
+      <stop offset="1" stop-color="#dd9063"/>
+    </linearGradient>
+    <linearGradient id="rock01-shade-gradient" x1="25.5" y1="19" x2="25.5" y2="3.3" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c0b3d4"/>
+      <stop offset=".5" stop-color="#d1becd"/>
+      <stop offset="1" stop-color="#e3cac7"/>
+    </linearGradient>
+  </defs>
+  <polygon class="rock-back" points="0 15.4 9.7 1.9 15.9 1.4 36.8 0 41.7 3.3 50.9 19 22.7 19 19 16.7 0 15.4"/>
+  <path class="rock-top" d="M9.7,1.9l2.2,3.9,19.4,3.7,10.4-6.2L36.8,0s-15.2-.2-27.1,1.9Z"/>
+  <polygon class="rock-shade" points="31.3 9.5 31.5 16.5 23.5 19 19 16.7 22.4 7.8 11.9 5.7 8.2 14 0 15.4 18 16.7 22.7 19 50.9 19 41.7 3.3 31.3 9.5"/>
+  <polygon class="rock-edge" points="30.2 9.3 32.6 8.7 31.4 10.9 30.2 9.3"/>
+</svg>

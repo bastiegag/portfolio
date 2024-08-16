@@ -1,0 +1,179 @@
+// Common
+$black: #000000;
+$white: #ffffff;
+
+// Primary
+$primaryMain: #5f399a;
+$primaryLight: #8f74b8;
+$primaryDark: #4c2e7b;
+$primary100: #efebf5;
+
+// Secondary
+$secondaryMain: #efb353;
+$secondaryLight: #f4ca87;
+$secondaryDark: #bf8f42;
+
+// Error
+$errorMain: #ed695f;
+$errorLight: #ed695f;
+$errorDark: #be544c;
+
+// Warning
+$warningMain: #efb353;
+$warningLight: #f4ca87;
+$warningDark: #d7a14b;
+
+// Info
+$infoMain: #3373d3;
+$infoLight: #709de0;
+$infoDark: #295ca9;
+
+// Success
+$successMain: #36b971;
+$successLight: #72ce9c;
+$successDark: #31a766;
+
+// Grey
+$grey50: #f5f6f9;
+$grey100: #eff1f6;
+$grey200: #cfd4e3;
+$grey300: #aeb7d0;
+$grey400: #8e9abd;
+$grey500: #6e7daa;
+$grey600: #556391;
+$grey700: #424d71;
+$grey800: #2f3751;
+$grey900: #1c2130;
+
+// Colors
+$red: #ed695f;
+$orange: #ef8e53;
+$yellow: #efb353;
+$green: #36b971;
+$teal: #38a5a9;
+$cyan: #3593d5;
+$blue: #3373d3;
+$indigo: #3043b4;
+$purple: #5f399a;
+$pink: #dc74b1;
+
+// Text
+$textPrimary: $grey800;
+$textSecondary: $grey600;
+$textDisabled: $grey400;
+
+// Divider
+$divider: $grey800;
+
+// Background
+$bgDefault: $grey50;
+$bgPaper: $white;
+
+// Action
+$actionActive: rgba(0, 0, 0, 0.54);
+$actionHover: rgba(0, 0, 0, 0.04);
+$actionHoverOpacity: 0.04;
+$actionSelected: rgba(0, 0, 0, 0.08);
+$actionSelectedOpacity: 0.08;
+$actionDisabled: rgba(0, 0, 0, 0.26);
+$actionDisabledBackground: rgba(0, 0, 0, 0.12);
+$actionDisabledOpacity: 0.38;
+$actionFocus: rgba(0, 0, 0, 0.12);
+$actionFocusOpacity: 0.12;
+$actionActivatedOpacity: 0.12;
+$actionActiveChannel: 0 0 0;
+$actionSelectedChannel: 0 0 0;
+
+// Border
+$borderRadius: 4px;
+
+:export {
+	// Common
+	black: $black;
+	white: $white;
+
+	// Primary
+	primaryMain: $primaryMain;
+	primaryLight: $primaryLight;
+	primaryDark: $primaryDark;
+	primary100: $primary100;
+
+	// secondary
+	secondaryMain: $secondaryMain;
+	secondaryLight: $secondaryLight;
+	secondaryDark: $secondaryDark;
+
+	// Error
+	errorMain: $errorMain;
+	errorLight: $errorLight;
+	errorDark: $errorDark;
+
+	// Warning
+	warningMain: $warningMain;
+	warningLight: $warningLight;
+	warningDark: $warningDark;
+
+	// Info
+	infoMain: $infoMain;
+	infoLight: $infoLight;
+	infoDark: $infoDark;
+
+	// Success
+	successMain: $successMain;
+	successLight: $successLight;
+	successDark: $successDark;
+
+	// Grey
+	grey50: $grey50;
+	grey100: $grey100;
+	grey200: $grey200;
+	grey300: $grey300;
+	grey400: $grey400;
+	grey500: $grey500;
+	grey600: $grey600;
+	grey700: $grey700;
+	grey800: $grey800;
+	grey900: $grey900;
+
+	// Color
+	red: $red;
+	orange: $orange;
+	yellow: $yellow;
+	green: $green;
+	teal: $teal;
+	cyan: $cyan;
+	blue: $blue;
+	indigo: $indigo;
+	purple: $purple;
+	pink: $pink;
+
+	// Text
+	textPrimary: $textPrimary;
+	textSecondary: $textSecondary;
+	textDisabled: $textDisabled;
+
+	// Divider
+	divider: $divider;
+
+	// Background
+	bgDefault: $bgDefault;
+	bgPaper: $bgPaper;
+
+	// Action
+	actionActive: $actionActive;
+	actionHover: $actionHover;
+	actionHoverOpacity: $actionHoverOpacity;
+	actionSelected: $actionSelected;
+	actionSelectedOpacity: $actionSelectedOpacity;
+	actionDisabled: $actionDisabled;
+	actionDisabledBackground: $actionDisabledBackground;
+	actionDisabledOpacity: $actionDisabledOpacity;
+	actionFocus: $actionFocus;
+	actionFocusOpacity: $actionFocusOpacity;
+	actionActivatedOpacity: $actionActivatedOpacity;
+	actionActiveChannel: $actionActiveChannel;
+	actionSelectedChannel: $actionSelectedChannel;
+
+	// Border
+	border-radius: $borderRadius;
+}

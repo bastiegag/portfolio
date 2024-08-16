@@ -1,0 +1,51 @@
+import { styled } from '@mui/system';
+
+export const GroundWaves = () => {
+	const CustomSvg = styled('g', {
+		name: 'groundWaves',
+		slot: 'Root',
+	})(() => ({
+		mixBlendMode: 'multiply',
+		'.ground-waves-shape': {
+			fill: 'url(#horizon-gradient)',
+		},
+	}));
+
+	return (
+		<CustomSvg
+			transform={`translate(0,54)`}
+			// xmlns="http://www.w3.org/2000/svg"
+			// xmlnsXlink="http://www.w3.org/1999/xlink"
+			// version="1.1"
+			// viewBox="0 0 875.7 64.8"
+			// width="875.7"
+			// height="64.8"
+			// y="54"
+		>
+			<defs>
+				<linearGradient
+					id="ground-waves-gradient"
+					x1="0"
+					y1="0"
+					x2="876.3"
+					y2="0"
+					gradientTransform="translate(876.3) rotate(-180) scale(1 -1)"
+					gradientUnits="userSpaceOnUse"
+				>
+					<stop offset="0" stopColor="#a2c2ff" />
+					<stop offset=".3" stopColor="#c0d6ff" />
+					<stop offset=".8" stopColor="#edf3ff" />
+					<stop offset="1" stopColor="#fff" />
+				</linearGradient>
+			</defs>
+			<path
+				className="ground-waves-shape"
+				d="M875.7,64.8s-185.6-4.9-297.1-11.7C404.9,42.5,363.6,10.8,267.7,2.4,171.8-5.9,0,9.9,0,9.9v9.1s129.1-10.4,277.6,3.8c148.5,14.1,306.9,42,397,42h201.2Z"
+			/>
+			<path
+				className="ground-waves-shape"
+				d="M569.8,64.8s-147.1-6.3-267.2-21.9C154,23.5,0,41,0,41v8.4s158.6-19.1,279.4-6.4c120.8,12.6,188.2,18.9,256.1,21.8h34.3Z"
+			/>
+		</CustomSvg>
+	);
+};
