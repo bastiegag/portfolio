@@ -58,7 +58,7 @@ export const Sky = () => {
 				transform="translate(1000 280) rotate(180)"
 			/>
 			<Air />
-			<Clouds />
+			{/* <Clouds /> */}
 		</CustomSvg>
 	);
 };

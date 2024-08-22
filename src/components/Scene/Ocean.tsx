@@ -55,7 +55,7 @@ export const Ocean = () => {
 		>
 			<filter id="waterFilter" x="0%" y="0%" width="100%" height="100%">
 				<feTurbulence
-					id="turbulence"
+					// id="turbulence"
 					baseFrequency="0.02 0.35"
 					type="turbulence"
 					result="noise"

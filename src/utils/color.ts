@@ -3,7 +3,7 @@
  * @param {string} hex
  * @returns
  */
-export const hexToRgba = (hexCode, opacity = 1) => {
+export const hexToRgba = (hexCode: string, opacity = 1) => {
 	let hex = hexCode.replace('#', '');
 
 	if (hex.length === 3) {
@@ -27,7 +27,13 @@ export const hexToRgba = (hexCode, opacity = 1) => {
  * @param {object} color
  * @returns
  */
-export const rgbToHex = (color) => {
+interface Color {
+	r: number;
+	g: number;
+	b: number;
+}
+
+export const rgbToHex = (color: Color) => {
 	return (
 		'#' +
 		componentToHex(color.r) +
@@ -36,7 +42,7 @@ export const rgbToHex = (color) => {
 	);
 };
 
-const componentToHex = (c) => {
+const componentToHex = (c: number) => {
 	var hex = c.toString(16);
 
 	return hex.length == 1 ? '0' + hex : hex;

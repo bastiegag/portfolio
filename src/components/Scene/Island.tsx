@@ -1,6 +1,6 @@
 import { styled } from '@mui/system';
 
-import { Dev } from '@components';
+import { Dev } from 'components';
 
 export const Island = () => {
 	const CustomSvg = styled('g', {

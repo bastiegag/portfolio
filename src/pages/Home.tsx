@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 
-import { Scene } from '@components';
+import { Scene } from 'components';
 
 export const Home = () => {
 	return (

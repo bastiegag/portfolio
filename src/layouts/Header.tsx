@@ -1,7 +1,7 @@
 import { IconMail } from '@tabler/icons-react';
 import { AppBar, Toolbar, Divider, Stack, IconButton } from '@mui/material';
 
-import { Logo, Social } from '@components';
+import { Logo, Social } from 'components';
 import config from '@/config';
 
 export const Header = () => {
