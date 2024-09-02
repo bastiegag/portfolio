@@ -1,44 +1,27 @@
-import { styled } from '@mui/system';
+import { styled, useTheme } from '@mui/system';
+
+const CustomSvg = styled('g', {
+	name: 'rock06',
+	slot: 'Root',
+})(() => ({
+	'.rock-back': {
+		fill: 'url(#rock06-back-gradient)',
+	},
+	'.rock-top': {
+		fill: 'url(#rock06-top-gradient)',
+	},
+	'.rock-shade': {
+		fill: 'url(#rock06-shade-gradient)',
+		mixBlendMode: 'multiply',
+		opacity: 0.5,
+	},
+}));
 
 export const Rock06 = () => {
-	const CustomSvg = styled('g', {
-		name: 'rock06',
-		slot: 'Root',
-	})(() => ({
-		'.rock-back': {
-			fill: 'url(#rock06-back-gradient)',
-		},
-		'.rock-top': {
-			fill: 'url(#rock06-top-gradient)',
-		},
-		'.rock-top2': {
-			fill: 'url(#rock06-top2-gradient)',
-		},
-		'.rock-side': {
-			fill: 'url(#rock06-side-gradient)',
-		},
-		'.rock-edge': {
-			fill: '#ffb565',
-		},
-		'.rock-shade': {
-			fill: 'url(#rock06-shade-gradient)',
-			mixBlendMode: 'multiply',
-			opacity: 0.5,
-		},
-	}));
+	const colors = useTheme().palette.scene.rock;
 
 	return (
-		<CustomSvg
-			transform={`translate(304,230)`}
-			// xmlns="http://www.w3.org/2000/svg"
-			// xmlnsXlink="http://www.w3.org/1999/xlink"
-			// version="1.1"
-			// viewBox="0 0 42.1 63.8"
-			// width="42.1"
-			// height="63.8"
-			// x="304"
-			// y="230"
-		>
+		<CustomSvg transform={`translate(304,230)`}>
 			<defs>
 				<linearGradient
 					id="rock06-back-gradient"
@@ -48,21 +31,8 @@ export const Rock06 = () => {
 					y2="0"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stopColor="#ffa777" />
-					<stop offset=".4" stopColor="#d4836c" />
-					<stop offset=".8" stopColor="#b86b65" />
-					<stop offset="1" stopColor="#ae6363" />
-				</linearGradient>
-				<linearGradient
-					id="rock06-side-gradient"
-					x1="18.4"
-					y1="42.1"
-					x2="18.4"
-					y2="0"
-					gradientUnits="userSpaceOnUse"
-				>
-					<stop offset="0" stopColor="#d9905b" />
-					<stop offset="1" stopColor="#dd9063" />
+					<stop offset="0" stopColor={colors.hit} />
+					<stop offset="1" stopColor={colors.coral} />
 				</linearGradient>
 				<linearGradient
 					id="rock06-top-gradient"
@@ -72,9 +42,8 @@ export const Rock06 = () => {
 					y2="28.8"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stopColor="#eb9552" />
-					<stop offset=".6" stopColor="#f0a85d" />
-					<stop offset="1" stopColor="#f4b363" />
+					<stop offset="0" stopColor={colors.jaffa} />
+					<stop offset="1" stopColor={colors.koromiko} />
 				</linearGradient>
 				<linearGradient
 					id="rock06-edge-gradient"
@@ -92,21 +61,8 @@ export const Rock06 = () => {
 					y2="5.1"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stopColor="#c0b3d4" />
-					<stop offset=".5" stopColor="#d1becd" />
-					<stop offset="1" stopColor="#e3cac7" />
-				</linearGradient>
-				<linearGradient
-					id="rock06-top2-gradient"
-					x1="20.8"
-					y1="13.2"
-					x2="20.8"
-					y2="0"
-					gradientUnits="userSpaceOnUse"
-				>
-					<stop offset="0" stopColor="#f8a152" />
-					<stop offset=".3" stopColor="#f6a859" />
-					<stop offset="1" stopColor="#f4b363" />
+					<stop offset="0" stopColor={colors.lavender} />
+					<stop offset="1" stopColor={colors.dust} />
 				</linearGradient>
 			</defs>
 			<path
@@ -115,6 +71,7 @@ export const Rock06 = () => {
 			/>
 			<path
 				className="rock-side"
+				fill={colors.serria}
 				d="M11.4,13.2l-4.8,24.8,2.4,4.1h8l4.1-9.3L30.2,5.1S24.3,1.4,20.3,0c0,0-8.3,10.1-8.9,13.2Z"
 			/>
 			<polygon
@@ -123,6 +80,7 @@ export const Rock06 = () => {
 			/>
 			<polygon
 				className="rock-edge"
+				fill={colors.koromiko}
 				points="4.6 40.7 9 42.1 6.6 38 4.6 40.7"
 			/>
 			<polygon
@@ -131,6 +89,7 @@ export const Rock06 = () => {
 			/>
 			<path
 				className="rock-top2"
+				fill={colors.koromiko}
 				d="M11.4,13.2l14.8-.7,4.1-7.3s-3.2-3.9-10-5.1c0,0-8.2,9.2-8.9,13.2Z"
 			/>
 		</CustomSvg>

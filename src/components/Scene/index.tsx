@@ -7,17 +7,17 @@ import { Ripples } from './Ripples';
 import { PalmTrees } from './PalmTrees';
 import { Rocks } from './Rocks';
 
-export const Scene = () => {
-	const CustomSvg = styled('svg', {
-		name: 'scene',
-		slot: 'Root',
-	})(() => ({
-		'.island': {
-			transform: 'scale(0.85) translateY(12px) translateX(2%)',
-			transformOrigin: '50% 50%',
-		},
-	}));
+const CustomSvg = styled('svg', {
+	name: 'scene',
+	slot: 'Root',
+})(() => ({
+	'.island': {
+		transform: 'scale(0.85) translateY(12px) translateX(2%)',
+		transformOrigin: '50% 50%',
+	},
+}));
 
+export const Scene = () => {
 	return (
 		<CustomSvg
 			xmlns="http://www.w3.org/2000/svg"
@@ -28,10 +28,10 @@ export const Scene = () => {
 			<Sky />
 			<Ocean />
 			<g className="island">
-				<Island />
+				{/* <Island /> */}
 				<Ripples />
 				{/* <PalmTrees /> */}
-				<Rocks />
+				{/* <Rocks /> */}
 			</g>
 		</CustomSvg>
 	);

@@ -1,11 +1,14 @@
 import { Suspense } from 'react';
 
 import Routes from 'routes';
+import { ThemeContextProvider } from 'context';
 
 const App = () => {
 	return (
 		<Suspense>
-			<Routes />
+			<ThemeContextProvider>
+				<Routes />
+			</ThemeContextProvider>
 		</Suspense>
 	);
 };

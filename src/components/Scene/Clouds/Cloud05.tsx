@@ -1,6 +1,6 @@
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { styled } from '@mui/system';
+import { styled, useTheme } from '@mui/system';
 
 import config from '@/config';
 
@@ -12,14 +12,31 @@ const animation = {
 	start: 4,
 };
 
+const CustomSvg = styled('g', {
+	name: 'cloud05',
+	slot: 'Root',
+})(() => ({
+	'.cloud-back': {
+		fill: 'url(#cloud05-back-gradient)',
+	},
+	'.cloud-shade': {
+		fill: 'url(#cloud05-shade-gradient)',
+		mixBlendMode: 'multiply',
+	},
+}));
+
 export const Cloud05 = () => {
 	gsap.registerPlugin(useGSAP);
 
+	const colors = useTheme().palette.scene.cloud;
+
 	useGSAP(() => {
-		var timeline = gsap.timeline({
+		const timeline = gsap.timeline({
 			repeat: -1,
 			repeatDelay: animation.repeatDelay,
+			repeatRefresh: true,
 		});
+
 		timeline.fromTo(
 			'.cloud05',
 			{ x: animation.width * -1 },
@@ -29,35 +46,14 @@ export const Cloud05 = () => {
 				ease: 'none',
 			}
 		);
+
 		timeline.seek(animation.start * config.cloudsSpeed);
 	});
-
-	const CustomSvg = styled('g', {
-		name: 'cloud05',
-		slot: 'Root',
-	})(() => ({
-		'.cloud-back': {
-			fill: 'url(#cloud05-back-gradient)',
-		},
-		'.cloud-shade': {
-			fill: 'url(#cloud05-shade-gradient)',
-			mixBlendMode: 'multiply',
-		},
-	}));
 
 	return (
 		<CustomSvg
 			className="cloud05"
 			transform={`translate(0,${animation.y})`}
-			// xmlns="http://www.w3.org/2000/svg"
-			// xmlnsXlink="http://www.w3.org/1999/xlink"
-			// version="1.1"
-			// viewBox="0 0 633.7 159.8"
-			// preserveAspectRatio="xMidYMid slice"
-			// width="633.7"
-			// height="159.8"
-			// x="0"
-			// y={animation.y}
 		>
 			<defs>
 				<linearGradient
@@ -69,10 +65,9 @@ export const Cloud05 = () => {
 					gradientTransform="translate(0 162) scale(1 -1)"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stopColor="#b0f1ff" />
-					<stop offset=".3" stopColor="#bef8ff" />
-					<stop offset=".6" stopColor="#c8fdff" />
-					<stop offset="1" stopColor="#cbffff" />
+					<stop offset="0" stopColor={colors.far.dark} />
+					<stop offset=".3" stopColor={colors.far.mid} />
+					<stop offset="1" stopColor={colors.far.light} />
 				</linearGradient>
 				<linearGradient
 					id="cloud05-shade-gradient"
@@ -83,9 +78,9 @@ export const Cloud05 = () => {
 					gradientTransform="translate(0 162) scale(1 -1)"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stopColor="#d1e8ff" />
-					<stop offset=".6" stopColor="#edf6ff" />
-					<stop offset="1" stopColor="#fff" />
+					<stop offset="0" stopColor={colors.shade.dark} />
+					<stop offset=".6" stopColor={colors.shade.mid} />
+					<stop offset="1" stopColor={colors.shade.light} />
 				</linearGradient>
 			</defs>
 			<path

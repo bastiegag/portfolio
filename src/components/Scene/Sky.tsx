@@ -1,29 +1,22 @@
-import { styled } from '@mui/system';
+import { styled, useTheme } from '@mui/system';
 
 import { Air } from './Air';
 import { Clouds } from './Clouds';
 
+const CustomSvg = styled('g', {
+	name: 'sky',
+	slot: 'Root',
+})(() => ({
+	'.sky-back': {
+		fill: 'url(#sky-gradient)',
+	},
+}));
+
 export const Sky = () => {
-	const CustomSvg = styled('g', {
-		name: 'sky',
-		slot: 'Root',
-	})(() => ({
-		'.sky-back': {
-			fill: 'url(#sky-gradient)',
-		},
-	}));
+	const colors = useTheme().palette.scene.sky;
 
 	return (
-		<CustomSvg
-			transform={`translate(0,0)`}
-			// xmlns="http://www.w3.org/2000/svg"
-			// xmlnsXlink="http://www.w3.org/1999/xlink"
-			// version="1.1"
-			// viewBox="0 0 1000 280"
-			// preserveAspectRatio="xMidYMid slice"
-			// width="1000"
-			// height="280"
-		>
+		<CustomSvg transform={`translate(0,0)`}>
 			<defs>
 				<linearGradient
 					id="sky-gradient"
@@ -34,21 +27,9 @@ export const Sky = () => {
 					gradientTransform="translate(-.6 280) scale(1 -1)"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop
-						className="stop-light"
-						offset="0"
-						stopColor="#c2fff7"
-					/>
-					<stop
-						className="stop-mid"
-						offset=".5"
-						stopColor="#8af1f2"
-					/>
-					<stop
-						className="stop-dark"
-						offset="1"
-						stopColor="#54c7ff"
-					/>
+					<stop offset="0" stopColor={colors.light} />
+					<stop offset=".5" stopColor={colors.mid} />
+					<stop offset="1" stopColor={colors.dark} />
 				</linearGradient>
 			</defs>
 			<rect
@@ -57,7 +38,7 @@ export const Sky = () => {
 				height="280"
 				transform="translate(1000 280) rotate(180)"
 			/>
-			<Air />
+			{/* <Air /> */}
 			{/* <Clouds /> */}
 		</CustomSvg>
 	);

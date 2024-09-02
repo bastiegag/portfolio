@@ -2,46 +2,35 @@ import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { styled } from '@mui/system';
 
+const CustomSvg = styled('g', {
+	name: 'air',
+	slot: 'Root',
+})(() => ({
+	mixBlendMode: 'multiply',
+	opacity: 0.25,
+	'.air-shape': {
+		fill: 'url(#air-gradient)',
+	},
+}));
+
 export const Air = () => {
 	gsap.registerPlugin(useGSAP);
 
-	// useGSAP(() => {
-	// 	const timeline = gsap.timeline({
-	// 		repeat: -1,
-	// 		repeatRefresh: true,
-	// 	});
+	useGSAP(() => {
+		const timeline = gsap.timeline({
+			repeat: -1,
+			repeatRefresh: true,
+		});
 
-	// 	timeline.to('.air', {
-	// 		opacity: 'random(0.25,1)',
-	// 		duration: gsap.utils.random(2, 5),
-	// 		ease: 'power2.inOut',
-	// 	});
-	// });
-
-	const CustomSvg = styled('g', {
-		name: 'air',
-		slot: 'Root',
-	})(() => ({
-		mixBlendMode: 'multiply',
-		opacity: 0.5,
-		'.air-shape': {
-			fill: 'url(#air-gradient)',
-		},
-	}));
+		timeline.to('.air', {
+			opacity: 'random(0.25,1)',
+			duration: gsap.utils.random(2, 5),
+			ease: 'power2.inOut',
+		});
+	});
 
 	return (
-		<CustomSvg
-			className="air"
-			transform={`translate(30,30)`}
-			// xmlns="http://www.w3.org/2000/svg"
-			// xmlnsXlink="http://www.w3.org/1999/xlink"
-			// version="1.1"
-			// viewBox="0 0 933 216.5"
-			// width="933"
-			// height="216.5"
-			// x="30"
-			// y="30"
-		>
+		<CustomSvg className="air" transform={`translate(30,30)`}>
 			<defs>
 				<linearGradient
 					id="air-gradient"

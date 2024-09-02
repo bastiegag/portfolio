@@ -5,3 +5,8 @@ svg {
 	width: 100%;
 	height: 100%;
 }
+
+stop,
+.animate {
+	transition: all 0.3s ease-out;
+}

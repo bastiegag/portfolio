@@ -10,10 +10,10 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
-		"@emotion/react": "^11.11.4",
-		"@emotion/styled": "^11.11.5",
+		"@emotion/react": "^11.13.3",
+		"@emotion/styled": "^11.13.0",
 		"@gsap/react": "^2.1.1",
-		"@mui/material": "^5.15.21",
+		"@mui/material": "^6.0.1",
 		"@tabler/icons-react": "^3.11.0",
 		"@types/jest": "^29.5.12",
 		"@types/node": "^22.4.0",

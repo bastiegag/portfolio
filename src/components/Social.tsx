@@ -6,30 +6,30 @@ import {
 	IconBrandLinkedin,
 } from '@tabler/icons-react';
 
-export const Social = () => {
-	const links = [
-		{
-			name: 'Github',
-			url: 'https://github.com/bastiegag',
-			icon: <IconBrandGithub />,
-		},
-		{
-			name: 'Vimeo',
-			url: 'https://vimeo.com/bastiegag',
-			icon: <IconBrandVimeo />,
-		},
-		{
-			name: 'Instagram',
-			url: 'https://www.instagram.com/bastiegag/',
-			icon: <IconBrandInstagram />,
-		},
-		{
-			name: 'Linkedin',
-			url: 'https://www.linkedin.com/in/bastiegag/',
-			icon: <IconBrandLinkedin />,
-		},
-	];
+const links = [
+	{
+		name: 'Github',
+		url: 'https://github.com/bastiegag',
+		icon: <IconBrandGithub />,
+	},
+	{
+		name: 'Vimeo',
+		url: 'https://vimeo.com/bastiegag',
+		icon: <IconBrandVimeo />,
+	},
+	{
+		name: 'Instagram',
+		url: 'https://www.instagram.com/bastiegag/',
+		icon: <IconBrandInstagram />,
+	},
+	{
+		name: 'Linkedin',
+		url: 'https://www.linkedin.com/in/bastiegag/',
+		icon: <IconBrandLinkedin />,
+	},
+];
 
+export const Social = () => {
 	const Buttons = () => {
 		const buttons = links.map((item) => {
 			return (

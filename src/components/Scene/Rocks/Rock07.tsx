@@ -1,53 +1,39 @@
-import { styled } from '@mui/system';
+import { styled, useTheme } from '@mui/system';
+
+const CustomSvg = styled('g', {
+	name: 'rock07',
+	slot: 'Root',
+})(() => ({
+	'.rock-back': {
+		fill: 'url(#rock07-back-gradient)',
+	},
+	'.rock-top': {
+		fill: 'url(#rock07-top-gradient)',
+	},
+	'.rock-face': {
+		fill: 'url(#rock07-face-gradient)',
+	},
+	'.rock-side': {
+		fill: 'url(#rock07-side-gradient)',
+	},
+	'.rock-shade2': {
+		fill: 'url(#rock07-shade2-gradient)',
+	},
+	'.rock-shade2-2': {
+		fill: 'url(#rock07-shade2-gradient-2)',
+	},
+	'.rock-shade, .rock-shade-2, .rock-shade2, .rock-shade2-2': {
+		fill: 'url(#rock07-shade-gradient)',
+		mixBlendMode: 'multiply',
+		opacity: 0.5,
+	},
+}));
 
 export const Rock07 = () => {
-	const CustomSvg = styled('g', {
-		name: 'rock07',
-		slot: 'Root',
-	})(() => ({
-		'.rock-back': {
-			fill: 'url(#rock07-back-gradient)',
-		},
-		'.rock-top': {
-			fill: 'url(#rock07-top-gradient)',
-		},
-		'.rock-top2': {
-			fill: 'url(#rock07-top2-gradient)',
-		},
-		'.rock-face': {
-			fill: 'url(#rock07-face-gradient)',
-		},
-		'.rock-side': {
-			fill: 'url(#rock07-side-gradient)',
-		},
-		'.rock-shade-2': {
-			fill: '#efdbff',
-		},
-		'.rock-shade2': {
-			fill: 'url(#rock07-shade2-gradient)',
-		},
-		'.rock-shade2-2': {
-			fill: 'url(#rock07-shade2-gradient-2)',
-		},
-		'.rock-shade, .rock-shade-2, .rock-shade2, .rock-shade2-2': {
-			fill: 'url(#rock07-shade-gradient)',
-			mixBlendMode: 'multiply',
-			opacity: 0.5,
-		},
-	}));
+	const colors = useTheme().palette.scene.rock;
 
 	return (
-		<CustomSvg
-			transform={`translate(356,170)`}
-			// xmlns="http://www.w3.org/2000/svg"
-			// xmlnsXlink="http://www.w3.org/1999/xlink"
-			// version="1.1"
-			// viewBox="0 0 87.7 121.1"
-			// width="87.7"
-			// height="121.1"
-			// x="356"
-			// y="170"
-		>
+		<CustomSvg transform={`translate(356,170)`}>
 			<defs>
 				<linearGradient
 					id="rock07-back-gradient"
@@ -58,22 +44,8 @@ export const Rock07 = () => {
 					gradientTransform="translate(-2.5 0) rotate(-1.9)"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stopColor="#ffa777" />
-					<stop offset=".4" stopColor="#d4836c" />
-					<stop offset=".8" stopColor="#b86b65" />
-					<stop offset="1" stopColor="#ae6363" />
-				</linearGradient>
-				<linearGradient
-					id="rock07-side-gradient"
-					x1="41"
-					y1="88.8"
-					x2="41"
-					y2="1.7"
-					gradientTransform="translate(-2.5 0) rotate(-1.9)"
-					gradientUnits="userSpaceOnUse"
-				>
-					<stop offset="0" stopColor="#d9905b" />
-					<stop offset="1" stopColor="#dd9063" />
+					<stop offset="0" stopColor={colors.hit} />
+					<stop offset="1" stopColor={colors.coral} />
 				</linearGradient>
 				<linearGradient
 					id="rock07-top-gradient"
@@ -84,9 +56,8 @@ export const Rock07 = () => {
 					gradientTransform="translate(-2.5 0) rotate(-1.9)"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stopColor="#eb9552" />
-					<stop offset=".6" stopColor="#f0a85d" />
-					<stop offset="1" stopColor="#f4b363" />
+					<stop offset="0" stopColor={colors.jaffa} />
+					<stop offset="1" stopColor={colors.koromiko} />
 				</linearGradient>
 				<linearGradient
 					id="rock07-shade-gradient"
@@ -97,9 +68,8 @@ export const Rock07 = () => {
 					gradientTransform="translate(-2.5 0) rotate(-1.9)"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stopColor="#c0b3d4" />
-					<stop offset=".5" stopColor="#d1becd" />
-					<stop offset="1" stopColor="#e3cac7" />
+					<stop offset="0" stopColor={colors.lavender} />
+					<stop offset="1" stopColor={colors.dust} />
 				</linearGradient>
 				<linearGradient
 					id="rock07-shade2-gradient"
@@ -110,9 +80,8 @@ export const Rock07 = () => {
 					gradientTransform="translate(-2.5 0) rotate(-1.9)"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stopColor="#d1e8ff" />
-					<stop offset="0" stopColor="#d1e8ff" />
-					<stop offset="1" stopColor="#e3ecff" />
+					<stop offset="0" stopColor={colors.onahau} />
+					<stop offset="1" stopColor={colors.dust} />
 				</linearGradient>
 				<linearGradient
 					id="rock07-shade2-gradient-2"
@@ -122,19 +91,6 @@ export const Rock07 = () => {
 					y2="46.1"
 					xlinkHref="#rock07-shade2-gradient"
 				/>
-				<linearGradient
-					id="rock07-top2-gradient"
-					x1="46.1"
-					y1="19.4"
-					x2="46.1"
-					y2="1.7"
-					gradientTransform="translate(-2.5 0) rotate(-1.9)"
-					gradientUnits="userSpaceOnUse"
-				>
-					<stop offset="0" stopColor="#f8a152" />
-					<stop offset=".3" stopColor="#f6a859" />
-					<stop offset="1" stopColor="#f4b363" />
-				</linearGradient>
 			</defs>
 			<path
 				className="rock-back"
@@ -142,6 +98,7 @@ export const Rock07 = () => {
 			/>
 			<path
 				className="rock-side"
+				fill={colors.koromiko}
 				d="M23.2,18.6l-4.7,13.9-3.8,38.4,5.2,5.4,5.4,9.1,6.9,2.3,14.4-43.2,1.9-.7,6.9-24.3,6.9-4.4,2.4-6.8L51.2,0s-18.4,4.7-28,18.6Z"
 			/>
 			<polygon
@@ -162,10 +119,12 @@ export const Rock07 = () => {
 			/>
 			<polygon
 				className="rock-shade-2"
+				fill={colors.chalk}
 				points="32.2 72.8 33 61.5 36.8 54.8 43.2 37.5 36.3 60.3 32.2 72.8"
 			/>
 			<path
 				className="rock-top2"
+				fill={colors.koromiko}
 				d="M23.2,18.6l24.5-.8,14.7-2.7,2.4-6.8L51.2,0s-21.3,4.7-28,18.6Z"
 			/>
 		</CustomSvg>

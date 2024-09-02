@@ -11,6 +11,17 @@ import { Cloud07 } from './Cloud07';
 export const Clouds = () => {
 	return (
 		<React.Fragment>
+			<defs>
+				<filter
+					id="cloudBlur"
+					x="0"
+					y="0"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<feGaussianBlur in="SourceGraphic" stdDeviation="1" />
+				</filter>
+			</defs>
+			{/* <g filter="cloudBlur"> */}
 			<Cloud07 />
 			<Cloud06 />
 			<Cloud05 />
@@ -18,6 +29,7 @@ export const Clouds = () => {
 			<Cloud03 />
 			<Cloud02 />
 			<Cloud01 />
+			{/* </g> */}
 		</React.Fragment>
 	);
 };

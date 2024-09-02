@@ -1,9 +1,81 @@
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { styled } from '@mui/system';
+import { styled, useTheme } from '@mui/system';
+
+const CustomSvg = styled('g', {
+	name: 'palm02',
+	slot: 'Root',
+})(() => ({
+	'.palm-leaf-3': {
+		fill: 'url(#palm02-leaf-gradient-3)',
+	},
+	'.palm-leaf-4': {
+		fill: 'url(#palm02-leaf-gradient-4)',
+	},
+	'.palm-leaf-2': {
+		fill: 'url(#palm02-leaf-gradient-2)',
+	},
+	'.palm-leaf-5': {
+		fill: 'url(#palm02-leaf-gradient-5)',
+	},
+	'.palm-shade': {
+		opacity: 0.5,
+		mixBlendMode: 'multiply',
+	},
+	'.palm-leaf-lighter': {
+		fill: 'url(#palm02-leaf-lighter-gradient)',
+	},
+	'.palm-trunk-light': {
+		fill: 'url(#palm02-trunk-light-gradient)',
+	},
+	'.palm-leaf-dark': {
+		fill: 'url(#palm02-leaf-dark-gradient)',
+	},
+	'.palm-leaf-light-3': {
+		fill: 'url(#palm02-leaf-light-gradient-3)',
+	},
+	'.palm-mid-right': {
+		fill: 'url(#palm02-mid-right-gradient)',
+	},
+	'.palm-mid-left': {
+		fill: 'url(#palm02-mid-left-gradient)',
+	},
+	'.palm-leaf-light': {
+		fill: 'url(#palm02-leaf-light-gradient)',
+	},
+	'.palm-trunk-dark': {
+		fill: 'url(#palm02-trunk-dark-gradient)',
+	},
+	'.palm-leaf': {
+		fill: 'url(#palm02-leaf-gradient)',
+	},
+	'.palm-leaf-light-2': {
+		fill: 'url(#palm02-leaf-light-gradient-2)',
+	},
+	'.palm-leaf-dark-2': {
+		fill: 'url(#palm02-leaf-dark-gradient-2)',
+	},
+	'.palm-leaf-dark-3': {
+		fill: 'url(#palm02-leaf-dark-gradient-3)',
+	},
+	'.palm-mid-left-4': {
+		fill: 'url(#palm02-mid-left-gradient-4)',
+	},
+	'.palm-mid-left-3': {
+		fill: 'url(#palm02-mid-left-gradient-3)',
+	},
+	'.palm-mid-left-2': {
+		fill: 'url(#palm02-mid-left-gradient-2)',
+	},
+	'.palm-leaf-lighter-2': {
+		fill: 'url(#palm02-leaf-lighter-gradient-2)',
+	},
+}));
 
 export const Palm02 = () => {
 	gsap.registerPlugin(useGSAP);
+
+	const colors = useTheme().palette.scene.palm;
 
 	useGSAP(() => {
 		const timeline = gsap.timeline({
@@ -26,124 +98,15 @@ export const Palm02 = () => {
 
 			leafTimeline.to(`.palm02 .leaf0${i}`, {
 				rotation: 'random(-3,3)',
-				duration: gsap.utils.random(2, 4),
+				duration: gsap.utils.random(2, 3),
 				ease: 'power2.inOut',
 				svgOrigin: '65 16',
 			});
 		}
 	});
 
-	const CustomSvg = styled('g', {
-		name: 'palm02',
-		slot: 'Root',
-	})(() => ({
-		'.palm-leaf-3': {
-			fill: 'url(#palm02-leaf-gradient-3)',
-		},
-		'.palm-leaf-4': {
-			fill: 'url(#palm02-leaf-gradient-4)',
-		},
-		'.palm-leaf-2': {
-			fill: 'url(#palm02-leaf-gradient-2)',
-		},
-		'.palm-leaf-5': {
-			fill: 'url(#palm02-leaf-gradient-5)',
-		},
-		'.palm-shade-5': {
-			fill: 'url(#palm02-shade-gradient-5)',
-		},
-		'.palm-shade-5, .palm-shade-3, .palm-shade-6, .palm-shade-8, .palm-shade-7, .palm-shade-2':
-			{
-				opacity: 0.5,
-			},
-		'.palm-shade-5, .palm-shade-3, .palm-shade-6, .palm-shade-8, .palm-shade-7, .palm-shade-2, .palm-shade-4, .palm-shade':
-			{
-				mixBlendMode: 'multiply',
-			},
-		'.palm-shade-3': {
-			fill: 'url(#palm02-shade-gradient-3)',
-		},
-		'.palm-shade-6': {
-			fill: 'url(#palm02-shade-gradient-6)',
-		},
-		'.palm-shade-8': {
-			fill: 'url(#palm02-shade-gradient-8)',
-		},
-		'.palm-shade-7': {
-			fill: 'url(#palm02-shade-gradient-7)',
-		},
-		'.palm-shade-2': {
-			fill: 'url(#palm02-shade-gradient-2)',
-		},
-		'.palm-shade-4': {
-			fill: 'url(#palm02-shade-gradient-4)',
-		},
-		'.palm-leaf-lighter': {
-			fill: 'url(#palm02-leaf-lighter-gradient)',
-		},
-		'.palm-trunk-light': {
-			fill: 'url(#palm02-trunk-light-gradient)',
-		},
-		'.palm-leaf-dark': {
-			fill: 'url(#palm02-leaf-dark-gradient)',
-		},
-		'.palm-leaf-light-3': {
-			fill: 'url(#palm02-leaf-light-gradient-3)',
-		},
-		'.palm-mid-right': {
-			fill: 'url(#palm02-mid-right-gradient)',
-		},
-		'.palm-mid-left': {
-			fill: 'url(#palm02-mid-left-gradient)',
-		},
-		'.palm-leaf-light': {
-			fill: 'url(#palm02-leaf-light-gradient)',
-		},
-		'.palm-trunk-dark': {
-			fill: 'url(#palm02-trunk-dark-gradient)',
-		},
-		'.palm-shade': {
-			fill: 'url(#palm02-shade-gradient)',
-		},
-		'.palm-leaf': {
-			fill: 'url(#palm02-leaf-gradient)',
-		},
-		'.palm-leaf-light-2': {
-			fill: 'url(#palm02-leaf-light-gradient-2)',
-		},
-		'.palm-leaf-dark-2': {
-			fill: 'url(#palm02-leaf-dark-gradient-2)',
-		},
-		'.palm-leaf-dark-3': {
-			fill: 'url(#palm02-leaf-dark-gradient-3)',
-		},
-		'.palm-mid-left-4': {
-			fill: 'url(#palm02-mid-left-gradient-4)',
-		},
-		'.palm-mid-left-3': {
-			fill: 'url(#palm02-mid-left-gradient-3)',
-		},
-		'.palm-mid-left-2': {
-			fill: 'url(#palm02-mid-left-gradient-2)',
-		},
-		'.palm-leaf-lighter-2': {
-			fill: 'url(#palm02-leaf-lighter-gradient-2)',
-		},
-	}));
-
 	return (
-		<CustomSvg
-			className="palm02"
-			transform={`translate(494,86)`}
-			// xmlns="http://www.w3.org/2000/svg"
-			// xmlnsXlink="http://www.w3.org/1999/xlink"
-			// version="1.1"
-			// viewBox="0 0 114 167.3"
-			// width="114"
-			// height="167.3"
-			// x="494"
-			// y="86"
-		>
+		<CustomSvg className="palm02" transform={`translate(494,86)`}>
 			<defs>
 				<linearGradient
 					id="palm02-leaf-dark-gradient"
@@ -153,9 +116,8 @@ export const Palm02 = () => {
 					y2="15.8"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stopColor="#6f7b00" />
-					<stop offset=".6" stopColor="#597314" />
-					<stop offset="1" stopColor="#4f701e" />
+					<stop offset="0" stopColor={colors.leaf.olive} />
+					<stop offset="1" stopColor={colors.leaf.fern} />
 				</linearGradient>
 				<linearGradient
 					id="palm02-leaf-dark-gradient-2"
@@ -173,10 +135,8 @@ export const Palm02 = () => {
 					y2="11.1"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stopColor="#aead13" />
-					<stop offset=".4" stopColor="#899e20" />
-					<stop offset=".8" stopColor="#6d942b" />
-					<stop offset="1" stopColor="#63902f" />
+					<stop offset="0" stopColor={colors.leaf.sahara} />
+					<stop offset="1" stopColor={colors.leaf.olivedrab} />
 				</linearGradient>
 				<linearGradient
 					id="palm02-leaf-dark-gradient-3"
@@ -194,10 +154,8 @@ export const Palm02 = () => {
 					y2="19.1"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stopColor="#b87251" />
-					<stop offset=".2" stopColor="#a76656" />
-					<stop offset=".7" stopColor="#8b535f" />
-					<stop offset="1" stopColor="#814c63" />
+					<stop offset="0" stopColor={colors.trunk.mid} />
+					<stop offset="1" stopColor={colors.trunk.dark} />
 				</linearGradient>
 				<linearGradient
 					id="palm02-trunk-light-gradient"
@@ -207,10 +165,8 @@ export const Palm02 = () => {
 					y2="42.2"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stopColor="#ef9f3b" />
-					<stop offset=".3" stopColor="#e4963f" />
-					<stop offset=".8" stopColor="#c87f4a" />
-					<stop offset="1" stopColor="#b87251" />
+					<stop offset="0" stopColor={colors.trunk.light} />
+					<stop offset="1" stopColor={colors.trunk.mid} />
 				</linearGradient>
 				<linearGradient
 					id="palm02-leaf-gradient-2"
@@ -220,18 +176,6 @@ export const Palm02 = () => {
 					y2="7.9"
 					xlinkHref="#palm02-leaf-gradient"
 				/>
-				<linearGradient
-					id="palm02-shade-gradient"
-					x1="73.9"
-					y1="53"
-					x2="73.9"
-					y2="20.4"
-					gradientUnits="userSpaceOnUse"
-				>
-					<stop offset="0" stopColor="#c0b3d4" />
-					<stop offset=".5" stopColor="#d1becd" />
-					<stop offset="1" stopColor="#e3cac7" />
-				</linearGradient>
 				<linearGradient
 					id="palm02-leaf-gradient-3"
 					x1="0"
@@ -256,9 +200,8 @@ export const Palm02 = () => {
 					y2="13.7"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stopColor="#c2ba13" />
-					<stop offset=".6" stopColor="#a6a627" />
-					<stop offset="1" stopColor="#9c9f2f" />
+					<stop offset="0" stopColor={colors.leaf.rioja} />
+					<stop offset="1" stopColor={colors.leaf.luxor} />
 				</linearGradient>
 				<linearGradient
 					id="palm02-leaf-gradient-5"
@@ -284,10 +227,8 @@ export const Palm02 = () => {
 					y2="33.1"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stopColor="#a4a22f" />
-					<stop offset=".3" stopColor="#aea92a" />
-					<stop offset=".7" stopColor="#cabd1d" />
-					<stop offset="1" stopColor="#e2cf13" />
+					<stop offset="0" stopColor={colors.leaf.alpine} />
+					<stop offset="1" stopColor={colors.leaf.barbeery} />
 				</linearGradient>
 				<linearGradient
 					id="palm02-mid-left-gradient"
@@ -297,10 +238,8 @@ export const Palm02 = () => {
 					y2="32.7"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stopColor="#e2cf13" />
-					<stop offset=".3" stopColor="#cabd1d" />
-					<stop offset=".7" stopColor="#aea92a" />
-					<stop offset="1" stopColor="#a4a22f" />
+					<stop offset="0" stopColor={colors.leaf.barbeery} />
+					<stop offset="1" stopColor={colors.leaf.alpine} />
 				</linearGradient>
 				<linearGradient
 					id="palm02-mid-left-gradient-2"
@@ -327,62 +266,6 @@ export const Palm02 = () => {
 					xlinkHref="#palm02-mid-left-gradient"
 				/>
 				<linearGradient
-					id="palm02-shade-gradient-2"
-					x1="56.5"
-					y1="33.5"
-					x2="56.5"
-					y2="20.6"
-					xlinkHref="#palm02-shade-gradient"
-				/>
-				<linearGradient
-					id="palm02-shade-gradient-3"
-					x1="93"
-					y1="40.8"
-					x2="93"
-					y2="27.1"
-					xlinkHref="#palm02-shade-gradient"
-				/>
-				<linearGradient
-					id="palm02-shade-gradient-4"
-					x1="73.4"
-					y1="26.1"
-					x2="73.4"
-					y2="13.7"
-					xlinkHref="#palm02-shade-gradient"
-				/>
-				<linearGradient
-					id="palm02-shade-gradient-5"
-					x1="96.4"
-					y1="25"
-					x2="96.4"
-					y2="22.2"
-					xlinkHref="#palm02-shade-gradient"
-				/>
-				<linearGradient
-					id="palm02-shade-gradient-6"
-					x1="51.4"
-					y1="18.6"
-					x2="51.4"
-					y2="10.1"
-					xlinkHref="#palm02-shade-gradient"
-				/>
-				<linearGradient
-					id="palm02-shade-gradient-7"
-					x1="31.4"
-					y1="20"
-					x2="31.4"
-					y2="2.6"
-					xlinkHref="#palm02-shade-gradient"
-				/>
-				<linearGradient
-					id="palm02-shade-gradient-8"
-					x1="101.6"
-					y1="15.8"
-					x2="101.6"
-					y2="6.6"
-					xlinkHref="#palm02-shade-gradient"
-				/>
-				<linearGradient
 					id="palm02-leaf-lighter-gradient"
 					x1="42.7"
 					y1="36.3"
@@ -390,9 +273,8 @@ export const Palm02 = () => {
 					y2="22.4"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stopColor="#e2cf13" />
-					<stop offset=".6" stopColor="#c7be27" />
-					<stop offset="1" stopColor="#bdb82f" />
+					<stop offset="0" stopColor={colors.leaf.barbeery} />
+					<stop offset="1" stopColor={colors.leaf.erals} />
 				</linearGradient>
 				<linearGradient
 					id="palm02-leaf-lighter-gradient-2"
@@ -410,9 +292,8 @@ export const Palm02 = () => {
 					y2="3.8"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stopColor="#aeb413" />
-					<stop offset=".5" stopColor="#a7a824" />
-					<stop offset="1" stopColor="#a4a22f" />
+					<stop offset="0" stopColor={colors.leaf.sahara} />
+					<stop offset="1" stopColor={colors.leaf.alpine} />
 				</linearGradient>
 			</defs>
 			<g className="leaf07">
@@ -428,6 +309,7 @@ export const Palm02 = () => {
 				/>
 				<path
 					className="palm-shade"
+					fill={colors.leaf.maverick}
 					d="M65.6,37.2l4.1-9.3s1.5,1.4,5.9,8c4.4,6.6,8,17.1,8,17.1v-15.5l-4.2-1.6,4.2.8v-3.2l-1.6-7.9-14.3-5.2-3.6,6.6.5,8.8,1,1.4Z"
 				/>
 			</g>
@@ -461,7 +343,8 @@ export const Palm02 = () => {
 					d="M67.8,11.8s9.4-5.6,12.5-6.4c3.1-.8,21.5.6,23.6,1.7,2.1,1,10.1,9.3,10.1,9.3,0,0-7.6-8.2-9.8-9.5s-20.8-3.4-26.4-1.6c-5.5,1.8-10.1,6.6-10.1,6.6Z"
 				/>
 				<path
-					className="palm-shade-8"
+					className="palm-shade"
+					fill={colors.leaf.maverick}
 					d="M103.9,15.6l.8-7.9s-1.4-.9-3.1-1.1l-3.2,9.2,5.5-.2Z"
 				/>
 			</g>
@@ -479,7 +362,8 @@ export const Palm02 = () => {
 					d="M3.9,16.9S26.4,3.8,33.7,2.8c7.3-1,15.5,3.6,15.5,3.6,0,0-8-4.3-10.8-4.8S23.4,3.4,3.9,16.9Z"
 				/>
 				<path
-					className="palm-shade-7"
+					className="palm-shade"
+					fill={colors.leaf.maverick}
 					d="M26.7,19.8l3.3-16s2.8-1.5,6.1-1.1l-1.2,17.3-8.2-.2Z"
 				/>
 				<path
@@ -501,11 +385,13 @@ export const Palm02 = () => {
 					d="M73.6,17.4s9.9,2.4,13.7,4.3c3.8,1.9,17.5,17.4,17.5,17.4l7.5,9.7-15.6-17.4s-7.9-8.4-9.7-9.3c-1.8-.9-13.5-4.9-13.5-4.9Z"
 				/>
 				<polygon
-					className="palm-shade-3"
+					className="palm-shade"
+					fill={colors.leaf.maverick}
 					points="92.6 27.1 91.5 40.8 94.5 40.6 94.1 28.7 92.6 27.1"
 				/>
 				<polygon
-					className="palm-shade-5"
+					className="palm-shade"
+					fill={colors.leaf.maverick}
 					points="100.3 25 90.6 24.2 88.2 22.2 100.8 22.2 104.7 24.7 100.3 25"
 				/>
 				<path
@@ -513,7 +399,8 @@ export const Palm02 = () => {
 					d="M105.7,27.2h-11.9c0,0,8.5,9.1,8.5,9.1l7.5,1.2s-2-7.1-4.1-10.3Z"
 				/>
 				<path
-					className="palm-shade-4"
+					className="palm-shade"
+					fill={colors.leaf.maverick}
 					d="M75.6,26.1l-.2-8.2,2.6-4.3h-.9l-8.3,8.9s3.7,1.1,4.1,1.4c.4.3,2.7,2.2,2.7,2.2Z"
 				/>
 			</g>
@@ -531,12 +418,14 @@ export const Palm02 = () => {
 					d="M38.1,51.2s1.8-10.5,2.6-13.2c.7-2.7,12.2-17.2,13.9-18.9,1.7-1.6,11-5,11-5,0,0-9.5,3-12.7,5-3.2,2-12,16.6-12.7,18.6-.8,2-2.1,13.5-2.1,13.5Z"
 				/>
 				<polygon
-					className="palm-shade-2"
+					className="palm-shade"
+					fill={colors.leaf.maverick}
 					points="58.5 33.5 50.3 24.2 53.2 20.6 62.8 29 58.5 33.5"
 				/>
 
 				<path
-					className="palm-shade-6"
+					className="palm-shade"
+					fill={colors.leaf.maverick}
 					d="M42.9,13.6l11,5,6-2.5-14.9-6s-1.6,2.2-2.1,3.5Z"
 				/>
 				<path

@@ -22,6 +22,8 @@ export default defineConfig({
 			'@': resolve(root, ''),
 			assets: resolve(root, 'assets'),
 			components: resolve(root, 'components'),
+			context: resolve(root, 'context'),
+			hooks: resolve(root, 'hooks'),
 			layouts: resolve(root, 'layouts'),
 			pages: resolve(root, 'pages'),
 			routes: resolve(root, 'routes'),

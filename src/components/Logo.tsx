@@ -1,36 +1,36 @@
 import { styled } from '@mui/system';
 
-export const Logo = () => {
-	const CustomSvg = styled('svg', {
-		name: 'logo',
-		slot: 'Root',
-	})(() => ({
-		width: '460px',
-		height: 'auto',
-		zIndex: 2,
-		'.logo-dark': {
-			fill: '#d7d7c9',
-		},
-		'.logo-medium': {
-			fill: '#e2e2dc',
-		},
-		'.logo-title': {
-			fill: '#000',
-		},
-		'.logo-shade': {
-			fill: '#6f6e61',
-		},
-		'.logo-darker': {
-			fill: '#c1c1b1',
-		},
-		'.logo-light': {
-			fill: '#efefef',
-		},
-		'.logo-gradient': {
-			fill: 'url(#logo-gradient)',
-		},
-	}));
+const CustomSvg = styled('svg', {
+	name: 'logo',
+	slot: 'Root',
+})(() => ({
+	width: '460px',
+	height: 'auto',
+	zIndex: 2,
+	'.logo-dark': {
+		fill: '#d7d7c9',
+	},
+	'.logo-medium': {
+		fill: '#e2e2dc',
+	},
+	'.logo-title': {
+		fill: '#000',
+	},
+	'.logo-shade': {
+		fill: '#6f6e61',
+	},
+	'.logo-darker': {
+		fill: '#c1c1b1',
+	},
+	'.logo-light': {
+		fill: '#efefef',
+	},
+	'.logo-gradient': {
+		fill: 'url(#logo-gradient)',
+	},
+}));
 
+export const Logo = () => {
 	return (
 		<CustomSvg
 			className="logo"

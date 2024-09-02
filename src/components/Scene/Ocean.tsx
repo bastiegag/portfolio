@@ -1,13 +1,24 @@
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { styled } from '@mui/material';
+import { styled, useTheme } from '@mui/system';
 
 import { Horizon } from './Horizon';
 import { Waves } from './Waves';
 import { GroundWaves } from './GroundWaves';
 
+const CustomSvg = styled('g', {
+	name: 'ocean',
+	slot: 'Root',
+})(() => ({
+	'.ocean-back': {
+		fill: 'url(#ocean-gradient)',
+	},
+}));
+
 export const Ocean = () => {
 	gsap.registerPlugin(useGSAP);
+
+	const colors = useTheme().palette.scene.ocean;
 
 	useGSAP(() => {
 		const timeline = gsap.timeline({
@@ -16,60 +27,37 @@ export const Ocean = () => {
 		});
 
 		timeline.to('#turbulence', {
-			attr: { baseFrequency: '0.02 0.3' },
-			duration: 6,
+			attr: { values: '180' },
+			duration: 3,
 			ease: 'none',
 		});
 		timeline.to('#turbulence', {
-			attr: { baseFrequency: '0.02 0.35' },
-			duration: 6,
+			attr: { values: '359' },
+			duration: 3,
 			ease: 'none',
 		});
 	});
 
-	const CustomSvg = styled('g', {
-		name: 'ocean',
-		slot: 'Root',
-	})(() => ({
-		'.ocean-back': {
-			fill: 'url(#ocean-gradient)',
-		},
-		'.island-water': {
-			fill: '#7adec5',
-			transform: 'scale(0.85) translateY(-6px) translateX(35px)',
-			transformOrigin: '50% 50%',
-		},
-	}));
-
 	return (
-		<CustomSvg
-			transform={`translate(0,280)`}
-			// xmlns="http://www.w3.org/2000/svg"
-			// xmlnsXlink="http://www.w3.org/1999/xlink"
-			// version="1.1"
-			// viewBox="0 0 1000 120"
-			// preserveAspectRatio="xMidYMid slice"
-			// width="1000"
-			// height="120"
-			// y="280"
-		>
+		<CustomSvg transform={`translate(0,280)`}>
 			<filter id="waterFilter" x="0%" y="0%" width="100%" height="100%">
 				<feTurbulence
-					// id="turbulence"
-					baseFrequency="0.02 0.35"
+					baseFrequency="0.02 0.2"
 					type="turbulence"
 					result="noise"
 					seed="3"
-					numOctaves="2"
+					numOctaves="1"
 					stitchTiles="noStitch"
 				/>
-				<feDisplacementMap
-					in="SourceGraphic"
-					in2="noise"
-					scale="15"
-					xChannelSelector="R"
-					yChannelSelector="G"
-				></feDisplacementMap>
+				<feColorMatrix type="hueRotate" id="turbulence" values="0" />
+				<feColorMatrix
+					type="matrix"
+					values="0 0 0 0 0
+               0 0 0 0 0
+               0 0 0 0 0
+               1 0 0 0 0"
+				/>
+				<feDisplacementMap in="SourceGraphic" scale="15" />
 			</filter>
 			<defs>
 				<radialGradient
@@ -82,10 +70,8 @@ export const Ocean = () => {
 					gradientTransform="translate(0 88.7) scale(1 .3)"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset=".2" stopColor="#46e7c4" />
-					<stop offset=".6" stopColor="#4dbbdc" />
-					<stop offset=".8" stopColor="#529fec" />
-					<stop offset="1" stopColor="#5495f2" />
+					<stop offset=".2" stopColor={colors.back.light} />
+					<stop offset="1" stopColor={colors.back.dark} />
 				</radialGradient>
 			</defs>
 			<rect className="ocean-back" width="1000" height="120" />

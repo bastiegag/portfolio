@@ -1,56 +1,31 @@
 import { createTheme } from '@mui/material';
 
 import colors from 'assets/scss/_vars.module.scss';
-// import config from '@/config';
+// import { components } from './components';
+import { palette } from './palette';
+import { colorSchemes } from './colorSchemes';
 
-console.log(colors);
+declare module '@mui/material/styles' {
+	interface Palette {
+		scene: object;
+	}
+	interface PaletteOptions {
+		scene: object;
+	}
+}
 
 const portfolioTheme = () => {
 	const theme = createTheme();
+	const themeOptions = {
+		colorSchemes: colorSchemes(colors),
+		cssVariables: {
+			colorSchemeSelector: 'class',
+		},
+		palette: palette(colors),
+		// components: components(theme),
+	};
 
-	return createTheme({
-		components: {
-			MuiAppBar: {
-				defaultProps: {
-					elevation: 0,
-				},
-				styleOverrides: {
-					root: {
-						top: '36px',
-						backgroundColor: 'transparent',
-						[theme.breakpoints.down('md')]: {
-							top: '24px',
-						},
-					},
-				},
-			},
-			MuiToolbar: {
-				styleOverrides: {
-					root: {
-						justifyContent: 'space-between',
-						alignItems: 'start',
-						flexWrap: 'wrap',
-						[theme.breakpoints.down('md')]: {
-							justifyContent: 'center',
-							'.logo': {
-								order: 2,
-								marginTop: '16px',
-								width: '360px',
-							},
-						},
-					},
-				},
-			},
-		},
-		palette: {
-			primary: { main: colors.primary },
-			secondary: { main: colors.secondary },
-			success: { main: colors.success },
-			info: { main: colors.info },
-			warning: { main: colors.warning },
-			error: { main: colors.error },
-		},
-	});
+	return createTheme(themeOptions);
 };
 
 export default portfolioTheme;

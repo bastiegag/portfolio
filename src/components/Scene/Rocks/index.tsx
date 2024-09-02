@@ -11,8 +11,20 @@ import { Rock07 } from './Rock07';
 export const Rocks = () => {
 	return (
 		<React.Fragment>
+			<defs>
+				<filter
+					id="rockBlur"
+					x="0"
+					y="0"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<feGaussianBlur in="SourceGraphic" stdDeviation="0.5" />
+				</filter>
+			</defs>
+			{/* <g filter="url(#rockBlur)"> */}
 			<Rock07 />
 			<Rock06 />
+			{/* </g> */}
 			<Rock05 />
 			<Rock04 />
 			<Rock03 />

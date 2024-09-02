@@ -1,37 +1,26 @@
-import { styled } from '@mui/system';
+import { styled, useTheme } from '@mui/system';
+
+const CustomSvg = styled('g', {
+	name: 'rock01',
+	slot: 'Root',
+})(() => ({
+	'.rock-back': {
+		fill: 'url(#rock01-back-gradient)',
+	},
+	'.rock-top': {
+		fill: 'url(#rock01-top-gradient)',
+	},
+	'.rock-shade': {
+		fill: 'url(#rock01-shade-gradient)',
+		mixBlendMode: 'multiply',
+	},
+}));
 
 export const Rock01 = () => {
-	const CustomSvg = styled('g', {
-		name: 'rock01',
-		slot: 'Root',
-	})(() => ({
-		'.rock-back': {
-			fill: 'url(#rock01-back-gradient)',
-		},
-		'.rock-top': {
-			fill: 'url(#rock01-top-gradient)',
-		},
-		'.rock-edge': {
-			fill: '#ffb565',
-		},
-		'.rock-shade': {
-			fill: 'url(#rock01-shade-gradient)',
-			mixBlendMode: 'multiply',
-		},
-	}));
+	const colors = useTheme().palette.scene.rock;
 
 	return (
-		<CustomSvg
-			transform={`translate(404,278)`}
-			// xmlns="http://www.w3.org/2000/svg"
-			// xmlnsXlink="http://www.w3.org/1999/xlink"
-			// version="1.1"
-			// viewBox="0 0 50.9 19"
-			// width="50.9"
-			// height="19"
-			// x="404"
-			// y="278"
-		>
+		<CustomSvg transform={`translate(404,278)`}>
 			<defs>
 				<linearGradient
 					id="rock01-back-gradient"
@@ -41,10 +30,8 @@ export const Rock01 = () => {
 					y2="0"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stopColor="#b87251" />
-					<stop offset=".2" stopColor="#a76656" />
-					<stop offset=".7" stopColor="#8b535f" />
-					<stop offset="1" stopColor="#814c63" />
+					<stop offset="0" stopColor={colors.santa} />
+					<stop offset="1" stopColor={colors.cannon} />
 				</linearGradient>
 				<linearGradient
 					id="rock01-top-gradient"
@@ -54,9 +41,8 @@ export const Rock01 = () => {
 					y2="0"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stopColor="#b87251" />
-					<stop offset=".6" stopColor="#d2875d" />
-					<stop offset="1" stopColor="#dd9063" />
+					<stop offset="0" stopColor={colors.santa} />
+					<stop offset="1" stopColor={colors.serria} />
 				</linearGradient>
 				<linearGradient
 					id="rock01-shade-gradient"
@@ -66,9 +52,8 @@ export const Rock01 = () => {
 					y2="3.3"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stopColor="#c0b3d4" />
-					<stop offset=".5" stopColor="#d1becd" />
-					<stop offset="1" stopColor="#e3cac7" />
+					<stop offset="0" stopColor={colors.lavender} />
+					<stop offset="1" stopColor={colors.dust} />
 				</linearGradient>
 			</defs>
 			<polygon
@@ -85,6 +70,7 @@ export const Rock01 = () => {
 			/>
 			<polygon
 				className="rock-edge"
+				fill={colors.koromiko}
 				points="30.2 9.3 32.6 8.7 31.4 10.9 30.2 9.3"
 			/>
 		</CustomSvg>

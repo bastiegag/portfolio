@@ -1,6 +1,6 @@
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { styled } from '@mui/system';
+import { styled, useTheme } from '@mui/system';
 
 import config from '@/config';
 
@@ -12,14 +12,39 @@ const animation = {
 	start: 2.5,
 };
 
+const CustomSvg = styled('g', {
+	name: 'cloud01',
+	slot: 'Root',
+})(() => ({
+	'.cloud-back': {
+		fill: 'url(#cloud01-back-gradient)',
+	},
+	'.cloud-shade': {
+		fill: 'url(#cloud01-shade-gradient)',
+		mixBlendMode: 'multiply',
+	},
+	'.cloud-shade, .cloud-shade-2, .cloud-shade-3': {
+		mixBlendMode: 'multiply',
+	},
+	'.cloud-shade-2': {
+		fill: 'url(#cloud01-shade2-gradient)',
+	},
+	'.cloud-shade-3': {
+		fill: 'url(#cloud01-shade3-gradient)',
+	},
+}));
+
 export const Cloud01 = () => {
 	gsap.registerPlugin(useGSAP);
 
+	const colors = useTheme().palette.scene.cloud;
+
 	useGSAP(() => {
-		var timeline = gsap.timeline({
+		const timeline = gsap.timeline({
 			repeat: -1,
 			repeatDelay: animation.repeatDelay,
 		});
+
 		timeline.fromTo(
 			'.cloud01',
 			{ x: animation.width * -1 },
@@ -29,44 +54,14 @@ export const Cloud01 = () => {
 				ease: 'none',
 			}
 		);
-		timeline.seek(animation.start * config.cloudsSpeed);
-	});
 
-	const CustomSvg = styled('g', {
-		name: 'cloud01',
-		slot: 'Root',
-	})(() => ({
-		'.cloud-back': {
-			fill: 'url(#cloud01-back-gradient)',
-		},
-		'.cloud-shade': {
-			fill: 'url(#cloud01-shade-gradient)',
-			mixBlendMode: 'multiply',
-		},
-		'.cloud-shade, .cloud-shade-2, .cloud-shade-3': {
-			mixBlendMode: 'multiply',
-		},
-		'.cloud-shade-2': {
-			fill: 'url(#cloud01-shade2-gradient)',
-		},
-		'.cloud-shade-3': {
-			fill: 'url(#cloud01-shade3-gradient)',
-		},
-	}));
+		// timeline.seek(animation.start * config.cloudsSpeed);
+	});
 
 	return (
 		<CustomSvg
 			className="cloud01"
 			transform={`translate(0,${animation.y})`}
-			// xmlns="http://www.w3.org/2000/svg"
-			// xmlnsXlink="http://www.w3.org/1999/xlink"
-			// version="1.1"
-			// viewBox="0 0 273.1 48.2"
-			// preserveAspectRatio="xMidYMid slice"
-			// width="273.1"
-			// height="48.2"
-			// x="0"
-			// y={animation.y}
 		>
 			<defs>
 				<linearGradient
@@ -78,11 +73,9 @@ export const Cloud01 = () => {
 					gradientTransform="translate(0 -870.2)"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stopColor="#d6f1ff" />
-					<stop offset="0" stopColor="#e2f5ff" />
-					<stop offset=".4" stopColor="#f2faff" />
-					<stop offset=".6" stopColor="#fcfdff" />
-					<stop offset="1" stopColor="#fff" />
+					<stop offset="0" stopColor={colors.back.dark} />
+					<stop offset=".6" stopColor={colors.back.mid} />
+					<stop offset="1" stopColor={colors.back.light} />
 				</linearGradient>
 				<linearGradient
 					id="cloud01-shade-gradient"
@@ -93,9 +86,9 @@ export const Cloud01 = () => {
 					gradientTransform="translate(0 50) scale(1 -1)"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stopColor="#d1e8ff" />
-					<stop offset=".6" stopColor="#edf6ff" />
-					<stop offset="1" stopColor="#fff" />
+					<stop offset="0" stopColor={colors.shade.dark} />
+					<stop offset=".6" stopColor={colors.shade.mid} />
+					<stop offset="1" stopColor={colors.shade.light} />
 				</linearGradient>
 				<linearGradient
 					id="cloud01-shade2-gradient"

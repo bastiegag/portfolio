@@ -1,16 +1,16 @@
 import { styled } from '@mui/system';
 
-export const Dev = () => {
-	const CustomSvg = styled('svg', {
-		name: 'dev',
-		slot: 'Root',
-	})(() => ({
-		opacity: 1,
-		'.dev-title': {
-			fill: '#c89040',
-		},
-	}));
+const CustomSvg = styled('svg', {
+	name: 'dev',
+	slot: 'Root',
+})(() => ({
+	opacity: 1,
+	'.dev-title': {
+		fill: '#c89040',
+	},
+}));
 
+export const Dev = () => {
 	return (
 		<CustomSvg
 			id="dev"

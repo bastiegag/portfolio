@@ -1,6 +1,6 @@
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { styled } from '@mui/system';
+import { styled, useTheme } from '@mui/system';
 
 import config from '@/config';
 
@@ -12,14 +12,27 @@ const animation = {
 	start: 2,
 };
 
+const CustomSvg = styled('g', {
+	name: 'cloud06',
+	slot: 'Root',
+})(() => ({
+	mixBlendMode: 'soft-light',
+	'.cloud-back': {
+		fill: 'url(#cloud06-back-gradient)',
+	},
+}));
+
 export const Cloud06 = () => {
 	gsap.registerPlugin(useGSAP);
 
+	const colors = useTheme().palette.scene.cloud;
+
 	useGSAP(() => {
-		var timeline = gsap.timeline({
+		const timeline = gsap.timeline({
 			repeat: -1,
 			repeatDelay: animation.repeatDelay,
 		});
+
 		timeline.fromTo(
 			'.cloud06',
 			{ x: animation.width * -1 },
@@ -29,32 +42,14 @@ export const Cloud06 = () => {
 				ease: 'none',
 			}
 		);
+
 		timeline.seek(animation.start * config.cloudsSpeed);
 	});
-
-	const CustomSvg = styled('g', {
-		name: 'cloud06',
-		slot: 'Root',
-	})(() => ({
-		mixBlendMode: 'soft-light',
-		'.cloud-back': {
-			fill: 'url(#cloud06-back-gradient)',
-		},
-	}));
 
 	return (
 		<CustomSvg
 			className="cloud06"
 			transform={`translate(0,${animation.y})`}
-			// xmlns="http://www.w3.org/2000/svg"
-			// xmlnsXlink="http://www.w3.org/1999/xlink"
-			// version="1.1"
-			// viewBox="0 0 374.2 57.9"
-			// preserveAspectRatio="xMidYMid slice"
-			// width="374.2"
-			// height="57.9"
-			// x="0"
-			// y={animation.y}
 		>
 			<defs>
 				<linearGradient
@@ -66,14 +61,9 @@ export const Cloud06 = () => {
 					gradientTransform="translate(0 60) scale(1 -1)"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stopColor="#def" />
-					<stop offset=".2" stopColor="#daedff" />
-					<stop offset=".4" stopColor="#d0ebff" />
-					<stop offset=".5" stopColor="#c0e7ff" />
-					<stop offset=".7" stopColor="#aae2ff" />
-					<stop offset=".8" stopColor="#8ddcff" />
-					<stop offset=".9" stopColor="#69d4ff" />
-					<stop offset="1" stopColor="#4fcfff" />
+					<stop offset="0" stopColor={colors.back.dark} />
+					<stop offset=".6" stopColor={colors.back.mid} />
+					<stop offset="1" stopColor={colors.back.light} />
 				</linearGradient>
 			</defs>
 			<path

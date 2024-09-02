@@ -1,43 +1,29 @@
-import { styled } from '@mui/system';
+import { styled, useTheme } from '@mui/system';
+
+const CustomSvg = styled('g', {
+	name: 'rock03',
+	slot: 'Root',
+})(() => ({
+	'.rock-back': {
+		fill: 'url(#rock03-back-gradient)',
+	},
+	'.rock-top': {
+		fill: 'url(#rock03-top-gradient)',
+	},
+	'.rock-side': {
+		fill: 'url(#rock03-side-gradient)',
+	},
+	'.rock-shade': {
+		fill: 'url(#rock03-shade-gradient)',
+		mixBlendMode: 'multiply',
+	},
+}));
 
 export const Rock03 = () => {
-	const CustomSvg = styled('g', {
-		name: 'rock03',
-		slot: 'Root',
-	})(() => ({
-		'.rock-back': {
-			fill: 'url(#rock03-back-gradient)',
-		},
-		'.rock-top': {
-			fill: 'url(#rock03-top-gradient)',
-		},
-		'.rock-face': {
-			fill: 'url(#rock03-face-gradient)',
-		},
-		'.rock-side': {
-			fill: 'url(#rock03-side-gradient)',
-		},
-		'.rock-edge': {
-			fill: '#ffb565',
-		},
-		'.rock-shade': {
-			fill: 'url(#rock03-shade-gradient)',
-			mixBlendMode: 'multiply',
-		},
-	}));
+	const colors = useTheme().palette.scene.rock;
 
 	return (
-		<CustomSvg
-			transform={`translate(329,261)`}
-			// xmlns="http://www.w3.org/2000/svg"
-			// xmlnsXlink="http://www.w3.org/1999/xlink"
-			// version="1.1"
-			// viewBox="0 0 46.5 34.6"
-			// width="46.5"
-			// height="34.6"
-			// x="329"
-			// y="261"
-		>
+		<CustomSvg transform={`translate(329,261)`}>
 			<defs>
 				<linearGradient
 					id="rock03-back-gradient"
@@ -47,10 +33,8 @@ export const Rock03 = () => {
 					y2=".3"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stopColor="#b87251" />
-					<stop offset=".2" stopColor="#a76656" />
-					<stop offset=".7" stopColor="#8b535f" />
-					<stop offset="1" stopColor="#814c63" />
+					<stop offset="0" stopColor={colors.santa} />
+					<stop offset="1" stopColor={colors.cannon} />
 				</linearGradient>
 				<linearGradient
 					id="rock03-side-gradient"
@@ -60,9 +44,8 @@ export const Rock03 = () => {
 					y2=".3"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stopColor="#b87251" />
-					<stop offset=".6" stopColor="#d2875d" />
-					<stop offset="1" stopColor="#dd9063" />
+					<stop offset="0" stopColor={colors.santa} />
+					<stop offset="1" stopColor={colors.serria} />
 				</linearGradient>
 				<linearGradient
 					id="rock03-top-gradient"
@@ -72,9 +55,8 @@ export const Rock03 = () => {
 					y2="23.9"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stopColor="#eb9552" />
-					<stop offset=".6" stopColor="#f0a85d" />
-					<stop offset="1" stopColor="#f4b363" />
+					<stop offset="0" stopColor={colors.jaffa} />
+					<stop offset="1" stopColor={colors.koromiko} />
 				</linearGradient>
 				<linearGradient
 					id="rock03-shade-gradient"
@@ -84,21 +66,8 @@ export const Rock03 = () => {
 					y2="9.5"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stopColor="#c0b3d4" />
-					<stop offset=".5" stopColor="#d1becd" />
-					<stop offset="1" stopColor="#e3cac7" />
-				</linearGradient>
-				<linearGradient
-					id="rock03-face-gradient"
-					x1="26.2"
-					y1="13.3"
-					x2="26.2"
-					y2="0"
-					gradientUnits="userSpaceOnUse"
-				>
-					<stop offset="0" stopColor="#d99f5b" />
-					<stop offset=".2" stopColor="#da9a5d" />
-					<stop offset="1" stopColor="#dd9063" />
+					<stop offset="0" stopColor={colors.lavender} />
+					<stop offset="1" stopColor={colors.dust} />
 				</linearGradient>
 			</defs>
 			<path
@@ -119,16 +88,19 @@ export const Rock03 = () => {
 			/>
 			<path
 				className="rock-face"
+				fill={colors.serria}
 				d="M13.2,3.2l13.7,10,12.3-3.8L28,.9s-9.9-3-14.8,2.4Z"
 			/>
-			<polygon
-				className="rock-edge"
-				points="23.6 10.9 28.7 12.7 26.7 15.1 23.6 10.9"
-			/>
-			<polygon
-				className="rock-edge"
-				points="9.3 28.2 11.5 28.3 10.8 28.9 9.3 28.2"
-			/>
+			<g fill={colors.koromiko}>
+				<polygon
+					className="rock-edge"
+					points="23.6 10.9 28.7 12.7 26.7 15.1 23.6 10.9"
+				/>
+				<polygon
+					className="rock-edge"
+					points="9.3 28.2 11.5 28.3 10.8 28.9 9.3 28.2"
+				/>
+			</g>
 		</CustomSvg>
 	);
 };
