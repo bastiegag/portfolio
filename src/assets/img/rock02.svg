@@ -1,49 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 33.3 22.7">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 33.3 22.7">
   <defs>
     <style>
-      .rock-top {
-        fill: url(#rock02-top-gradient);
+      .cls-1 {
+        fill: #ae7471;
       }
-      .rock-back {
-        fill: url(#rock02-back-gradient);
+
+      .cls-2 {
+        fill: #875b6a;
+        isolation: isolate;
       }
-      .rock-face {
-        fill: url(#rock02-face-gradient);
+
+      .cls-3 {
+        fill: #ffd5a9;
       }
-      .rock-edge {
-        fill: #ffb565;
+
+      .cls-4 {
+        fill: #d3936e;
       }
-      .rock-shade {
-        fill: url(#rock02-shade-gradient);
-        mix-blend-mode: multiply;
+
+      .cls-5 {
+        fill: #f4b771;
       }
     </style>
-    <linearGradient id="rock02-back-gradient" x1="16.7" y1="22.7" x2="16.7" y2="0" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#b87251"/>
-      <stop offset=".2" stop-color="#a76656"/>
-      <stop offset=".7" stop-color="#8b535f"/>
-      <stop offset="1" stop-color="#814c63"/>
-    </linearGradient>
-    <linearGradient id="rock02-face-gradient" x1="17.4" y1="11.8" x2="17.4" y2="0" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#b87251"/>
-      <stop offset=".6" stop-color="#d2875d"/>
-      <stop offset="1" stop-color="#dd9063"/>
-    </linearGradient>
-    <linearGradient id="rock02-top-gradient" x1="25.5" y1="13" x2="25.5" y2="11.4" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#eb9552"/>
-      <stop offset=".6" stop-color="#f0a85d"/>
-      <stop offset="1" stop-color="#f4b363"/>
-    </linearGradient>
-    <linearGradient id="rock02-shade-gradient" x1="16.7" y1="22.7" x2="16.7" y2="10.4" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#c0b3d4"/>
-      <stop offset=".5" stop-color="#d1becd"/>
-      <stop offset="1" stop-color="#e3cac7"/>
-    </linearGradient>
   </defs>
-  <polygon class="rock-back" points="33.3 21 30.8 11.6 27.5 11.4 14.6 0 7.3 3.3 0 22.7 33.3 21"/>
-  <path class="rock-face" d="M7.3,3.3l3.3,7.1s12.1,2.4,16.9,1.1L14.6,0l-7.3,3.3Z"/>
-  <polygon class="rock-top" points="27.5 11.4 20.1 11.8 27.5 13 30.8 11.6 27.5 11.4"/>
-  <polygon class="rock-shade" points="10.6 10.4 8.4 21 0 22.7 33.3 21 30.8 11.6 27.5 13 26.1 18.9 18.3 20.3 20.1 11.8 10.6 10.4"/>
-  <polygon class="rock-edge" points="26 12.7 28 12.7 27.3 13.7 26 12.7"/>
-  <polygon class="rock-edge" points="10.2 9.6 12.3 10.7 10.6 11.4 10.2 9.6"/>
+  <!-- Generator: Adobe Illustrator 28.7.0, SVG Export Plug-In . SVG Version: 1.2.0 Build 136)  -->
+  <g>
+    <g id="Calque_1">
+      <polygon id="back" class="cls-1" points="33.3 21 30.8 11.6 27.5 11.4 14.6 0 7.3 3.3 0 22.7 33.3 21"/>
+      <path id="angle" class="cls-4" d="M7.3,3.3l3.3,7.1s12.1,2.3,16.9,1L14.6,0l-7.3,3.3Z"/>
+      <polygon id="top" class="cls-5" points="27.5 11.4 19.6 11.6 27.5 13 30.8 11.6 27.5 11.4"/>
+      <polygon id="shadow" class="cls-2" points="10.6 10.4 8.4 21 0 22.7 33.3 21 30.8 11.6 27.5 13 26.1 18.9 18.3 20.3 19.6 11.6 10.6 10.4"/>
+      <path id="edge" class="cls-3" d="M25.6,12.7h2.9c0,0-1.2,1.3-1.2,1.3l-1.7-1.3ZM10.2,9.5l2.2,1.2-2,1-.2-2.2Z"/>
+    </g>
+  </g>
 </svg>

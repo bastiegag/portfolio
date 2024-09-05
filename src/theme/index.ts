@@ -17,7 +17,7 @@ declare module '@mui/material/styles' {
 const portfolioTheme = () => {
 	const theme = createTheme();
 	const themeOptions = {
-		colorSchemes: colorSchemes(colors),
+		// colorSchemes: colorSchemes(colors),
 		cssVariables: {
 			colorSchemeSelector: 'class',
 		},

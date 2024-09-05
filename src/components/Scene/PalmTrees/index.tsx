@@ -1,15 +1,15 @@
 import React from 'react';
 
-import { Palm01 } from './Palm01';
-import { Palm02 } from './Palm02';
-import { Palm03 } from './Palm03';
+import { Palm1 } from './Palm1';
+import { Palm2 } from './Palm2';
+import { Palm3 } from './Palm3';
 
 export const PalmTrees = () => {
 	return (
 		<React.Fragment>
-			<Palm03 />
-			<Palm02 />
-			<Palm01 />
+			<Palm3 />
+			<Palm2 />
+			<Palm1 />
 		</React.Fragment>
 	);
 };

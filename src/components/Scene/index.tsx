@@ -28,10 +28,10 @@ export const Scene = () => {
 			<Sky />
 			<Ocean />
 			<g className="island">
-				{/* <Island /> */}
+				<Island />
 				<Ripples />
-				{/* <PalmTrees /> */}
-				{/* <Rocks /> */}
+				<PalmTrees />
+				<Rocks />
 			</g>
 		</CustomSvg>
 	);

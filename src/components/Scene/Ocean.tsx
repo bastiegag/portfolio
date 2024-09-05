@@ -10,7 +10,7 @@ const CustomSvg = styled('g', {
 	name: 'ocean',
 	slot: 'Root',
 })(() => ({
-	'.ocean-back': {
+	'.ocean-shape': {
 		fill: 'url(#ocean-gradient)',
 	},
 }));
@@ -18,7 +18,7 @@ const CustomSvg = styled('g', {
 export const Ocean = () => {
 	gsap.registerPlugin(useGSAP);
 
-	const colors = useTheme().palette.scene.ocean;
+	const colors = useTheme().palette.scene.water;
 
 	useGSAP(() => {
 		const timeline = gsap.timeline({
@@ -70,13 +70,13 @@ export const Ocean = () => {
 					gradientTransform="translate(0 88.7) scale(1 .3)"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset=".2" stopColor={colors.back.light} />
-					<stop offset="1" stopColor={colors.back.dark} />
+					<stop offset=".2" stopColor={colors.light} />
+					<stop offset="1" stopColor={colors.dark} />
 				</radialGradient>
 			</defs>
-			<rect className="ocean-back" width="1000" height="120" />
+			<rect className="ocean-shape" width="1000" height="120" />
 			<g filter="url(#waterFilter)">
-				<rect className="ocean-back" width="1000" height="120" />
+				<rect className="ocean-shape" width="1000" height="120" />
 				<Waves />
 				<GroundWaves />
 			</g>

@@ -1,35 +1,23 @@
 import React from 'react';
 
-import { Rock01 } from './Rock01';
-import { Rock02 } from './Rock02';
-import { Rock03 } from './Rock03';
-import { Rock04 } from './Rock04';
-import { Rock05 } from './Rock05';
-import { Rock06 } from './Rock06';
-import { Rock07 } from './Rock07';
+import { Rock1 } from './Rock1';
+import { Rock2 } from './Rock2';
+import { Rock3 } from './Rock3';
+import { Rock4 } from './Rock4';
+import { Rock5 } from './Rock5';
+import { Rock6 } from './Rock6';
+import { Rock7 } from './Rock7';
 
 export const Rocks = () => {
 	return (
 		<React.Fragment>
-			<defs>
-				<filter
-					id="rockBlur"
-					x="0"
-					y="0"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<feGaussianBlur in="SourceGraphic" stdDeviation="0.5" />
-				</filter>
-			</defs>
-			{/* <g filter="url(#rockBlur)"> */}
-			<Rock07 />
-			<Rock06 />
-			{/* </g> */}
-			<Rock05 />
-			<Rock04 />
-			<Rock03 />
-			<Rock02 />
-			<Rock01 />
+			<Rock7 distance={10} />
+			<Rock6 distance={20} />
+			<Rock5 distance={10} />
+			<Rock4 />
+			<Rock3 />
+			<Rock2 distance={5} />
+			<Rock1 />
 		</React.Fragment>
 	);
 };

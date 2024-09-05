@@ -7,7 +7,7 @@ const CustomSvg = styled('g', {
 	name: 'sky',
 	slot: 'Root',
 })(() => ({
-	'.sky-back': {
+	'.sky-shape': {
 		fill: 'url(#sky-gradient)',
 	},
 }));
@@ -24,22 +24,22 @@ export const Sky = () => {
 					y1="280"
 					x2="0"
 					y2="0"
-					gradientTransform="translate(-.6 280) scale(1 -1)"
+					gradientTransform="translate(0 280) scale(1 -1)"
 					gradientUnits="userSpaceOnUse"
 				>
 					<stop offset="0" stopColor={colors.light} />
-					<stop offset=".5" stopColor={colors.mid} />
+					<stop offset=".5" stopColor={colors.main} />
 					<stop offset="1" stopColor={colors.dark} />
 				</linearGradient>
 			</defs>
 			<rect
-				className="sky-back"
+				className="sky-shape"
 				width="1000"
 				height="280"
 				transform="translate(1000 280) rotate(180)"
 			/>
 			{/* <Air /> */}
-			{/* <Clouds /> */}
+			<Clouds />
 		</CustomSvg>
 	);
 };

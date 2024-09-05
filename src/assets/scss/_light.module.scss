@@ -1,117 +1,124 @@
-$skyLight_12: #c2fff7;
-$skyMid_12: #8af1f2;
-$skyDark_12: #54c7ff;
+$skyLight: #c2fff7;
+$skyMain: #8af1f2;
+$skyDark: #54c7ff;
 
-$cloudBackLight_12: #fff;
-$cloudBackMid_12: #fcfcff;
-$cloudBackDark_12: #d1deff;
-$cloudShadeLight_12: #fff;
-$cloudShadeMid_12: #edf6ff;
-$cloudShadeDark_12: #d1e8ff;
-$cloudFarLight_12: #cbffff;
-$cloudFarMid_12: #bef8ff;
-$cloudFarDark_12: #b0f1ff;
+$waterLight: #46e7c4;
+$waterDark: #5495f2;
 
-$islandSandLight_12: #ffe075;
-$islandSandMid_12: #fdd56b;
-$islandSandDark_12: #fabb52;
-$islandGrassLight_12: #aead13;
-$islandGrassDark_12: #63902f;
-$islandWater_12: #7adec5;
-$islandWet_12: #efdbff;
-$islandShadow_12: #d1becd;
+$cloudLight: #fff;
+$cloudDark: #d1e8ff;
 
-$oceanBackLight_12: #46e7c4;
-$oceanBackDark_12: #5495f2;
-$oceanWave_12: #d1e8ff;
+$sandLight: #fdd56b;
+$sandDark: #fabb52;
+$sandDarker: #f3b256;
 
-$rockKimberly_12: #706492;
-$rockRum_12: #725780;
-$rockCannon_12: #814c63;
-$rockFriar_12: #848179;
-$rockOyster_12: #9f917e;
-$rockSanta_12: #b87251;
-$rockOnahau_12: #d1e8ff;
-$rockSerria_12: #dd9063;
-$rockDust_12: #e3cac7;
-$rockJaffa_12: #eb9552;
-$rockChalk_12: #efdbff;
-$rockKoromiko_12: #ffb565;
-$rockLavender_12: #c0b3d4;
-$rockCoral_12: #ae6363;
-$rockHit_12: #ffa777;
+$grass: #7a921f;
 
-$palmFern_12: #4f701e;
-$palmOliveDrab_12: #63902f;
-$palmOlive_12: #6f7b00;
-$palmLuxor_12: #9c9f2f;
-$palmAlpine_12: #a4a22f;
-$palmSahara_12: #aead13;
-$palmErals_12: #bdb82f;
-$palmRioja_12: #c2ba13;
-$palmMaverick_12: #d1becd;
-$palmBarbeery_12: #e2cf13;
+$rock100: #ffcf9f;
+$rock200: #f2ae66;
+$rock300: #c69b7b;
+$rock400: #cd8863;
+$rock500: #a56966;
+$rock600: #93575f;
+$rock700: #87808e;
+$rock800: #7c515f;
 
-$palmTrunkLight_12: #ef9f3b;
-$palmTrunkMid_12: #b87251;
-$palmTrunkDark_12: #814c63;
+$palmLight: #fff;
+$palmDark: #000;
+
+$trunkLight: #df9242;
+$trunkDark: #a86756;
+
+$leafDarker: #4f701e;
+$leafDark: #687807;
+$leafMain: #759728;
+$leafLight: #a2a32b;
+$leafLighter: #d7c91c;
+
+// $palmFern_12: #4f701e;
+// $palmOliveDrab_12: #63902f;
+// $palmOlive_12: #6f7b00;
+// $palmLuxor_12: #9c9f2f;
+// $palmAlpine_12: #a4a22f;
+// $palmSahara_12: #aead13;
+// $palmErals_12: #bdb82f;
+// $palmRioja_12: #c2ba13;
+// $palmMaverick_12: #d1becd;
+// $palmBarbeery_12: #e2cf13;
+
+// $palmTrunkLight_12: #ef9f3b;
+// $palmTrunkMid_12: #b87251;
+// $palmTrunkDark_12: #814c63;
 
 :export {
-	skyLight_12: $skyLight_12;
-	skyMid_12: $skyMid_12;
-	skyDark_12: $skyDark_12;
+	skyLight: $skyLight;
+	skyMain: $skyMain;
+	skyDark: $skyDark;
 
-	cloudBackLight_12: $cloudBackLight_12;
-	cloudBackMid_12: $cloudBackMid_12;
-	cloudBackDark_12: $cloudBackDark_12;
-	cloudShadeLight_12: $cloudShadeLight_12;
-	cloudShadeMid_12: $cloudShadeMid_12;
-	cloudShadeDark_12: $cloudShadeDark_12;
-	cloudFarLight_12: $cloudFarLight_12;
-	cloudFarMid_12: $cloudFarMid_12;
-	cloudFarDark_12: $cloudFarDark_12;
+	waterLight: $waterLight;
+	waterDark: $waterDark;
 
-	islandSandLight_12: $islandSandLight_12;
-	islandSandMid_12: $islandSandMid_12;
-	islandSandDark_12: $islandSandDark_12;
-	islandGrassLight_12: $islandGrassLight_12;
-	islandGrassDark_12: $islandGrassDark_12;
-	islandWater_12: $islandWater_12;
-	islandWet_12: $islandWet_12;
-	islandShadow_12: $islandShadow_12;
+	cloudLight: $cloudLight;
+	cloudDark: $cloudDark;
 
-	oceanBackLight_12: $oceanBackLight_12;
-	oceanBackDark_12: $oceanBackDark_12;
-	oceanWave_12: $oceanWave_12;
+	sandLight: $sandLight;
+	sandDark: $sandDark;
+	sandDarker: $sandDarker;
 
-	rockKimberly_12: $rockKimberly_12;
-	rockRum_12: $rockRum_12;
-	rockCannon_12: $rockCannon_12;
-	rockFriar_12: $rockFriar_12;
-	rockOyster_12: $rockOyster_12;
-	rockSanta_12: $rockSanta_12;
-	rockOnahau_12: $rockOnahau_12;
-	rockSerria_12: $rockSerria_12;
-	rockDust_12: $rockDust_12;
-	rockJaffa_12: $rockJaffa_12;
-	rockChalk_12: $rockChalk_12;
-	rockKoromiko_12: $rockKoromiko_12;
-	rockLavender_12: $rockLavender_12;
-	rockCoral_12: $rockCoral_12;
-	rockHit_12: $rockHit_12;
+	grass: $grass;
 
-	palmFern_12: $palmFern_12;
-	palmOliveDrab_12: $palmOliveDrab_12;
-	palmOlive_12: $palmOlive_12;
-	palmLuxor_12: $palmLuxor_12;
-	palmAlpine_12: $palmAlpine_12;
-	palmSahara_12: $palmSahara_12;
-	palmErals_12: $palmErals_12;
-	palmRioja_12: $palmRioja_12;
-	palmMaverick_12: $palmMaverick_12;
-	palmBarbeery_12: $palmBarbeery_12;
+	rock100: $rock100;
+	rock200: $rock200;
+	rock300: $rock300;
+	rock400: $rock400;
+	rock500: $rock500;
+	rock600: $rock600;
+	rock700: $rock700;
+	rock800: $rock800;
 
-	palmTrunkLight_12: $palmTrunkLight_12;
-	palmTrunkMid_12: $palmTrunkMid_12;
-	palmTrunkDark_12: $palmTrunkDark_12;
+	palmLight: $palmLight;
+	palmDark: $palmDark;
+
+	trunkLight: $trunkLight;
+	trunkDark: $trunkDark;
+
+	leafLighter: $leafLighter;
+	leafLight: $leafLight;
+	leafMain: $leafMain;
+	leafDark: $leafDark;
+	leafDarker: $leafDarker;
+
+	// rockKimberly_12: $rockKimberly_12;
+	// rockRum_12: $rockRum_12;
+	// rockCannon_12: $rockCannon_12;
+	// rockFriar_12: $rockFriar_12;
+	// rockOyster_12: $rockOyster_12;
+	// rockSanta_12: $rockSanta_12;
+	// rockOnahau_12: $rockOnahau_12;
+	// rockSerria_12: $rockSerria_12;
+	// rockDust_12: $rockDust_12;
+	// rockJaffa_12: $rockJaffa_12;
+	// rockChalk_12: $rockChalk_12;
+	// rockKoromiko_12: $rockKoromiko_12;
+	// rockLavender_12: $rockLavender_12;
+	// rockCoral_12: $rockCoral_12;
+	// rockHit_12: $rockHit_12;
+	// rockFace_12: $rockFace_12;
+	// rockFaceRight_12: $rockFaceRight_12;
+	// rockShade: $rockShade;
+
+	// palmFern_12: $palmFern_12;
+	// palmOliveDrab_12: $palmOliveDrab_12;
+	// palmOlive_12: $palmOlive_12;
+	// palmLuxor_12: $palmLuxor_12;
+	// palmAlpine_12: $palmAlpine_12;
+	// palmSahara_12: $palmSahara_12;
+	// palmErals_12: $palmErals_12;
+	// palmRioja_12: $palmRioja_12;
+	// palmMaverick_12: $palmMaverick_12;
+	// palmBarbeery_12: $palmBarbeery_12;
+
+	// palmTrunkLight_12: $palmTrunkLight_12;
+	// palmTrunkMid_12: $palmTrunkMid_12;
+	// palmTrunkDark_12: $palmTrunkDark_12;
 }
