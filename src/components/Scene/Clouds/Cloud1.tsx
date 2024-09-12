@@ -2,6 +2,7 @@ import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { styled, useTheme } from '@mui/system';
 
+import { CloudProps } from './';
 import config from '@/config';
 
 const animation = {
@@ -17,7 +18,7 @@ const CustomSvg = styled('g', {
 	slot: 'Root',
 })(() => ({}));
 
-export const Cloud1 = ({ distance }: { distance?: number }) => {
+export const Cloud1 = ({ distance, position }: CloudProps) => {
 	gsap.registerPlugin(useGSAP);
 
 	const colors = useTheme().palette.scene;
@@ -44,7 +45,7 @@ export const Cloud1 = ({ distance }: { distance?: number }) => {
 	return (
 		<CustomSvg
 			className="cloud cloud-1"
-			transform={`translate(0,${animation.y})`}
+			transform={`translate(0,${position})`}
 		>
 			<path
 				className="cloud-light"

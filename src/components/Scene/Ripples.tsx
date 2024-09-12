@@ -3,9 +3,12 @@ import { styled, useTheme } from '@mui/system';
 const CustomSvg = styled('g', {
 	name: 'ripples',
 	slot: 'Root',
-})(() => ({
-	mixBlendMode: 'screen',
+})(({ theme }) => ({
+	mixBlendMode: 'overlay',
 	opacity: 0.75,
+	...theme.applyStyles('dark', {
+		opacity: 0.25,
+	}),
 }));
 
 export const Ripples = () => {

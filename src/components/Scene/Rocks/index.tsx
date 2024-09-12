@@ -8,6 +8,10 @@ import { Rock5 } from './Rock5';
 import { Rock6 } from './Rock6';
 import { Rock7 } from './Rock7';
 
+export interface RockProps {
+	distance?: number;
+}
+
 export const Rocks = () => {
 	return (
 		<React.Fragment>

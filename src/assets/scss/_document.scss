@@ -6,7 +6,12 @@ svg {
 	height: 100%;
 }
 
-stop,
 .animate {
-	transition: all 0.3s ease-out;
+	g,
+	path,
+	rect,
+	polygon,
+	stop {
+		transition: all 0.3s ease-out;
+	}
 }

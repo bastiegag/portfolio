@@ -1,0 +1,75 @@
+$skyLight_s: #0176d5;
+$skyMain_s: #003992;
+$skyDark_s: #000153;
+
+$waterLight_s: #032483;
+$waterDark_s: #00104b;
+
+$cloudLight_s: #00489d;
+$cloudDark_s: #003384;
+
+$sandLight_s: #066d90;
+$sandDark_s: #07559f;
+$sandDarker_s: #07559f;
+
+$grass_s: #043270;
+
+$rock100_s: #0ca8ce; // Edge
+$rock200_s: #0976b1; // Top
+$rock300_s: #06457b; // Light
+$rock400_s: #003277; // Angle
+$rock500_s: #150355; // Back
+$rock600_s: #0e0757; // Front
+$rock700_s: #020028; // Side
+$rock800_s: #04012c; // Shadow
+
+$palmLight_s: #fff;
+$palmDark_s: #000;
+
+$trunkLight_s: #067ab3;
+$trunkDark_s: #051769;
+
+$leafLighter_s: #0460b3;
+$leafLight_s: #013275;
+$leafMain_s: #00074f;
+$leafDark_s: #020957;
+$leafDarker_s: #0f002b;
+
+:export {
+	skyLight_s: $skyLight_s;
+	skyMain_s: $skyMain_s;
+	skyDark_s: $skyDark_s;
+
+	waterLight_s: $waterLight_s;
+	waterDark_s: $waterDark_s;
+
+	cloudLight_s: $cloudLight_s;
+	cloudDark_s: $cloudDark_s;
+
+	sandLight_s: $sandLight_s;
+	sandDark_s: $sandDark_s;
+	sandDarker_s: $sandDarker_s;
+
+	grass_s: $grass_s;
+
+	rock100_s: $rock100_s;
+	rock200_s: $rock200_s;
+	rock300_s: $rock300_s;
+	rock400_s: $rock400_s;
+	rock500_s: $rock500_s;
+	rock600_s: $rock600_s;
+	rock700_s: $rock700_s;
+	rock800_s: $rock800_s;
+
+	palmLight_s: $palmLight_s;
+	palmDark_s: $palmDark_s;
+
+	trunkLight_s: $trunkLight_s;
+	trunkDark_s: $trunkDark_s;
+
+	leafLighter_s: $leafLighter_s;
+	leafLight_s: $leafLight_s;
+	leafMain_s: $leafMain_s;
+	leafDark_s: $leafDark_s;
+	leafDarker_s: $leafDarker_s;
+}

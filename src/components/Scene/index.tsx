@@ -6,6 +6,7 @@ import { Island } from './Island';
 import { Ripples } from './Ripples';
 import { PalmTrees } from './PalmTrees';
 import { Rocks } from './Rocks';
+import { Foliages } from './Foliages';
 
 const CustomSvg = styled('svg', {
 	name: 'scene',
@@ -24,6 +25,7 @@ export const Scene = () => {
 			version="1.1"
 			viewBox="0 0 1000 400"
 			preserveAspectRatio="xMidYMid slice"
+			className="animate"
 		>
 			<Sky />
 			<Ocean />
@@ -32,6 +34,7 @@ export const Scene = () => {
 				<Ripples />
 				<PalmTrees />
 				<Rocks />
+				<Foliages />
 			</g>
 		</CustomSvg>
 	);

@@ -1,12 +1,12 @@
-$skyLight: #c2fff7;
-$skyMain: #8af1f2;
-$skyDark: #54c7ff;
+$skyLight: #d0f5fe;
+$skyMain: #88d8fb;
+$skyDark: #426dcc;
 
-$waterLight: #46e7c4;
+$waterLight: #46e2e7;
 $waterDark: #5495f2;
 
 $cloudLight: #fff;
-$cloudDark: #d1e8ff;
+$cloudDark: #d5e4f9;
 
 $sandLight: #fdd56b;
 $sandDark: #fabb52;
@@ -14,14 +14,14 @@ $sandDarker: #f3b256;
 
 $grass: #7a921f;
 
-$rock100: #ffcf9f;
-$rock200: #f2ae66;
-$rock300: #c69b7b;
-$rock400: #cd8863;
-$rock500: #a56966;
-$rock600: #93575f;
-$rock700: #87808e;
-$rock800: #7c515f;
+$rock100: #ffcf9f; // Edge
+$rock200: #f2ae66; // Top
+$rock300: #c69b7b; // Light
+$rock400: #cd8863; // Angle
+$rock500: #a56966; // Back
+$rock600: #93575f; // Front
+$rock700: #87808e; // Side
+$rock800: #7c515f; // Shadow
 
 $palmLight: #fff;
 $palmDark: #000;
@@ -34,21 +34,6 @@ $leafDark: #687807;
 $leafMain: #759728;
 $leafLight: #a2a32b;
 $leafLighter: #d7c91c;
-
-// $palmFern_12: #4f701e;
-// $palmOliveDrab_12: #63902f;
-// $palmOlive_12: #6f7b00;
-// $palmLuxor_12: #9c9f2f;
-// $palmAlpine_12: #a4a22f;
-// $palmSahara_12: #aead13;
-// $palmErals_12: #bdb82f;
-// $palmRioja_12: #c2ba13;
-// $palmMaverick_12: #d1becd;
-// $palmBarbeery_12: #e2cf13;
-
-// $palmTrunkLight_12: #ef9f3b;
-// $palmTrunkMid_12: #b87251;
-// $palmTrunkDark_12: #814c63;
 
 :export {
 	skyLight: $skyLight;
@@ -87,38 +72,4 @@ $leafLighter: #d7c91c;
 	leafMain: $leafMain;
 	leafDark: $leafDark;
 	leafDarker: $leafDarker;
-
-	// rockKimberly_12: $rockKimberly_12;
-	// rockRum_12: $rockRum_12;
-	// rockCannon_12: $rockCannon_12;
-	// rockFriar_12: $rockFriar_12;
-	// rockOyster_12: $rockOyster_12;
-	// rockSanta_12: $rockSanta_12;
-	// rockOnahau_12: $rockOnahau_12;
-	// rockSerria_12: $rockSerria_12;
-	// rockDust_12: $rockDust_12;
-	// rockJaffa_12: $rockJaffa_12;
-	// rockChalk_12: $rockChalk_12;
-	// rockKoromiko_12: $rockKoromiko_12;
-	// rockLavender_12: $rockLavender_12;
-	// rockCoral_12: $rockCoral_12;
-	// rockHit_12: $rockHit_12;
-	// rockFace_12: $rockFace_12;
-	// rockFaceRight_12: $rockFaceRight_12;
-	// rockShade: $rockShade;
-
-	// palmFern_12: $palmFern_12;
-	// palmOliveDrab_12: $palmOliveDrab_12;
-	// palmOlive_12: $palmOlive_12;
-	// palmLuxor_12: $palmLuxor_12;
-	// palmAlpine_12: $palmAlpine_12;
-	// palmSahara_12: $palmSahara_12;
-	// palmErals_12: $palmErals_12;
-	// palmRioja_12: $palmRioja_12;
-	// palmMaverick_12: $palmMaverick_12;
-	// palmBarbeery_12: $palmBarbeery_12;
-
-	// palmTrunkLight_12: $palmTrunkLight_12;
-	// palmTrunkMid_12: $palmTrunkMid_12;
-	// palmTrunkDark_12: $palmTrunkDark_12;
 }
