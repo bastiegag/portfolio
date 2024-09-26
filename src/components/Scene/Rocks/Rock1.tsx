@@ -7,11 +7,14 @@ const CustomSvg = styled('g', {
 	slot: 'Root',
 })(() => ({}));
 
-export const Rock1 = ({ distance }: RockProps) => {
+export const Rock1 = ({ params }: RockProps) => {
 	const colors = useTheme().palette.scene;
 
+	const x = typeof params.x == 'undefined' ? 0 : params.x;
+	const y = typeof params.y == 'undefined' ? 0 : params.y;
+
 	return (
-		<CustomSvg className="rock rock-1" transform={`translate(404,278)`}>
+		<CustomSvg className="rock rock-1" transform={`translate(${x},${y})`}>
 			<polygon
 				fill={colors.rock[500]}
 				points="0 15.4 9.7 1.9 15.9 1.4 36.8 0 41.7 3.3 50.9 19 22.7 19 19 16.7 0 15.4"
@@ -31,7 +34,7 @@ export const Rock1 = ({ distance }: RockProps) => {
 			<polygon
 				className="rock-fade"
 				fill={colors.sky.light}
-				fillOpacity={distance ? `${distance}%` : '0'}
+				fillOpacity={params.distance ? `${params.distance}%` : '0'}
 				points="0 15.4 9.7 1.9 15.9 1.4 36.8 0 41.7 3.3 50.9 19 22.7 19 19 16.7 0 15.4"
 			/>
 		</CustomSvg>

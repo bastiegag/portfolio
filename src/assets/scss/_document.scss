@@ -1,17 +1,31 @@
-@import './_vars.module.scss';
+@import "./_vars.module.scss";
 
 svg {
-	display: block;
-	width: 100%;
-	height: 100%;
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .animate {
-	g,
-	path,
-	rect,
-	polygon,
-	stop {
-		transition: all 0.3s ease-out;
-	}
+    g,
+    path,
+    rect,
+    polygon,
+    stop {
+        transition: all 0.3s ease-out;
+    }
+}
+
+.not-animate {
+    g,
+    path,
+    rect,
+    polygon,
+    stop {
+        transition: none;
+    }
+}
+
+.link {
+    cursor: pointer;
 }

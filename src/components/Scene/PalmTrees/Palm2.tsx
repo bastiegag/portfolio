@@ -20,7 +20,7 @@ const CustomSvg = styled('g', {
 	},
 }));
 
-export const Palm2 = ({ position }: PalmProps) => {
+export const Palm2 = ({ params }: PalmProps) => {
 	gsap.registerPlugin(useGSAP);
 
 	const id = useId();
@@ -33,9 +33,9 @@ export const Palm2 = ({ position }: PalmProps) => {
 		});
 
 		timeline.to(`#${CSS.escape(id)}`, {
-			rotation: 'random(-2,2)',
-			duration: gsap.utils.random(2, 5),
-			ease: 'power2.inOut',
+			duration: params.palmDuration,
+			rotation: params.palmRotation,
+			ease: params.ease,
 			svgOrigin: '544 288',
 		});
 
@@ -46,9 +46,9 @@ export const Palm2 = ({ position }: PalmProps) => {
 			});
 
 			leafTimeline.to(`#${CSS.escape(id)}-${i}`, {
-				rotation: 'random(-3,3)',
-				duration: gsap.utils.random(2, 3),
-				// ease: 'power2.inOut',
+				duration: params.leafDuration,
+				rotation: params.leafRotation,
+				ease: params.ease,
 				svgOrigin: '65 16',
 			});
 		}
@@ -58,7 +58,7 @@ export const Palm2 = ({ position }: PalmProps) => {
 		<CustomSvg
 			id={id}
 			className="palm palm-2"
-			transform={`translate(${position[0]},${position[1]})`}
+			transform={`translate(${params.x},${params.y})`}
 		>
 			<g id={`${id}-1`} className="leaf">
 				<path

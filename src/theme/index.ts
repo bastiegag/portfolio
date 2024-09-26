@@ -5,8 +5,6 @@ import colors from 'assets/scss/_vars.module.scss';
 import { palette } from './palette';
 import { colorSchemes } from './colorSchemes';
 
-console.log(colors);
-
 declare module '@mui/material/styles' {
 	interface Palette {
 		scene: object;
@@ -14,10 +12,12 @@ declare module '@mui/material/styles' {
 	interface PaletteOptions {
 		scene: object;
 	}
+	// interface ColorSchemeOverrides {
+	// 	sunset: true;
+	// }
 }
 
 const portfolioTheme = () => {
-	const theme = createTheme();
 	const themeOptions = {
 		colorSchemes: colorSchemes(colors),
 		cssVariables: {

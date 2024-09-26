@@ -47,7 +47,7 @@ export const Sky = () => {
 				transform="translate(1000 280) rotate(180)"
 			/>
 			<Starfield />
-			{/* <Air /> */}
+			<Air />
 			<Clouds />
 		</CustomSvg>
 	);

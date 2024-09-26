@@ -7,6 +7,7 @@ import { Ripples } from './Ripples';
 import { PalmTrees } from './PalmTrees';
 import { Rocks } from './Rocks';
 import { Foliages } from './Foliages';
+import { Objects } from './Objects';
 
 const CustomSvg = styled('svg', {
 	name: 'scene',
@@ -35,6 +36,7 @@ export const Scene = () => {
 				<PalmTrees />
 				<Rocks />
 				<Foliages />
+				<Objects />
 			</g>
 		</CustomSvg>
 	);

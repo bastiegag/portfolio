@@ -19,7 +19,7 @@ import { useThemeOptions } from 'hooks';
 import config from '@/config';
 
 export const Header = () => {
-	const { mode, setMode } = useColorScheme();
+	const { mode, setMode, setColorScheme } = useColorScheme();
 	const { settings, setSettings } = useThemeOptions();
 
 	if (!mode) {
@@ -30,9 +30,11 @@ export const Header = () => {
 		<>
 			{/* <AppBar>
 			<Toolbar> */}
-			{/* <Logo /> */}
+
 			<Stack
 				direction="row"
+				justifyContent="space-between"
+				alignItems="top"
 				sx={(theme) => ({
 					position: 'absolute',
 					top: 16,
@@ -44,6 +46,7 @@ export const Header = () => {
 					},
 				})}
 			>
+				{/* <Logo /> */}
 				{/* <Social /> */}
 				{/* <Divider
 						orientation="vertical"
@@ -51,32 +54,34 @@ export const Header = () => {
 						flexItem
 						sx={{ borderColor: '#000', opacity: 0.25, mx: 1 }}
 					/> */}
-				<IconButton
-					size="large"
-					onClick={() => {
-						setMode(mode === 'dark' ? 'light' : 'dark');
-					}}
-				>
-					{mode == 'dark' ? <IconSun /> : <IconMoon />}
-				</IconButton>
-				<IconButton
-					size="large"
-					onClick={() => {
-						setSettings({
-							...settings,
-							animate: settings.animate ? false : true,
-						});
-					}}
-				>
-					{settings.animate ? (
-						<IconPlayerPause />
-					) : (
-						<IconPlayerPlay />
-					)}
-				</IconButton>
-				{/* <IconButton href={`mailto:${config.mail}`}>
+				{/* <Stack direction="row"> */}
+					<IconButton
+						size="large"
+						onClick={() => {
+							setMode(mode === 'dark' ? 'light' : 'dark');
+						}}
+					>
+						{mode == 'dark' ? <IconSun /> : <IconMoon />}
+					</IconButton>
+					<IconButton
+						size="large"
+						onClick={() => {
+							setSettings({
+								...settings,
+								animate: settings.animate ? false : true,
+							});
+						}}
+					>
+						{settings.animate ? (
+							<IconPlayerPause />
+						) : (
+							<IconPlayerPlay />
+						)}
+					</IconButton>
+					{/* <IconButton href={`mailto:${config.mail}`}>
 						<IconMail />
 					</IconButton> */}
+				{/* </Stack> */}
 			</Stack>
 			{/* </Toolbar>
 		</AppBar> */}

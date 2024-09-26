@@ -7,7 +7,6 @@ import config from '@/config';
 
 const animation = {
 	width: 393.3,
-	y: 150,
 	duration: 3,
 	repeatDelay: 0,
 	start: 1,
@@ -18,7 +17,7 @@ const CustomSvg = styled('g', {
 	slot: 'Root',
 })(() => ({}));
 
-export const Cloud2 = ({ distance, position }: CloudProps) => {
+export const Cloud2 = ({ params }: CloudProps) => {
 	gsap.registerPlugin(useGSAP);
 
 	const colors = useTheme().palette.scene;
@@ -39,13 +38,13 @@ export const Cloud2 = ({ distance, position }: CloudProps) => {
 			}
 		);
 
-		timeline.seek(animation.start * config.cloudsSpeed);
+		!config.debug && timeline.seek(animation.start * config.cloudsSpeed);
 	});
 
 	return (
 		<CustomSvg
 			className="cloud cloud-2"
-			transform={`translate(0,${animation.y})`}
+			transform={`translate(0,${params.y})`}
 		>
 			<path
 				className="cloud-light"
@@ -60,7 +59,7 @@ export const Cloud2 = ({ distance, position }: CloudProps) => {
 			<path
 				className="cloud-fade"
 				fill={colors.sky.main}
-				fillOpacity={distance ? `${distance}%` : '0'}
+				fillOpacity={params.distance ? `${params.distance}%` : '0'}
 				d="M0,46.5h393.3c-4.4-1.8-11.5-5-19.7-6.1-10.7-1.4-23.5-.9-35.4,4.9,0,0-.1,0-.2-.2h0c-1.9-2.5-3.9-4.4-5.9-6-15.1-11.7-32.6-.6-34.8.9-.2,0-.2.2-.2.2v-.6c0-.5.1-1.4.1-2.6,0-1.8,0-4.2-.3-6.8-.7-5.6-2.8-11.9-8.4-14.2-8.7-3.5-17.1,8.6-21.6,16.7-2,3.7-3.3,6.5-3.3,6.5,0,0,0-1.4-.4-3.5-1.4-7.3-6.3-32.2-34.4-35.6-21.2-2.5-42.6,21.3-52.6,32.7-5.7,6.5-8.8,11.8-8.8,11.8l-15.9-4.5c-.2,0-.4,0-.7-.2-16.1-4.2-46.3,2.2-46.3,2.2,0,0-5.7-7.6-22-8.6-16.3-.9-39.8,11.9-39.8,11.9-22.3-1.5-42.7,1-42.7,1h0Z"
 			/>
 		</CustomSvg>

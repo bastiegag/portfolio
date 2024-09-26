@@ -7,11 +7,14 @@ const CustomSvg = styled('g', {
 	slot: 'Root',
 })(() => ({}));
 
-export const Rock5 = ({ distance }: RockProps) => {
+export const Rock5 = ({ params }: RockProps) => {
 	const colors = useTheme().palette.scene;
 
+	const x = typeof params.x == 'undefined' ? 0 : params.x;
+	const y = typeof params.y == 'undefined' ? 0 : params.y;
+
 	return (
-		<CustomSvg className="rock rock-1" transform={`translate(600,245)`}>
+		<CustomSvg className="rock rock-5" transform={`translate(${x},${y})`}>
 			<path
 				fill={colors.rock[500]}
 				d="M0,53.4l8.8-19.9,4.1-2.4L26.1,3.3s8.1-3.3,14.3-2.7l5.5,23.7,4.9.7,2.6,25.3,8.1,3.2v5.9L0,53.4Z"
@@ -39,7 +42,7 @@ export const Rock5 = ({ distance }: RockProps) => {
 			<path
 				className="rock-fade"
 				fill={colors.sky.light}
-				fillOpacity={distance ? `${distance}%` : '0'}
+				fillOpacity={params.distance ? `${params.distance}%` : '0'}
 				d="M0,53.4l8.8-19.9,4.1-2.4L26.1,3.3s8.1-3.3,14.3-2.7l5.5,23.7,4.9.7,2.6,25.3,8.1,3.2v5.9L0,53.4Z"
 			/>
 		</CustomSvg>

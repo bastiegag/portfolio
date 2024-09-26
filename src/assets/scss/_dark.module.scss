@@ -12,7 +12,7 @@ $sandLight_d: #066d90;
 $sandDark_d: #07559f;
 $sandDarker_d: #07559f;
 
-$grass_d: #043270;
+$grass_d: #00074f;
 
 $rock100_d: #0ca8ce; // Edge
 $rock200_d: #0976b1; // Top
@@ -23,6 +23,12 @@ $rock600_d: #0e0757; // Front
 $rock700_d: #020028; // Side
 $rock800_d: #04012c; // Shadow
 
+$rockAltLighter_d: #0ca8ce;
+$rockAltLight_d: #0976b1;
+$rockAltMain_d: #06457b;
+$rockAltDark_d: #150355;
+$rockAltDarker_d: #150355;
+
 $palmLight_d: #fff;
 $palmDark_d: #000;
 
@@ -31,45 +37,78 @@ $trunkDark_d: #051769;
 
 $leafLighter_d: #0460b3;
 $leafLight_d: #013275;
-$leafMain_d: #00074f;
+$leafMain_d: $grass_d;
 $leafDark_d: #020957;
 $leafDarker_d: #0f002b;
 
+$studLight_d: $trunkLight_d;
+$studDark_d: $trunkDark_d;
+$clotheslineRope_d: $rock200_d;
+$towelLight_d: $leafLight_d;
+$towelDark_d: $leafMain_d;
+$towelIcon_d: #9afde9;
+
+$bottleLight_d: #0460b3;
+$bottleMain_d: $grass_d;
+$bottleDark_d: #020957;
+
+$messageLight_d: $leafLight_d;
+$messageDark_d: $leafMain_d;
+
 :export {
-	skyLight_d: $skyLight_d;
-	skyMain_d: $skyMain_d;
-	skyDark_d: $skyDark_d;
+    skyLight_d: $skyLight_d;
+    skyMain_d: $skyMain_d;
+    skyDark_d: $skyDark_d;
 
-	waterLight_d: $waterLight_d;
-	waterDark_d: $waterDark_d;
+    waterLight_d: $waterLight_d;
+    waterDark_d: $waterDark_d;
 
-	cloudLight_d: $cloudLight_d;
-	cloudDark_d: $cloudDark_d;
+    cloudLight_d: $cloudLight_d;
+    cloudDark_d: $cloudDark_d;
 
-	sandLight_d: $sandLight_d;
-	sandDark_d: $sandDark_d;
-	sandDarker_d: $sandDarker_d;
+    sandLight_d: $sandLight_d;
+    sandDark_d: $sandDark_d;
+    sandDarker_d: $sandDarker_d;
 
-	grass_d: $grass_d;
+    grass_d: $grass_d;
 
-	rock100_d: $rock100_d;
-	rock200_d: $rock200_d;
-	rock300_d: $rock300_d;
-	rock400_d: $rock400_d;
-	rock500_d: $rock500_d;
-	rock600_d: $rock600_d;
-	rock700_d: $rock700_d;
-	rock800_d: $rock800_d;
+    rock100_d: $rock100_d;
+    rock200_d: $rock200_d;
+    rock300_d: $rock300_d;
+    rock400_d: $rock400_d;
+    rock500_d: $rock500_d;
+    rock600_d: $rock600_d;
+    rock700_d: $rock700_d;
+    rock800_d: $rock800_d;
 
-	palmLight_d: $palmLight_d;
-	palmDark_d: $palmDark_d;
+    rockAltLighter_d: $rockAltLighter_d;
+    rockAltLight_d: $rockAltLight_d;
+    rockAltMain_d: $rockAltMain_d;
+    rockAltDark_d: $rockAltDark_d;
+    rockAltDarker_d: $rockAltDarker_d;
 
-	trunkLight_d: $trunkLight_d;
-	trunkDark_d: $trunkDark_d;
+    palmLight_d: $palmLight_d;
+    palmDark_d: $palmDark_d;
 
-	leafLighter_d: $leafLighter_d;
-	leafLight_d: $leafLight_d;
-	leafMain_d: $leafMain_d;
-	leafDark_d: $leafDark_d;
-	leafDarker_d: $leafDarker_d;
+    trunkLight_d: $trunkLight_d;
+    trunkDark_d: $trunkDark_d;
+
+    leafLighter_d: $leafLighter_d;
+    leafLight_d: $leafLight_d;
+    leafMain_d: $leafMain_d;
+    leafDark_d: $leafDark_d;
+    leafDarker_d: $leafDarker_d;
+
+    studLight_d: $studLight_d;
+    studDark_d: $studDark_d;
+    clotheslineRope_d: $clotheslineRope_d;
+    towelLight_d: $towelLight_d;
+    towelDark_d: $towelDark_d;
+    towelIcon_d: $towelIcon_d;
+
+    bottleLight_d: $bottleLight_d;
+    bottleMain_d: $bottleMain_d;
+    bottleDark_d: $bottleDark_d;
+    messageLight_d: $messageLight_d;
+    messageDark_d: $messageDark_d;
 }

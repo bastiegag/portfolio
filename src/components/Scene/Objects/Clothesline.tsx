@@ -1,0 +1,242 @@
+import { useId } from 'react';
+import { gsap } from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { styled, useTheme } from '@mui/system';
+
+import { openLink } from 'utils';
+import config from '@/config';
+
+const CustomSvg = styled('g', {
+    name: 'clothesline',
+    slot: 'Root',
+})(({ theme }) => ({
+    '.stud-shadow': {
+        opacity: 0.15,
+        mixBlendMode: 'multiply',
+    },
+    '.towel-icon': {
+        ...theme.applyStyles('dark', {
+            filter: `drop-shadow(0 0 3px ${theme.palette.scene.towel.icon})`,
+        }),
+    },
+    '.social:hover': {
+        ...theme.applyStyles('light', {
+            '&.github .towel-icon': {
+                fill: `${theme.palette.social.github}`,
+            },
+            '&.vimeo .towel-icon': {
+                fill: `${theme.palette.social.vimeo}`,
+            },
+            '&.instagram .towel-icon': {
+                fill: `${theme.palette.social.instagram}`,
+            },
+            '&.linkedin .towel-icon': {
+                fill: `${theme.palette.social.linkedin}`,
+            },
+        }),
+        ...theme.applyStyles('dark', {
+            '&.github .towel-icon': {
+                fill: `${theme.palette.social.github}`,
+                filter: `drop-shadow(0 0 3px ${theme.palette.social.github})`,
+            },
+            '&.vimeo .towel-icon': {
+                fill: `${theme.palette.social.vimeo}`,
+                filter: `drop-shadow(0 0 3px ${theme.palette.social.vimeo})`,
+            },
+            '&.instagram .towel-icon': {
+                fill: `${theme.palette.social.instagram}`,
+                filter: `drop-shadow(0 0 3px ${theme.palette.social.instagram})`,
+            },
+            '&.linkedin .towel-icon': {
+                fill: `${theme.palette.social.linkedin}`,
+                filter: `drop-shadow(0 0 3px ${theme.palette.social.linkedin})`,
+            },
+        }),
+    },
+}));
+
+export interface ClotheslineProps {
+    params: {
+        x: number;
+        y: number;
+    };
+}
+
+export const Clothesline = ({ params }: ClotheslineProps) => {
+    gsap.registerPlugin(useGSAP);
+
+    const id = useId();
+    const colors = useTheme().palette.scene;
+
+    useGSAP(() => {
+        const timeline = gsap.timeline({
+            repeat: -1,
+            repeatRefresh: true,
+        });
+
+        timeline.to(`#${CSS.escape(id)}`, {
+            duration: gsap.utils.random(1.5, 2.5),
+            skewX: 'random(-0.5, 0.5)',
+            ease: 'power1.inOut',
+            svgOrigin: '51 79',
+        });
+
+        for (let i = 1; i <= 7; i++) {
+            const towelTimeline = gsap.timeline({
+                repeat: -1,
+                repeatRefresh: true,
+            });
+
+            towelTimeline.to(`#${CSS.escape(id)}-${i}`, {
+                duration: gsap.utils.random(1.5, 2.5),
+                skewX: 'random(-3,3)',
+                ease: 'power1.inOut',
+                svgOrigin: '8 0',
+            });
+        }
+    });
+
+    return (
+        <CustomSvg
+            className='clothesline'
+            transform={`translate(${params.x},${params.y})`}
+        >
+            <g id={id}>
+                <g className='stud'>
+                    <path
+                        className='stud-shadow'
+                        d='M94,77s1.9-1,3.5-.9,3.7.6,3.7.6c1.8.5,5.8,2.1,3.4,2.8s-8.7,0-10.6-2.5Z'
+                    />
+                    <path
+                        className='stud-dark'
+                        fill={colors.stud.dark}
+                        d='M101.8,1c1.7,28.4-.6,76.8-.6,76.8,0,0-2.2,1-4,1s-3.2-1.8-3.2-1.8c0,0,5.8-33,4.9-76.5l1.3-.5,1.6,1Z'
+                    />
+                    <path
+                        className='stud-light'
+                        fill={colors.stud.light}
+                        d='M100.2,0c.6,34.2-1.4,56.2-1.4,56.2l-3,6.9s3.4-28.2,3-62.6l1.3-.5Z'
+                    />
+                </g>
+                <g className='stud'>
+                    <path
+                        className='stud-shadow'
+                        d='M0,77s1.9-1,3.5-.9,3.7.6,3.7.6c1.8.5,5.8,2.1,3.4,2.8s-8.7,0-10.6-2.5Z'
+                    />
+                    <path
+                        className='stud-dark'
+                        fill={colors.stud.dark}
+                        d='M7.8,1c1.7,28.4-.6,76.8-.6,76.8,0,0-1.7,1-4,1s-3.2-1.8-3.2-1.8C0,77,5.8,44,4.9.5l1.3-.5,1.6,1Z'
+                    />
+                    <path
+                        className='stud-light'
+                        fill={colors.stud.light}
+                        d='M6.2,0c.6,34.2-1.4,56.2-1.4,56.2l-3,6.9S5.3,35,4.9.5l1.3-.5Z'
+                    />
+                </g>
+                <path
+                    id={`${id}-1`}
+                    className='towel-dark'
+                    fill={colors.towel.dark}
+                    d='M79.4,8.8v1.5s-.5,5.1-.5,5.1c0,0-.3,4.3.5,7.7s1.4,3.1,1.4,3.1l5,1.5.9-.7,4.7,1.6s3.2-2.1,2.9-3.5.2-6.5-.3-10l-1.1-7.3v-1.5c-.1,0-13.5,2.4-13.5,2.4Z'
+                />
+                <path
+                    id={`${id}-2`}
+                    className='towel-dark'
+                    fill={colors.towel.dark}
+                    d='M65.7,27s5.3,2.1,5.8,1.5c.9-1.7,1.5,0,2.2-2.8s.3-3.9.4-7.4l.3-5.4-.2-3.3-15.4,1.3s0,.9,0,1.8c0,1.4,0,3.3,0,4,0,1.1-.5,5.7-.5,5.7l.3,2.2,1.7,3.4s2.3-.9,5.4-.9Z'
+                />
+                <path
+                    id={`${id}-3`}
+                    className='towel-dark'
+                    fill={colors.towel.dark}
+                    d='M52.3,11.2s.2.7.3,1.3c.5,1.7.2,6.6.5,9.5s-.4,2.8-.8,6.3l.4,4-11-.6-6.5.9s-.4-1.1-.2-2.2.7-4.4.7-4.4l-.5-6.1v-8c-.1,0-.1-1.5-.1-1.5l17.3,1Z'
+                />
+                <path
+                    id={`${id}-4`}
+                    className='towel-dark'
+                    fill={colors.towel.dark}
+                    d='M30.7,31.6s.4-4.1.5-5.5c.7-9.2.5-13.5.7-14.9l-.3-1.5-16.8-3.2s0,1.3-.2,2.2.3,6.4-.6,13.8c.2,1,0,2.4,0,2.4l-.2,2.6s.9,1.8,1.5,3.4l7.5-.2,7.9.9Z'
+                />
+                <path
+                    className='clothesline-rope'
+                    fill={colors.rope}
+                    d='M51.9,12.5c-15.1,0-29.4-2.1-43.7-6.2,0,0-.9-.3-1.8-.3s-1.6.5-1.6.5v-1c0,0,.7-.5,1.6-.5s1.8.4,1.8.4c28.4,8.2,58.1,8.3,90.7,0,0,0,.8-.4,1.5-.4s1.7.4,1.9.4v1s-1-.4-1.9-.4-1.3.3-1.5.4c-16.4,4.2-31.8,6.2-46.9,6.2Z'
+                />
+                <g
+                    id={`${id}-5`}
+                    className='social linkedin link'
+                    onClick={() => {
+                        openLink(config.linkedin);
+                    }}
+                >
+                    <path
+                        className='towel-light'
+                        fill={colors.towel.light}
+                        d='M79.4,8.8l.3,1.4-.6,10.4s-1.1,5.7-.3,9.1.3,5.4.3,5.4l1.4,4.8,5.2-1.5,7.4-4.1s1.1-5.6.8-6.9,0-6.8-.1-8.8l-.9-10.6v-1.5c-.1,0-13.5,2.4-13.5,2.4Z'
+                    />
+                    <g className='towel-icon' fill={colors.towel.icon}>
+                        <path d='M89.5,18.1h-6c-.8,0-1.5.7-1.5,1.5v6c0,.8.7,1.5,1.5,1.5h6c.8,0,1.5-.7,1.5-1.5v-6c0-.8-.7-1.5-1.5-1.5ZM90,25.6c0,.3-.2.5-.5.5h-6c-.3,0-.5-.2-.5-.5v-6c0-.3.2-.5.5-.5h6c.3,0,.5.2.5.5v6Z' />
+                        <path d='M84.5,21.6c-.3,0-.5.2-.5.5v2.5c0,.3.2.5.5.5s.5-.2.5-.5v-2.5c0-.3-.2-.5-.5-.5Z' />
+                        <path d='M84.5,20.1c-.3,0-.5.2-.5.5s.2.5.5.5.5-.2.5-.5h0c0-.3-.2-.5-.5-.5Z' />
+                        <path d='M87.5,21.6c-.2,0-.4,0-.6.2,0,0-.2-.2-.4-.2-.3,0-.5.2-.5.5v2.5c0,.3.2.5.5.5s.5-.2.5-.5v-1.5c0-.3.2-.5.5-.5s.5.2.5.5v1.5c0,.3.2.5.5.5s.5-.2.5-.5v-1.5c0-.8-.7-1.5-1.5-1.5Z' />
+                    </g>
+                </g>
+                <g
+                    id={`${id}-6`}
+                    className='social instagram link'
+                    onClick={() => {
+                        openLink(config.instagram);
+                    }}
+                >
+                    <path
+                        className='towel-light'
+                        fill={colors.towel.light}
+                        d='M68.8,39.3s5-.7,5.3-1.2c.7-1.6-.1-4.1.5-6.9s-.4-9.3-.3-12.8l.2-7.2-.3-1.6-15.4,1.3s0,.7-.2,1.6c-.1,1.4-.3,3.2-.3,3.9,0,1.1.7,8.8.7,8.8l-.8-.5.7,15.1s9.4,1.1,9.8-.4Z'
+                    />
+                    <g className='towel-icon' fill={colors.towel.icon}>
+                        <path d='M68.5,29.1h-4c-1.4,0-2.5-1.1-2.5-2.5v-4c0-1.4,1.1-2.5,2.5-2.5h4c1.4,0,2.5,1.1,2.5,2.5v4c0,1.4-1.1,2.5-2.5,2.5ZM64.5,21.1c-.8,0-1.5.7-1.5,1.5v4c0,.8.7,1.5,1.5,1.5h4c.8,0,1.5-.7,1.5-1.5v-4c0-.8-.7-1.5-1.5-1.5h-4Z' />
+                        <path d='M66.5,26.6c-1.1,0-2-.9-2-2s.9-2,2-2,2,.9,2,2-.9,2-2,2ZM66.5,23.6c-.6,0-1,.4-1,1s.4,1,1,1,1-.4,1-1-.4-1-1-1Z' />
+                        <path d='M68.7,22.8c-.3,0-.5-.2-.5-.5s.2-.5.5-.5.5.2.5.5h0c0,.3-.2.5-.5.5Z' />
+                    </g>
+                </g>
+                <g
+                    id={`${id}-7`}
+                    className='social vimeo link'
+                    onClick={() => {
+                        openLink(config.vimeo);
+                    }}
+                >
+                    <path
+                        className='towel-light'
+                        fill={colors.towel.light}
+                        d='M52.3,11.2s-.2.9,0,1.5c.5,1.7,0,6.4.3,9.3s-.2,5.3-.6,8.8l-.2,6.8h-10.7c0,0-6-1.6-6-1.6,0,0,.2-3.9.3-5s-.1-5.9-.1-5.9l-.9.4.4-5.1v-8.6s.3-1.5.3-1.5l17.3,1Z'
+                    />
+                    <path
+                        className='towel-icon'
+                        fill={colors.towel.icon}
+                        d='M42.9,29.1c-.1,0-.3,0-.4,0-.8-.2-1.2-.9-1.3-1.2-.2-.3-.4-1.1-.7-2.4-.2-.7-.4-1.5-.5-1.9-.1,0-.3.1-.4.2-.2.1-.5.1-.6,0l-.5-.5c-.2-.2-.2-.4,0-.6.2-.3,1.7-2.5,3.2-2.5s1.6,1.6,1.8,2.8c0,.3,0,.6.2.9.2.7.3,1,.4,1.2.2-.2.4-.5.7-1.1.2-.4.2-.8.2-.9,0,0-.1,0-.2.1-.2.1-.4,0-.5,0-.2-.1-.2-.3-.2-.5.3-1.8,1.7-2.4,2.7-2.4s1,.2,1.3.6c.3.3.6,1,.4,2-.5,3.1-3.3,5.2-4.4,6h0c-.4.3-.8.4-1,.4ZM40.2,22.5c.2,0,.4,0,.6.3.2.2.3.7.7,2.4.2.8.5,1.9.6,2.2.1.3.4.6.7.7,0,0,.3,0,.6-.2h0c1.1-.8,3.5-2.7,4-5.4,0-.5,0-.9-.2-1.2-.1-.2-.3-.3-.6-.3s-1.1,0-1.5.8c.2,0,.3.2.4.2.5.4.5,1.3,0,2.2-.6,1.2-1.2,1.8-1.7,1.8s-.9-.8-1.2-2.1c0-.3-.1-.6-.2-1-.2-1.1-.3-1.9-.8-1.9s-1.4.8-2,1.5c.2,0,.3-.1.5-.1ZM43.8,25.1h0Z'
+                    />
+                </g>
+                <g
+                    id={`${id}-8`}
+                    className='social github link'
+                    onClick={() => {
+                        openLink(config.github);
+                    }}
+                >
+                    <path
+                        className='towel-light'
+                        fill={colors.towel.light}
+                        d='M30.4,40s1.6-12.2,1.5-13.6c-.2-8.4-1-14.6-.7-15.2l.3-1.5-16.8-3.2s-.3.7-.7,1.3-.7,6.1.9,14.6c.2,1,.8,1.5.8,1.5l2-.7-2.2,1.6s-1,6.6-.3,8.2l-.5,8.3,15.7-1.2Z'
+                    />
+                    <path
+                        className='towel-icon'
+                        fill={colors.towel.icon}
+                        d='M25.7,27.5c-.3,0-.5-.2-.5-.5v-1.9c0-.3,0-.3-.1-.5s-.2-.3-.1-.5c0-.2.2-.3.4-.3,1.2-.1,2.3-.5,2.3-2.5,0-.5-.2-.9-.5-1.3-.1-.1-.2-.3-.1-.5.1-.3.1-.6,0-.9-.2,0-.6.2-1.1.5s-.3.1-.4,0c-.9-.2-1.9-.2-2.8,0-.1,0-.3,0-.4,0-.5-.4-.9-.5-1.1-.5,0,.3,0,.6,0,.9,0,.2,0,.4-.1.5-.3.3-.5.8-.5,1.3,0,2,1.1,2.4,2.3,2.5.2,0,.4.1.4.3,0,.2,0,.4-.1.5s-.2.2-.1.6c0,0,0,0,0,0v.7h0v1c0,.3-.2.5-.5.5s-.5-.2-.5-.5v-.4c-1.3.2-1.9-.7-2.2-1.2-.1-.2-.3-.4-.4-.5-.3,0-.4-.4-.3-.6,0-.3.4-.4.6-.3.5.1.7.5,1,.9.3.5.6.9,1.4.7v-.3c0-.2,0-.4,0-.6-1-.2-2.5-.9-2.5-3.4,0-.6.2-1.2.6-1.7-.1-.6,0-1.2.2-1.7,0-.1.2-.2.3-.3.2,0,.8-.1,2,.6,1-.2,2-.2,2.9,0,1.2-.7,1.8-.6,2-.6.1,0,.3.1.3.3.2.5.3,1.1.2,1.7.4.5.6,1.1.6,1.7,0,2.5-1.5,3.2-2.5,3.4,0,.1,0,.3,0,.4v1.9c0,.3-.2.5-.5.5Z'
+                    />
+                </g>
+            </g>
+        </CustomSvg>
+    );
+};

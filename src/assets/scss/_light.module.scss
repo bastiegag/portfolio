@@ -1,3 +1,8 @@
+$github: #6cc644;
+$vimeo: #1ab7ea;
+$instagram: #f56040;
+$linkedin: #0a66c2;
+
 $skyLight: #d0f5fe;
 $skyMain: #88d8fb;
 $skyDark: #426dcc;
@@ -12,7 +17,7 @@ $sandLight: #fdd56b;
 $sandDark: #fabb52;
 $sandDarker: #f3b256;
 
-$grass: #7a921f;
+$grass: #759728;
 
 $rock100: #ffcf9f; // Edge
 $rock200: #f2ae66; // Top
@@ -23,6 +28,12 @@ $rock600: #93575f; // Front
 $rock700: #87808e; // Side
 $rock800: #7c515f; // Shadow
 
+$rockAltLighter: #e4d8d0;
+$rockAltLight: #d3c1ba;
+$rockAltMain: #c9b1a5;
+$rockAltDark: #b89383;
+$rockAltDarker: #ad8278;
+
 $palmLight: #fff;
 $palmDark: #000;
 
@@ -31,45 +42,83 @@ $trunkDark: #a86756;
 
 $leafDarker: #4f701e;
 $leafDark: #687807;
-$leafMain: #759728;
+$leafMain: $grass;
 $leafLight: #a2a32b;
 $leafLighter: #d7c91c;
 
+$studLight: $trunkLight;
+$studDark: $trunkDark;
+$clotheslineRope: $rock200;
+$towelLight: #f2f0ed;
+$towelDark: #d6d5d4;
+$towelIcon: #fff;
+
+$bottleLight: #8ddba7;
+$bottleMain: #538e68;
+$bottleDark: #4c7c5d;
+
+$messageLight: #f2f0e7;
+$messageDark: #c6c5be;
+
 :export {
-	skyLight: $skyLight;
-	skyMain: $skyMain;
-	skyDark: $skyDark;
+    github: $github;
+    vimeo: $vimeo;
+    instagram: $instagram;
+    linkedin: $linkedin;
 
-	waterLight: $waterLight;
-	waterDark: $waterDark;
+    skyLight: $skyLight;
+    skyMain: $skyMain;
+    skyDark: $skyDark;
 
-	cloudLight: $cloudLight;
-	cloudDark: $cloudDark;
+    waterLight: $waterLight;
+    waterDark: $waterDark;
 
-	sandLight: $sandLight;
-	sandDark: $sandDark;
-	sandDarker: $sandDarker;
+    cloudLight: $cloudLight;
+    cloudDark: $cloudDark;
 
-	grass: $grass;
+    sandLight: $sandLight;
+    sandDark: $sandDark;
+    sandDarker: $sandDarker;
 
-	rock100: $rock100;
-	rock200: $rock200;
-	rock300: $rock300;
-	rock400: $rock400;
-	rock500: $rock500;
-	rock600: $rock600;
-	rock700: $rock700;
-	rock800: $rock800;
+    grass: $grass;
 
-	palmLight: $palmLight;
-	palmDark: $palmDark;
+    rock100: $rock100;
+    rock200: $rock200;
+    rock300: $rock300;
+    rock400: $rock400;
+    rock500: $rock500;
+    rock600: $rock600;
+    rock700: $rock700;
+    rock800: $rock800;
 
-	trunkLight: $trunkLight;
-	trunkDark: $trunkDark;
+    rockAltLighter: $rockAltLighter;
+    rockAltLight: $rockAltLight;
+    rockAltMain: $rockAltMain;
+    rockAltDark: $rockAltDark;
+    rockAltDarker: $rockAltDarker;
 
-	leafLighter: $leafLighter;
-	leafLight: $leafLight;
-	leafMain: $leafMain;
-	leafDark: $leafDark;
-	leafDarker: $leafDarker;
+    palmLight: $palmLight;
+    palmDark: $palmDark;
+
+    trunkLight: $trunkLight;
+    trunkDark: $trunkDark;
+
+    leafLighter: $leafLighter;
+    leafLight: $leafLight;
+    leafMain: $leafMain;
+    leafDark: $leafDark;
+    leafDarker: $leafDarker;
+
+    studLight: $studLight;
+    studDark: $studDark;
+    clotheslineRope: $clotheslineRope;
+    towelLight: $towelLight;
+    towelDark: $towelDark;
+    towelIcon: $towelIcon;
+
+    bottleLight: $bottleLight;
+    bottleMain: $bottleMain;
+    bottleDark: $bottleDark;
+    messageLight: $messageLight;
+    messageDark: $messageDark;
 }
