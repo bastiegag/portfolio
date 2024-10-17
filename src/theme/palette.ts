@@ -81,6 +81,21 @@ export const palette = (colors: Colors) => {
                 light: colors.messageLight,
                 dark: colors.messageDark,
             },
+            wood: {
+                lighter: colors.woodLighter,
+                light: colors.woodLight,
+                main: colors.woodMain,
+                dark: colors.woodDark,
+                darker: colors.woodDarker,
+            },
+            smoke: {
+                light: colors.smokeLight,
+                dark: colors.smokeDark,
+            },
+            popper: {
+                bg: colors.popperBg,
+                text: colors.popperText,
+            },
         },
     };
 };

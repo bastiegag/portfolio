@@ -82,6 +82,21 @@ export const colorSchemes = (colors: Colors) => {
                         light: colors.messageLight_d,
                         dark: colors.messageDark_d,
                     },
+                    wood: {
+                        lighter: colors.woodLighter_d,
+                        light: colors.woodLight_d,
+                        main: colors.woodMain_d,
+                        dark: colors.woodDark_d,
+                        darker: colors.woodDarker_d,
+                    },
+                    smoke: {
+                        light: colors.smokeLight_d,
+                        dark: colors.smokeDark_d,
+                    },
+                    popper: {
+                        bg: colors.popperBg_d,
+                        text: colors.popperText_d,
+                    },
                 },
             },
         },

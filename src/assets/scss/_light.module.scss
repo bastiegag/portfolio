@@ -51,7 +51,7 @@ $studDark: $trunkDark;
 $clotheslineRope: $rock200;
 $towelLight: #f2f0ed;
 $towelDark: #d6d5d4;
-$towelIcon: #fff;
+$towelIcon: #c9b1a5;
 
 $bottleLight: #8ddba7;
 $bottleMain: #538e68;
@@ -59,6 +59,18 @@ $bottleDark: #4c7c5d;
 
 $messageLight: #f2f0e7;
 $messageDark: #c6c5be;
+
+$woodLighter: #db8e5f;
+$woodLight: #cb755b;
+$woodMain: #9d5b47;
+$woodDark: #88423c;
+$woodDarker: #5d3028;
+
+$smokeLight: #cccccc;
+$smokeDark: #aaaaaa;
+
+$popperBg: rgba(0, 0, 0, 0.75);
+$popperText: #ffff00;
 
 :export {
     github: $github;
@@ -119,6 +131,19 @@ $messageDark: #c6c5be;
     bottleLight: $bottleLight;
     bottleMain: $bottleMain;
     bottleDark: $bottleDark;
+
     messageLight: $messageLight;
     messageDark: $messageDark;
+
+    woodLighter: $woodLighter;
+    woodLight: $woodLight;
+    woodMain: $woodMain;
+    woodDark: $woodDark;
+    woodDarker: $woodDarker;
+
+    smokeLight: $smokeLight;
+    smokeDark: $smokeDark;
+
+    popperBg: $popperBg;
+    popperText: $popperText;
 }

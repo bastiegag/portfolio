@@ -55,6 +55,18 @@ $bottleDark_d: #020957;
 $messageLight_d: $leafLight_d;
 $messageDark_d: $leafMain_d;
 
+$woodLighter_d: $rock300_d;
+$woodLight_d: $rock400_d;
+$woodMain_d: $rock500_d;
+$woodDark_d: $rock600_d;
+$woodDarker_d: $rock700_d;
+
+$smokeLight_d: #aaaaaa;
+$smokeDark_d: #777777;
+
+$popperBg_d: rgba(0, 0, 0, 0.5);
+$popperText_d: #ffff00;
+
 :export {
     skyLight_d: $skyLight_d;
     skyMain_d: $skyMain_d;
@@ -109,6 +121,19 @@ $messageDark_d: $leafMain_d;
     bottleLight_d: $bottleLight_d;
     bottleMain_d: $bottleMain_d;
     bottleDark_d: $bottleDark_d;
+
     messageLight_d: $messageLight_d;
     messageDark_d: $messageDark_d;
+
+    woodLighter_d: $woodLighter_d;
+    woodLight_d: $woodLight_d;
+    woodMain_d: $woodMain_d;
+    woodDark_d: $woodDark_d;
+    woodDarker_d: $woodDarker_d;
+
+    smokeLight_d: $smokeLight_d;
+    smokeDark_d: $smokeDark_d;
+
+    popperBg_d: $popperBg_d;
+    popperText_d: $popperText_d;
 }

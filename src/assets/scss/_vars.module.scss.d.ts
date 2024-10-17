@@ -62,6 +62,18 @@ export interface Colors {
     bottleDark: string;
     messageLight: string;
     messageDark: string;
+
+    woodLighter: string;
+    woodLight: string;
+    woodMain: string;
+    woodDark: string;
+    woodDarker: string;
+
+    smokeLight: string;
+    smokeDark: string;
+
+    $popperBg: string;
+    $popperText: string;
 }
 
 export const colors;
