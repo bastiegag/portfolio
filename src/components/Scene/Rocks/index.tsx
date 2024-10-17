@@ -1,35 +1,31 @@
 import React from 'react';
 
-import { Rock01 } from './Rock01';
-import { Rock02 } from './Rock02';
-import { Rock03 } from './Rock03';
-import { Rock04 } from './Rock04';
-import { Rock05 } from './Rock05';
-import { Rock06 } from './Rock06';
-import { Rock07 } from './Rock07';
+import { Rock1 } from './Rock1';
+import { Rock2 } from './Rock2';
+import { Rock3 } from './Rock3';
+import { Rock4 } from './Rock4';
+import { Rock5 } from './Rock5';
+import { Rock6 } from './Rock6';
+import { Rock7 } from './Rock7';
+
+export interface RockProps {
+    params: {
+        distance?: number;
+        x?: number;
+        y?: number;
+    };
+}
 
 export const Rocks = () => {
-	return (
-		<React.Fragment>
-			<defs>
-				<filter
-					id="rockBlur"
-					x="0"
-					y="0"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<feGaussianBlur in="SourceGraphic" stdDeviation="0.5" />
-				</filter>
-			</defs>
-			{/* <g filter="url(#rockBlur)"> */}
-			<Rock07 />
-			<Rock06 />
-			{/* </g> */}
-			<Rock05 />
-			<Rock04 />
-			<Rock03 />
-			<Rock02 />
-			<Rock01 />
-		</React.Fragment>
-	);
+    return (
+        <React.Fragment>
+            <Rock7 params={{ x: 356, y: 170, distance: 10 }} />
+            <Rock6 params={{ x: 304, y: 230, distance: 20 }} />
+            <Rock5 params={{ x: 600, y: 245, distance: 10 }} />
+            <Rock4 params={{ x: 400, y: 143 }} />
+            <Rock3 params={{ x: 329, y: 261 }} />
+            <Rock2 params={{ x: 284, y: 274, distance: 5 }} />
+            <Rock1 params={{ x: 404, y: 278 }} />
+        </React.Fragment>
+    );
 };

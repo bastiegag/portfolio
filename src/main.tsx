@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { createRoot } from 'react-dom/client';
 import {
 	CssBaseline,
 	StyledEngineProvider,
@@ -9,7 +9,9 @@ import {
 import App from './App';
 import theme from 'theme';
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+createRoot(document.getElementById('root')!, {
+	identifierPrefix: 'seb-',
+}).render(
 	<React.StrictMode>
 		<StyledEngineProvider injectFirst>
 			<ThemeProvider theme={theme()}>

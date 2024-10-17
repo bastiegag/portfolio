@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 27.5 18.1">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ad8278;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #b89383;
+      }
+
+      .cls-4 {
+        fill: #e4d8d0;
+      }
+
+      .cls-5 {
+        fill: #d3c1ba;
+      }
+
+      .cls-3 {
+        fill: #c9b1a5;
+      }
+    </style>
+  </defs>
+  <!-- Generator: Adobe Illustrator 28.7.1, SVG Export Plug-In . SVG Version: 1.2.0 Build 142)  -->
+  <g>
+    <g id="Calque_1">
+      <path id="back" class="cls-2" d="M.6,7.2L7.3.7,16.2,0s6.9,4.4,9.7,8.7l1.5,5.7-11.2,3.3-13.7.3-2.5-2L.6,7.2Z"/>
+      <path id="side" class="cls-1" d="M13.3,9.4l2.9,8.3,11.2-3.3-1.5-5.7s-1.5-2.3-4.8-5.1l-7.8,5.7Z"/>
+      <path id="angle" class="cls-3" d="M.6,7.2s.6,2.1,8.5,2.2c7.9.1,11.9-5.7,11.9-5.7L17,0s-6.5-.3-9.7.7C4.1,1.8.6,7.2.6,7.2Z"/>
+      <path id="top" class="cls-5" d="M.6,7.2S2.7,3.1,6.3,1.2l14.8,2.4s-1.2,2.9-7.8,5.7c0,0-10.1,1.1-12.7-2.2Z"/>
+      <polygon id="edge" class="cls-4" points="11.2 9.6 13.8 10.7 15.2 8.5 11.2 9.6"/>
+    </g>
+  </g>
+</svg>
