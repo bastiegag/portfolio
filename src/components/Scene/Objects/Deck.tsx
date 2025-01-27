@@ -1,23 +1,24 @@
-import React from "react";
-import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
-import { styled, useTheme } from "@mui/system";
+import React from 'react';
+import { gsap } from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { styled, useTheme } from '@mui/system';
 
-import { Link } from "components";
-import config from "@/config";
+import { Link } from 'components';
+import { useParallax } from 'hooks';
+import config from '@/config';
 
-const CustomSvg = styled("g", {
-	name: "deck",
-	slot: "Root",
+const CustomSvg = styled('g', {
+	name: 'deck',
+	slot: 'Root',
 })(({ theme }) => ({
-	".deck-ripple": {
-		mixBlend: "overlay",
+	'.deck-ripple': {
+		mixBlend: 'overlay',
 		opacity: 0.75,
-		...theme.applyStyles("dark", {
+		...theme.applyStyles('dark', {
 			opacity: 0.25,
 		}),
 	},
-	".deck-glass": {
+	'.deck-glass': {
 		opacity: 0.9,
 	},
 }));
@@ -27,16 +28,22 @@ export interface DeckProps {
 		x: number;
 		y: number;
 		scale?: number;
+		offset: {
+			x: number;
+			y: number;
+		};
 	};
 }
 
 export const Deck = ({ params }: DeckProps) => {
 	gsap.registerPlugin(useGSAP);
 
+	const name = 'deck';
 	const id = React.useId();
 	const colors = useTheme().palette.scene;
 	const width = 82;
 	const height = 55;
+	const multiplier = { x: 5, y: 10 };
 
 	useGSAP(() => {
 		const randDur = gsap.utils.random(1.5, 2.5, true);
@@ -49,7 +56,7 @@ export const Deck = ({ params }: DeckProps) => {
 			repeat: -1,
 			repeatRefresh: true,
 			defaults: {
-				ease: "power1.inOut",
+				ease: 'power1.inOut',
 				duration: 1.5,
 			},
 			onRepeat: () => {
@@ -58,17 +65,25 @@ export const Deck = ({ params }: DeckProps) => {
 			},
 		});
 
-		timeline.to(".deck-water-level", {
+		timeline.to('.deck-water-level', {
 			duration: () => newDur,
 			y: () => newY,
 		});
 	});
 
+	useParallax(
+		`#${name}`,
+		{ x: params.x, y: params.y },
+		params.offset,
+		multiplier
+	);
+
 	return (
 		<React.Fragment>
 			<Link to="/projets" title="Projets" tab={false}>
 				<CustomSvg
-					className="deck link animate-all"
+					id={name}
+					className={`${name} link animate-all`}
 					transform={`translate(${params.x},${params.y})`}
 					strokeWidth="0"
 				>

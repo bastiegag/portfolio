@@ -1,6 +1,6 @@
-import React, { createContext, useMemo, useState } from "react";
-import { Popper, Box, Slide } from "@mui/material";
-import { useTheme } from "@mui/system";
+import React, { createContext, useMemo, useState } from 'react';
+import { Popper, Box, Slide } from '@mui/material';
+import { useTheme } from '@mui/system';
 
 interface IPopperContext {
 	settings: {
@@ -8,7 +8,7 @@ interface IPopperContext {
 		title: string;
 	};
 	setSettings: React.Dispatch<
-		React.SetStateAction<IPopperContext["settings"]>
+		React.SetStateAction<IPopperContext['settings']>
 	>;
 }
 
@@ -17,9 +17,9 @@ export const PopperContext = createContext<IPopperContext | null>(null);
 export const PopperContextProvider = ({
 	children,
 }: React.PropsWithChildren<{}>) => {
-	const [settings, setSettings] = useState<IPopperContext["settings"]>({
+	const [settings, setSettings] = useState<IPopperContext['settings']>({
 		anchorEl: null,
-		title: "",
+		title: '',
 	});
 
 	const colors = useTheme().palette.scene;
@@ -34,14 +34,14 @@ export const PopperContextProvider = ({
 					<Box
 						sx={{
 							backgroundColor: colors.popper.bg,
-							borderRadius: "24px",
+							borderRadius: '24px',
 							color: colors.popper.text,
 							py: 0.5,
 							px: 2,
 							mt: -7,
-							fontFamily: "Afacad Flux",
-							fontSize: "1.5rem",
-							pointerEvents: "none",
+							fontFamily: 'Afacad Flux',
+							fontSize: '1rem',
+							pointerEvents: 'none',
 						}}
 					>
 						{settings.title}

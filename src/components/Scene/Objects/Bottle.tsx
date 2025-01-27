@@ -1,29 +1,30 @@
-import React from "react";
-import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
-import { styled, useTheme } from "@mui/system";
+import React from 'react';
+import { gsap } from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { styled, useTheme } from '@mui/system';
 
-import { Link } from "components";
-import config from "@/config";
+import { Link } from 'components';
+import { useParallax } from 'hooks';
+import config from '@/config';
 
-const CustomSvg = styled("g", {
-	name: "bottle",
-	slot: "Root",
+const CustomSvg = styled('g', {
+	name: 'bottle',
+	slot: 'Root',
 })(({ theme }) => ({
-	".action": {
-		transition: "all 0.3s ease-out !important",
+	'.action': {
+		transition: 'all 0.3s ease-out !important',
 	},
-	"&:hover .action": {
-		transform: "translateY(-4px)",
+	'&:hover .action': {
+		transform: 'translateY(-4px)',
 	},
-	".bottle-ripple": {
-		mixBlend: "overlay",
+	'.bottle-ripple': {
+		mixBlend: 'overlay',
 		opacity: 0.75,
-		...theme.applyStyles("dark", {
+		...theme.applyStyles('dark', {
 			opacity: 0.25,
 		}),
 	},
-	".bottle-glass": {
+	'.bottle-glass': {
 		opacity: 0.9,
 	},
 }));
@@ -32,14 +33,20 @@ export interface BottleProps {
 	params: {
 		x: number;
 		y: number;
+		offset: {
+			x: number;
+			y: number;
+		};
 	};
 }
 
 export const Bottle = ({ params }: BottleProps) => {
 	gsap.registerPlugin(useGSAP);
 
+	const name = 'bottle';
 	const id = React.useId();
 	const colors = useTheme().palette.scene;
+	const multiplier = { x: 30, y: 15 };
 
 	useGSAP(() => {
 		const randDur = gsap.utils.random(1.5, 2.5, true);
@@ -52,7 +59,7 @@ export const Bottle = ({ params }: BottleProps) => {
 			repeat: -1,
 			repeatRefresh: true,
 			defaults: {
-				ease: "power1.inOut",
+				ease: 'power1.inOut',
 				duration: 1.5,
 			},
 			onRepeat: () => {
@@ -61,35 +68,43 @@ export const Bottle = ({ params }: BottleProps) => {
 			},
 		});
 
-		timeline.to(".bottle-water-level", {
+		timeline.to('.bottle-water-level', {
 			duration: () => newDur,
 			y: () => newY,
 		});
 	});
 
+	useParallax(
+		`#${name}`,
+		{ x: params.x, y: params.y },
+		params.offset,
+		multiplier
+	);
+
 	return (
 		<React.Fragment>
 			<Link url={`mailto:${config.mail}`} title="Contact" tab={false}>
 				<CustomSvg
-					className="bottle link animate-all"
+					id={name}
+					className={`${name} link animate-all`}
 					transform={`translate(${params.x},${params.y})`}
 					strokeWidth="0"
 				>
 					<defs>
 						<clipPath
-							id="bottle-top-mask"
-							className="bottle-water-level animate"
+							id={`${name}-top-mask`}
+							className={`${name}-water-level animate`}
 						>
 							<path d="M19.1,30s-3.1,2.6-9.6,2.6-12.4-2.6-12.4-2.6v23h22s0-23,0-23Z" />
 						</clipPath>
 						<clipPath
-							id="bottle-bottom-mask"
-							className="bottle-water-level animate"
+							id={`${name}-bottom-mask`}
+							className={`${name}-water-level animate`}
 						>
 							<path d="M-3-19V28.6s5.9,4,12.4,4,9.6-4,9.6-4V-19H-3Z" />
 						</clipPath>
 					</defs>
-					<filter id="bottle-blur">
+					<filter id={`${name}-blur`}>
 						<feGaussianBlur
 							in="SourceGraphic"
 							stdDeviation="0.35"
@@ -98,7 +113,7 @@ export const Bottle = ({ params }: BottleProps) => {
 					</filter>
 					<g
 						id={`${id}-bottom`}
-						clipPath="url(#bottle-top-mask)"
+						clipPath={`url(#${name}-top-mask)`}
 						filter="url(#waterReflection)"
 						opacity="0.35"
 					>
@@ -121,18 +136,18 @@ export const Bottle = ({ params }: BottleProps) => {
 						</g>
 					</g>
 					<g
-						className="bottle-water-level animate"
+						className={`${name}-water-level animate`}
 						filter="url(#waterRipple)"
 					>
 						<path
 							fill={colors.white}
-							className="bottle-ripple animate"
+							className={`${name}-ripple animate`}
 							d="M27.2,29.6c3.2,2.2-28.8,7.5-36,2.4-7.2-5.1,30-6.4,36-2.4Z"
 						/>
 					</g>
-					<g id={`${id}-top`} clipPath="url(#bottle-bottom-mask)">
+					<g id={`${id}-top`} clipPath={`url(#${name}-bottom-mask)`}>
 						<g className="action">
-							<g className="bottle-glass">
+							<g className={`${name}-glass`}>
 								<polygon
 									className="main"
 									strokeWidth="1"
@@ -146,7 +161,7 @@ export const Bottle = ({ params }: BottleProps) => {
 								/>
 								<polygon
 									className="light"
-									filter="url(#bottle-blur)"
+									filter={`url(#${name}-blur)`}
 									fill={colors.bottle.light}
 									points="12.2 18.3 14.7 19.9 15.1 21.5 11.4 21.3 12.2 18.3"
 								/>
