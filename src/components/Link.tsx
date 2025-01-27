@@ -1,47 +1,50 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode } from "react";
+import { Link as RouterLink } from "react-router";
 
-import { usePopper } from 'hooks';
-import { openLink } from 'utils';
+import { usePopper } from "hooks";
+import { openLink } from "utils";
 
-export interface LinkProps {
-    url: string;
-    title: string;
-    tab?: boolean;
-    children: ReactNode;
+export interface LinkPropsType {
+	url?: string;
+	to?: string;
+	title: string;
+	tab?: boolean;
+	children: ReactNode;
 }
 
-export const Link = ({ url, title, tab, children }: LinkProps) => {
-    const { settings, setSettings } = usePopper();
+export const Link = ({ url, to, title, tab, children }: LinkPropsType) => {
+	const { settings, setSettings } = usePopper();
 
-    const handlePopoverOpen = (
-        event: React.MouseEvent<HTMLAnchorElement>,
-        title: string
-    ) => {
-        setSettings({
-            ...settings,
-            anchorEl: event.currentTarget,
-            title: title,
-        });
-    };
+	const handlePopoverOpen = (
+		event: React.MouseEvent<HTMLAnchorElement>,
+		title: string
+	) => {
+		setSettings({
+			...settings,
+			anchorEl: event.currentTarget,
+			title: title,
+		});
+	};
 
-    const handlePopoverClose = () => {
-        setSettings({
-            ...settings,
-            anchorEl: null,
-            title: '',
-        });
-    };
+	const handlePopoverClose = () => {
+		setSettings({
+			...settings,
+			anchorEl: null,
+			title: "",
+		});
+	};
 
-    return (
-        <a
-            className="link"
-            onMouseEnter={(event) => handlePopoverOpen(event, title)}
-            onMouseLeave={handlePopoverClose}
-            onClick={() => {
-                openLink(url, tab);
-            }}
-        >
-            {children}
-        </a>
-    );
+	return (
+		<RouterLink
+			className="link"
+			onMouseEnter={(event) => handlePopoverOpen(event, title)}
+			onMouseLeave={handlePopoverClose}
+			to={to || ""}
+			onClick={() => {
+				url && openLink(url, tab);
+			}}
+		>
+			{children}
+		</RouterLink>
+	);
 };

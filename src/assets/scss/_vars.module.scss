@@ -1,24 +1,2 @@
 @import './_light.module.scss';
-@import './_sunset.module.scss';
 @import './_dark.module.scss';
-
-$black: #000000;
-$white: #ffffff;
-
-$primary: #ff00bf;
-$secondary: #ffffff;
-$success: #ffffff;
-$info: #ffffff;
-$warning: #ffffff;
-$error: #ffffff;
-
-:export {
-	black: $black;
-	white: $white;
-	primary: $primary;
-	secondary: $secondary;
-	success: $success;
-	info: $info;
-	warning: $warning;
-	error: $error;
-}

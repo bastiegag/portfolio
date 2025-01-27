@@ -1,4 +1,5 @@
 import { styled } from '@mui/system';
+import { MouseParallax } from "react-just-parallax";
 
 import { Sky } from './Sky';
 import { Ocean } from './Ocean';
@@ -25,14 +26,14 @@ export const Scene = () => {
             xmlns="http://www.w3.org/2000/svg"
             version="1.1"
             viewBox="0 0 1000 400"
+            id="scene"
             preserveAspectRatio="xMidYMid slice"
-            className="animate-color"
         >
             <Sky />
             <Ocean />
             <g className="island">
                 <Island />
-                <Ripples />
+                <Ripples params={{ x: -25, y: 325 }} />
                 <PalmTrees />
                 <Rocks />
                 <Foliages />

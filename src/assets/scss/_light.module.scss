@@ -1,149 +1,151 @@
-$github: #6cc644;
-$vimeo: #1ab7ea;
-$instagram: #f56040;
-$linkedin: #0a66c2;
+$black: #000000;
+$white: #ffffff;
+$primary: #fff7a6;
 
-$skyLight: #d0f5fe;
-$skyMain: #88d8fb;
-$skyDark: #426dcc;
+$skyLight: #9dd3df;
+$skyMain: #239bc6;
+$skyDark: #1a558a;
 
-$waterLight: #46e2e7;
-$waterDark: #5495f2;
+$cloudLight: #f2f1ed;
+$cloudDark: #c0cee2;
 
-$cloudLight: #fff;
-$cloudDark: #d5e4f9;
+$waterLight: #48bfc4;
+$waterDark: #2f789c;
 
-$sandLight: #fdd56b;
-$sandDark: #fabb52;
-$sandDarker: #f3b256;
+$sandLight: #ebe1c3;
+$sandDark: #ead59e;
+$sandDarker: #e6c48f;
 
-$grass: #759728;
+$rock100: #f1e6d0; // Edge
+$rock200: #e7c7a6; // Top
+$rock300: #d8b19a; // Light
+$rock400: #ba8d7d; // Angle
+$rock500: #906d6f; // Back
+$rock600: #836166; // Front
+$rock700: #6a5c68; // Side
+$rock800: #5b5665; // Shadow
+$rock900: #4c4f63;
 
-$rock100: #ffcf9f; // Edge
-$rock200: #f2ae66; // Top
-$rock300: #c69b7b; // Light
-$rock400: #cd8863; // Angle
-$rock500: #a56966; // Back
-$rock600: #93575f; // Front
-$rock700: #87808e; // Side
-$rock800: #7c515f; // Shadow
+$palmLighter: #d3d259;
+$palmLight: #bbb853;
+$palmMain: #a7a544;
+$palmDark: #929141;
+$palmDarker: #7a813e;
 
-$rockAltLighter: #e4d8d0;
-$rockAltLight: #d3c1ba;
-$rockAltMain: #c9b1a5;
-$rockAltDark: #b89383;
-$rockAltDarker: #ad8278;
+$foliageLighter: #aaac51;
+$foliageLight: #949d55;
+$foliageMain: #7d8747;
+$foliageDark: #697347;
+$foliageDarker: #52614a;
 
-$palmLight: #fff;
-$palmDark: #000;
+$trunkLight: #ac714d;
+$trunkDark: #82513b;
 
-$trunkLight: #df9242;
-$trunkDark: #a86756;
+$woodLighter: #b5805f;
+$woodLight: #94674e;
+$woodLightless: #82513b;
+$woodMain: #845841;
+$woodDark: #6f4c3b;
+$woodDarker: #4b3120;
 
-$leafDarker: #4f701e;
-$leafDark: #687807;
-$leafMain: $grass;
-$leafLight: #a2a32b;
-$leafLighter: #d7c91c;
+$ropeLight: #eecc8d;
+$ropeDark: #d89760;
 
-$studLight: $trunkLight;
-$studDark: $trunkDark;
-$clotheslineRope: $rock200;
-$towelLight: #f2f0ed;
-$towelDark: #d6d5d4;
-$towelIcon: #c9b1a5;
+$towelLight: #efede9;
+$towelDark: #8c888b;
+$towelIcon: #8c888b;
 
-$bottleLight: #8ddba7;
-$bottleMain: #538e68;
-$bottleDark: #4c7c5d;
+$bottleLight: #9db7bf;
+$bottleMain: #667a84;
+$bottleDark: #4c565b;
 
-$messageLight: #f2f0e7;
-$messageDark: #c6c5be;
+$paperLighter: #f1e6d0;
+$paperLight: #e7c7a6;
+$paperMain: #d8b19a;
+$paperDark: #ba8d7d;
+$paperDarker: #906d6f;
 
-$woodLighter: #db8e5f;
-$woodLight: #cb755b;
-$woodMain: #9d5b47;
-$woodDark: #88423c;
-$woodDarker: #5d3028;
+$smoke: #cccccc;
 
-$smokeLight: #cccccc;
-$smokeDark: #aaaaaa;
+$popperBg: rgba(0, 0, 0, 0.5);
+$popperText: $primary;
 
-$popperBg: rgba(0, 0, 0, 0.75);
-$popperText: #ffff00;
+$redLight: #d42a0f;
+$redDark: #711a1a;
 
 :export {
-    github: $github;
-    vimeo: $vimeo;
-    instagram: $instagram;
-    linkedin: $linkedin;
+	black: $black;
+	white: $white;
+	primary: $primary;
 
-    skyLight: $skyLight;
-    skyMain: $skyMain;
-    skyDark: $skyDark;
+	skyLight: $skyLight;
+	skyMain: $skyMain;
+	skyDark: $skyDark;
 
-    waterLight: $waterLight;
-    waterDark: $waterDark;
+	cloudLight: $cloudLight;
+	cloudDark: $cloudDark;
 
-    cloudLight: $cloudLight;
-    cloudDark: $cloudDark;
+	waterLight: $waterLight;
+	waterDark: $waterDark;
 
-    sandLight: $sandLight;
-    sandDark: $sandDark;
-    sandDarker: $sandDarker;
+	sandLight: $sandLight;
+	sandDark: $sandDark;
+	sandDarker: $sandDarker;
 
-    grass: $grass;
+	rock100: $rock100;
+	rock200: $rock200;
+	rock300: $rock300;
+	rock400: $rock400;
+	rock500: $rock500;
+	rock600: $rock600;
+	rock700: $rock700;
+	rock800: $rock800;
+	rock900: $rock900;
 
-    rock100: $rock100;
-    rock200: $rock200;
-    rock300: $rock300;
-    rock400: $rock400;
-    rock500: $rock500;
-    rock600: $rock600;
-    rock700: $rock700;
-    rock800: $rock800;
+	palmLighter: $palmLighter;
+	palmLight: $palmLight;
+	palmMain: $palmMain;
+	palmDark: $palmDark;
+	palmDarker: $palmDarker;
 
-    rockAltLighter: $rockAltLighter;
-    rockAltLight: $rockAltLight;
-    rockAltMain: $rockAltMain;
-    rockAltDark: $rockAltDark;
-    rockAltDarker: $rockAltDarker;
+	foliageLighter: $foliageLighter;
+	foliageLight: $foliageLight;
+	foliageMain: $foliageMain;
+	foliageDark: $foliageDark;
+	foliageDarker: $foliageDarker;
 
-    palmLight: $palmLight;
-    palmDark: $palmDark;
+	trunkLight: $trunkLight;
+	trunkDark: $trunkDark;
 
-    trunkLight: $trunkLight;
-    trunkDark: $trunkDark;
+	woodLighter: $woodLighter;
+	woodLight: $woodLight;
+	woodLightless: $woodLightless;
+	woodMain: $woodMain;
+	woodDark: $woodDark;
+	woodDarker: $woodDarker;
 
-    leafLighter: $leafLighter;
-    leafLight: $leafLight;
-    leafMain: $leafMain;
-    leafDark: $leafDark;
-    leafDarker: $leafDarker;
+	ropeLight: $ropeLight;
+	ropeDark: $ropeDark;
 
-    studLight: $studLight;
-    studDark: $studDark;
-    clotheslineRope: $clotheslineRope;
-    towelLight: $towelLight;
-    towelDark: $towelDark;
-    towelIcon: $towelIcon;
+	towelLight: $towelLight;
+	towelDark: $towelDark;
+	towelIcon: $towelIcon;
 
-    bottleLight: $bottleLight;
-    bottleMain: $bottleMain;
-    bottleDark: $bottleDark;
+	bottleLight: $bottleLight;
+	bottleMain: $bottleMain;
+	bottleDark: $bottleDark;
 
-    messageLight: $messageLight;
-    messageDark: $messageDark;
+	paperLighter: $paperLighter;
+	paperLight: $paperLight;
+	paperMain: $paperMain;
+	paperDark: $paperDark;
+	paperDarker: $paperDarker;
 
-    woodLighter: $woodLighter;
-    woodLight: $woodLight;
-    woodMain: $woodMain;
-    woodDark: $woodDark;
-    woodDarker: $woodDarker;
+	smoke: $smoke;
 
-    smokeLight: $smokeLight;
-    smokeDark: $smokeDark;
+	popperBg: $popperBg;
+	popperText: $popperText;
 
-    popperBg: $popperBg;
-    popperText: $popperText;
+	redLight: $redLight;
+	redDark: $redDark;
 }

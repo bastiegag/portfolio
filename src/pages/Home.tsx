@@ -1,29 +1,33 @@
-import { Box } from '@mui/material';
+import { Outlet } from "react-router-dom";
+import { Box } from "@mui/material";
 
-import { Scene } from 'components';
+import { Scene } from "components";
 
 export const Home = () => {
 	return (
-		<Box
-			sx={{
-				width: '100%',
-				height: '100vh',
-				position: 'relative',
-				overflow: 'hidden',
-			}}
-		>
+		<>
+			<Outlet />
 			<Box
 				sx={{
-					width: '100%',
-					height: '100%',
-					position: 'absolute',
-					top: '50%',
-					left: '50%',
-					transform: 'translateX(-50%) translateY(-50%)',
+					width: "100%",
+					height: "100vh",
+					position: "relative",
+					overflow: "hidden",
 				}}
 			>
-				<Scene />
+				<Box
+					sx={{
+						width: "100%",
+						height: "100%",
+						position: "absolute",
+						top: "50%",
+						left: "50%",
+						transform: "translateX(-50%) translateY(-50%)",
+					}}
+				>
+					<Scene />
+				</Box>
 			</Box>
-		</Box>
+		</>
 	);
 };

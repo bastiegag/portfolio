@@ -1,90 +1,70 @@
-import {
-	IconMail,
-	IconMoon,
-	IconSun,
-	IconPlayerPlay,
-	IconPlayerPause,
-} from '@tabler/icons-react';
-import {
-	AppBar,
-	Toolbar,
-	Divider,
-	Stack,
-	IconButton,
-	useColorScheme,
-} from '@mui/material';
+import React, { useState } from "react";
+import { IconMenu2, IconX } from "@tabler/icons-react";
+import { Stack, IconButton, Modal, Box, Fade } from "@mui/material";
 
-import { Logo, Social } from 'components';
-import { useThemeOptions } from 'hooks';
-import config from '@/config';
+import { Logo, Menu } from "components";
+
+const menuContainer = {
+	position: "absolute",
+	top: 0,
+	left: 0,
+	width: "100%",
+	height: "100%",
+	display: "flex",
+	alignItems: "center",
+	justifyContent: "center",
+};
 
 export const Header = () => {
-	const { mode, setMode, setColorScheme } = useColorScheme();
-	const { settings, setSettings } = useThemeOptions();
+	const [open, setOpen] = useState<boolean>(false);
 
-	if (!mode) {
-		return null;
-	}
+	const toggleMenu = () => {
+		setOpen((value) => !value);
+	};
 
 	return (
 		<>
-			{/* <AppBar>
-			<Toolbar> */}
-
+			<Modal
+				sx={(theme) => ({
+					color: "white",
+					zIndex: theme.zIndex.drawer + 1,
+				})}
+				open={open}
+				onClose={() => setOpen(false)}
+				closeAfterTransition
+			>
+				<Fade in={open}>
+					<Box sx={menuContainer}>
+						<Menu open={open} setOpen={setOpen} />
+					</Box>
+				</Fade>
+			</Modal>
 			<Stack
 				direction="row"
 				justifyContent="space-between"
-				alignItems="top"
+				alignItems="start"
 				sx={(theme) => ({
-					position: 'absolute',
-					top: 16,
-					left: 16,
-					zIndex: 10,
-					[theme.breakpoints.down('md')]: {
-						width: '100%',
-						justifyContent: 'center',
+					position: "absolute",
+					top: theme.spacing(3),
+					left: theme.spacing(3),
+					right: theme.spacing(3),
+					zIndex: theme.zIndex.drawer + 2,
+					[theme.breakpoints.down("sm")]: {
+						justifyContent: "center",
+						flexWrap: "wrap",
 					},
 				})}
 			>
-				{/* <Logo /> */}
-				{/* <Social /> */}
-				{/* <Divider
-						orientation="vertical"
-						variant="middle"
-						flexItem
-						sx={{ borderColor: '#000', opacity: 0.25, mx: 1 }}
-					/> */}
-				{/* <Stack direction="row"> */}
-					<IconButton
-						size="large"
-						onClick={() => {
-							setMode(mode === 'dark' ? 'light' : 'dark');
-						}}
-					>
-						{mode == 'dark' ? <IconSun /> : <IconMoon />}
-					</IconButton>
-					<IconButton
-						size="large"
-						onClick={() => {
-							setSettings({
-								...settings,
-								animate: settings.animate ? false : true,
-							});
-						}}
-					>
-						{settings.animate ? (
-							<IconPlayerPause />
-						) : (
-							<IconPlayerPlay />
-						)}
-					</IconButton>
-					{/* <IconButton href={`mailto:${config.mail}`}>
-						<IconMail />
-					</IconButton> */}
-				{/* </Stack> */}
+				<Logo />
+
+				<IconButton
+					size="large"
+					onClick={toggleMenu}
+					sx={{ color: "white" }}
+				>
+					{open ? <IconX /> : <IconMenu2 />}
+				</IconButton>
 			</Stack>
-			{/* </Toolbar>
-		</AppBar> */}
 		</>
 	);
 };

@@ -19,12 +19,12 @@ export interface RockProps {
 export const Rocks = () => {
     return (
         <React.Fragment>
-            <Rock7 params={{ x: 356, y: 170, distance: 10 }} />
-            <Rock6 params={{ x: 304, y: 230, distance: 20 }} />
-            <Rock5 params={{ x: 600, y: 245, distance: 10 }} />
+            <Rock7 params={{ x: 356, y: 170, distance: 0 }} />
+            <Rock6 params={{ x: 304, y: 230, distance: 0 }} />
+            <Rock5 params={{ x: 600, y: 245, distance: 0 }} />
             <Rock4 params={{ x: 400, y: 143 }} />
             <Rock3 params={{ x: 329, y: 261 }} />
-            <Rock2 params={{ x: 284, y: 274, distance: 5 }} />
+            <Rock2 params={{ x: 284, y: 274, distance: 0 }} />
             <Rock1 params={{ x: 404, y: 278 }} />
         </React.Fragment>
     );

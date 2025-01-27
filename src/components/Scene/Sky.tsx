@@ -1,6 +1,5 @@
 import { styled, useTheme } from '@mui/system';
 
-import { Air } from './Air';
 import { Clouds } from './Clouds';
 import { Starfield } from './Starfield';
 import { Smoke } from './Objects/Smoke';
@@ -25,7 +24,10 @@ export const Sky = () => {
     const colors = useTheme().palette.scene.sky;
 
     return (
-        <CustomSvg className="sky" transform={`translate(0,0)`}>
+        <CustomSvg
+            className="sky animate-gradient"
+            transform={`translate(0,0)`}
+        >
             <defs>
                 <linearGradient
                     id="sky-gradient"
@@ -48,7 +50,6 @@ export const Sky = () => {
                 transform="translate(1000 280) rotate(180)"
             />
             <Starfield />
-            <Air />
             <Clouds />
             <Smoke params={{ x: 250, y: 115 }} />
         </CustomSvg>

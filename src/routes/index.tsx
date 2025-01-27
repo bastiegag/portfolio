@@ -1,19 +1,29 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-import { Main } from 'layouts';
-import { Home, Error } from 'pages';
+import { Main } from "layouts";
+import { Home, Error } from "pages";
 
 const Routes = () => {
 	const router = createBrowserRouter([
 		{
-			path: '/',
+			path: "/",
 			element: <Main />,
 			errorElement: <Error />,
 			children: [
 				{
-					path: '/',
+					path: "/",
 					element: <Home />,
 					errorElement: <Error />,
+					children: [
+						{
+							path: "/a-propos",
+							element: "",
+						},
+						{
+							path: "/projets",
+							element: "",
+						},
+					],
 				},
 			],
 		},
