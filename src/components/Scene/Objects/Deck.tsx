@@ -60,7 +60,7 @@ export const Deck = ({ params }: IDeckProps) => {
 			},
 		});
 
-		timeline.to('.deck-water-level', {
+		timeline.to(`.${CSS.escape(id)}-water-level`, {
 			duration: () => newDur,
 			y: () => newY,
 		});

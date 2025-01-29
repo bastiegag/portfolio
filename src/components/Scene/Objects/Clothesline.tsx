@@ -48,7 +48,7 @@ export const Clothesline = ({ params }: IClotheslineProps) => {
 
 		timeline.to(`#${CSS.escape(id)}-skew`, {
 			duration: gsap.utils.random(1.5, 2.5),
-			skewX: 'random(-1.5, 1.5)',
+			skewX: 'random(-1, 1)',
 			ease: 'power1.inOut',
 			svgOrigin: '51 79',
 		});

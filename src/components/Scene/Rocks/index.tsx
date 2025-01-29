@@ -24,9 +24,9 @@ export const Rocks = () => {
 			<Rock6 params={{ x: 304, y: 230, multiplier: 11, distance: 0 }} />
 			<Rock5 params={{ x: 600, y: 245, multiplier: 11, distance: 0 }} />
 			<Rock4 params={{ x: 400, y: 143, multiplier: 11 }} />
-			<Rock3 params={{ x: 329, y: 261, multiplier: 12 }} />
-			<Rock2 params={{ x: 284, y: 274, multiplier: 12, distance: 0 }} />
-			<Rock1 params={{ x: 404, y: 278, multiplier: 12 }} />
+			<Rock3 params={{ x: 329, y: 261, multiplier: 11 }} />
+			<Rock2 params={{ x: 284, y: 274, multiplier: 11, distance: 0 }} />
+			<Rock1 params={{ x: 404, y: 278, multiplier: 11 }} />
 		</React.Fragment>
 	);
 };
