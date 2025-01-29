@@ -1,23 +1,21 @@
-import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
-import { styled, useTheme } from "@mui/system";
+import { gsap } from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { styled, useTheme } from '@mui/system';
 
-import { Horizon } from "./Horizon";
-import { Waves } from "./Waves";
-import { GroundWaves } from "./GroundWaves";
+import { Horizon } from './Horizon';
+import { Waves } from './Waves';
+import { GroundWaves } from './GroundWaves';
 
-const CustomSvg = styled("g", {
-	name: "ocean",
-	slot: "Root",
+const CustomSvg = styled('g', {
+	name: 'ocean',
+	slot: 'Root',
 })(() => ({
-	".ocean-shape": {
-		fill: "url(#ocean-gradient)",
+	'.ocean-shape': {
+		fill: 'url(#ocean-gradient)',
 	},
 }));
 
 export const Ocean = () => {
-	gsap.registerPlugin(useGSAP);
-
 	const colors = useTheme().palette.scene;
 
 	useGSAP(() => {
@@ -26,15 +24,15 @@ export const Ocean = () => {
 			repeatRefresh: true,
 		});
 
-		timeline.to("#turbulence", {
-			attr: { values: "180" },
+		timeline.to('#turbulence', {
+			attr: { values: '180' },
 			duration: 3,
-			ease: "none",
+			ease: 'none',
 		});
-		timeline.to("#turbulence", {
-			attr: { values: "359" },
+		timeline.to('#turbulence', {
+			attr: { values: '359' },
 			duration: 3,
-			ease: "none",
+			ease: 'none',
 		});
 	});
 
@@ -129,7 +127,7 @@ export const Ocean = () => {
 				</linearGradient>
 			</defs>
 			<rect className="ocean-shape" width="1000" height="120" />
-			<Horizon params={{ y: 2, opacity: 0.75 }} />
+			<Horizon params={{ y: 2, multiplier: 2, opacity: 0.75 }} />
 			<g filter="url(#waterFilter)">
 				<rect
 					className="ocean-shape"
@@ -137,13 +135,15 @@ export const Ocean = () => {
 					height="120"
 					fillOpacity="0.5"
 				/>
-				<Waves params={{ opacity: 0.75 }} />
-				<GroundWaves params={{ y: 45, opacity: 0.25 }} />
-				<GroundWaves params={{ y: 60, opacity: 0.5 }} />
-				<Horizon params={{ y: 0, opacity: 0.25 }} />
-				<Horizon params={{ y: 15, opacity: 0.15 }} />
+				<Waves params={{ multiplier: 8, opacity: 0.75 }} />
+				<GroundWaves
+					params={{ y: 45, multiplier: 15, opacity: 0.25 }}
+				/>
+				<GroundWaves params={{ y: 60, multiplier: 25, opacity: 0.5 }} />
+				<Horizon params={{ y: 0, multiplier: 2, opacity: 0.25 }} />
+				<Horizon params={{ y: 15, multiplier: 2, opacity: 0.15 }} />
 			</g>
-			<Horizon params={{ y: 0, opacity: 0.25 }} />
+			<Horizon params={{ y: 0, multiplier: 2, opacity: 0.25 }} />
 		</CustomSvg>
 	);
 };

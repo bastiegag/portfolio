@@ -1,2 +1,2 @@
-@import './_light.module.scss';
-@import './_dark.module.scss';
+@use 'light.module';
+@use 'dark.module';

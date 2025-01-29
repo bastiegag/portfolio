@@ -1,38 +1,44 @@
-import React from "react";
-import { styled, useTheme } from "@mui/system";
+import React from 'react';
+import { styled, useTheme } from '@mui/system';
 
-import { Link } from "components";
+import { Link } from 'components';
+import { useParallax } from 'hooks';
 
-const CustomSvg = styled("g", {
-	name: "map",
-	slot: "Root",
+const width = 39;
+const height = 25;
+
+const CustomSvg = styled('g', {
+	name: 'map',
+	slot: 'Root',
 })(({ theme }) => ({
-	".action": {
-		transition: "all 0.3s ease-out !important",
+	'.action': {
+		transition: 'all 0.3s ease-out !important',
 	},
-	"&:hover .action": {
-		transform: "rotate(-4px)",
+	'&:hover .action': {
+		transform: 'rotate(-4px)',
 	},
 }));
 
-export interface MapPropsType {
+export interface IMapProps {
 	params: {
 		x: number;
 		y: number;
+		multiplier: number;
 		scale?: number;
 	};
 }
 
-export const Map = ({ params }: MapPropsType) => {
+export const Map = ({ params }: IMapProps) => {
 	const id = React.useId();
 	const colors = useTheme().palette.scene;
-	const width = 39;
-	const height = 25;
+
+	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.multiplier);
 
 	return (
 		<React.Fragment>
 			<Link to="/a-propos" title="À propos" tab={false}>
 				<CustomSvg
+					id={id}
 					className="map link animate-all"
 					transform={`translate(${params.x},${params.y})`}
 					strokeWidth="0"

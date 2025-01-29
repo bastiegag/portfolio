@@ -1,3 +1,4 @@
+import React from 'react';
 import { styled, useTheme } from '@mui/system';
 
 import { useParallax } from 'hooks';
@@ -19,28 +20,19 @@ export interface IslandProps {
 	params: {
 		x: number;
 		y: number;
-		offset: {
-			x: number;
-			y: number;
-		};
+		multiplier: number;
 	};
 }
 
 export const Island = ({ params }: IslandProps) => {
-	const name = 'sand';
-	const multiplier = { x: 5, y: 10 };
+	const id = React.useId();
 	const colors = useTheme().palette.scene;
 
-	useParallax(
-		`#${name}`,
-		{ x: params.x, y: params.y },
-		params.offset,
-		multiplier
-	);
+	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.multiplier);
 
 	return (
 		<CustomSvg
-			id={name}
+			id={id}
 			className="animate-gradient"
 			transform={`translate(${params.x},${params.y})`}
 		>

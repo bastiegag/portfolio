@@ -1,3 +1,5 @@
+@use 'light.module' as colors;
+
 $skyLight_d: #196385;
 $skyMain_d: #07375f;
 $skyDark_d: #0a183a;
@@ -64,7 +66,7 @@ $paperDarker_d: #040c28;
 $smoke_d: #aaaaaa;
 
 $popperBg_d: rgba(0, 0, 0, 0.5);
-$popperText_d: $primary;
+$popperText_d: colors.$primary;
 
 $redLight_d: #061c42;
 $redDark_d: #051434;

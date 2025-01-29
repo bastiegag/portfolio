@@ -1,21 +1,24 @@
-import { Suspense } from "react";
+import { Suspense } from 'react';
 
-import Routes from "routes";
+import Routes from 'routes';
 import {
 	ThemeContextProvider,
 	PopperContextProvider,
 	ModalContextProvider,
-} from "context";
+	OffsetContextProvider,
+} from 'context';
 
 const App = () => {
 	return (
 		<Suspense>
 			<ThemeContextProvider>
-				<PopperContextProvider>
-					<ModalContextProvider>
-						<Routes />
-					</ModalContextProvider>
-				</PopperContextProvider>
+				<OffsetContextProvider>
+					<PopperContextProvider>
+						<ModalContextProvider>
+							<Routes />
+						</ModalContextProvider>
+					</PopperContextProvider>
+				</OffsetContextProvider>
 			</ThemeContextProvider>
 		</Suspense>
 	);

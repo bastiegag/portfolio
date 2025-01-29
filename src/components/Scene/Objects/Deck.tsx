@@ -5,7 +5,9 @@ import { styled, useTheme } from '@mui/system';
 
 import { Link } from 'components';
 import { useParallax } from 'hooks';
-import config from '@/config';
+
+const width = 82;
+const height = 55;
 
 const CustomSvg = styled('g', {
 	name: 'deck',
@@ -23,27 +25,20 @@ const CustomSvg = styled('g', {
 	},
 }));
 
-export interface DeckProps {
+export interface IDeckProps {
 	params: {
 		x: number;
 		y: number;
+		multiplier: number;
 		scale?: number;
-		offset: {
-			x: number;
-			y: number;
-		};
 	};
 }
 
-export const Deck = ({ params }: DeckProps) => {
-	gsap.registerPlugin(useGSAP);
-
-	const name = 'deck';
+export const Deck = ({ params }: IDeckProps) => {
 	const id = React.useId();
 	const colors = useTheme().palette.scene;
-	const width = 82;
-	const height = 55;
-	const multiplier = { x: 5, y: 10 };
+
+	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.multiplier);
 
 	useGSAP(() => {
 		const randDur = gsap.utils.random(1.5, 2.5, true);
@@ -71,19 +66,12 @@ export const Deck = ({ params }: DeckProps) => {
 		});
 	});
 
-	useParallax(
-		`#${name}`,
-		{ x: params.x, y: params.y },
-		params.offset,
-		multiplier
-	);
-
 	return (
 		<React.Fragment>
 			<Link to="/projets" title="Projets" tab={false}>
 				<CustomSvg
-					id={name}
-					className={`${name} link animate-all`}
+					id={id}
+					className="deck link animate-all"
 					transform={`translate(${params.x},${params.y})`}
 					strokeWidth="0"
 				>
@@ -94,21 +82,21 @@ export const Deck = ({ params }: DeckProps) => {
 					>
 						<defs>
 							<clipPath
-								id="deck-top-mask"
-								className="deck-water-level animate"
+								id={`${id}-top-mask`}
+								className={`${id}-water-level animate`}
 							>
 								<path d="M72.5,39.1c-6.5,0-12.4-4-12.4-4l-37.8,2s-3.1,4-9.6,4S0,37.2,0,37.2v18.4h82.4v-20.6s-3.4,4.2-9.9,4.2Z" />
 							</clipPath>
 							<clipPath
-								id="deck-bottom-mask"
-								className="deck-water-level animate"
+								id={`${id}-bottom-mask`}
+								className={`${id}-water-level animate`}
 							>
 								<path d="M0,0v37.2s6.1,3.9,12.6,3.9,9.6-4,9.6-4l37.8-2s5.9,4,12.4,4,9.9-4.2,9.9-4.2V0H0Z" />
 							</clipPath>
 						</defs>
 						<g
 							className="lower-right-stud"
-							clipPath="url(#deck-top-mask)"
+							clipPath={`url(#${id}-top-mask)`}
 							filter="url(#waterReflection)"
 							opacity="0.35"
 						>
@@ -139,7 +127,7 @@ export const Deck = ({ params }: DeckProps) => {
 							/>
 						</g>
 						<g
-							className="deck-water-level animate"
+							className={`${id}-water-level animate`}
 							filter="url(#waterRipple)"
 						>
 							<path
@@ -150,7 +138,7 @@ export const Deck = ({ params }: DeckProps) => {
 						</g>
 						<g
 							className="lower-right-stud"
-							clipPath="url(#deck-bottom-mask)"
+							clipPath={`url(#${id}-bottom-mask)`}
 						>
 							<path
 								className="main"
@@ -180,7 +168,7 @@ export const Deck = ({ params }: DeckProps) => {
 						</g>
 						<g
 							className="lower-left-stud"
-							clipPath="url(#deck-top-mask)"
+							clipPath={`url(#${id}-top-mask)`}
 							filter="url(#waterReflection)"
 							opacity="0.35"
 						>
@@ -211,7 +199,7 @@ export const Deck = ({ params }: DeckProps) => {
 							/>
 						</g>
 						<g
-							className="deck-water-level animate"
+							className={`${id}-water-level animate`}
 							filter="url(#waterRipple)"
 						>
 							<path
@@ -222,7 +210,7 @@ export const Deck = ({ params }: DeckProps) => {
 						</g>
 						<g
 							className="lower-left-stud"
-							clipPath="url(#deck-bottom-mask)"
+							clipPath={`url(#${id}-bottom-mask)`}
 						>
 							<path
 								className="main"

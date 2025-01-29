@@ -1,11 +1,11 @@
-import { createTheme } from "@mui/material";
+import { createTheme } from '@mui/material';
 
-import colors from "assets/scss/_vars.module.scss";
-import { components } from "./components";
-import { palette } from "./palette";
-import { colorSchemes } from "./colorSchemes";
+import colors from 'assets/scss/_vars.module.scss';
+import { components } from './components';
+import { palette } from './palette';
+import { colorSchemes } from './colorSchemes';
 
-declare module "@mui/material/styles" {
+declare module '@mui/material/styles' {
 	interface Palette {
 		scene: object;
 	}
@@ -18,10 +18,11 @@ declare module "@mui/material/styles" {
 }
 
 const portfolioTheme = () => {
+	console.log(colors);
 	const themeOptions = {
 		colorSchemes: colorSchemes(colors),
 		cssVariables: {
-			colorSchemeSelector: "class",
+			colorSchemeSelector: 'class',
 		},
 		palette: palette(colors),
 		components: components(colors),

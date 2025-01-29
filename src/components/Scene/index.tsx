@@ -9,6 +9,8 @@ import { PalmTrees } from './PalmTrees';
 import { Rocks } from './Rocks';
 import { Foliages } from './Foliages';
 import { Objects } from './Objects';
+
+import { useOffset } from 'hooks';
 import config from '@/config';
 
 const CustomSvg = styled('svg', {
@@ -28,7 +30,7 @@ export const Scene = () => {
 	const w = config.sceneWidth;
 	const h = config.sceneHeight;
 
-	const [offset, setOffset] = React.useState({ x: 0, y: 0 });
+	const { offset, setOffset } = useOffset();
 
 	const handleMouseMove = (e: React.MouseEvent<HTMLOrSVGElement>) => {
 		const scene = document.getElementById('scene');
@@ -49,15 +51,15 @@ export const Scene = () => {
 			preserveAspectRatio="xMidYMid slice"
 			onMouseMove={(e) => handleMouseMove(e)}
 		>
-			<Sky />
 			<Ocean />
+			<Sky />
 			<g className="island">
-				<Island params={{ x: 17, y: 286, offset: offset }} />
-				<Ripples params={{ x: -25, y: 325 }} />
+				<Island params={{ x: 17, y: 286, multiplier: 15 }} />
+				<Ripples params={{ x: -25, y: 325, multiplier: 20 }} />
 				<PalmTrees />
 				<Rocks />
 				<Foliages />
-				<Objects offset={offset} />
+				<Objects />
 			</g>
 		</CustomSvg>
 	);

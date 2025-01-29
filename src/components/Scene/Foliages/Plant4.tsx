@@ -1,30 +1,31 @@
-import { useId } from "react";
-import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
-import { styled, useTheme } from "@mui/system";
+import React from 'react';
+import { gsap } from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { styled, useTheme } from '@mui/system';
 
-import { FoliagesProps } from "./";
+import { useParallax } from 'hooks';
+import { IFoliagesProps } from './';
 
-const CustomSvg = styled("g", {
-	name: "plant-4",
-	slot: "Root",
+const CustomSvg = styled('g', {
+	name: 'plant-4',
+	slot: 'Root',
 })(() => ({
-	".leaf-light, .leaf-dark": {
+	'.leaf-light, .leaf-dark': {
 		opacity: 0.25,
 	},
-	".leaf-dark": {
-		mixBlendMode: "multiply",
+	'.leaf-dark': {
+		mixBlendMode: 'multiply',
 	},
-	".leaf-light": {
-		mixBlendMode: "overlay",
+	'.leaf-light': {
+		mixBlendMode: 'overlay',
 	},
 }));
 
-export const Plant4 = ({ params }: FoliagesProps) => {
-	gsap.registerPlugin(useGSAP);
-
-	const id = useId();
+export const Plant4 = ({ params }: IFoliagesProps) => {
+	const id = React.useId();
 	const colors = useTheme().palette.scene;
+
+	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.multiplier);
 
 	useGSAP(() => {
 		for (let i = 1; i <= 4; i++) {
@@ -37,7 +38,7 @@ export const Plant4 = ({ params }: FoliagesProps) => {
 				duration: params.duration,
 				rotation: params.rotation,
 				ease: params.ease,
-				svgOrigin: "33 21",
+				svgOrigin: '33 21',
 			});
 		}
 	});

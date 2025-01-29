@@ -1,18 +1,25 @@
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 
+import { useOffset, useThemeOptions } from 'hooks';
+
 export const useParallax = (
 	element: string,
-	position: { x: number; y: number },
-	offset: { x: number; y: number },
-	multiplier: { x: number; y: number }
+	x: number,
+	y: number,
+	multiplier: number
 ) => {
-	useGSAP(() => {
-		const mX = multiplier.x / 1000;
-		const mY = multiplier.y / 1000;
-		const posX = position.x - offset.x * mX;
-		const posY = position.y - offset.y * mY;
+	const { themeOptions, setThemeOptions } = useThemeOptions();
+	const { offset, setOffset } = useOffset();
 
-		gsap.to(element, { x: posX, y: posY });
+	useGSAP(() => {
+		if (themeOptions.parallax) {
+			const posX = x - (offset.x * multiplier) / 600;
+			const posY = y - (offset.y * multiplier) / 600;
+
+			gsap.to(element, { x: posX, y: posY });
+		} else {
+			gsap.to(element, { x: x, y: y });
+		}
 	}, [offset]);
 };

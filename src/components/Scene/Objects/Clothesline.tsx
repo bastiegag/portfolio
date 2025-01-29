@@ -7,6 +7,9 @@ import { Link } from 'components';
 import { useParallax } from 'hooks';
 import config from '@/config';
 
+const width = 105;
+const height = 80;
+
 const CustomSvg = styled('g', {
 	name: 'clothesline',
 	slot: 'Root',
@@ -22,27 +25,20 @@ const CustomSvg = styled('g', {
 	},
 }));
 
-export interface ClotheslineProps {
+export interface IClotheslineProps {
 	params: {
 		x: number;
 		y: number;
+		multiplier: number;
 		scale?: number;
-		offset: {
-			x: number;
-			y: number;
-		};
 	};
 }
 
-export const Clothesline = ({ params }: ClotheslineProps) => {
-	gsap.registerPlugin(useGSAP);
-
-	const name = 'clothesline';
+export const Clothesline = ({ params }: IClotheslineProps) => {
 	const id = useId();
 	const colors = useTheme().palette.scene;
-	const width = 105;
-	const height = 80;
-	const multiplier = { x: 20, y: 10 };
+
+	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.multiplier);
 
 	useGSAP(() => {
 		const timeline = gsap.timeline({
@@ -50,9 +46,9 @@ export const Clothesline = ({ params }: ClotheslineProps) => {
 			repeatRefresh: true,
 		});
 
-		timeline.to(`#${CSS.escape(id)}`, {
+		timeline.to(`#${CSS.escape(id)}-skew`, {
 			duration: gsap.utils.random(1.5, 2.5),
-			skewX: 'random(-1, 1)',
+			skewX: 'random(-1.5, 1.5)',
 			ease: 'power1.inOut',
 			svgOrigin: '51 79',
 		});
@@ -65,33 +61,27 @@ export const Clothesline = ({ params }: ClotheslineProps) => {
 
 			towelTimeline.to(`#${CSS.escape(id)}-${i}`, {
 				duration: gsap.utils.random(1.5, 2),
-				skewX: 'random(-3,3)',
+				skewX: 'random(-4,4)',
 				ease: 'power1.inOut',
 				svgOrigin: '8 0',
 			});
 		}
 	});
 
-	useParallax(
-		`#${name}`,
-		{ x: params.x, y: params.y },
-		params.offset,
-		multiplier
-	);
-
 	return (
 		<CustomSvg
-			id={name}
-			className={name}
+			id={id}
+			className="clothesline"
 			transform={`translate(${params.x},${params.y})`}
 			strokeWidth="0"
 		>
 			<svg
+				id={`${id}-skew`}
 				width={params.scale ? width * params.scale : width}
 				height={params.scale ? height * params.scale : height}
 				viewBox={`0 0 ${width} ${height}`}
 			>
-				<g id={id} className="animate-color">
+				<g className="animate-color">
 					<g className="stud">
 						<path
 							className="stud-shadow"
