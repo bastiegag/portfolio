@@ -5,6 +5,7 @@ import { styled, useTheme } from '@mui/system';
 
 import { Link } from 'components';
 import { useParallax } from 'hooks';
+import { SceneComponentProps } from 'components/Scene';
 
 const width = 82;
 const height = 55;
@@ -25,20 +26,11 @@ const CustomSvg = styled('g', {
 	},
 }));
 
-export interface IDeckProps {
-	params: {
-		x: number;
-		y: number;
-		multiplier: number;
-		scale?: number;
-	};
-}
-
-export const Deck = ({ params }: IDeckProps) => {
+export const Deck = ({ params }: SceneComponentProps) => {
 	const id = React.useId();
 	const colors = useTheme().palette.scene;
 
-	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.multiplier);
+	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.m);
 
 	useGSAP(() => {
 		const randDur = gsap.utils.random(1.5, 2.5, true);

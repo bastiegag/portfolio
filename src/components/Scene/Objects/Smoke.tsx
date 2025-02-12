@@ -2,6 +2,7 @@ import { useId } from 'react';
 import { styled, useTheme } from '@mui/system';
 
 import { useParallax } from 'hooks';
+import { SceneComponentProps } from 'components/Scene';
 
 const CustomSvg = styled('g', {
 	name: 'smoke',
@@ -17,19 +18,11 @@ const CustomSvg = styled('g', {
 	},
 }));
 
-export interface ISmokeProps {
-	params: {
-		x: number;
-		y: number;
-		multiplier: number;
-	};
-}
-
-export const Smoke = ({ params }: ISmokeProps) => {
+export const Smoke = ({ params }: SceneComponentProps) => {
 	const id = useId();
 	const colors = useTheme().palette.scene;
 
-	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.multiplier);
+	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.m);
 
 	return (
 		<CustomSvg

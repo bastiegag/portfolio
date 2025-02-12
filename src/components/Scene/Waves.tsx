@@ -2,6 +2,7 @@ import React from 'react';
 import { styled } from '@mui/system';
 
 import { useParallax } from 'hooks';
+import { SceneComponentProps } from 'components/Scene';
 
 const CustomSvg = styled('g', {
 	name: 'waves',
@@ -17,10 +18,13 @@ export interface WavesProps {
 	};
 }
 
-export const Waves = ({ params }: WavesProps) => {
+export const Waves = ({ params }: SceneComponentProps) => {
 	const id = React.useId();
 
-	useParallax(`#${CSS.escape(id)}`, 0, 0, params.multiplier);
+	useParallax(`#${CSS.escape(id)}`, 0, 0, params.m, {
+		pos: 'y',
+		skew: true,
+	});
 
 	return (
 		<CustomSvg

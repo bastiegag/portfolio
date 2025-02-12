@@ -14,29 +14,44 @@ export interface IPalmProps {
 		ease: string;
 		x: number;
 		y: number;
-		multiplier: number;
+		m: { x: number; y: number };
 	};
 }
 
 export const PalmTrees = () => {
 	const palmAnimation = {
-		palmDuration: gsap.utils.random(3, 5),
+		palmDuration: gsap.utils.random(2, 5),
 		palmRotation: 'random(-2,2)',
-		leafDuration: gsap.utils.random(3, 5),
-		leafRotation: 'random(-4,4)',
+		leafDuration: gsap.utils.random(2, 5),
+		leafRotation: 'random(-5,5)',
 		ease: 'power1.inOut',
 	};
 
 	return (
 		<React.Fragment>
 			<Palm1
-				params={{ ...palmAnimation, x: 286, y: 110, multiplier: 10 }}
+				params={{
+					...palmAnimation,
+					x: 286,
+					y: 110,
+					m: { x: 13, y: 10 },
+				}}
 			/>
 			<Palm2
-				params={{ ...palmAnimation, x: 494, y: 86, multiplier: 10 }}
+				params={{
+					...palmAnimation,
+					x: 494,
+					y: 86,
+					m: { x: 13, y: 10 },
+				}}
 			/>
 			<Palm3
-				params={{ ...palmAnimation, x: 588, y: 126, multiplier: 10 }}
+				params={{
+					...palmAnimation,
+					x: 588,
+					y: 126,
+					m: { x: 13, y: 10 },
+				}}
 			/>
 		</React.Fragment>
 	);

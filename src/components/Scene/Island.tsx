@@ -2,6 +2,7 @@ import React from 'react';
 import { styled, useTheme } from '@mui/system';
 
 import { useParallax } from 'hooks';
+import { SceneComponentProps } from 'components/Scene';
 
 const CustomSvg = styled('g', {
 	name: 'island',
@@ -16,19 +17,11 @@ const CustomSvg = styled('g', {
 	},
 }));
 
-export interface IslandProps {
-	params: {
-		x: number;
-		y: number;
-		multiplier: number;
-	};
-}
-
-export const Island = ({ params }: IslandProps) => {
+export const Island = ({ params }: SceneComponentProps) => {
 	const id = React.useId();
 	const colors = useTheme().palette.scene;
 
-	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.multiplier);
+	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.m);
 
 	return (
 		<CustomSvg

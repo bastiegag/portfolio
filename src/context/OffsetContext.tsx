@@ -2,8 +2,16 @@ import React, { createContext, useMemo, useState } from 'react';
 
 interface IOffsetContext {
 	offset: {
-		x: number;
-		y: number;
+		pos: {
+			x: number;
+			y: number;
+		};
+		dist: {
+			x: number;
+			y: number;
+		};
+		scale: number;
+		skew: number;
 	};
 	setOffset: React.Dispatch<React.SetStateAction<IOffsetContext['offset']>>;
 }
@@ -14,8 +22,16 @@ export const OffsetContextProvider = ({
 	children,
 }: React.PropsWithChildren<{}>) => {
 	const [offset, setOffset] = useState<IOffsetContext['offset']>({
-		x: 0,
-		y: 0,
+		pos: {
+			x: 0,
+			y: 0,
+		},
+		dist: {
+			x: 0,
+			y: 0,
+		},
+		scale: 1,
+		skew: 0,
 	});
 
 	const value = useMemo(() => ({ offset, setOffset }), [offset]);

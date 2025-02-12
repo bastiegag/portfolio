@@ -2,25 +2,18 @@ import React from 'react';
 import { styled, useTheme } from '@mui/system';
 
 import { useParallax } from 'hooks';
+import { SceneComponentProps } from 'components/Scene';
 
 const CustomSvg = styled('g', {
 	name: 'horizon',
 	slot: 'Root',
 })(() => ({ mixBlendMode: 'multiply' }));
 
-export interface HorizonProps {
-	params: {
-		y: number;
-		multiplier: number;
-		opacity?: number;
-	};
-}
-
-export const Horizon = ({ params }: HorizonProps) => {
+export const Horizon = ({ params }: SceneComponentProps) => {
 	const id = React.useId();
 	const colors = useTheme().palette.scene.water;
 
-	useParallax(`#${CSS.escape(id)}`, 0, params.y, params.multiplier);
+	useParallax(`#${CSS.escape(id)}`, 0, params.y, params.m);
 
 	return (
 		<CustomSvg

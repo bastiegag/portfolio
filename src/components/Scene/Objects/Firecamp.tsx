@@ -1,10 +1,8 @@
 import React from 'react';
 import { styled, useTheme } from '@mui/system';
 
-// import { Rock8 } from '../Rocks/Rock8';
-// import { Rock9 } from '../Rocks/Rock9';
-// import { Rock10 } from '../Rocks/Rock10';
 import { useParallax } from 'hooks';
+import { SceneComponentProps } from 'components/Scene';
 
 const CustomSvg = styled('g', {
 	name: 'firecamp',
@@ -25,19 +23,11 @@ const CustomSvg = styled('g', {
 	},
 }));
 
-export interface IFirecampProps {
-	params: {
-		x: number;
-		y: number;
-		multiplier: number;
-	};
-}
-
-export const Firecamp = ({ params }: IFirecampProps) => {
+export const Firecamp = ({ params }: SceneComponentProps) => {
 	const id = React.useId();
 	const colors = useTheme().palette.scene;
 
-	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.multiplier);
+	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.m);
 
 	return (
 		<CustomSvg
@@ -87,9 +77,6 @@ export const Firecamp = ({ params }: IFirecampProps) => {
 				className="firecamp-shadow"
 				points="3.6 189.7 35 191.9 83.5 191.9 130.3 190.3 131.8 189.3 127.5 187.3 136 186.8 108.5 184.7 113.6 179 3.6 189.7"
 			/>
-			{/* <Rock9 params={{ x: 2, y: 170, multiplier: 14 }} />
-			<Rock8 params={{ x: 86, y: 166, multiplier: 14 }} />
-			<Rock10 params={{ x: 41, y: 175, multiplier: 14 }} /> */}
 		</CustomSvg>
 	);
 };

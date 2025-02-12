@@ -3,6 +3,7 @@ import { styled, useTheme } from '@mui/system';
 
 import { Link } from 'components';
 import { useParallax } from 'hooks';
+import { SceneComponentProps } from 'components/Scene';
 
 const width = 39;
 const height = 25;
@@ -19,20 +20,11 @@ const CustomSvg = styled('g', {
 	},
 }));
 
-export interface IMapProps {
-	params: {
-		x: number;
-		y: number;
-		multiplier: number;
-		scale?: number;
-	};
-}
-
-export const Map = ({ params }: IMapProps) => {
+export const Map = ({ params }: SceneComponentProps) => {
 	const id = React.useId();
 	const colors = useTheme().palette.scene;
 
-	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.multiplier);
+	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.m);
 
 	return (
 		<React.Fragment>

@@ -11,7 +11,7 @@ import { Rock7 } from './Rock7';
 export interface IRockProps {
 	params: {
 		distance?: number;
-		multiplier: number;
+		m: { x: number; y: number };
 		x: number;
 		y: number;
 	};
@@ -20,13 +20,21 @@ export interface IRockProps {
 export const Rocks = () => {
 	return (
 		<React.Fragment>
-			<Rock7 params={{ x: 356, y: 170, multiplier: 11, distance: 0 }} />
-			<Rock6 params={{ x: 304, y: 230, multiplier: 11, distance: 0 }} />
-			<Rock5 params={{ x: 600, y: 245, multiplier: 11, distance: 0 }} />
-			<Rock4 params={{ x: 400, y: 143, multiplier: 11 }} />
-			<Rock3 params={{ x: 329, y: 261, multiplier: 11 }} />
-			<Rock2 params={{ x: 284, y: 274, multiplier: 11, distance: 0 }} />
-			<Rock1 params={{ x: 404, y: 278, multiplier: 11 }} />
+			<Rock7
+				params={{ x: 356, y: 171, m: { x: 14, y: 10 }, distance: 0 }}
+			/>
+			<Rock6
+				params={{ x: 304, y: 230, m: { x: 14, y: 10 }, distance: 0 }}
+			/>
+			<Rock5
+				params={{ x: 600, y: 245, m: { x: 14, y: 10 }, distance: 0 }}
+			/>
+			<Rock4 params={{ x: 400, y: 146, m: { x: 14, y: 10 } }} />
+			<Rock3 params={{ x: 329, y: 261, m: { x: 14, y: 10 } }} />
+			<Rock2
+				params={{ x: 284, y: 274, m: { x: 14, y: 10 }, distance: 0 }}
+			/>
+			<Rock1 params={{ x: 404, y: 278, m: { x: 14, y: 10 } }} />
 		</React.Fragment>
 	);
 };

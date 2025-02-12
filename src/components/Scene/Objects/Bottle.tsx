@@ -5,6 +5,7 @@ import { styled, useTheme } from '@mui/system';
 
 import { useParallax } from 'hooks';
 import { Link } from 'components';
+import { SceneComponentProps } from 'components/Scene';
 import config from '@/config';
 
 const CustomSvg = styled('g', {
@@ -29,19 +30,11 @@ const CustomSvg = styled('g', {
 	},
 }));
 
-export interface IBottleProps {
-	params: {
-		x: number;
-		y: number;
-		multiplier: number;
-	};
-}
-
-export const Bottle = ({ params }: IBottleProps) => {
+export const Bottle = ({ params }: SceneComponentProps) => {
 	const id = React.useId();
 	const colors = useTheme().palette.scene;
 
-	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.multiplier);
+	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.m);
 
 	useGSAP(() => {
 		const randDur = gsap.utils.random(1.5, 2.5, true);

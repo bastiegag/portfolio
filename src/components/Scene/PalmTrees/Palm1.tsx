@@ -24,37 +24,34 @@ const CustomSvg = styled('g', {
 export const Palm1 = ({ params }: IPalmProps) => {
 	const id = React.useId();
 	const colors = useTheme().palette.scene;
-	const { themeOptions, setThemeOptions } = useThemeOptions();
 
-	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.multiplier);
+	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.m);
 
 	useGSAP(() => {
-		if (themeOptions.animate) {
-			const timeline = gsap.timeline({
+		const timeline = gsap.timeline({
+			repeat: -1,
+			repeatRefresh: true,
+		});
+
+		timeline.to(`#${CSS.escape(id)}`, {
+			duration: params.palmDuration,
+			rotation: params.palmRotation,
+			ease: params.ease,
+			svgOrigin: '356 280',
+		});
+
+		for (let i = 1; i <= 7; i++) {
+			const leafTimeline = gsap.timeline({
 				repeat: -1,
 				repeatRefresh: true,
 			});
 
-			timeline.to(`#${CSS.escape(id)}`, {
-				duration: params.palmDuration,
-				rotation: params.palmRotation,
+			leafTimeline.to(`#${CSS.escape(id)}-${i}`, {
+				duration: params.leafDuration,
+				rotation: params.leafRotation,
 				ease: params.ease,
-				svgOrigin: '356 280',
+				svgOrigin: '50 20',
 			});
-
-			for (let i = 1; i <= 7; i++) {
-				const leafTimeline = gsap.timeline({
-					repeat: -1,
-					repeatRefresh: true,
-				});
-
-				leafTimeline.to(`#${CSS.escape(id)}-${i}`, {
-					duration: params.leafDuration,
-					rotation: params.leafRotation,
-					ease: params.ease,
-					svgOrigin: '50 20',
-				});
-			}
 		}
 	});
 

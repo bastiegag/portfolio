@@ -25,7 +25,7 @@ export const Plant2 = ({ params }: IFoliagesProps) => {
 	const id = React.useId();
 	const colors = useTheme().palette.scene;
 
-	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.multiplier);
+	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.m);
 
 	useGSAP(() => {
 		for (let i = 1; i <= 5; i++) {

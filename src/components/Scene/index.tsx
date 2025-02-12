@@ -10,8 +10,8 @@ import { Rocks } from './Rocks';
 import { Foliages } from './Foliages';
 import { Objects } from './Objects';
 
-import { useOffset } from 'hooks';
-import config from '@/config';
+import { useMousePosition } from 'hooks';
+// import config from '@/config';
 
 const CustomSvg = styled('svg', {
 	name: 'scene',
@@ -26,21 +26,18 @@ const CustomSvg = styled('svg', {
 	},
 }));
 
-export const Scene = () => {
-	const w = config.sceneWidth;
-	const h = config.sceneHeight;
-
-	const { offset, setOffset } = useOffset();
-
-	const handleMouseMove = (e: React.MouseEvent<HTMLOrSVGElement>) => {
-		const scene = document.getElementById('scene');
-		const sw = scene ? scene.getBoundingClientRect().width : 0;
-
-		const dx = (e.nativeEvent.offsetX * w) / sw - w / 2;
-		const dy = (e.nativeEvent.offsetY * h) / window.innerHeight - h / 2;
-
-		setOffset({ x: dx, y: dy });
+export interface SceneComponentProps {
+	params: {
+		x: number;
+		y: number;
+		m: { x: number; y: number };
+		opacity?: number;
+		scale?: number;
 	};
+}
+
+export const Scene = () => {
+	useMousePosition();
 
 	return (
 		<CustomSvg
@@ -48,14 +45,27 @@ export const Scene = () => {
 			version="1.1"
 			viewBox="0 0 1000 400"
 			id="scene"
+			filter="url(#pixelates)"
 			preserveAspectRatio="xMidYMid slice"
-			onMouseMove={(e) => handleMouseMove(e)}
 		>
+			<filter id="pixelate" x="0" y="0">
+				<feFlood x="1" y="1" height="0.5" width="0.5" />
+				<feComposite width="2" height="2" />
+				<feTile result="a" />
+				<feComposite in="SourceGraphic" in2="a" operator="in" />
+				<feMorphology operator="dilate" radius="2" />
+			</filter>
 			<Ocean />
 			<Sky />
 			<g className="island">
-				<Island params={{ x: 17, y: 286, multiplier: 15 }} />
-				<Ripples params={{ x: -25, y: 325, multiplier: 20 }} />
+				<Island params={{ x: 17, y: 286, m: { x: 15, y: 10 } }} />
+				<Ripples
+					params={{
+						x: -25,
+						y: 325,
+						m: { x: 15, y: 10 },
+					}}
+				/>
 				<PalmTrees />
 				<Rocks />
 				<Foliages />

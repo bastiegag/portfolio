@@ -51,7 +51,7 @@ export const Sky = () => {
 			/>
 			<Starfield />
 			<Clouds />
-			<Smoke params={{ x: 250, y: 115, multiplier: 13 }} />
+			<Smoke params={{ x: 250, y: 115, m: { x: 13, y: 10 } }} />
 		</CustomSvg>
 	);
 };

@@ -20,7 +20,7 @@ export const ThemeContextProvider = ({
 		IThemeContext['themeOptions']
 	>({
 		animate: true,
-		parallax: false,
+		parallax: true,
 	});
 
 	const value = useMemo(
@@ -38,7 +38,7 @@ export const ThemeContextProvider = ({
 			gsap.globalTimeline.pause();
 			[...svgs].forEach((svg) => svg.pauseAnimations());
 		}
-	}, [themeOptions]);
+	}, []);
 
 	return (
 		<ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>

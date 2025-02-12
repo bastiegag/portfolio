@@ -2,6 +2,7 @@ import React from 'react';
 import { styled, useTheme } from '@mui/system';
 
 import { useParallax } from 'hooks';
+import { SceneComponentProps } from 'components/Scene';
 
 const CustomSvg = styled('g', {
 	name: 'ripples',
@@ -13,19 +14,13 @@ const CustomSvg = styled('g', {
 	}),
 }));
 
-export interface RipplesProps {
-	params: {
-		x: number;
-		y: number;
-		multiplier: number;
-	};
-}
-
-export const Ripples = ({ params }: RipplesProps) => {
+export const Ripples = ({ params }: SceneComponentProps) => {
 	const id = React.useId();
 	const colors = useTheme().palette.scene;
 
-	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.multiplier);
+	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.m, {
+		skew: true,
+	});
 
 	return (
 		<CustomSvg

@@ -127,7 +127,9 @@ export const Ocean = () => {
 				</linearGradient>
 			</defs>
 			<rect className="ocean-shape" width="1000" height="120" />
-			<Horizon params={{ y: 2, multiplier: 2, opacity: 0.75 }} />
+			<Horizon
+				params={{ x: 0, y: 2, m: { x: 2, y: 1 }, opacity: 0.75 }}
+			/>
 			<g filter="url(#waterFilter)">
 				<rect
 					className="ocean-shape"
@@ -135,15 +137,25 @@ export const Ocean = () => {
 					height="120"
 					fillOpacity="0.5"
 				/>
-				<Waves params={{ multiplier: 8, opacity: 0.75 }} />
-				<GroundWaves
-					params={{ y: 45, multiplier: 15, opacity: 0.25 }}
+				<Waves
+					params={{ x: 0, y: 0, m: { x: 8, y: 8 }, opacity: 0.75 }}
 				/>
-				<GroundWaves params={{ y: 60, multiplier: 25, opacity: 0.5 }} />
-				<Horizon params={{ y: 0, multiplier: 2, opacity: 0.25 }} />
-				<Horizon params={{ y: 15, multiplier: 2, opacity: 0.15 }} />
+				<GroundWaves
+					params={{ x: 0, y: 45, m: { x: 13, y: 13 }, opacity: 0.25 }}
+				/>
+				<GroundWaves
+					params={{ x: 0, y: 60, m: { x: 16, y: 16 }, opacity: 0.5 }}
+				/>
+				<Horizon
+					params={{ x: 0, y: 0, m: { x: 2, y: 1 }, opacity: 0.25 }}
+				/>
+				<Horizon
+					params={{ x: 0, y: 15, m: { x: 2, y: 1 }, opacity: 0.15 }}
+				/>
 			</g>
-			<Horizon params={{ y: 0, multiplier: 2, opacity: 0.25 }} />
+			<Horizon
+				params={{ x: 0, y: 0, m: { x: 2, y: 1 }, opacity: 0.25 }}
+			/>
 		</CustomSvg>
 	);
 };

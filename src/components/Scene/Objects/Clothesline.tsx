@@ -5,6 +5,7 @@ import { styled, useTheme } from '@mui/system';
 
 import { Link } from 'components';
 import { useParallax } from 'hooks';
+import { SceneComponentProps } from 'components/Scene';
 import config from '@/config';
 
 const width = 105;
@@ -25,20 +26,11 @@ const CustomSvg = styled('g', {
 	},
 }));
 
-export interface IClotheslineProps {
-	params: {
-		x: number;
-		y: number;
-		multiplier: number;
-		scale?: number;
-	};
-}
-
-export const Clothesline = ({ params }: IClotheslineProps) => {
+export const Clothesline = ({ params }: SceneComponentProps) => {
 	const id = useId();
 	const colors = useTheme().palette.scene;
 
-	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.multiplier);
+	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.m);
 
 	useGSAP(() => {
 		const timeline = gsap.timeline({
