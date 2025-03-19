@@ -1,10 +1,12 @@
 import React, { createContext, useEffect, useMemo, useState } from 'react';
 import { gsap } from 'gsap';
+import { Backdrop } from '@mui/material';
 
 interface IThemeContext {
 	themeOptions: {
 		animate: boolean;
 		parallax: boolean;
+		backdrop: boolean;
 	};
 	setThemeOptions: React.Dispatch<
 		React.SetStateAction<IThemeContext['themeOptions']>
@@ -21,6 +23,7 @@ export const ThemeContextProvider = ({
 	>({
 		animate: true,
 		parallax: true,
+		backdrop: false,
 	});
 
 	const value = useMemo(
@@ -38,9 +41,18 @@ export const ThemeContextProvider = ({
 			gsap.globalTimeline.pause();
 			[...svgs].forEach((svg) => svg.pauseAnimations());
 		}
-	}, []);
+	}, [themeOptions]);
 
 	return (
-		<ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+		<ThemeContext.Provider value={value}>
+			<Backdrop
+				sx={(theme) => ({
+					color: '#fff',
+					zIndex: theme.zIndex.drawer + 1,
+				})}
+				open={themeOptions.backdrop}
+			/>
+			{children}
+		</ThemeContext.Provider>
 	);
 };

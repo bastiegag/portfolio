@@ -1,8 +1,8 @@
-import React, { ReactNode } from "react";
-import { Link as RouterLink } from "react-router";
+import React, { ReactNode } from 'react';
+import { Link as RouterLink } from 'react-router';
 
-import { usePopper } from "hooks";
-import { openLink } from "utils";
+import { usePopper } from 'hooks';
+import { openLink } from 'utils';
 
 export interface LinkPropsType {
 	url?: string;
@@ -14,6 +14,7 @@ export interface LinkPropsType {
 
 export const Link = ({ url, to, title, tab, children }: LinkPropsType) => {
 	const { settings, setSettings } = usePopper();
+	const timerRef = React.useRef<Function>(null);
 
 	const handlePopoverOpen = (
 		event: React.MouseEvent<HTMLAnchorElement>,
@@ -30,16 +31,16 @@ export const Link = ({ url, to, title, tab, children }: LinkPropsType) => {
 		setSettings({
 			...settings,
 			anchorEl: null,
-			title: "",
+			title: '',
 		});
 	};
 
 	return (
 		<RouterLink
 			className="link"
-			onMouseEnter={(event) => handlePopoverOpen(event, title)}
+			onMouseEnter={(event) => title && handlePopoverOpen(event, title)}
 			onMouseLeave={handlePopoverClose}
-			to={to || ""}
+			to={to || ''}
 			onClick={() => {
 				url && openLink(url, tab);
 			}}

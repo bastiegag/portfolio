@@ -55,13 +55,22 @@ $towelIcon_d: #7df5e5;
 
 $bottleLight_d: #13203e;
 $bottleMain_d: #030c28;
-$bottleDark_d: $skyLight_d;
+$bottleDark_d: #05183d;
+
+$capLight_d: #071f4a;
+$capDark_d: #05183d;
 
 $paperLighter_d: #071f4a;
 $paperLight_d: #061c43;
 $paperMain_d: #05183d;
 $paperDark_d: #051232;
 $paperDarker_d: #040c28;
+
+$mugLighter_d: #05183d;
+$mugLight_d: #051232;
+$mugMain_d: #040c28;
+$mugDark_d: #030b23;
+$mugDarker_d: #030921;
 
 $smoke_d: #aaaaaa;
 
@@ -129,11 +138,20 @@ $redDark_d: #051434;
 	bottleMain_d: $bottleMain_d;
 	bottleDark_d: $bottleDark_d;
 
+	capLight_d: $capLight_d;
+	capDark_d: $capDark_d;
+
 	paperLighter_d: $paperLighter_d;
 	paperLight_d: $paperLight_d;
 	paperMain_d: $paperMain_d;
 	paperDark_d: $paperDark_d;
 	paperDarker_d: $paperDarker_d;
+
+	mugLighter_d: $mugLighter_d;
+	mugLight_d: $mugLight_d;
+	mugMain_d: $mugMain_d;
+	mugDark_d: $mugDark_d;
+	mugDarker_d: $mugDarker_d;
 
 	smoke_d: $smoke_d;
 

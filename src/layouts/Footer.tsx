@@ -33,7 +33,7 @@ export const Footer = () => {
 				left: 0,
 				p: 3,
 				color: 'white',
-				zIndex: theme.zIndex.drawer + 2,
+				zIndex: theme.zIndex.modal + 2,
 			}}
 		>
 			<Tooltip

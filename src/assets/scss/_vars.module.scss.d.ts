@@ -59,11 +59,20 @@ export interface Colors {
 	bottleMain: string;
 	bottleDark: string;
 
+	capLight: string;
+	capDark: string;
+
 	paperLighter: string;
 	paperLight: string;
 	paperMain: string;
 	paperDark: string;
 	paperDarker: string;
+
+	mugLighter: string;
+	mugLight: string;
+	mugMain: string;
+	mugDark: string;
+	mugDarker: string;
 
 	smoke: string;
 

@@ -1,4 +1,4 @@
-import { palette } from "./palette";
+import { palette } from './palette';
 
 interface Colors {
 	[key: string]: string;
@@ -12,6 +12,9 @@ export const colorSchemes = (colors: Colors) => {
 		dark: {
 			palette: {
 				scene: {
+					black: colors.black,
+					white: colors.white,
+					primary: colors.primary,
 					sky: {
 						light: colors.skyLight_d,
 						main: colors.skyMain_d,
@@ -81,12 +84,23 @@ export const colorSchemes = (colors: Colors) => {
 						main: colors.bottleMain_d,
 						dark: colors.bottleDark_d,
 					},
+					cap: {
+						light: colors.capLight_d,
+						dark: colors.capDark_d,
+					},
 					paper: {
 						lighter: colors.paperLighter_d,
 						light: colors.paperLight_d,
 						main: colors.paperMain_d,
 						dark: colors.paperDark_d,
 						darker: colors.paperDarker_d,
+					},
+					mug: {
+						lighter: colors.mugLighter_d,
+						light: colors.mugLight_d,
+						main: colors.mugMain_d,
+						dark: colors.mugDark_d,
+						darker: colors.mugDarker_d,
 					},
 					smoke: colors.smoke_d,
 					popper: {

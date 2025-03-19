@@ -3,6 +3,7 @@ import { createTheme } from '@mui/material';
 import colors from 'assets/scss/_vars.module.scss';
 import { components } from './components';
 import { palette } from './palette';
+import { typography } from './typography';
 import { colorSchemes } from './colorSchemes';
 
 declare module '@mui/material/styles' {
@@ -24,6 +25,7 @@ const portfolioTheme = () => {
 			colorSchemeSelector: 'class',
 		},
 		palette: palette(colors),
+		typography: typography(),
 		components: components(colors),
 	};
 

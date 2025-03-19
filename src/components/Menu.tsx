@@ -1,11 +1,11 @@
-import React from "react";
-import { Link } from "react-router";
+import React from 'react';
+import { Link } from 'react-router';
 import {
 	IconBrandGithub,
 	IconBrandVimeo,
 	IconBrandInstagram,
 	IconBrandLinkedin,
-} from "@tabler/icons-react";
+} from '@tabler/icons-react';
 import {
 	Box,
 	IconButton,
@@ -14,35 +14,35 @@ import {
 	ListItemButton,
 	Slide,
 	Tooltip,
-} from "@mui/material";
+} from '@mui/material';
 
-import { openLink } from "utils";
-import config from "@/config";
+import { openLink } from 'utils';
+import config from '@/config';
 
 const menu = [
 	{
-		title: "À propos",
-		url: "/a-propos",
+		title: 'À propos',
+		url: '/a-propos',
 	},
+	// {
+	// 	title: "Projets",
+	// 	url: "/projets",
+	// },
 	{
-		title: "Projets",
-		url: "/projets",
-	},
-	{
-		title: "Contact",
+		title: 'Contact',
 		url: `mailto:${config.mail}`,
 	},
 ];
 
 const icons = [
-	{ title: "Github", icon: IconBrandGithub, url: config.github },
-	{ title: "Vimeo", icon: IconBrandVimeo, url: config.vimeo },
-	{ title: "Instagram", icon: IconBrandInstagram, url: config.instagram },
-	{ title: "LinkedIn", icon: IconBrandLinkedin, url: config.linkedin },
+	{ title: 'Github', icon: IconBrandGithub, url: config.github },
+	{ title: 'Vimeo', icon: IconBrandVimeo, url: config.vimeo },
+	{ title: 'Instagram', icon: IconBrandInstagram, url: config.instagram },
+	{ title: 'LinkedIn', icon: IconBrandLinkedin, url: config.linkedin },
 ];
 
 const socialContainer = {
-	position: "absolute",
+	position: 'absolute',
 	bottom: 0,
 	right: 0,
 	p: 3,

@@ -77,12 +77,23 @@ export const palette = (colors: Colors) => {
 				main: colors.bottleMain,
 				dark: colors.bottleDark,
 			},
+			cap: {
+				light: colors.capLight,
+				dark: colors.capDark,
+			},
 			paper: {
 				lighter: colors.paperLighter,
 				light: colors.paperLight,
 				main: colors.paperMain,
 				dark: colors.paperDark,
 				darker: colors.paperDarker,
+			},
+			mug: {
+				lighter: colors.mugLighter,
+				light: colors.mugLight,
+				main: colors.mugMain,
+				dark: colors.mugDark,
+				darker: colors.mugDarker,
 			},
 			smoke: colors.smoke,
 			popper: {

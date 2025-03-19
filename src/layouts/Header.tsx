@@ -1,18 +1,18 @@
-import React, { useState } from "react";
-import { IconMenu2, IconX } from "@tabler/icons-react";
-import { Stack, IconButton, Modal, Box, Fade } from "@mui/material";
+import React, { useState } from 'react';
+import { IconMenu2, IconX } from '@tabler/icons-react';
+import { Stack, IconButton, Modal, Box, Fade } from '@mui/material';
 
-import { Logo, Menu } from "components";
+import { Logo, Menu } from 'components';
 
 const menuContainer = {
-	position: "absolute",
+	position: 'absolute',
 	top: 0,
 	left: 0,
-	width: "100%",
-	height: "100%",
-	display: "flex",
-	alignItems: "center",
-	justifyContent: "center",
+	width: '100%',
+	height: '100%',
+	display: 'flex',
+	alignItems: 'center',
+	justifyContent: 'center',
 };
 
 export const Header = () => {
@@ -26,8 +26,11 @@ export const Header = () => {
 		<>
 			<Modal
 				sx={(theme) => ({
-					color: "white",
-					zIndex: theme.zIndex.drawer + 1,
+					color: 'white',
+					zIndex: theme.zIndex.modal + 1,
+					'.MuiModal-backdrop': {
+						backdropFilter: 'blur(15px)',
+					},
 				})}
 				open={open}
 				onClose={() => setOpen(false)}
@@ -43,16 +46,13 @@ export const Header = () => {
 				direction="row"
 				justifyContent="space-between"
 				alignItems="start"
+				spacing={3}
 				sx={(theme) => ({
-					position: "absolute",
+					position: 'absolute',
 					top: theme.spacing(3),
 					left: theme.spacing(3),
 					right: theme.spacing(3),
-					zIndex: theme.zIndex.drawer + 2,
-					[theme.breakpoints.down("sm")]: {
-						justifyContent: "center",
-						flexWrap: "wrap",
-					},
+					zIndex: theme.zIndex.modal + 2,
 				})}
 			>
 				<Logo />
@@ -60,7 +60,7 @@ export const Header = () => {
 				<IconButton
 					size="large"
 					onClick={toggleMenu}
-					sx={{ color: "white" }}
+					sx={{ color: 'white' }}
 				>
 					{open ? <IconX /> : <IconMenu2 />}
 				</IconButton>

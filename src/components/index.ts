@@ -1,4 +1,9 @@
-export { Logo } from "./Logo";
-export { Link } from "./Link";
-export { Menu } from "./Menu";
-export { Scene } from "./Scene";
+export { Logo } from './Logo';
+export { Link } from './Link';
+export { Menu } from './Menu';
+export { Page } from './Page';
+export { Paper } from './Paper';
+export { Photo } from './Photo';
+export { Scene } from './Scene';
+export { Content } from './Content';
+export { Container } from './Container';

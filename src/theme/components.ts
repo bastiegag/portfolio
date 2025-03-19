@@ -7,11 +7,11 @@ export const components = (colors: Colors) => {
 		MuiListItemText: {
 			styleOverrides: {
 				root: {
-					".MuiListItemText-primary": {
+					'.MuiListItemText-primary': {
 						fontFamily: `"Joti One", serif`,
-						fontSize: "5rem",
-						textShadow: "2px 4px 0 rgba(0,0,0,0.15)",
-						textAlign: "center",
+						fontSize: '5rem',
+						textShadow: '2px 4px 0 rgba(0,0,0,0.15)',
+						textAlign: 'center',
 					},
 				},
 			},
@@ -22,9 +22,9 @@ export const components = (colors: Colors) => {
 			},
 			styleOverrides: {
 				root: {
-					justifyContent: "center !important",
-					color: "inherit",
-					"&:hover": {
+					justifyContent: 'center !important',
+					color: 'inherit',
+					'&:hover': {
 						color: colors.white,
 					},
 				},
@@ -37,14 +37,14 @@ export const components = (colors: Colors) => {
 			styleOverrides: {
 				root: {
 					fontFamily: `"Joti One", serif`,
-					fontSize: "5rem",
-					textShadow: "2px 4px 0 rgba(0,0,0,0.15)",
-					textAlign: "center",
+					fontSize: '5rem',
+					textShadow: '2px 4px 0 rgba(0,0,0,0.15)',
+					textAlign: 'center',
 					color: colors.primary,
-					justifyContent: "center",
-					"&:hover": {
+					justifyContent: 'center',
+					'&:hover': {
 						color: colors.white,
-						backgroundColor: "transparent",
+						backgroundColor: 'transparent',
 					},
 				},
 			},
@@ -52,9 +52,16 @@ export const components = (colors: Colors) => {
 		MuiTooltip: {
 			styleOverrides: {
 				root: {
-					".MuiTooltip-tooltip": {
-						backgroundColor: "#000",
+					'.MuiTooltip-tooltip': {
+						backgroundColor: '#000',
 					},
+				},
+			},
+		},
+		MuiPopper: {
+			styleOverrides: {
+				root: {
+					zIndex: 1300,
 				},
 			},
 		},

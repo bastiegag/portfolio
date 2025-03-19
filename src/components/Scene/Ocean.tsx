@@ -29,6 +29,7 @@ export const Ocean = () => {
 			duration: 3,
 			ease: 'none',
 		});
+
 		timeline.to('#turbulence', {
 			attr: { values: '359' },
 			duration: 3,
