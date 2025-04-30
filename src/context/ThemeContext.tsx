@@ -15,9 +15,7 @@ interface IThemeContext {
 
 export const ThemeContext = createContext<IThemeContext | null>(null);
 
-export const ThemeContextProvider = ({
-	children,
-}: React.PropsWithChildren<{}>) => {
+export const ThemeProvider = ({ children }: React.PropsWithChildren<{}>) => {
 	const [themeOptions, setThemeOptions] = useState<
 		IThemeContext['themeOptions']
 	>({

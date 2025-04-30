@@ -13,6 +13,9 @@ export interface Colors {
 	waterLight: string;
 	waterDark: string;
 
+	rippleLight: string;
+	rippleDark: string;
+
 	sandLight: string;
 	sandDark: string;
 	sandDarker: string;
@@ -67,6 +70,7 @@ export interface Colors {
 	paperMain: string;
 	paperDark: string;
 	paperDarker: string;
+	paperText: string;
 
 	mugLighter: string;
 	mugLight: string;

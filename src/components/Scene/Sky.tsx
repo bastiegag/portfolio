@@ -26,6 +26,7 @@ export const Sky = () => {
 	return (
 		<CustomSvg
 			className="sky animate-gradient"
+			id="sky"
 			transform={`translate(0,0)`}
 		>
 			<defs>

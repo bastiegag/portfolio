@@ -11,10 +11,10 @@ import { Plant4 } from './Plant4';
 
 export interface IFoliagesProps {
 	params: {
-		duration: number;
-		skewX?: string;
-		rotation?: string;
-		ease: string;
+		duration: () => number;
+		skewX: () => number;
+		rotation?: () => number;
+		ease: () => string;
 		x: number;
 		y: number;
 		m: { x: number; y: number };
@@ -23,17 +23,24 @@ export interface IFoliagesProps {
 
 export const Foliages = () => {
 	const grassAnimation = {
-		duration: gsap.utils.random(1, 2),
-		skewX: 'random(-10,10)',
-		ease: 'power1.inOut',
+		duration: gsap.utils.random(2, 3, true),
+		rotation: gsap.utils.random(-2, 2, true),
+		skewX: gsap.utils.random(-10, 10, true),
+		ease: gsap.utils.random(
+			['power1.inOut', 'power2.inOut', 'expo.inOut'],
+			true
+		),
 		m: { x: 14, y: 9 },
 	};
 
 	const plantAnimation = {
-		duration: gsap.utils.random(1, 5),
-		skewX: 'random(-10,10)',
-		rotation: 'random(-5,5)',
-		ease: 'power1.inOut',
+		duration: gsap.utils.random(2, 3, true),
+		rotation: gsap.utils.random(-4, 4, true),
+		skewX: gsap.utils.random(-4, 4, true),
+		ease: gsap.utils.random(
+			['power1.inOut', 'power2.inOut', 'expo.inOut'],
+			true
+		),
 		m: { x: 15, y: 10 },
 	};
 

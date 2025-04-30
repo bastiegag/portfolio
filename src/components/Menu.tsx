@@ -16,6 +16,7 @@ import {
 	Tooltip,
 } from '@mui/material';
 
+import { useCursor } from 'hooks';
 import { openLink } from 'utils';
 import config from '@/config';
 
@@ -54,6 +55,8 @@ interface MenuPropsType {
 }
 
 export const Menu = ({ open, setOpen }: MenuPropsType) => {
+	const { cursor, setCursor } = useCursor();
+
 	return (
 		<>
 			<List>
@@ -69,7 +72,20 @@ export const Menu = ({ open, setOpen }: MenuPropsType) => {
 								<ListItemButton
 									component={Link}
 									to={item.url}
+									onMouseEnter={() =>
+										setCursor({ hover: true })
+									}
+									onMouseLeave={() =>
+										setCursor({ hover: false })
+									}
 									onClick={() => setOpen(false)}
+									sx={{
+										fontSize: {
+											xs: '3rem',
+											md: '4rem',
+											lg: '5rem',
+										},
+									}}
 								>
 									{item.title}
 								</ListItemButton>
@@ -84,16 +100,19 @@ export const Menu = ({ open, setOpen }: MenuPropsType) => {
 				{icons.map((item, i) => {
 					const Icon = item.icon;
 					return (
-						<Tooltip key={i} title={item.title}>
-							<IconButton
-								size="large"
-								onClick={() => {
-									openLink(item.url);
-								}}
-							>
-								<Icon />
-							</IconButton>
-						</Tooltip>
+						// <Tooltip key={i} title={item.title}>
+						<IconButton
+							key={i}
+							size="large"
+							onMouseEnter={() => setCursor({ hover: true })}
+							onMouseLeave={() => setCursor({ hover: false })}
+							onClick={() => {
+								openLink(item.url);
+							}}
+						>
+							<Icon size={32} />
+						</IconButton>
+						// </Tooltip>
 					);
 				})}
 			</Box>

@@ -26,7 +26,7 @@ export const Plant1 = ({ params }: IFoliagesProps) => {
 		timeline.to(`#${CSS.escape(id)}-skew`, {
 			duration: params.duration,
 			skewX: params.skewX,
-			ease: params.ease,
+			ease: params.ease(),
 			svgOrigin: '30 24',
 		});
 	});

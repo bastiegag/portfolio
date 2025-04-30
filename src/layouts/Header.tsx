@@ -3,6 +3,8 @@ import { IconMenu2, IconX } from '@tabler/icons-react';
 import { Stack, IconButton, Modal, Box, Fade } from '@mui/material';
 
 import { Logo, Menu } from 'components';
+import { useCursor } from 'hooks';
+import { MenuIcon, CloseIcon } from 'components/Icons';
 
 const menuContainer = {
 	position: 'absolute',
@@ -17,6 +19,7 @@ const menuContainer = {
 
 export const Header = () => {
 	const [open, setOpen] = useState<boolean>(false);
+	const { cursor, setCursor } = useCursor();
 
 	const toggleMenu = () => {
 		setOpen((value) => !value);
@@ -29,7 +32,7 @@ export const Header = () => {
 					color: 'white',
 					zIndex: theme.zIndex.modal + 1,
 					'.MuiModal-backdrop': {
-						backdropFilter: 'blur(15px)',
+						backdropFilter: 'blur(5px)',
 					},
 				})}
 				open={open}
@@ -59,10 +62,12 @@ export const Header = () => {
 
 				<IconButton
 					size="large"
+					onMouseEnter={() => setCursor({ hover: true })}
+					onMouseLeave={() => setCursor({ hover: false })}
 					onClick={toggleMenu}
 					sx={{ color: 'white' }}
 				>
-					{open ? <IconX /> : <IconMenu2 />}
+					{open ? <CloseIcon size={32} /> : <MenuIcon size={32} />}
 				</IconButton>
 			</Stack>
 		</>

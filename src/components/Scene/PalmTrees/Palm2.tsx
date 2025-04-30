@@ -36,7 +36,7 @@ export const Palm2 = ({ params }: IPalmProps) => {
 		timeline.to(`#${CSS.escape(id)}`, {
 			duration: params.palmDuration,
 			rotation: params.palmRotation,
-			ease: params.ease,
+			ease: params.ease(),
 			svgOrigin: '544 288',
 		});
 
@@ -49,7 +49,7 @@ export const Palm2 = ({ params }: IPalmProps) => {
 			leafTimeline.to(`#${CSS.escape(id)}-${i}`, {
 				duration: params.leafDuration,
 				rotation: params.leafRotation,
-				ease: params.ease,
+				ease: params.ease(),
 				svgOrigin: '65 16',
 			});
 		}

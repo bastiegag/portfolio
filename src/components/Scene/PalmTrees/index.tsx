@@ -7,11 +7,11 @@ import { Palm3 } from './Palm3';
 
 export interface IPalmProps {
 	params: {
-		palmDuration: number;
-		palmRotation: string;
-		leafDuration: number;
-		leafRotation: string;
-		ease: string;
+		palmDuration: () => number;
+		palmRotation: () => number;
+		leafDuration: () => number;
+		leafRotation: () => number;
+		ease: () => string;
 		x: number;
 		y: number;
 		m: { x: number; y: number };
@@ -20,11 +20,14 @@ export interface IPalmProps {
 
 export const PalmTrees = () => {
 	const palmAnimation = {
-		palmDuration: gsap.utils.random(2, 5),
-		palmRotation: 'random(-2,2)',
-		leafDuration: gsap.utils.random(2, 5),
-		leafRotation: 'random(-5,5)',
-		ease: 'power1.inOut',
+		palmDuration: gsap.utils.random(2, 5, true),
+		palmRotation: gsap.utils.random(-1, 1, true),
+		leafDuration: gsap.utils.random(3, 5, true),
+		leafRotation: gsap.utils.random(-5, 5, true),
+		ease: gsap.utils.random(
+			['power1.inOut', 'power2.inOut', 'expo.inOut'],
+			true
+		),
 	};
 
 	return (

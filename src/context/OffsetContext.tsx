@@ -18,9 +18,7 @@ interface IOffsetContext {
 
 export const OffsetContext = createContext<IOffsetContext | null>(null);
 
-export const OffsetContextProvider = ({
-	children,
-}: React.PropsWithChildren<{}>) => {
+export const OffsetProvider = ({ children }: React.PropsWithChildren<{}>) => {
 	const [offset, setOffset] = useState<IOffsetContext['offset']>({
 		pos: {
 			x: 0,

@@ -21,6 +21,10 @@ export const palette = (colors: Colors) => {
 				light: colors.waterLight,
 				dark: colors.waterDark,
 			},
+			ripple: {
+				light: colors.rippleLight,
+				dark: colors.rippleDark,
+			},
 			sand: {
 				light: colors.sandLight,
 				dark: colors.sandDark,
@@ -87,6 +91,7 @@ export const palette = (colors: Colors) => {
 				main: colors.paperMain,
 				dark: colors.paperDark,
 				darker: colors.paperDarker,
+				text: colors.paperText,
 			},
 			mug: {
 				lighter: colors.mugLighter,

@@ -1,8 +1,8 @@
-import { PopperContext, PopperContextProvider } from 'context';
+import { PopperContext, PopperProvider } from 'context';
 import { useContextWrapper } from 'hooks';
 
 export const usePopper = () =>
-    useContextWrapper(PopperContext, {
-        contextName: usePopper.name,
-        providerName: PopperContextProvider.name,
-    });
+	useContextWrapper(PopperContext, {
+		contextName: usePopper.name,
+		providerName: PopperProvider.name,
+	});

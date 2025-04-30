@@ -14,12 +14,14 @@ import {
 	Tooltip,
 } from '@mui/material';
 
-import { useThemeOptions } from 'hooks';
+import { MoonIcon, SunIcon } from 'components/Icons';
+import { useThemeOptions, useCursor } from 'hooks';
 
 export const Footer = () => {
 	const theme = useTheme();
 	const { mode, setMode } = useColorScheme();
 	const { themeOptions, setThemeOptions } = useThemeOptions();
+	const { cursor, setCursor } = useCursor();
 
 	if (!mode) {
 		return null;
@@ -36,7 +38,7 @@ export const Footer = () => {
 				zIndex: theme.zIndex.modal + 2,
 			}}
 		>
-			<Tooltip
+			{/* <Tooltip
 				title={
 					themeOptions.animate ? 'Stop animation' : 'Play animation'
 				}
@@ -56,8 +58,8 @@ export const Footer = () => {
 						<IconPlayerPlay />
 					)}
 				</IconButton>
-			</Tooltip>
-			<Tooltip
+			</Tooltip> */}
+			{/* <Tooltip
 				title={
 					themeOptions.parallax
 						? 'Deactivate parallax'
@@ -79,17 +81,23 @@ export const Footer = () => {
 						<IconLayersIntersect />
 					)}
 				</IconButton>
-			</Tooltip>
-			<Tooltip title="Dark mode">
-				<IconButton
-					size="large"
-					onClick={() => {
-						setMode(mode === 'dark' ? 'light' : 'dark');
-					}}
-				>
-					{mode == 'dark' ? <IconSun /> : <IconMoon />}
-				</IconButton>
-			</Tooltip>
+			</Tooltip> */}
+			{/* <Tooltip title="Dark mode"> */}
+			<IconButton
+				size="large"
+				onMouseEnter={() => setCursor({ hover: true })}
+				onMouseLeave={() => setCursor({ hover: false })}
+				onClick={() => {
+					setMode(mode === 'dark' ? 'light' : 'dark');
+				}}
+			>
+				{mode == 'dark' ? (
+					<SunIcon size={32} />
+				) : (
+					<MoonIcon size={32} />
+				)}
+			</IconButton>
+			{/* </Tooltip> */}
 		</Box>
 	);
 };

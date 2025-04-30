@@ -30,6 +30,13 @@ export const components = (colors: Colors) => {
 				},
 			},
 		},
+		MuiPaper: {
+			styleOverrides: {
+				root: {
+					backgroundColor: 'transparent',
+				},
+			},
+		},
 		MuiListItemButton: {
 			defaultProps: {
 				disableRipple: true,
@@ -38,7 +45,7 @@ export const components = (colors: Colors) => {
 				root: {
 					fontFamily: `"Joti One", serif`,
 					fontSize: '5rem',
-					textShadow: '2px 4px 0 rgba(0,0,0,0.15)',
+					// textShadow: '2px 4px 0 rgba(0,0,0,0.15)',
 					textAlign: 'center',
 					color: colors.primary,
 					justifyContent: 'center',

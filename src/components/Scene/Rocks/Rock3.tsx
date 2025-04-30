@@ -48,19 +48,6 @@ export const Rock3 = ({ params }: IRockProps) => {
 					fillOpacity={params.distance ? `${params.distance}%` : '0'}
 					d="M46.5,32.6v-5.9l-5.1-4.7-2.2-12.5L28,.9s-8.4-2.3-14.8,2.4l-4.4,21.6-6,1.8L0,33.9l28.4.4s18.1-1.7,18.1-1.7Z"
 				/>
-				{/* <path
-                    className="backlight"
-                    clipPath={`url(#${id}-backlight-mask)`}
-                    d="M41.4,21.93l-2.2-12.5L28,.83s-9.9-3-14.8,2.4l-4.4,21.5-6,1.9-2.8,7.2,10.7.15v.05s17.7.2,17.7.2l18.1-1.7v-5.9l-5.1-4.7Z"
-                />
-                <defs>
-                    <clipPath
-                        id={`${id}-backlight-mask`}
-                        className="backlight-mask"
-                    >
-                        <path d="M41.4,21.93l-2.2-12.5L28,.83s-9.9-3-14.8,2.4l-4.4,21.5-6,1.9-2.8,7.2,10.7.15v.05s17.7.2,17.7.2l18.1-1.7v-5.9l-5.1-4.7Z" />
-                    </clipPath>
-                </defs> */}
 			</CustomSvg>
 		</React.Fragment>
 	);

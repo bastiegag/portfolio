@@ -9,9 +9,6 @@ const CustomSvg = styled('g', {
 	slot: 'Root',
 })(({ theme }) => ({
 	opacity: 0.75,
-	...theme.applyStyles('dark', {
-		opacity: 0.15,
-	}),
 }));
 
 export const Ripples = ({ params }: SceneComponentProps) => {
@@ -26,7 +23,7 @@ export const Ripples = ({ params }: SceneComponentProps) => {
 		<CustomSvg
 			id={id}
 			transform={`translate(${params.x},${params.y})`}
-			fill={colors.white}
+			fill={colors.ripple.light}
 			className="animate"
 			filter="url(#waterFilter)"
 		>

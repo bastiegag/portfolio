@@ -25,8 +25,9 @@ export const Grass1 = ({ params }: IFoliagesProps) => {
 
 		timeline.to(`#${CSS.escape(id)}-grass`, {
 			duration: params.duration,
+			rotation: params.rotation,
 			skewX: params.skewX,
-			ease: params.ease,
+			ease: params.ease(),
 			svgOrigin: '25 11',
 		});
 	});

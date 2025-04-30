@@ -7,3 +7,4 @@ export { Photo } from './Photo';
 export { Scene } from './Scene';
 export { Content } from './Content';
 export { Container } from './Container';
+export { Cursor } from './Cursor';

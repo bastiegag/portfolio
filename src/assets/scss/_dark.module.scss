@@ -1,76 +1,80 @@
 @use 'light.module' as colors;
 
-$skyLight_d: #196385;
-$skyMain_d: #07375f;
-$skyDark_d: #0a183a;
+$skyLight_d: #184779;
+$skyMain_d: #142f57;
+$skyDark_d: #07142b;
 
-$cloudLight_d: #07204e;
-$cloudDark_d: #051b45;
+$cloudLight_d: #487ca9;
+$cloudDark_d: #335a8d;
 
-$waterLight_d: #021537;
-$waterDark_d: #010b25;
+$waterLight_d: #142f57;
+$waterDark_d: #184779;
 
-$sandLight_d: #061e47;
-$sandDark_d: #061c44;
-$sandDarker_d: #061c40;
+$rippleLight_d: #356489;
+$rippleDark_d: #0f304f;
 
-$rock100_d: #071f4a;
-$rock200_d: #061c43;
-$rock300_d: #05183d;
-$rock400_d: #051232;
-$rock500_d: #040c28;
-$rock600_d: #030b23;
-$rock700_d: #030921;
-$rock800_d: #02091f;
-$rock900_d: #02081d;
+$sandLight_d: #132b4f;
+$sandDark_d: #112848;
+$sandDarker_d: #102543;
 
-$palmLighter_d: #051b3c;
-$palmLight_d: #051736;
-$palmMain_d: #041430;
-$palmDark_d: #041029;
-$palmDarker_d: #030d24;
+$rock100_d: #142d51;
+$rock200_d: #112747;
+$rock300_d: #0f2340;
+$rock400_d: #0d203c;
+$rock500_d: #0c1e38;
+$rock600_d: #0a1b33;
+$rock700_d: #09182f;
+$rock800_d: #08172d;
+$rock900_d: #08172d;
 
-$foliageLighter_d: #041532;
-$foliageLight_d: #04112e;
-$foliageMain_d: #030e27;
-$foliageDark_d: #030b22;
-$foliageDarker_d: #02091e;
+$palmLighter_d: #112746;
+$palmLight_d: #0c1e39;
+$palmMain_d: #0b1d36;
+$palmDark_d: #0a1b33;
+$palmDarker_d: #091931;
 
-$trunkLight_d: #040d27;
-$trunkDark_d: #03091e;
+$foliageLighter_d: #112746;
+$foliageLight_d: #0c1e39;
+$foliageMain_d: #0b1d36;
+$foliageDark_d: #0a1b33;
+$foliageDarker_d: #091931;
 
-$woodLighter_d: #050f2c;
-$woodLight_d: #040c24;
-$woodLightless_d: #040c24;
-$woodMain_d: #03091f;
-$woodDark_d: #03081c;
-$woodDarker_d: #020513;
+$trunkLight_d: #0b1c34;
+$trunkDark_d: #07172c;
 
-$ropeLight_d: #061c42;
-$ropeDark_d: #051434;
+$woodLighter_d: #0e223f;
+$woodLight_d: #0c1e39;
+$woodLightless_d: #0c1e37;
+$woodMain_d: #08182f;
+$woodDark_d: #07162b;
+$woodDarker_d: #071529;
 
-$towelLight_d: #071f4c;
-$towelDark_d: #04102f;
+$ropeLight_d: #112849;
+$ropeDark_d: #0a1b33;
+
+$towelLight_d: #173258;
+$towelDark_d: #0d203b;
 $towelIcon_d: #7df5e5;
 
-$bottleLight_d: #13203e;
-$bottleMain_d: #030c28;
-$bottleDark_d: #05183d;
+$bottleLight_d: #091930;
+$bottleMain_d: #08172d;
+$bottleDark_d: #07152a;
 
-$capLight_d: #071f4a;
-$capDark_d: #05183d;
+$capLight_d: #112747;
+$capDark_d: #0c1f3a;
 
-$paperLighter_d: #071f4a;
-$paperLight_d: #061c43;
-$paperMain_d: #05183d;
-$paperDark_d: #051232;
-$paperDarker_d: #040c28;
+$paperLighter_d: #132c4f;
+$paperLight_d: #12294c;
+$paperMain_d: #112849;
+$paperDark_d: #112848;
+$paperDarker_d: #102644;
+$paperText_d: #7df5e5;
 
-$mugLighter_d: #05183d;
-$mugLight_d: #051232;
-$mugMain_d: #040c28;
-$mugDark_d: #030b23;
-$mugDarker_d: #030921;
+$mugLighter_d: #0b1c34;
+$mugLight_d: #0a1b33;
+$mugMain_d: #08182f;
+$mugDark_d: #07172c;
+$mugDarker_d: #071529;
 
 $smoke_d: #aaaaaa;
 
@@ -90,6 +94,9 @@ $redDark_d: #051434;
 
 	waterLight_d: $waterLight_d;
 	waterDark_d: $waterDark_d;
+
+	rippleLight_d: $rippleLight_d;
+	rippleDark_d: $rippleDark_d;
 
 	sandLight_d: $sandLight_d;
 	sandDark_d: $sandDark_d;
@@ -146,6 +153,7 @@ $redDark_d: #051434;
 	paperMain_d: $paperMain_d;
 	paperDark_d: $paperDark_d;
 	paperDarker_d: $paperDarker_d;
+	paperText_d: $paperText_d;
 
 	mugLighter_d: $mugLighter_d;
 	mugLight_d: $mugLight_d;

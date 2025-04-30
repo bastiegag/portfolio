@@ -14,9 +14,7 @@ interface IPopperContext {
 
 export const PopperContext = createContext<IPopperContext | null>(null);
 
-export const PopperContextProvider = ({
-	children,
-}: React.PropsWithChildren<{}>) => {
+export const PopperProvider = ({ children }: React.PropsWithChildren<{}>) => {
 	const [settings, setSettings] = useState<IPopperContext['settings']>({
 		anchorEl: null,
 		title: '',

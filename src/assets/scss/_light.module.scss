@@ -12,6 +12,9 @@ $cloudDark: #d8e6f3;
 $waterLight: #c9eee0;
 $waterDark: #1992b4;
 
+$rippleLight: #ffffff;
+$rippleDark: #1992b4;
+
 $sandLight: #faeebe;
 $sandDark: #f4dea2;
 $sandDarker: #eacb88;
@@ -62,11 +65,12 @@ $bottleDark: #1f5435;
 $capLight: #fdd07f;
 $capDark: #eb8f3c;
 
-$paperLighter: #f3e5ce;
+$paperLighter: #faeddb;
 $paperLight: #f3e5ce;
 $paperMain: #f2e0c6;
 $paperDark: #efdcc2;
 $paperDarker: #e7cfb6;
+$paperText: #43362e;
 
 $mugLighter: #a7815a;
 $mugLight: #8f796c;
@@ -96,6 +100,9 @@ $redDark: #711a1a;
 
 	waterLight: $waterLight;
 	waterDark: $waterDark;
+
+	rippleLight: $rippleLight;
+	rippleDark: $rippleDark;
 
 	sandLight: $sandLight;
 	sandDark: $sandDark;
@@ -152,6 +159,7 @@ $redDark: #711a1a;
 	paperMain: $paperMain;
 	paperDark: $paperDark;
 	paperDarker: $paperDarker;
+	paperText: $paperText;
 
 	mugLighter: $mugLighter;
 	mugLight: $mugLight;

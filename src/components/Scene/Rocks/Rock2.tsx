@@ -48,19 +48,6 @@ export const Rock2 = ({ params }: IRockProps) => {
 					fillOpacity={params.distance ? `${params.distance}%` : '0'}
 					points="33.3 21 30.8 11.6 27.5 11.4 14.6 0 7.3 3.3 0 22.7 33.3 21"
 				/>
-				{/* <polygon
-                    className="backlight"
-                    clipPath={`url(#${id}-backlight-mask)`}
-                    points="30.8 11.6 27.5 11.4 14.6 0 7.3 3.3 0 22.7 33.3 21 30.8 11.6"
-                />
-                <defs>
-                    <clipPath
-                        id={`${id}-backlight-mask`}
-                        className="backlight-mask"
-                    >
-                        <polygon points="30.8 11.6 27.5 11.4 14.6 0 7.3 3.3 0 22.7 33.3 21 30.8 11.6" />
-                    </clipPath>
-                </defs> */}
 			</CustomSvg>
 		</React.Fragment>
 	);

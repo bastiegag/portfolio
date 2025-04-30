@@ -1,8 +1,5 @@
 import React, { ReactNode } from 'react';
-import { styled } from '@mui/system';
 import { Box } from '@mui/material';
-
-import { Scene } from 'components';
 
 export interface ContentPropsType {
 	children: ReactNode;
@@ -11,10 +8,11 @@ export interface ContentPropsType {
 export const Content = ({ children }: ContentPropsType) => {
 	return (
 		<Box
+			className="animate-all clearfix"
 			sx={{
 				position: 'relative',
 				zIndex: 2,
-				p: 6,
+				p: 2,
 			}}
 		>
 			{children}

@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { Link as RouterLink } from 'react-router';
 
-import { usePopper } from 'hooks';
+import { usePopper, useCursor } from 'hooks';
 import { openLink } from 'utils';
 
 export interface LinkPropsType {
@@ -14,12 +14,14 @@ export interface LinkPropsType {
 
 export const Link = ({ url, to, title, tab, children }: LinkPropsType) => {
 	const { settings, setSettings } = usePopper();
+	const { cursor, setCursor } = useCursor();
 	const timerRef = React.useRef<Function>(null);
 
 	const handlePopoverOpen = (
 		event: React.MouseEvent<HTMLAnchorElement>,
 		title: string
 	) => {
+		setCursor({ hover: true });
 		setSettings({
 			...settings,
 			anchorEl: event.currentTarget,
@@ -28,6 +30,7 @@ export const Link = ({ url, to, title, tab, children }: LinkPropsType) => {
 	};
 
 	const handlePopoverClose = () => {
+		setCursor({ hover: false });
 		setSettings({
 			...settings,
 			anchorEl: null,

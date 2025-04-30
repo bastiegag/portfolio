@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { useNavigate } from 'react-router';
-import { Dialog, Slide, Box } from '@mui/material';
+import { Dialog, Slide } from '@mui/material';
 
 import { Paper, Content } from 'components';
 
@@ -30,14 +30,14 @@ export const Page = ({ children }: PagePropsType) => {
 			}}
 			slotProps={{
 				transition: { direction: 'up' },
-				paper: { elevation: 0, sx: { bgcolor: 'transparent' } },
+				paper: {
+					elevation: 0,
+					sx: {
+						mt: 14,
+						p: 2,
+					},
+				},
 			}}
-			// slots={{ backdrop: Backdrop }}
-			// slotProps={{
-			// 	backdrop: {
-			// 		timeout: 500,
-			// 	},
-			// }}
 		>
 			<Paper>
 				<Content>{children}</Content>

@@ -28,6 +28,10 @@ export const colorSchemes = (colors: Colors) => {
 						light: colors.waterLight_d,
 						dark: colors.waterDark_d,
 					},
+					ripple: {
+						light: colors.rippleLight_d,
+						dark: colors.rippleDark_d,
+					},
 					sand: {
 						light: colors.sandLight_d,
 						dark: colors.sandDark_d,
@@ -94,6 +98,7 @@ export const colorSchemes = (colors: Colors) => {
 						main: colors.paperMain_d,
 						dark: colors.paperDark_d,
 						darker: colors.paperDarker_d,
+						text: colors.paperText_d,
 					},
 					mug: {
 						lighter: colors.mugLighter_d,
