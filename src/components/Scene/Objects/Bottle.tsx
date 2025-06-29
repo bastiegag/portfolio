@@ -111,7 +111,7 @@ export const Bottle = ({ params }: SceneComponentProps) => {
 					<g
 						id={`${id}-bottom`}
 						clipPath={`url(#${id}-top-mask)`}
-						filter="url(#waterReflection)"
+						filter="url(#waterFilter)"
 						opacity="0.35"
 					>
 						<g className="action animate-all">

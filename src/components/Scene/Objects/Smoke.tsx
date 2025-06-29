@@ -1,4 +1,6 @@
 import { useId } from 'react';
+import { gsap } from 'gsap';
+import { useGSAP } from '@gsap/react';
 import { styled, useTheme } from '@mui/system';
 
 import { useParallax } from 'hooks';
@@ -24,10 +26,24 @@ export const Smoke = ({ params }: SceneComponentProps) => {
 
 	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.m);
 
+	useGSAP(() => {
+		const timeline = gsap.timeline({
+			repeat: -1,
+			repeatRefresh: true,
+		});
+
+		timeline.to(`#${CSS.escape(id)}`, {
+			duration: gsap.utils.random(2, 5, true),
+			skewX: gsap.utils.random(-2, 2, true),
+			ease: 'power1.inOut',
+			svgOrigin: '120 280',
+		});
+	});
+
 	return (
 		<CustomSvg
 			id={id}
-			className="smoke"
+			className="smoke animate"
 			transform={`translate(${params.x},${params.y})`}
 		>
 			<svg width="60" height="140" viewBox="0 0 240 560">

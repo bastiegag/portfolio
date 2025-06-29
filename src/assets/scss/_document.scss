@@ -1,6 +1,15 @@
 @use 'light.module' as *;
 @use 'dark.module' as *;
 
+html,
+body {
+	overflow: hidden;
+
+	&.light .flick {
+		display: none;
+	}
+}
+
 .clearfix::after {
 	content: '';
 	clear: both;

@@ -51,6 +51,9 @@ $woodMain: #965628;
 $woodDark: #783e26;
 $woodDarker: #663026;
 
+$fireLight: #ffd57c;
+$fireDark: #f4850e;
+
 $ropeLight: #fae08c;
 $ropeDark: #a37c3e;
 
@@ -85,6 +88,9 @@ $popperText: $primary;
 
 $redLight: #d42a0f;
 $redDark: #711a1a;
+
+$aboutBg: #f2e0c6;
+$aboutText: #43362e;
 
 :export {
 	black: $black;
@@ -140,6 +146,9 @@ $redDark: #711a1a;
 	woodDark: $woodDark;
 	woodDarker: $woodDarker;
 
+	fireLight: $fireLight;
+	fireDark: $fireDark;
+
 	ropeLight: $ropeLight;
 	ropeDark: $ropeDark;
 
@@ -174,4 +183,7 @@ $redDark: #711a1a;
 
 	redLight: $redLight;
 	redDark: $redDark;
+
+	aboutBg: $aboutBg;
+	aboutText: $aboutText;
 }

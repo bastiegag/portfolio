@@ -23,24 +23,18 @@ export interface IFoliagesProps {
 
 export const Foliages = () => {
 	const grassAnimation = {
-		duration: gsap.utils.random(2, 3, true),
+		duration: gsap.utils.random(1, 2, true),
 		rotation: gsap.utils.random(-2, 2, true),
 		skewX: gsap.utils.random(-10, 10, true),
-		ease: gsap.utils.random(
-			['power1.inOut', 'power2.inOut', 'expo.inOut'],
-			true
-		),
+		ease: gsap.utils.random(['sine.inOut', 'sine.in', 'sine.out'], true),
 		m: { x: 14, y: 9 },
 	};
 
 	const plantAnimation = {
-		duration: gsap.utils.random(2, 3, true),
+		duration: gsap.utils.random(1, 3, true),
 		rotation: gsap.utils.random(-4, 4, true),
 		skewX: gsap.utils.random(-4, 4, true),
-		ease: gsap.utils.random(
-			['power1.inOut', 'power2.inOut', 'expo.inOut'],
-			true
-		),
+		ease: gsap.utils.random(['sine.inOut', 'sine.in', 'sine.out'], true),
 		m: { x: 15, y: 10 },
 	};
 

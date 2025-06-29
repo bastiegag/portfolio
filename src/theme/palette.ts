@@ -67,6 +67,10 @@ export const palette = (colors: Colors) => {
 				dark: colors.woodDark,
 				darker: colors.woodDarker,
 			},
+			fire: {
+				light: colors.fireLight,
+				dark: colors.fireDark,
+			},
 			rope: {
 				light: colors.ropeLight,
 				dark: colors.ropeDark,
@@ -108,6 +112,10 @@ export const palette = (colors: Colors) => {
 			red: {
 				light: colors.redLight,
 				dark: colors.redDark,
+			},
+			about: {
+				bg: colors.aboutBg,
+				text: colors.aboutText,
 			},
 		},
 	};

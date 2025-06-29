@@ -32,7 +32,7 @@ export const Paper = ({ children }: PaperPropsType) => {
 			>
 				<path
 					className="main"
-					fill={colors.paper.main}
+					fill={colors.about.bg}
 					d="M3.53,3.65c3.92,62.96.65,178.36-3.53,230.67,44.33,6.45,229.26,7.63,247.04,4.92-5.75-53.64-3.4-173.43,0-237.32C200.49-2.07,55.06.99,3.53,3.65Z"
 				/>
 			</CustomSvg>

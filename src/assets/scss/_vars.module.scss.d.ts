@@ -52,6 +52,9 @@ export interface Colors {
 	woodDark: string;
 	woodDarker: string;
 
+	fireLight: string;
+	fireDark: string;
+
 	ropeLight: string;
 	ropeDark: string;
 
@@ -85,6 +88,9 @@ export interface Colors {
 
 	redLight: string;
 	redDark: string;
+
+	aboutBg: string;
+	aboutText: string;
 }
 
 export const colors;

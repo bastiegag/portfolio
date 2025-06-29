@@ -18,6 +18,12 @@ const CustomSvg = styled('g', {
 			opacity: 0.75,
 		}),
 	},
+	'.smoke': {
+		opacity: 1,
+		...theme.applyStyles('dark', {
+			opacity: 0,
+		}),
+	},
 }));
 
 export const Sky = () => {
@@ -47,7 +53,7 @@ export const Sky = () => {
 			<rect
 				className="sky-shape"
 				width="1000"
-				height="280"
+				height="290"
 				transform="translate(1000 280) rotate(180)"
 			/>
 			<Starfield />

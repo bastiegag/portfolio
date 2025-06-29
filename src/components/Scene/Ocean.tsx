@@ -127,7 +127,7 @@ export const Ocean = () => {
 					<stop offset="100%" stopColor={colors.water.light} />
 				</linearGradient>
 			</defs>
-			<rect className="ocean-shape" width="1000" height="120" />
+			<rect className="ocean-shape" width="1000" height="125" />
 			<Horizon
 				params={{ x: 0, y: 2, m: { x: 2, y: 1 }, opacity: 0.75 }}
 			/>
@@ -135,7 +135,7 @@ export const Ocean = () => {
 				<rect
 					className="ocean-shape"
 					width="1000"
-					height="120"
+					height="130"
 					fillOpacity="0.5"
 				/>
 				<Waves

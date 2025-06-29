@@ -74,6 +74,10 @@ export const colorSchemes = (colors: Colors) => {
 						dark: colors.woodDark_d,
 						darker: colors.woodDarker_d,
 					},
+					fire: {
+						light: colors.fireLight_d,
+						dark: colors.fireDark_d,
+					},
 					rope: {
 						light: colors.ropeLight_d,
 						dark: colors.ropeDark_d,
@@ -115,6 +119,10 @@ export const colorSchemes = (colors: Colors) => {
 					red: {
 						light: colors.redLight_d,
 						dark: colors.redDark_d,
+					},
+					about: {
+						bg: colors.aboutBg_d,
+						text: colors.aboutText_d,
 					},
 				},
 			},

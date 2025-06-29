@@ -26,11 +26,13 @@ const CustomSvg = styled('g', {
 	},
 }));
 
-export const Clothesline = ({ params }: SceneComponentProps) => {
+export const Clothesline = ({ params, invert }: SceneComponentProps) => {
 	const id = useId();
 	const colors = useTheme().palette.scene;
 
-	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.m);
+	const posY = invert ? params.y + 170 : params.y;
+
+	useParallax(`#${CSS.escape(id)}`, params.x, posY, params.m);
 
 	useGSAP(() => {
 		const timeline = gsap.timeline({
@@ -64,7 +66,11 @@ export const Clothesline = ({ params }: SceneComponentProps) => {
 		<CustomSvg
 			id={id}
 			className="clothesline"
-			transform={`translate(${params.x},${params.y})`}
+			transform={
+				invert
+					? `translate(${params.x},${posY}) scale(1,-1)`
+					: `translate(${params.x},${posY})`
+			}
 			strokeWidth="0"
 		>
 			<svg

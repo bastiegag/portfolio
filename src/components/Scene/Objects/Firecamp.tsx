@@ -23,23 +23,29 @@ const CustomSvg = styled('g', {
 	},
 }));
 
-export const Firecamp = ({ params }: SceneComponentProps) => {
+export const Firecamp = ({ params, invert }: SceneComponentProps) => {
 	const id = React.useId();
 	const colors = useTheme().palette.scene;
 
-	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.m);
+	const posY = invert ? params.y + 90 : params.y;
+
+	useParallax(`#${CSS.escape(id)}`, params.x, posY, params.m);
 
 	return (
 		<CustomSvg
 			id={id}
 			className="firecamp animate-color"
-			transform={`translate(${params.x},${params.y})`}
+			transform={
+				invert
+					? `translate(${params.x},${posY}) scale(1,-1)`
+					: `translate(${params.x},${posY})`
+			}
 		>
-			<path
-				fill={colors.wood.darker}
-				d="M36,178.9s6.8-10.9,10.7-12.1c3.9-1.3,23.2-1,25.2.2,2,1.2,2.9,4.5,2.9,4.5,0,0,16.4-1.5,18.4-.7,2.1.8,4.8,8.9,4.8,8.9l-16.4,3.4-26.1.6h-18.3l-1.3-4.9Z"
-			/>
 			<g className="firecamp-wood">
+				<path
+					fill={colors.wood.darker}
+					d="M36,178.9s6.8-10.9,10.7-12.1c3.9-1.3,23.2-1,25.2.2,2,1.2,2.9,4.5,2.9,4.5,0,0,16.4-1.5,18.4-.7,2.1.8,4.8,8.9,4.8,8.9l-16.4,3.4-26.1.6h-18.3l-1.3-4.9Z"
+				/>
 				<polygon
 					fill={colors.wood.dark}
 					points="56.9 177.2 59.3 153.3 61.8 144.5 64.2 144.5 67.3 164.9 67.3 178.9 56.3 178.9 56.9 177.2"

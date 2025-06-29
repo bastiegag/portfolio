@@ -20,14 +20,11 @@ export interface IPalmProps {
 
 export const PalmTrees = () => {
 	const palmAnimation = {
-		palmDuration: gsap.utils.random(2, 5, true),
+		palmDuration: gsap.utils.random(2, 3, true),
 		palmRotation: gsap.utils.random(-1, 1, true),
-		leafDuration: gsap.utils.random(3, 5, true),
+		leafDuration: gsap.utils.random(1, 3, true),
 		leafRotation: gsap.utils.random(-5, 5, true),
-		ease: gsap.utils.random(
-			['power1.inOut', 'power2.inOut', 'expo.inOut'],
-			true
-		),
+		ease: gsap.utils.random(['sine.inOut', 'sine.in', 'sine.out'], true),
 	};
 
 	return (

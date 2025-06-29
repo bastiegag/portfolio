@@ -49,6 +49,9 @@ $woodMain_d: #08182f;
 $woodDark_d: #07162b;
 $woodDarker_d: #071529;
 
+$fireLight_d: #ffd57c;
+$fireDark_d: #f4850e;
+
 $ropeLight_d: #112849;
 $ropeDark_d: #0a1b33;
 
@@ -81,8 +84,11 @@ $smoke_d: #aaaaaa;
 $popperBg_d: rgba(0, 0, 0, 0.5);
 $popperText_d: colors.$primary;
 
-$redLight_d: #061c42;
-$redDark_d: #051434;
+$redLight_d: #d42a0f;
+$redDark_d: #711a1a;
+
+$aboutBg_d: #f2e0c6;
+$aboutText_d: #43362e;
 
 :export {
 	skyLight_d: $skyLight_d;
@@ -134,6 +140,9 @@ $redDark_d: #051434;
 	woodDark_d: $woodDark_d;
 	woodDarker_d: $woodDarker_d;
 
+	fireLight_d: $fireLight_d;
+	fireDark_d: $fireDark_d;
+
 	ropeLight_d: $ropeLight_d;
 	ropeDark_d: $ropeDark_d;
 
@@ -168,4 +177,7 @@ $redDark_d: #051434;
 
 	redLight_d: $redLight_d;
 	redDark_d: $redDark_d;
+
+	aboutBg_d: $aboutBg_d;
+	aboutText_d: $aboutText_d;
 }

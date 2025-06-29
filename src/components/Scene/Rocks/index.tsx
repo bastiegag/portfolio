@@ -15,6 +15,7 @@ export interface IRockProps {
 		x: number;
 		y: number;
 	};
+	invert?: boolean;
 }
 
 export const Rocks = () => {
@@ -38,3 +39,11 @@ export const Rocks = () => {
 		</React.Fragment>
 	);
 };
+
+export { Rock1 } from './Rock1';
+export { Rock2 } from './Rock2';
+export { Rock3 } from './Rock3';
+export { Rock4 } from './Rock4';
+export { Rock5 } from './Rock5';
+export { Rock6 } from './Rock6';
+export { Rock7 } from './Rock7';
