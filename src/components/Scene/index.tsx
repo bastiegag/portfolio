@@ -50,16 +50,16 @@ export const Scene = () => {
 			version="1.1"
 			viewBox="0 0 1000 400"
 			id="scene"
-			filter="url(#pixelates)"
+			//filter="url(#pixelates)"
 			preserveAspectRatio="xMidYMid slice"
 		>
-			<filter id="pixelate" x="0" y="0">
+			{/*<filter id="pixelate" x="0" y="0">
 				<feFlood x="1" y="1" height="0.5" width="0.5" />
 				<feComposite width="2" height="2" />
 				<feTile result="a" />
 				<feComposite in="SourceGraphic" in2="a" operator="in" />
 				<feMorphology operator="dilate" radius="2" />
-			</filter>
+			</filter>*/}
 			<g id="background">
 				<Ocean />
 				<Sky />
