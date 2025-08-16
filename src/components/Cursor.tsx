@@ -37,6 +37,7 @@ export const Cursor = () => {
 				zIndex: 5000,
 				position: 'absolute',
 				pointerEvents: 'none',
+				display: { xs: 'none', lg: 'block' },
 			}}
 		>
 			<CustomSvg viewBox="0 0 86.75 84.53" width={size} height={size}>

@@ -64,7 +64,7 @@ export const Scene = () => {
 				<Ocean />
 				<Sky />
 			</g>
-			<g
+			{/*<g
 				className="reflections"
 				filter="url(#waterFilter)"
 				opacity="0.35"
@@ -112,7 +112,7 @@ export const Scene = () => {
 					params={{ x: 200, y: 196, m: { x: 15, y: 10 } }}
 					invert={true}
 				/>
-			</g>
+			</g>*/}
 			<g className="island">
 				<Island params={{ x: 17, y: 286, m: { x: 15, y: 10 } }} />
 				<Ripples

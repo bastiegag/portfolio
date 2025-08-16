@@ -15,7 +15,7 @@ export const About = () => {
 					mb: 3,
 				}}
 			>
-				<Photo src="seb.jpg" />
+				<Photo src="seb2.jpg" />
 			</Box>
 
 			<Typography color="scene.about.text" sx={{ mb: 3 }}>

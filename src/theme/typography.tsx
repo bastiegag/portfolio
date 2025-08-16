@@ -5,6 +5,6 @@ interface Colors {
 export const typography = () => {
 	return {
 		fontFamily: '"Indie Flower", cursive',
-		fontSize: 22,
+		fontSize: 18,
 	};
 };

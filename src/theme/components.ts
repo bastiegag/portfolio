@@ -53,6 +53,7 @@ export const components = (colors: Colors) => {
 						color: colors.white,
 						backgroundColor: 'transparent',
 					},
+					variants: [],
 				},
 			},
 		},
