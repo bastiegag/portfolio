@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react';
 import { styled, useTheme } from '@mui/system';
-import { Box } from '@mui/material';
 
 const CustomSvg = styled('svg', {
 	name: 'paper',
@@ -27,13 +26,13 @@ export const Paper = ({ children }: PaperPropsType) => {
 			<CustomSvg
 				id={id}
 				className="animate-all"
-				viewBox="0 0 247.04 240.6"
+				viewBox="0 0 246.7 239.8"
 				preserveAspectRatio="none"
 			>
-				<path
+				<polygon
 					className="main"
 					fill={colors.about.bg}
-					d="M3.53,3.65c3.92,62.96.65,178.36-3.53,230.67,44.33,6.45,229.26,7.63,247.04,4.92-5.75-53.64-3.4-173.43,0-237.32C200.49-2.07,55.06.99,3.53,3.65Z"
+					points="3.5 4.6 2.9 91.2 3.5 101.7 0 235.2 72.5 238.3 168.9 235.9 246.7 236.5 241.7 145.1 243 137.6 245.2 2.7 155.4 0 139.3 1.5 3.5 4.6"
 				/>
 			</CustomSvg>
 		</>

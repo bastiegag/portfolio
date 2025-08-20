@@ -15,17 +15,17 @@ export const About = () => {
 					mb: 3,
 				}}
 			>
-				<Photo src="seb2.jpg" />
+				<Photo src="seb.jpg" />
 			</Box>
 
 			<Typography color="scene.about.text" sx={{ mb: 3 }}>
-				Hello, je suis Sébastien !
+				Hello, je suis <strong>Sébastien!</strong>
 			</Typography>
 			<Typography color="scene.about.text" sx={{ mb: 3 }}>
-				Développeur web front-end senior, je conçois des interfaces
-				dynamiques où le design rencontre la performance. Autodidacte et
-				créatif, je transforme les idées en expériences interactives
-				fluides et immersives.
+				Développeur <strong>front-end</strong>, je conçois des
+				interfaces dynamiques où le design rencontre la performance.
+				Autodidacte et créatif, je transforme les idées en expériences
+				interactives fluides et immersives.
 			</Typography>
 			<Typography color="scene.about.text">
 				En parallèle du code, je m’exprime à travers la musique, la

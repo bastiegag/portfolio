@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react';
 import { styled, useTheme } from '@mui/system';
-import { Box } from '@mui/material';
 
 const CustomSvg = styled('svg', {
 	name: 'Photo',
@@ -16,11 +15,16 @@ export const Photo = ({ src }: PhotoPropsType) => {
 	const colors = useTheme().palette.scene;
 
 	return (
-		<CustomSvg id={id} viewBox="0 0 70.37 63.86">
-			<path
+		<CustomSvg id={id} viewBox="0 0 69.9 72.5">
+			<polygon
+				fill={colors.black}
+				fillOpacity="0.15"
+				points="2.8 5.6 37.8 1.6 65 3.5 66.7 39.8 69.2 72.4 32.5 72.5 1.5 72.5 4.2 47.4 2.8 5.6"
+			/>
+			<polygon
 				className="main"
 				fill={colors.white}
-				d="M0,3.88c1.05,15.69,1.83,37.66,2.09,59.64,21.19.78,49.94.36,68.28-2.56-1.92-17.48-3.67-39.55-3.15-60.47C42.11-1.09,19.36,1.52,0,3.88Z"
+				points="0 2.6 36.6 .6 67.2 0 68.1 35.3 69.9 70.5 32.8 71.6 1.6 72.4 1.7 47.5 0 2.6"
 			/>
 			<image
 				xlinkHref={src}
@@ -30,9 +34,9 @@ export const Photo = ({ src }: PhotoPropsType) => {
 				preserveAspectRatio="xMidYMid slice"
 			></image>
 			<mask id="svgmask1">
-				<path
-					fill="#ffffff"
-					d="M3.4,6.59c.75,15.07,1.05,27.5,1.7,43.98,20.4-.26,43.15-.76,61.07-2.48-1.05-18.44-1.87-26.81-2.05-44.56-22.68-1.42-43.24.95-60.72,3.07Z"
+				<polygon
+					fill={colors.white}
+					points="3.4 6.1 23.2 4.9 27.3 4.3 64.1 3 65.7 57.5 47 58.4 5.1 60.1 4.8 27.1 3.4 6.1"
 				/>
 			</mask>
 		</CustomSvg>

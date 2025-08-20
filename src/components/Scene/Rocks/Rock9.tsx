@@ -25,7 +25,7 @@ export const Rock9 = ({ params }: IRockProps) => {
 	return (
 		<CustomSvg
 			id={id}
-			className="rock rock-9 animate-color"
+			className="rock rock-9 animate-color inset-light"
 			transform={`translate(${params.x},${params.y})`}
 			strokeWidth="0"
 		>
@@ -60,10 +60,10 @@ export const Rock9 = ({ params }: IRockProps) => {
 				fill={colors.rock[200]}
 				points="18.2 9.2 23.4 8.7 20.8 10.5 18.2 9.2"
 			/>
-			<g className="flick" fill={colors.fire.dark}>
+			{/*<g className="flick" fill={colors.fire.dark}>
 				<path d="M5.9,6.6s5.4,2.3,15,2.1c9.6-.2,17.4-6.5,17.4-6.5l-.7-2.1S23.4-1.4,5.9,6.6Z" />
 				<path d="M5.9,6.6S14.6,2.2,22.8,1.2c0,0,7.2,1.2,11.2,3.8,0,0-6.5,3.7-14.3,4.2,0,0-9.2.4-13.8-2.7Z" />
-			</g>
+			</g>*/}
 		</CustomSvg>
 	);
 };

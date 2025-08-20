@@ -21,7 +21,7 @@ export const Rock4 = ({ params, invert }: IRockProps) => {
 		<React.Fragment>
 			<CustomSvg
 				id={id}
-				className="rock rock-4 animate-color"
+				className="rock rock-4 animate-color inset-light"
 				transform={
 					invert
 						? `translate(${params.x},${posY}) scale(1,-1)`

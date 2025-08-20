@@ -4,7 +4,7 @@ interface Colors {
 
 export const typography = () => {
 	return {
-		fontFamily: '"Indie Flower", cursive',
-		fontSize: 18,
+		fontFamily: '"Chelsea Market", system-ui',
+		fontSize: 16,
 	};
 };

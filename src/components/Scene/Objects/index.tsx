@@ -18,16 +18,16 @@ export const Objects = () => {
 			<Bottle
 				params={{ x: 720, y: 326, m: { x: 19, y: 13 }, scale: 0.75 }}
 			/>
-			{/* <Deck
+			<Deck
 				params={{ x: 300, y: 330, m: { x: 19, y: 12 }, scale: 1.4 }}
-				/> */}
+			/>
 			<Firecamp params={{ x: 157, y: 119, m: { x: 15, y: 10 } }} />
 			<Fire params={{ x: 200, y: 196, m: { x: 15, y: 10 } }} />
 			<Rock9 params={{ x: 160, y: 289, m: { x: 15, y: 10 } }} />
 			<Rock8 params={{ x: 242, y: 285, m: { x: 15, y: 10 } }} />
 			<Rock10 params={{ x: 198, y: 294, m: { x: 15, y: 10 } }} />
 			<Mug params={{ x: 158, y: 270, m: { x: 15, y: 10 } }} />
-			{/* <Map params={{ x: 244, y: 296, m: { x: 15, y: 10 }, scale: 0.9 }} /> */}
+			<Map params={{ x: 244, y: 296, m: { x: 15, y: 10 }, scale: 0.9 }} />
 		</>
 	);
 };

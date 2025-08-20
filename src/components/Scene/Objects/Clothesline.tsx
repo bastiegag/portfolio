@@ -80,7 +80,7 @@ export const Clothesline = ({ params, invert }: SceneComponentProps) => {
 				viewBox={`0 0 ${width} ${height}`}
 			>
 				<g className="animate-color">
-					<g className="stud">
+					<g className="stud inset-light">
 						<path
 							className="stud-shadow"
 							d="M94,77s1.9-1,3.5-.9,3.7.6,3.7.6c1.8.5,5.8,2.1,3.4,2.8s-8.7,0-10.6-2.5Z"
@@ -96,7 +96,7 @@ export const Clothesline = ({ params, invert }: SceneComponentProps) => {
 							d="M100.2,0c.6,34.2-1.4,56.2-1.4,56.2l-3,6.9s3.4-28.2,3-62.6l1.3-.5Z"
 						/>
 					</g>
-					<g className="stud">
+					<g className="stud inset-light">
 						<path
 							className="stud-shadow"
 							d="M0,77s1.9-1,3.5-.9,3.7.6,3.7.6c1.8.5,5.8,2.1,3.4,2.8s-8.7,0-10.6-2.5Z"

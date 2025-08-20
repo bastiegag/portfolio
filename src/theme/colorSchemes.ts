@@ -124,6 +124,9 @@ export const colorSchemes = (colors: Colors) => {
 						bg: colors.aboutBg_d,
 						text: colors.aboutText_d,
 					},
+					inset: {
+						light: colors.insetLight_d,
+					},
 				},
 			},
 		},

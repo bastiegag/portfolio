@@ -10,10 +10,11 @@ const CustomSvg = styled('svg', {
 	name: 'fire',
 	slot: 'Root',
 })(({ theme }) => ({
-	mixBlendMode: 'screen',
+	mixBlendMode: 'plus-lighter',
 	opacity: 0,
 	...theme.applyStyles('dark', {
 		opacity: 1,
+		filter: `drop-shadow(0 0 6px ${theme.palette.scene.fire.dark})`,
 	}),
 }));
 

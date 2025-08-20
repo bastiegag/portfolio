@@ -28,7 +28,7 @@ export const PopperProvider = ({ children }: React.PropsWithChildren<{}>) => {
 	return (
 		<PopperContext.Provider value={value}>
 			<Popper open={open} anchorEl={settings.anchorEl} placement="top">
-				<Slide direction="up" in={open} mountOnEnter unmountOnExit>
+				<Slide direction="up" in={open}>
 					<Box
 						sx={{
 							backgroundColor: colors.popper.bg,
@@ -37,7 +37,7 @@ export const PopperProvider = ({ children }: React.PropsWithChildren<{}>) => {
 							py: 0.5,
 							px: 2,
 							mt: -7,
-							fontFamily: 'Afacad Flux',
+							fontFamily: '"Chelsea Market", system-ui',
 							fontSize: '1rem',
 							pointerEvents: 'none',
 						}}

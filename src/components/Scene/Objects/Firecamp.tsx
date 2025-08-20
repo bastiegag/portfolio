@@ -41,7 +41,7 @@ export const Firecamp = ({ params, invert }: SceneComponentProps) => {
 					: `translate(${params.x},${posY})`
 			}
 		>
-			<g className="firecamp-wood">
+			<g className="firecamp-wood inset-light">
 				<path
 					fill={colors.wood.darker}
 					d="M36,178.9s6.8-10.9,10.7-12.1c3.9-1.3,23.2-1,25.2.2,2,1.2,2.9,4.5,2.9,4.5,0,0,16.4-1.5,18.4-.7,2.1.8,4.8,8.9,4.8,8.9l-16.4,3.4-26.1.6h-18.3l-1.3-4.9Z"

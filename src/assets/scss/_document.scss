@@ -75,3 +75,18 @@ svg:not(.tabler-icon):not(.logo):not(#scene) {
 		stroke: $popperText;
 	}
 }
+
+.inset-light {
+	> g,
+	> g path,
+	> g polygon,
+	> path,
+	> rect,
+	> polygon,
+	> ellipse,
+	> stop {
+		transition: fill 0.3s ease-out, stop-color 0.3s ease-out,
+			opacity 0.3s ease-out, filter 0.3s ease-out;
+	}
+	filter: url(#inset-light);
+}

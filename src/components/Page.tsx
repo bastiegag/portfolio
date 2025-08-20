@@ -37,6 +37,11 @@ export const Page = ({ children }: PagePropsType) => {
 						p: 2,
 					},
 				},
+				backdrop: {
+					sx: {
+						backdropFilter: 'blur(2px)',
+					},
+				},
 			}}
 		>
 			<Paper>

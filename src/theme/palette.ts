@@ -117,6 +117,9 @@ export const palette = (colors: Colors) => {
 				bg: colors.aboutBg,
 				text: colors.aboutText,
 			},
+			inset: {
+				light: colors.insetLight,
+			},
 		},
 	};
 };

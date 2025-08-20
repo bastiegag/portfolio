@@ -8,7 +8,7 @@ export const components = (colors: Colors) => {
 			styleOverrides: {
 				root: {
 					'.MuiListItemText-primary': {
-						fontFamily: `"Joti One", serif`,
+						fontFamily: `"Chelsea Market", system-ui`,
 						fontSize: '5rem',
 						textShadow: '2px 4px 0 rgba(0,0,0,0.15)',
 						textAlign: 'center',
@@ -43,7 +43,7 @@ export const components = (colors: Colors) => {
 			},
 			styleOverrides: {
 				root: {
-					fontFamily: `"Joti One", serif`,
+					fontFamily: `"Chelsea Market", system-ui`,
 					fontSize: '5rem',
 					// textShadow: '2px 4px 0 rgba(0,0,0,0.15)',
 					textAlign: 'center',

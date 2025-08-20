@@ -87,7 +87,7 @@ export const Deck = ({ params }: SceneComponentProps) => {
 							</clipPath>
 						</defs>
 						<g
-							className="lower-right-stud"
+							className="lower-right-stud "
 							clipPath={`url(#${id}-top-mask)`}
 							filter="url(#waterReflection)"
 							opacity="0.35"
@@ -201,7 +201,7 @@ export const Deck = ({ params }: SceneComponentProps) => {
 							/>
 						</g>
 						<g
-							className="lower-left-stud"
+							className="lower-left-stud inset-light"
 							clipPath={`url(#${id}-bottom-mask)`}
 						>
 							<path
@@ -237,27 +237,27 @@ export const Deck = ({ params }: SceneComponentProps) => {
 								points="35.3 0 76.8 0 77.4 5.9 79.7 14.7 78.8 18.2 79.7 18.2 82.4 24.8 80.1 29.5 51.6 30.3 50.6 31.5 2.7 33.7 0 27.7 11 20.3 10.8 18.4 16.5 14.6 18.1 14.6 17.8 13.5 25.2 8.7 29.3 8.5 29.1 5.4 35.3 0"
 							/>
 							<path
-								className="lightless"
+								className="lightless "
 								fill={colors.wood.lightless}
 								d="M77.2,3.8C64.9,1.9,40.8,0,30.2,4.7L35.3,0h41.5s.4,3.7.4,3.7ZM60.1,7s-4,1.7,0,2.2,17.9.2,17.9.2c0,0-10.4,3.5-19.5,4s-12.6.8-8.9-1.8-18.2-4.8-27.3,2l8,.2c2.5-3.5,13.6-4.4,16.2-3.2s.1,2.3-2,3.5c0,0,4.1.7,8.6.6s14.5-.9,25.3-5.1v-.8c-.1,0-4.8.5-11.2.3s-8.7,0-7-2ZM38.4,14.7c10.4,0,27.7.8,27.1,1.9s-31.6,0-31.9,1.5l8.4,1.2,36.8-1.1,1-3.5h-41.3ZM80.3,19.7c-3.4,1-19.9,6.9-29.2.7,0,.2-29.6-1.8-28.1-1.2s6.8,2.9-5,5.3c-11.8,2.4-10.2-2.1-10.2-2.1L0,27.7l12.1-.5s12-4.4,28.5-5.9c12-1.1,9.7,1.9,15.5,2.3s14.1.8,24.9-2.1l-.7-1.9Z"
 							/>
 							<path
-								className="main"
+								className="main "
 								fill={colors.wood.main}
 								d="M76.9,1.1L47.9,0h28.9s.1,1.1.1,1.1ZM23.4,13.6c3.4-2.7,13.1-4.4,13.1-4.4-10.6.5-18.7,4.3-18.7,4.3h5.6ZM29.1,5.4s5.8-3.1,15.5-3.6,20,.4,20,.4c0,0-23.4-2.9-33.9,1.8l-1.6,1.4Z"
 							/>
 							<path
-								className="dark"
+								className="dark "
 								fill={colors.wood.dark}
 								d="M59.2,7.7h-14.1l-15.8.8-.2-3,48.3.5-18.2,1.8ZM17.8,13.5l.3,1h61.6c0,0-61.9-1-61.9-1ZM11,20.3l58-1.3-26-.3-9.4-.8-22.8.4.2,2ZM82.4,24.8h-31c0,0-27.1,1.5-27.3,1.5S0,27.7,0,27.7l2.7,6,47.9-2.2.9-1.2,28.5-.8,2.3-4.8ZM79.2,16.7l.6-2h-.9s.3,2,.3,2Z"
 							/>
 							<path
-								className="darker"
+								className="darker "
 								fill={colors.wood.darker}
 								d="M40.7,7.7l-.7-2.2,1.1-1.7-.4,3.9ZM70.6,3.6l.7,2.9.8-.6-1.5-2.3ZM35,22.2l-7.7,3.9.8,5.5,1.3-5.6,5.6-3.8ZM43,22.5l-2.4,2.9,2.2,3.6v-6.5Z"
 							/>
 						</g>
-						<g className="upper-left-stud">
+						<g className="upper-left-stud inset-light">
 							<path
 								className="main"
 								fill={colors.wood.main}
@@ -296,7 +296,7 @@ export const Deck = ({ params }: SceneComponentProps) => {
 								d="M10.7,13.3c-1.8.2-2.4-.5-2.4-.9,0-.2.4-.3.9-.4-1,0-2.1.2-2.2.6,0,.5.7,1.4,2.9,1.1,2-.2,3.2-.6,3.2-.9,0,0,0,0,0,0-.3.2-1.2.4-2.5.6Z"
 							/>
 						</g>
-						<g className="upper-right-stud">
+						<g className="upper-right-stud inset-light">
 							<path
 								className="main"
 								fill={colors.wood.main}

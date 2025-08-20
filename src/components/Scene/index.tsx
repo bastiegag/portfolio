@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled } from '@mui/material';
+import { styled, useTheme } from '@mui/material';
 
 import { useParallax } from 'hooks';
 import { Sky } from './Sky';
@@ -41,6 +41,8 @@ export interface SceneComponentProps {
 }
 
 export const Scene = () => {
+	const colors = useTheme().palette.scene;
+
 	useMousePosition();
 	useParallax('#background', 0, 0, { x: 0, y: 1 });
 
@@ -50,16 +52,30 @@ export const Scene = () => {
 			version="1.1"
 			viewBox="0 0 1000 400"
 			id="scene"
-			//filter="url(#pixelates)"
 			preserveAspectRatio="xMidYMid slice"
 		>
-			{/*<filter id="pixelate" x="0" y="0">
-				<feFlood x="1" y="1" height="0.5" width="0.5" />
-				<feComposite width="2" height="2" />
-				<feTile result="a" />
-				<feComposite in="SourceGraphic" in2="a" operator="in" />
-				<feMorphology operator="dilate" radius="2" />
-			</filter>*/}
+			<filter id="inset-light">
+				<feOffset dx="0.5" dy=".5" />
+				{/*<feGaussianBlur stdDeviation=".1" result="offset-blur" />*/}
+				<feComposite
+					operator="out"
+					in="SourceGraphic"
+					in2="offset-blur"
+					result="inverse"
+				/>
+				<feFlood
+					flood-color={colors.inset.light}
+					flood-opacity="1"
+					result="color"
+				/>
+				<feComposite
+					operator="in"
+					in="color"
+					in2="inverse"
+					result="shadow"
+				/>
+				<feComposite operator="over" in="shadow" in2="SourceGraphic" />
+			</filter>
 			<g id="background">
 				<Ocean />
 				<Sky />

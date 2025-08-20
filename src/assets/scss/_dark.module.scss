@@ -67,8 +67,8 @@ $capLight_d: #112747;
 $capDark_d: #0c1f3a;
 
 $paperLighter_d: #132c4f;
-$paperLight_d: #12294c;
-$paperMain_d: #112849;
+$paperLight_d: #132c4f;
+$paperMain_d: #12294c;
 $paperDark_d: #112848;
 $paperDarker_d: #102644;
 $paperText_d: #7df5e5;
@@ -89,6 +89,8 @@ $redDark_d: #711a1a;
 
 $aboutBg_d: #f2e0c6;
 $aboutText_d: #43362e;
+
+$insetLight_d: #487ca9;
 
 :export {
 	skyLight_d: $skyLight_d;
@@ -180,4 +182,6 @@ $aboutText_d: #43362e;
 
 	aboutBg_d: $aboutBg_d;
 	aboutText_d: $aboutText_d;
+
+	insetLight_d: $insetLight_d;
 }
