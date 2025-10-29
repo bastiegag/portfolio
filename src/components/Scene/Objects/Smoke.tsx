@@ -11,12 +11,11 @@ const CustomSvg = styled('g', {
 	slot: 'Root',
 })(() => ({
 	mixBlendMode: 'multiply',
-	opacity: 0.5,
-	'.smoke-shape': {
-		mixBlendMode: 'screen',
-		backdropFilter: 'blur(10px)',
-		opacity: 0.5,
-		fill: 'linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 100%)',
+	svg: {
+		maskImage:
+			'linear-gradient(180deg, transparent 5%, rgba(0,0,0,0.5) 25%, rgba(0,0,0,1) 100%)',
+		WebkitMaskImage:
+			'linear-gradient(180deg, transparent 5%, rgba(0,0,0,0.5) 25%, rgba(0,0,0,1) 100%)',
 	},
 }));
 
