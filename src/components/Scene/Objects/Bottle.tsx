@@ -75,7 +75,7 @@ export const Bottle = ({ params }: SceneComponentProps) => {
 	return (
 		<CustomSvg
 			id={id}
-			className="bottle link animate-all inset-light"
+			className="bottle link animate-all "
 			transform={`translate(${params.x},${params.y})`}
 			strokeWidth="0"
 		>

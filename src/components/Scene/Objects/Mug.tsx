@@ -22,7 +22,7 @@ export const Mug = ({ params }: SceneComponentProps) => {
 	return (
 		<CustomSvg
 			id={id}
-			className="mug animate-all inset-light"
+			className="mug animate-all"
 			transform={`translate(${params.x},${params.y})`}
 			strokeWidth="0"
 		>

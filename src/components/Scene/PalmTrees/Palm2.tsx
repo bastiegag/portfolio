@@ -78,7 +78,7 @@ export const Palm2 = ({ params }: IPalmProps) => {
 				fill={colors.palm.darker}
 				d="M48.2,23.6s3.4,19.1,4.3,21.3c.9,2.3,4.5,7.4,4.5,7.4,0,0,4.6-8.5,5.4-13,.9-4.5,3.2-15.8,3.2-15.8h-17.4,0Z"
 			/>
-			<g className="trunk inset-light">
+			<g className="trunk">
 				<path
 					className="trunk-dark"
 					fill={colors.trunk.dark}
@@ -90,7 +90,7 @@ export const Palm2 = ({ params }: IPalmProps) => {
 					d="M63.6,44.3c.6.9.5,36.2,0,41.6-.5,5.3-1.2,12.2-1.2,12.2l-1.6,1.4s1.1-8.5,1.3-15.2.4-42,.4-42c0,0,.5,1.2,1.1,2Z"
 				/>
 			</g>
-			<g id={`${id}-3`} className="leaf inset-light">
+			<g id={`${id}-3`} className="leaf">
 				<path
 					fill={colors.palm.dark}
 					d="M62.4,16.4s10.3-9.5,15.4-11.2c5-1.7,23.9.2,26.4,1.6s9.8,9.5,9.8,9.5l-8.7-.7-1-5.1-.4,4.9s-9.8.3-14.1.6c-4.3.3-11.4,1.4-11.4,1.4l-3.5-2.2,1.1,2.2s-10.4.3-13.5-1.1h-.1Z"
@@ -106,7 +106,7 @@ export const Palm2 = ({ params }: IPalmProps) => {
 					d="M67.8,11.8s9.4-5.6,12.5-6.4,21.5.6,23.6,1.7c2.1,1,10.1,9.3,10.1,9.3,0,0-6.5-7.7-9.8-9.6s-20.3-3.5-25.9-1.7c-5.5,1.8-10.6,6.8-10.6,6.8h.1Z"
 				/>
 			</g>
-			<g id={`${id}-4`} className="leaf inset-light">
+			<g id={`${id}-4`} className="leaf">
 				<path
 					fill={colors.palm.dark}
 					d="M67,15.8s-2-13.1-3.7-15.4c-1.7-2.3-19,5.7-19,5.7l13.1,6.3s9.6,3.4,9.6,3.4Z"
@@ -117,7 +117,7 @@ export const Palm2 = ({ params }: IPalmProps) => {
 					d="M58.2.7s3.5-.4,4.7.4c1.2.8,3.6,11.7,3.6,11.7,0,0-1.7-11-3.2-12.4-1-1-5.1.3-5.1.3Z"
 				/>
 			</g>
-			<g id={`${id}-5`} className="leaf inset-light">
+			<g id={`${id}-5`} className="leaf">
 				<path
 					fill={colors.palm.darker}
 					d="M5.1,19.8s20.9,1.4,28.7,3,22.6-2.3,22.6-2.3l-16-12.7h-13.7L5.1,19.8Z"
@@ -166,7 +166,7 @@ export const Palm2 = ({ params }: IPalmProps) => {
 					d="M73.6,17.4s9.9,2.4,13.7,4.3c3.8,1.9,17.5,17.4,17.5,17.4l7.6,9.8-15.7-17.5s-7.9-8.4-9.7-9.3c-1.8-.9-14-4.9-14-4.9l.6.2Z"
 				/>
 			</g>
-			<g id={`${id}-7`} className="leaf inset-light">
+			<g id={`${id}-7`} className="leaf">
 				<path
 					fill={colors.palm.main}
 					d="M65.6,14.1s-5.4-7.8-11.8-9.5c0,0-5.2-.4-10.9,8.9l6.4,2.8h-7.3s-5.9,14-6.4,19.9c-.4,6,2,18.7,2,18.7,0,0,11.9-11.2,18.3-18.5l-2.8-8.6,5.3,5.6,19.8-21.2s-5.5.2-12.7,1.8h0Z"

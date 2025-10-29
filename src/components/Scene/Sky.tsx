@@ -2,6 +2,7 @@ import { styled, useTheme } from '@mui/system';
 
 import { Clouds } from './Clouds';
 import { Starfield } from './Starfield';
+import { Moon } from './Moon';
 import { Smoke } from './Objects/Smoke';
 
 const CustomSvg = styled('g', {
@@ -57,6 +58,7 @@ export const Sky = () => {
 				transform="translate(1000 280) rotate(180)"
 			/>
 			<Starfield />
+			{/*<Moon params={{ x: 200, y: 65, m: { x: 0, y: 0 } }} />*/}
 			<Clouds />
 			<Smoke params={{ x: 250, y: 115, m: { x: 13, y: 10 } }} />
 		</CustomSvg>

@@ -64,7 +64,7 @@ export const Scene = () => {
 					result="inverse"
 				/>
 				<feFlood
-					flood-color={colors.inset.light}
+					flood-color="#ff0000"
 					flood-opacity="1"
 					result="color"
 				/>

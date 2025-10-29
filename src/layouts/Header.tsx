@@ -32,7 +32,7 @@ export const Header = () => {
 					color: 'white',
 					zIndex: theme.zIndex.modal + 1,
 					'.MuiModal-backdrop': {
-						backdropFilter: 'blur(2px)',
+						backdropFilter: 'blur(4px)',
 					},
 				})}
 				open={open}

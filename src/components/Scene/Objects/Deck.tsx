@@ -201,7 +201,7 @@ export const Deck = ({ params }: SceneComponentProps) => {
 							/>
 						</g>
 						<g
-							className="lower-left-stud inset-light"
+							className="lower-left-stud"
 							clipPath={`url(#${id}-bottom-mask)`}
 						>
 							<path
@@ -257,7 +257,7 @@ export const Deck = ({ params }: SceneComponentProps) => {
 								d="M40.7,7.7l-.7-2.2,1.1-1.7-.4,3.9ZM70.6,3.6l.7,2.9.8-.6-1.5-2.3ZM35,22.2l-7.7,3.9.8,5.5,1.3-5.6,5.6-3.8ZM43,22.5l-2.4,2.9,2.2,3.6v-6.5Z"
 							/>
 						</g>
-						<g className="upper-left-stud inset-light">
+						<g className="upper-left-stud">
 							<path
 								className="main"
 								fill={colors.wood.main}
@@ -296,7 +296,7 @@ export const Deck = ({ params }: SceneComponentProps) => {
 								d="M10.7,13.3c-1.8.2-2.4-.5-2.4-.9,0-.2.4-.3.9-.4-1,0-2.1.2-2.2.6,0,.5.7,1.4,2.9,1.1,2-.2,3.2-.6,3.2-.9,0,0,0,0,0,0-.3.2-1.2.4-2.5.6Z"
 							/>
 						</g>
-						<g className="upper-right-stud inset-light">
+						<g className="upper-right-stud">
 							<path
 								className="main"
 								fill={colors.wood.main}

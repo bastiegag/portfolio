@@ -25,7 +25,7 @@ export const Rock9 = ({ params }: IRockProps) => {
 	return (
 		<CustomSvg
 			id={id}
-			className="rock rock-9 animate-color inset-light"
+			className="rock rock-9 animate-color"
 			transform={`translate(${params.x},${params.y})`}
 			strokeWidth="0"
 		>

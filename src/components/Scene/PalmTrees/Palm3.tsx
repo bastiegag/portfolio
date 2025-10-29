@@ -74,17 +74,17 @@ export const Palm3 = ({ params }: IPalmProps) => {
 			</g>
 			<path
 				id={`${id}-2`}
-				className="leaf inset-light"
+				className="leaf"
 				fill={colors.palm.dark}
 				d="M91,17.5s18-5.6,23.2-5.4c5.2.1,24.1,19.2,24.1,19.2,0,0-13.7-1.3-16.9-2.5-3.2-1.2-12.4-4.7-12.4-4.7h-15l-3.1-6.6h0Z"
 			/>
 			<path
 				id={`${id}-3`}
-				className="leaf inset-light"
+				className="leaf"
 				fill={colors.palm.main}
 				d="M79.7,16.8s-13.3,1.3-20.9,3.3-24.6,18.5-24.6,18.5c0,0,6.9-.3,12.5-2l1.7-7v6.3s12.5-.6,19.6-5.3c7.1-4.7,8.7-11.4,8.7-11.4l3-2.5h0Z"
 			/>
-			<g className="trunk inset-light">
+			<g className="trunk">
 				<path
 					className="trunk-dark"
 					fill={colors.trunk.dark}
@@ -117,7 +117,7 @@ export const Palm3 = ({ params }: IPalmProps) => {
 					d="M96,20.7s23.7-6.3,29.2-6.6c5.5-.4,31.5,4.5,31.5,4.5,0,0-23.4-5.7-30.8-5.2-7.4.5-26.5,6-29.9,7.3Z"
 				/>
 			</g>
-			<g id={`${id}-5`} className="leaf inset-light">
+			<g id={`${id}-5`} className="leaf">
 				<path
 					fill={colors.palm.darker}
 					d="M40.2,9.5s7.9,2.8,18.6,4.4c10.7,1.7,20.2,1.5,20.2,1.5l3.6-8-8.6-5.4s-24.7,3-33.8,7.5Z"
@@ -170,7 +170,7 @@ export const Palm3 = ({ params }: IPalmProps) => {
 					d="M90.7,22.7s21.1,6.5,23.6,9.3c2.5,2.7,5.8,21.2,6,22.4s2.8,12.7,2.8,12.7c0,0-1.8-10.9-1.8-13.2s-3.4-18.4-6.7-22.7c-3.3-4.2-23.9-8.5-23.9-8.5Z"
 				/>
 			</g>
-			<g id={`${id}-7`} className="leaf inset-light">
+			<g id={`${id}-7`} className="leaf">
 				<path
 					fill={colors.palm.main}
 					d="M92.4,22.3l-4.3-2.5,2.8,3.4-11.7,15.7-6-8.4,4.2,10.6c-7.9,5.5-19.2,10.9-19.2,10.9-2-11.3,0-23.3,0-23.3l9.7-1.1-8.5-1.1s14.6-16.6,19.8-16c5,.5,16.3,10.8,16.9,11.4h0l-3.7.4Z"

@@ -72,7 +72,7 @@ export const Palm1 = ({ params }: IPalmProps) => {
 					d="M68.3,28.2l-9.8-2.8s0,2,2.3,9.7,7.9,17,7.9,17l-11.9-10,1.5-4.2-2.1,3.7-12.7-10.3,10.6-12.2,7.4,1.5,6.3,5.8.5,1.8Z"
 				/>
 			</g>
-			<g className="trunk inset-light">
+			<g className="trunk">
 				<path
 					className="trunk-dark"
 					fill={colors.trunk.dark}
@@ -90,7 +90,7 @@ export const Palm1 = ({ params }: IPalmProps) => {
 				fill={colors.palm.darker}
 				d="M48.7,31.5s.4,19.4,0,21.8c-.5,2.4-3,8.1-3,8.1,0,0-6.1-7.5-7.8-11.7s-6.2-14.9-6.2-14.9c0,0,17.1-3.3,17.1-3.3Z"
 			/>
-			<g id={`${id}-3`} className="leaf inset-light">
+			<g id={`${id}-3`} className="leaf">
 				<path
 					fill={colors.palm.dark}
 					d="M50.6,19.5s-12-7.3-17.2-8c-5.3-.7-23.4,4.8-25.6,6.7-2.2,1.9-7.8,11.2-7.8,11.2l8.4-2.3v-5.2l1.3,4.8s9.7-1.6,14-2.2,11.5-.8,11.5-.8l3-2.9-.7,2.4s10.2-1.7,13-3.7h.1Z"
@@ -106,7 +106,7 @@ export const Palm1 = ({ params }: IPalmProps) => {
 					d="M44.5,16s-10.2-3.6-13.4-3.8-21,4.7-22.8,6.2c-1.8,1.4-8.3,11-8.3,11,0,0,5.9-9.5,7.8-11.2,1.9-1.7,19.8-7.6,25.6-6.7s11.1,4.5,11.1,4.5Z"
 				/>
 			</g>
-			<g id={`${id}-4`} className="leaf inset-light">
+			<g id={`${id}-4`} className="leaf">
 				<path
 					fill={colors.palm.dark}
 					d="M46,19.8s-.6-13.2.6-15.8c1.2-2.5,19.8,1.9,19.8,1.9l-11.7,8.7-8.7,5.2Z"
@@ -117,7 +117,7 @@ export const Palm1 = ({ params }: IPalmProps) => {
 					d="M51.9,3.3s-3.6.1-4.6,1.2c-1,1-1.4,12.6-1.4,12.6,0,0-.3-11.7.9-13.4.7-1.1,5.2-.5,5.2-.5Z"
 				/>
 			</g>
-			<g id={`${id}-5`} className="leaf inset-light">
+			<g id={`${id}-5`} className="leaf">
 				<path
 					fill={colors.palm.darker}
 					d="M107.6,11.9s-20.3,5.4-27.6,8.4c-7.3,3-24.7.9-24.7.9l15.4-14.3,13.4-2.6s23.5,7.6,23.5,7.6Z"
@@ -142,7 +142,7 @@ export const Palm1 = ({ params }: IPalmProps) => {
 					d="M76.3.7c-7.3.4-15.3,7.1-15.3,7.1,0,0,7.2-6.1,9.9-7.1s15.9-1.2,37.6,8.3c0,0-24.9-8.7-32.2-8.2Z"
 				/>
 			</g>
-			<g id={`${id}-6`} className="leaf inset-light">
+			<g id={`${id}-6`} className="leaf">
 				<path
 					fill={colors.palm.main}
 					d="M50.9,21s-19.2-1.2-24.5,1.2c-5.3,2.4-15.7,13.6-15.7,13.6l4.9-.9-5.4,3.6s-3,9.2-2.4,22.5l14-8.6,1.9-2.9,3-.4s13.6-18.8,14.6-19.9c1.1-1.1,10.1-5.5,10.1-5.5l-.6-2.7h0Z"
@@ -166,7 +166,7 @@ export const Palm1 = ({ params }: IPalmProps) => {
 					d="M39.9,22.6s-9.3,4.2-12.7,6.9c-3.4,2.6-13.8,20.5-13.8,20.5l-5.5,11,12-20s6.1-9.7,7.7-10.9c1.6-1.2,12.3-7.4,12.3-7.4h0Z"
 				/>
 			</g>
-			<g id={`${id}-7`} className="leaf inset-light">
+			<g id={`${id}-7`} className="leaf">
 				<path
 					fill={colors.palm.main}
 					d="M46.7,16l-13.6-2s-3.2,10.9-2.9,12.5c.3,1.6,0,31.6,0,31.6,0,0,9.5-9.3,14.9-15.5l-2.4-3.7,3.4,3.1s4.9-8.4,7.7-15.3c2.8-6.9.8-15.2.8-15.2,0,0-7.9,4.5-7.9,4.5Z"

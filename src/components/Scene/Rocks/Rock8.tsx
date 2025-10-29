@@ -23,7 +23,7 @@ export const Rock8 = ({ params }: IRockProps) => {
 		<React.Fragment>
 			<CustomSvg
 				id={id}
-				className="rock rock-8 animate-color inset-light"
+				className="rock rock-8 animate-color"
 				transform={`translate(${params.x},${params.y})`}
 			>
 				<path
