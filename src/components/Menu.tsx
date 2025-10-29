@@ -25,10 +25,10 @@ const menu = [
 		title: 'À propos',
 		url: '/a-propos',
 	},
-	// {
-	// 	title: "Projets",
-	// 	url: "/projets",
-	// },
+	{
+		title: 'Projets',
+		url: '/projets',
+	},
 	{
 		title: 'Contact',
 		url: `mailto:${config.mail}`,
