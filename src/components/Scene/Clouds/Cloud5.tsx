@@ -20,8 +20,6 @@ const CustomSvg = styled('g', {
 }));
 
 export const Cloud5 = ({ params }: CloudProps) => {
-	gsap.registerPlugin(useGSAP);
-
 	const colors = useTheme().palette.scene;
 
 	useGSAP(() => {
@@ -45,7 +43,7 @@ export const Cloud5 = ({ params }: CloudProps) => {
 
 	return (
 		<CustomSvg
-			className="cloud cloud-5"
+			className="cloud cloud-5 animate-color"
 			transform={`translate(0,${params.y})`}
 		>
 			<path

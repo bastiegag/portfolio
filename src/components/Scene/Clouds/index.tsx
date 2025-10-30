@@ -10,8 +10,8 @@ import { Cloud7 } from './Cloud7';
 
 export interface CloudProps {
 	params: {
-		distance?: number;
 		y: number;
+		distance?: number;
 	};
 }
 

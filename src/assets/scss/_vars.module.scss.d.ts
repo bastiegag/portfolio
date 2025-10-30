@@ -1,79 +1,96 @@
 export interface Colors {
-    black: string;
-    white: string;
-    primary: string;
-    secondary: string;
-    success: string;
-    info: string;
-    warning: string;
-    error: string;
+	black: string;
+	white: string;
+	primary: string;
 
-    github: string;
-    vimeo: string;
-    instagram: string;
-    linkedin: string;
+	skyMain: string;
+	skyLight: string;
+	skyDark: string;
 
-    skyMain: string;
-    skyLight: string;
-    skyDark: string;
+	cloudLight: string;
+	cloudDark: string;
 
-    waterLight: string;
-    waterDark: string;
+	waterLight: string;
+	waterDark: string;
 
-    cloudLight: string;
-    cloudDark: string;
+	rippleLight: string;
+	rippleDark: string;
 
-    sandLight: string;
-    sandDark: string;
-    sandDarker: string;
+	sandLight: string;
+	sandDark: string;
+	sandDarker: string;
 
-    grass: string;
+	rock100: string;
+	rock200: string;
+	rock300: string;
+	rock400: string;
+	rock500: string;
+	rock600: string;
+	rock700: string;
+	rock800: string;
+	rock900: string;
 
-    rock100: string;
-    rock200: string;
-    rock300: string;
-    rock400: string;
-    rock500: string;
-    rock600: string;
-    rock700: string;
-    rock800: string;
+	palmLighter: string;
+	palmLight: string;
+	palmMain: string;
+	palmDark: string;
+	palmDarker: string;
 
-    palmLight: string;
-    palmDark: string;
+	foliageLighter: string;
+	foliageLight: string;
+	foliageMain: string;
+	foliageDark: string;
+	foliageDarker: string;
 
-    trunkLight: string;
-    trunkDark: string;
+	trunkLight: string;
+	trunkDark: string;
 
-    leafLighter: string;
-    leafLight: string;
-    leafMain: string;
-    leafDark: string;
-    leafDarker: string;
+	woodLighter: string;
+	woodLight: string;
+	woodLightless: string;
+	woodMain: string;
+	woodDark: string;
+	woodDarker: string;
 
-    studLight: string;
-    studDark: string;
-    clotheslineRope: string;
-    towelLight: string;
-    towelDark: string;
-    towelIcon: string;
+	fireLight: string;
+	fireDark: string;
 
-    bottleLight: string;
-    bottleMain: string;
-    bottleDark: string;
-    messageLight: string;
-    messageDark: string;
+	ropeLight: string;
+	ropeDark: string;
 
-    woodLighter: string;
-    woodLight: string;
-    woodMain: string;
-    woodDark: string;
-    woodDarker: string;
+	towelLight: string;
+	towelDark: string;
 
-    smokeLight: string;
-    smokeDark: string;
+	bottleLight: string;
+	bottleMain: string;
+	bottleDark: string;
 
-    $popperBg: string;
-    $popperText: string;
+	capLight: string;
+	capDark: string;
+
+	paperLighter: string;
+	paperLight: string;
+	paperMain: string;
+	paperDark: string;
+	paperDarker: string;
+	paperText: string;
+
+	mugLighter: string;
+	mugLight: string;
+	mugMain: string;
+	mugDark: string;
+	mugDarker: string;
+
+	smoke: string;
+
+	$popperBg: string;
+	$popperText: string;
+
+	redLight: string;
+	redDark: string;
+
+	aboutBg: string;
+	aboutText: string;
 }
 
 export const colors;

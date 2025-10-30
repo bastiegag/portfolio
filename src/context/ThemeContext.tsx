@@ -1,41 +1,56 @@
 import React, { createContext, useEffect, useMemo, useState } from 'react';
 import { gsap } from 'gsap';
+import { Backdrop } from '@mui/material';
 
 interface IThemeContext {
-    settings: {
-        animate: boolean;
-    };
-    setSettings: React.Dispatch<
-        React.SetStateAction<IThemeContext['settings']>
-    >;
+	themeOptions: {
+		animate: boolean;
+		parallax: boolean;
+		backdrop: boolean;
+	};
+	setThemeOptions: React.Dispatch<
+		React.SetStateAction<IThemeContext['themeOptions']>
+	>;
 }
 
 export const ThemeContext = createContext<IThemeContext | null>(null);
 
-export const ThemeContextProvider = ({
-    children,
-}: React.PropsWithChildren<{}>) => {
-    const [settings, setSettings] = useState<IThemeContext['settings']>({
-        animate: false,
-    });
+export const ThemeProvider = ({ children }: React.PropsWithChildren<{}>) => {
+	const [themeOptions, setThemeOptions] = useState<
+		IThemeContext['themeOptions']
+	>({
+		animate: true,
+		parallax: true,
+		backdrop: false,
+	});
 
-    const value = useMemo(() => ({ settings, setSettings }), [settings]);
-    // const svgs = document.querySelectorAll('svg');
-    // [...svgs].forEach((svg) => svg.pauseAnimations());
+	const value = useMemo(
+		() => ({ themeOptions, setThemeOptions }),
+		[themeOptions]
+	);
 
-    useEffect(() => {
-        const svgs = document.querySelectorAll('svg');
+	useEffect(() => {
+		const svgs = document.querySelectorAll('svg');
 
-        if (settings.animate) {
-            gsap.globalTimeline.play();
-            [...svgs].forEach((svg) => svg.unpauseAnimations());
-        } else {
-            gsap.globalTimeline.pause();
-            [...svgs].forEach((svg) => svg.pauseAnimations());
-        }
-    }, [settings]);
+		if (themeOptions.animate) {
+			gsap.globalTimeline.play();
+			[...svgs].forEach((svg) => svg.unpauseAnimations());
+		} else {
+			gsap.globalTimeline.pause();
+			[...svgs].forEach((svg) => svg.pauseAnimations());
+		}
+	}, [themeOptions]);
 
-    return (
-        <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
-    );
+	return (
+		<ThemeContext.Provider value={value}>
+			<Backdrop
+				sx={(theme) => ({
+					color: '#fff',
+					zIndex: theme.zIndex.drawer + 1,
+				})}
+				open={themeOptions.backdrop}
+			/>
+			{children}
+		</ThemeContext.Provider>
+	);
 };

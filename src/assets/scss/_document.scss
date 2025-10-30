@@ -1,42 +1,77 @@
-@import './_vars.module.scss';
+@use 'light.module' as *;
+@use 'dark.module' as *;
 
-svg {
-    display: block;
-    width: 100%;
-    height: 100%;
+html,
+body {
+	overflow: hidden;
+
+	&.light .flick {
+		display: none;
+	}
+}
+
+.clearfix::after {
+	content: '';
+	clear: both;
+	display: table;
+}
+
+svg:not(.tabler-icon):not(.logo):not(#scene) {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.animate {
+	transition: fill 0.3s ease-out, stop-color 0.3s ease-out,
+		opacity 0.3s ease-out, filter 0.3s ease-out;
 }
 
 .animate-color {
-    g,
-    path,
-    rect,
-    polygon,
-    stop {
-        transition: fill 0.3s ease-out, stop-color 0.3s ease-out,
-            opacity 0.3s ease-out, filter 0.3s ease-out;
-    }
+	> g,
+	> g path,
+	> g polygon,
+	> path,
+	> rect,
+	> polygon,
+	> ellipse,
+	> stop {
+		transition: fill 0.3s ease-out, stop-color 0.3s ease-out,
+			opacity 0.3s ease-out, filter 0.3s ease-out;
+	}
+}
+
+.animate-gradient stop {
+	transition: stop-color 0.3s ease-out;
 }
 
 .animate-all {
-    g,
-    path,
-    rect,
-    polygon,
-    stop {
-        transition: all 0.3s ease-out;
-    }
+	p,
+	g,
+	path,
+	rect,
+	polygon,
+	ellipse,
+	stop {
+		transition: all 0.3s ease-out;
+	}
 }
 
 .not-animate {
-    g,
-    path,
-    rect,
-    polygon,
-    stop {
-        transition: none;
-    }
+	g,
+	path,
+	rect,
+	polygon,
+	ellipse,
+	stop {
+		transition: none;
+	}
 }
 
 .link {
-    cursor: pointer;
+	cursor: pointer;
+
+	&:hover {
+		stroke: $popperText;
+	}
 }

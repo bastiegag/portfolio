@@ -1,5 +1,10 @@
 export { Logo } from './Logo';
 export { Link } from './Link';
+export { Menu } from './Menu';
+export { Page } from './Page';
+export { Paper } from './Paper';
+export { Photo } from './Photo';
 export { Scene } from './Scene';
-export { Social } from './Social';
-export { DebugName } from './DebugName';
+export { Content } from './Content';
+export { Container } from './Container';
+export { Cursor } from './Cursor';
