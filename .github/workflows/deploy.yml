@@ -3,7 +3,7 @@ name: Build and Deploy to GoDaddy
 on:
   push:
     branches:
-      - main # or your main branch
+      - main
 
 jobs:
   deploy:
@@ -16,19 +16,21 @@ jobs:
       - name: Setup Node.js (if applicable)
         uses: actions/setup-node@v2
         with:
-          node-version: '16' # or your desired Node.js version
+          node-version: '16'
 
       - name: Install dependencies (if applicable)
         run: npm install
 
       - name: Build project (if applicable)
-        run: npm run build # or your build command
+        run: npm run build
 
       - name: FTP Deploy to GoDaddy
-        uses: SamKirkland/FTP-Deploy-Action@4.3.0 # or a newer version
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/ # or the directory containing your built files
-          server-dir: /public_html/ # or your desired deployment directory on GoDaddy
+          local-dir: ./dist/
+          server-dir: /public_html/
+          protocol: ftps
+          port: 21
