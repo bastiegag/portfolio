@@ -1,0 +1,23 @@
+name: Deploy to GoDaddy via FTP
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/ # Or your project's build directory
+          server-dir: /public_html/ # Or your target directory on GoDaddy
+          protocol: ftps # Use ftps for secure transfer if supported
+          port: 21 # Or your specific FTP port
