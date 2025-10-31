@@ -3,6 +3,7 @@ import { styled, useTheme } from '@mui/system';
 
 import { useParallax } from 'hooks';
 import { SceneComponentProps } from 'components/Scene';
+import { Fire } from 'components/Scene/Objects';
 
 const CustomSvg = styled('g', {
 	name: 'island',
@@ -57,7 +58,12 @@ export const Island = ({ params }: SceneComponentProps) => {
 					fillOpacity="50%"
 					d="M64.7,29L0,40.9s191,45.6,356.5,50c189.2,5,442.4-11,506.4-39.4,0,0-10-10.1-78.8-17.6-63.3-6.1-719.3-4.8-719.3-4.8h-.1Z"
 				/>
+				<Fire
+					params={{ x: 180, y: -100, m: { x: 0, y: 0 } }}
+					invert={true}
+				/>
 			</g>
+
 			<path
 				className="sand"
 				d="M801.2,48.7c0,8.4-183.7,23.1-391.5,20.5-198.8-2.5-150.1-23.2-150.3-26.5-.3-4.5-100.5-2.2-217.4-9.6h-.2.2c2.5-.5,27.3-5.3,73.4-10.7h0c53.9-6.4,137-13.6,247.7-15.9,188-3.9,370.1,19.9,444.1,30.9,9,1.3,16.3,2.5,22,3.4-1.7-.2-36-3.8-40.4-.8-3.1,2.1,12.5,3,12.5,8.9v-.2Z"

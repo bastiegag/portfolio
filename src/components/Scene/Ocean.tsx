@@ -24,13 +24,13 @@ export const Ocean = () => {
 			repeatRefresh: true,
 		});
 
-		timeline.to('#turbulence', {
+		timeline.to('.turbulence', {
 			attr: { values: '180' },
 			duration: 3,
 			ease: 'none',
 		});
 
-		timeline.to('#turbulence', {
+		timeline.to('.turbulence', {
 			attr: { values: '359' },
 			duration: 3,
 			ease: 'none',
@@ -47,14 +47,18 @@ export const Ocean = () => {
 				height="100%"
 			>
 				<feTurbulence
-					baseFrequency="0.1 0.1"
+					baseFrequency="0.02 0.6"
 					type="turbulence"
 					result="noise"
 					seed="3"
 					numOctaves="10"
 					stitchTiles="noStitch"
 				/>
-				<feColorMatrix type="hueRotate" id="turbulence" values="0" />
+				<feColorMatrix
+					type="hueRotate"
+					className="turbulence"
+					values="0"
+				/>
 				<feColorMatrix
 					type="matrix"
 					values="0 0 0 0 0
@@ -66,33 +70,18 @@ export const Ocean = () => {
 			</filter>
 			<filter id="waterFilter" x="0%" y="0%" width="100%" height="100%">
 				<feTurbulence
-					baseFrequency="0.02 0.2"
+					baseFrequency="0.015 0.25"
 					type="turbulence"
 					result="noise"
 					seed="3"
 					numOctaves="1"
 					stitchTiles="noStitch"
 				/>
-				<feColorMatrix type="hueRotate" id="turbulence" values="0" />
 				<feColorMatrix
-					type="matrix"
-					values="0 0 0 0 0
-               0 0 0 0 0
-               0 0 0 0 0
-               1 0 0 0 0"
+					type="hueRotate"
+					className="turbulence"
+					values="0"
 				/>
-				<feDisplacementMap in="SourceGraphic" scale="15" />
-			</filter>
-			<filter id="waterRipple" x="0%" y="0%" width="100%" height="100%">
-				<feTurbulence
-					baseFrequency="0.005 0.3"
-					type="turbulence"
-					result="noise"
-					seed="3"
-					numOctaves="1"
-					stitchTiles="noStitch"
-				/>
-				<feColorMatrix type="hueRotate" id="turbulence" values="0" />
 				<feColorMatrix
 					type="matrix"
 					values="0 0 0 0 0

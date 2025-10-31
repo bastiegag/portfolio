@@ -89,7 +89,7 @@ export const Deck = ({ params }: SceneComponentProps) => {
 						<g
 							className="lower-right-stud "
 							clipPath={`url(#${id}-top-mask)`}
-							filter="url(#waterReflection)"
+							filter="url(#waterFilter)"
 							opacity="0.35"
 						>
 							<path
@@ -116,16 +116,6 @@ export const Deck = ({ params }: SceneComponentProps) => {
 								className="light"
 								fill={colors.wood.light}
 								d="M76,10.4c.5.2,0,.5-.6.8-.9.5-3,.9-4,0-.7-.6-.3-.9.5-1-1.5,0-2.7.5-1.5,1.3,1.3,1,4.1.6,5.4,0,.9-.5,2.4-.6.3-1.1Z"
-							/>
-						</g>
-						<g
-							className={`${id}-water-level animate`}
-							filter="url(#waterRipple)"
-						>
-							<path
-								fill={colors.white}
-								className="deck-ripple animate"
-								d="M80.6,38.4c-2.3-2-16.7-1.4-13.9,1.2,2.8,2.6,15.2-.1,13.9-1.2ZM68.1,39.2c-.9-.4,8.4-1.3,10.4-.4s-8.7,1.2-10.4.4Z"
 							/>
 						</g>
 						<g
@@ -161,7 +151,7 @@ export const Deck = ({ params }: SceneComponentProps) => {
 						<g
 							className="lower-left-stud"
 							clipPath={`url(#${id}-top-mask)`}
-							filter="url(#waterReflection)"
+							filter="url(#waterFilter)"
 							opacity="0.35"
 						>
 							<path
@@ -188,16 +178,6 @@ export const Deck = ({ params }: SceneComponentProps) => {
 								className="light"
 								fill={colors.wood.light}
 								d="M10.7,13.3c-1.8.2-2.4-.5-2.4-.9,0-.2.4-.3.9-.4-1,0-2.1.2-2.2.6,0,.5.7,1.4,2.9,1.1,2-.2,3.2-.6,3.2-.9,0,0,0,0,0,0-.3.2-1.2.4-2.5.6Z"
-							/>
-						</g>
-						<g
-							className={`${id}-water-level animate`}
-							filter="url(#waterRipple)"
-						>
-							<path
-								fill={colors.white}
-								className="deck-ripple animate"
-								d="M19.4,40.5c-2.3-2-16.7-1.4-13.9,1.2,2.8,2.6,15.2-.1,13.9-1.2ZM6.9,41.3c-.9-.4,8.4-1.3,10.4-.4s-8.7,1.2-10.4.4Z"
 							/>
 						</g>
 						<g

@@ -28,7 +28,7 @@ export const Fire = ({ params, invert }: SceneComponentProps) => {
 
 	useGSAP(() => {
 		const randDur = gsap.utils.random(0.1, 0.75, true);
-		const randOpacity = gsap.utils.random(0.1, 0.25, true);
+		const randOpacity = gsap.utils.random(0.05, 0.15, true);
 
 		let fireDur = randDur();
 		let fireOpacity = randOpacity();
@@ -103,7 +103,7 @@ export const Fire = ({ params, invert }: SceneComponentProps) => {
 				<filter id="spotlight">
 					<feBlend in="SourceGraphic" mode="multiply" />
 				</filter>
-				<g id={`${id}-1`}>
+				<g id={`${id}-1`} transform="translate(-2, 4)">
 					<path
 						fill={colors.fire.dark}
 						className="dark"
@@ -115,7 +115,7 @@ export const Fire = ({ params, invert }: SceneComponentProps) => {
 						d="M17.4,19.63s2.23,11.82,13.12,11.16c0,0-5.77,9.21-5.02,19.91s5.86,7.63,7.54,5.49c0,0,.65.87-2.23,4.58-2.88,3.7-2.11,8.08,2.3,12.17,4.4,4.09,9.43,10.98,2.63,17.86-6.79,6.88-13.58-1.58-13.58-1.58,0,0-5.02,5.77-12.28-.37-7.26-6.14-.65-13.4-.65-13.4,0,0-.28,4.09,1.77,3.72,2.05-.37,3.35-12.37-1.77-6.23,0,0-.09-4.74,4.28-4.84,0,0-5.4-2.61-3.54-11.54,1.86-8.93,13.49-14.33,7.44-36.94Z"
 					/>
 				</g>
-				<g id={`${id}-2`} transform="translate(-2, -2)">
+				<g id={`${id}-2`} transform="translate(-2, 0)">
 					<path
 						fill={colors.fire.dark}
 						className="dark"
@@ -144,7 +144,7 @@ export const Fire = ({ params, invert }: SceneComponentProps) => {
 						d="M20.43,43.88s.64,15.17,7.34,15.26c0,0-4.94,8.37-1.45,16.65,3.49,8.28,9.82,6.05,10.01,16,.19,9.95-10.01,10.89-10.01,10.89,0,0-9.07,10.61-15.95,2.05,0,0-6.51-1.77-5.77-7.91.74-6.14,9.12-7.72,9.58-12.47.47-4.74-4.19-1.86-6.51,2.23,0,0,1.12-5.02-1.3-8.56-2.42-3.54-5.4-9.7,2.33-15.64,7.72-5.94,9.6-6.96,11.73-18.5Z"
 					/>
 				</g>
-				<g id={`${id}-4`} transform="translate(-2, -16)">
+				<g id={`${id}-4`} transform="translate(-2, -14)">
 					<path
 						fill={colors.fire.dark}
 						className="dark"
@@ -217,7 +217,7 @@ export const Fire = ({ params, invert }: SceneComponentProps) => {
 						d="M17.18,12.21s3.18-.74,3.92-4.19,2.5-4.84,2.5-4.84c0,0-2.7-.56-4.47,2.42s.65,4.37-1.95,6.61Z"
 					/>
 				</g>
-				<g id={`${id}-8`} transform="translate(0, 12)">
+				<g id={`${id}-8`} transform="translate(-4, 14)">
 					<path
 						fill={colors.fire.dark}
 						className="dark"
@@ -234,7 +234,7 @@ export const Fire = ({ params, invert }: SceneComponentProps) => {
 						d="M12.8,22.08s-4.09,4.74-3.35,11.63c.74,6.88-.28,9.02-2.61,13.58-2.33,4.56-.56,9.86,1.95,14.51s-2.72,12.09,2.14,19.82,9.4,4.56,9.4,4.56c0,0,7.54,2.6,11.26-3.63,0,0,3.54,1.58,5.3-2.23s0-9.12,0-9.12c0,0-.56,2.7-2.33-1.58s-.37-6.17,2.33-2.14c0,0,.65-3.96-5.95-9-6.61-5.05-10.7-8.22-8.19-12.92,0,0-5.02-.32-4.56-5.81s-.56-9.58-3.63-10.51c-3.07-.93-3.07-4.47-1.77-7.16Z"
 					/>
 				</g>
-				<g id={`${id}-9`} transform="translate(-2, 10)">
+				<g id={`${id}-9`} transform="translate(-2, 12)">
 					<path
 						fill={colors.fire.dark}
 						className="dark"
@@ -263,7 +263,7 @@ export const Fire = ({ params, invert }: SceneComponentProps) => {
 						d="M12.39,20.31s-2.14,2.33.74,6.61c2.88,4.28,2.23,8.93,0,12.56-2.23,3.63-3.16,8.47-.47,12.09,2.7,3.63,3.63,4.56.93,8.09s-15.07,16.19-3.63,25.4c0,0,5.3,10.51,16.84,11.26s10.61-9.12,10.61-9.12c0,0,4.93-5.95,2.42-12.56-2.51-6.61-10.23-8.56-10.7-11.82,0,0,.74,3.54-1.77,2.14-2.51-1.4-7.91-11.16-.74-7.26,0,0-1.02-2.79-5.68-5.49-4.65-2.7-5.14-16.73-1.3-12.09,0,0,2.05-7.07-1.58-10.51-3.63-3.44-5.95-5.12-5.68-9.3Z"
 					/>
 				</g>
-				<g id={`${id}-11`} transform="translate(-2, 5)">
+				<g id={`${id}-11`} transform="translate(-2, 8)">
 					<path
 						fill={colors.fire.dark}
 						className="dark"
@@ -280,7 +280,7 @@ export const Fire = ({ params, invert }: SceneComponentProps) => {
 						d="M11.58,24.93s6.51,1.67,7.07,7.07c.56,5.4-1.4,8.84,2.51,11.82,3.91,2.98,5.12,5.21,5.12,5.21,0,0-3.26-3.26-3.63-1.02-.37,2.23,3.54,6.51,4.56,3.35,0,0-.28,2.05,2.33,3.63,2.61,1.58,10.79,8.09,9.21,11.82-1.58,3.72-4.65,7.26-2.79,11.54s2.33,11.82-4.65,12c0,0-8.75,7.07-14.98.47,0,0-6.42-.65-6.61-7.72-.19-7.07,1.21-9.58-2.51-13.77s1.3-11.16,4-14.42c2.7-3.26,2.79-5.77.74-7.91-2.05-2.14-2.7-4.93,0-8.93s4.19-11.07-.37-13.12Z"
 					/>
 				</g>
-				<g id={`${id}-12`} transform="translate(-2, 12)">
+				<g id={`${id}-12`} transform="translate(-2, 16)">
 					<path
 						fill={colors.fire.dark}
 						className="dark"
@@ -297,7 +297,7 @@ export const Fire = ({ params, invert }: SceneComponentProps) => {
 						d="M15.87,0s-8.81,7.32-4.34,14.14c4.47,6.82,9.06,1.36,14.51,7.19,0,0,.99-3.6-6.95-6.95-7.94-3.35-6.45-11.04-3.23-14.39Z"
 					/>
 				</g>
-				<g id={`${id}-13`} transform="translate(0, 18)">
+				<g id={`${id}-13`} transform="translate(0, 20)">
 					<path
 						fill={colors.fire.dark}
 						className="dark"
@@ -309,7 +309,7 @@ export const Fire = ({ params, invert }: SceneComponentProps) => {
 						d="M7.78,33.06s-.19,3.44-2.61,7.82c-2.42,4.37.37,7.35,1.77,11.72,1.4,4.37-.37,6.98-2.23,13.96-1.86,6.98,5.49,8.47,7.63,7.26,0,0,2.33,3.91,7.63,3.91s5.95-3.35,8.37-2.79c2.42.56,4.74.56,6.7-5.58,1.95-6.14-.19-6.51-2.14-8.56s1.02-9.49-2.42-13.58c-3.44-4.09-7.26-3.44-7.16-9.21s7.82-9.6-4.28-17.77c0,0,4.47,4.56,3.63,10.79-.84,6.23-3.81,5.82-.28,11.1s1.49,6.77-1.21,6.86c-2.7.09-4.84-3.16-3.81-5.4,0,0-5.02,3.58-8.28-.19s1.3-5.12-1.3-10.33Z"
 					/>
 				</g>
-				<g id={`${id}-14`} transform="translate(0, 12)">
+				<g id={`${id}-14`} transform="translate(0, 16)">
 					<path
 						fill={colors.fire.dark}
 						className="dark"

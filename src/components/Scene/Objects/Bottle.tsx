@@ -177,18 +177,6 @@ export const Bottle = ({ params }: SceneComponentProps) => {
 					</g>
 				</Link>
 			</svg>
-			{/* 
-				<g
-					className={`${id}-water-level animate`}
-					filter="url(#waterRipple)"
-				>
-					<path
-						fill={colors.white}
-						className="bottle-ripple animate"
-						d="M27.2,29.6c3.2,2.2-28.8,7.5-36,2.4-7.2-5.1,30-6.4,36-2.4Z"
-					/>
-				</g>
- */}
 		</CustomSvg>
 	);
 };

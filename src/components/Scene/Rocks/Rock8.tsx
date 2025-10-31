@@ -47,10 +47,10 @@ export const Rock8 = ({ params }: IRockProps) => {
 					points="11.2 9.6 13.8 10.7 15.2 8.5 11.2 9.6"
 				/>
 
-				{/*<g className="flick" fill={colors.fire.dark}>
+				<g className="flick" fill={colors.fire.dark}>
 					<path d="M.6,7.2s.6,2.1,8.5,2.2c7.9.1,11.9-5.7,11.9-5.7L17,0s-6.5-.3-9.7.7C4.1,1.8.6,7.2.6,7.2Z" />
 					<path d="M.6,7.2S2.7,3.1,6.3,1.2l14.8,2.4s-1.2,2.9-7.8,5.7c0,0-10.1,1.1-12.7-2.2Z" />
-				</g>*/}
+				</g>
 			</CustomSvg>
 		</React.Fragment>
 	);

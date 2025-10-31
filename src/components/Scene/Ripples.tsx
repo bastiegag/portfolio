@@ -3,6 +3,7 @@ import { styled, useTheme } from '@mui/system';
 
 import { useParallax } from 'hooks';
 import { SceneComponentProps } from 'components/Scene';
+import { Fire } from 'components/Scene/Objects';
 
 const CustomSvg = styled('g', {
 	name: 'ripples',
