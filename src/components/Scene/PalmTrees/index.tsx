@@ -5,6 +5,14 @@ import { Palm1 } from './Palm1';
 import { Palm2 } from './Palm2';
 import { Palm3 } from './Palm3';
 
+export interface IPalmsProps {
+	params: {
+		x: number;
+		y: number;
+	};
+	invert?: boolean;
+}
+
 export interface IPalmProps {
 	params: {
 		palmDuration: () => number;
@@ -18,7 +26,7 @@ export interface IPalmProps {
 	};
 }
 
-export const PalmTrees = () => {
+export const PalmTrees = ({ params, invert }: IPalmsProps) => {
 	const palmAnimation = {
 		palmDuration: gsap.utils.random(2, 3, true),
 		palmRotation: gsap.utils.random(-1, 1, true),
@@ -27,8 +35,16 @@ export const PalmTrees = () => {
 		ease: gsap.utils.random(['sine.inOut', 'sine.in', 'sine.out'], true),
 	};
 
+	const posY = invert ? 640 : 0;
+
 	return (
-		<React.Fragment>
+		<g
+			transform={
+				invert
+					? `translate(${params.x},${posY}) scale(1,-1)`
+					: `translate(${params.x},${posY})`
+			}
+		>
 			<Palm1
 				params={{
 					...palmAnimation,
@@ -53,6 +69,6 @@ export const PalmTrees = () => {
 					m: { x: 13, y: 10 },
 				}}
 			/>
-		</React.Fragment>
+		</g>
 	);
 };

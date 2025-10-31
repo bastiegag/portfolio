@@ -60,7 +60,7 @@ export const Sky = () => {
 			<Starfield />
 			{/*<Moon params={{ x: 200, y: 65, m: { x: 0, y: 0 } }} />*/}
 			<Clouds />
-			<Smoke params={{ x: 250, y: 115, m: { x: 13, y: 10 } }} />
+			{/*<Smoke params={{ x: 250, y: 115, m: { x: 13, y: 10 } }} />*/}
 		</CustomSvg>
 	);
 };

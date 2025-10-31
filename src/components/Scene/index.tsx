@@ -10,7 +10,7 @@ import { PalmTrees } from './PalmTrees';
 import { Rocks } from './Rocks';
 import { Foliages } from './Foliages';
 import { Objects } from './Objects';
-import { Fire, Firecamp, Clothesline } from 'components/Scene/Objects';
+import { Firecamp, Clothesline } from 'components/Scene/Objects';
 import { Rock4, Rock5, Rock6, Rock7 } from 'components/Scene/Rocks';
 
 import { useMousePosition } from 'hooks';
@@ -26,6 +26,9 @@ const CustomSvg = styled('svg', {
 	'.island': {
 		transform: 'scale(0.85) translateY(12px) translateX(2%)',
 		transformOrigin: '50% 50%',
+	},
+	'.reflections': {
+		filter: 'brightness(0.75)',
 	},
 }));
 
@@ -59,55 +62,60 @@ export const Scene = () => {
 				<Sky />
 			</g>
 			<g className="island">
-				<g
-					className="reflections"
-					filter="url(#waterReflection)"
-					opacity="0.25"
-				>
-					<Clothesline
-						params={{
-							x: 656,
-							y: 240,
-							m: { x: 16, y: 12 },
-							scale: 1.1,
-						}}
-						invert={true}
-					/>
-					<Rock7
-						params={{
-							x: 356,
-							y: 171,
-							m: { x: 14, y: 10 },
-							distance: 0,
-						}}
-						invert={true}
-					/>
-					<Rock6
-						params={{
-							x: 304,
-							y: 230,
-							m: { x: 14, y: 10 },
-							distance: 0,
-						}}
-						invert={true}
-					/>
-					<Rock5
-						params={{
-							x: 600,
-							y: 245,
-							m: { x: 14, y: 10 },
-							distance: 0,
-						}}
-						invert={true}
-					/>
-					<Rock4
-						params={{ x: 400, y: 146, m: { x: 14, y: 10 } }}
-						invert={true}
-					/>
-					<Firecamp
-						params={{ x: 157, y: 119, m: { x: 15, y: 10 } }}
-						invert={true}
-					/>
+				<g filter="url(#waterReflection)">
+					<g className="reflections" opacity="0.2">
+						<PalmTrees
+							params={{
+								x: 0,
+								y: 640,
+							}}
+							invert={true}
+						/>
+						<Clothesline
+							params={{
+								x: 656,
+								y: 240,
+								m: { x: 16, y: 12 },
+								scale: 1.1,
+							}}
+							invert={true}
+						/>
+						<Rock7
+							params={{
+								x: 356,
+								y: 171,
+								m: { x: 14, y: 10 },
+								distance: 0,
+							}}
+							invert={true}
+						/>
+						<Rock6
+							params={{
+								x: 304,
+								y: 230,
+								m: { x: 14, y: 10 },
+								distance: 0,
+							}}
+							invert={true}
+						/>
+						<Rock5
+							params={{
+								x: 600,
+								y: 245,
+								m: { x: 14, y: 10 },
+								distance: 0,
+							}}
+							invert={true}
+						/>
+						<Rock4
+							params={{ x: 400, y: 146, m: { x: 14, y: 10 } }}
+							invert={true}
+						/>
+						<Firecamp
+							params={{ x: 157, y: 119, m: { x: 15, y: 10 } }}
+							invert={true}
+						/>
+					</g>
 				</g>
 				<Island params={{ x: 17, y: 286, m: { x: 15, y: 10 } }} />
 				<Ripples
@@ -118,7 +126,7 @@ export const Scene = () => {
 					}}
 				/>
 
-				<PalmTrees />
+				<PalmTrees params={{ x: 0, y: 0 }} />
 				<Rocks />
 				<Foliages />
 				<Objects />
