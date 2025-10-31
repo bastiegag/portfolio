@@ -59,11 +59,11 @@ export const Rock10 = ({ params }: IRockProps) => {
 					points="39.8 10 40.9 11 42.7 9.5 39.8 10"
 				/>
 
-				{/*<g className="flick" fill={colors.fire.dark}>
+				<g className="flick" fill={colors.fire.dark}>
 					<path d="M35.2,8.1l2.8-3.1,9.4,1.6s-4,1.3-12.3,1.5Z" />
 					<path d="M2.8,8s1.3-1.6,5.7-4.1l19.2,1.2,6.4-1.8s-6.7,3.7-12.5,4.7c0,0-10.9.7-18.7,0Z" />
 					<path d="M8.5,3.8S4,6.5,2.8,8c0,0,10.4.7,17,0,6.6-.7,14.2-4.6,14.2-4.6l.5-3.2s-11.3-1.2-26,3.7Z" />
-				</g>*/}
+				</g>
 			</CustomSvg>
 		</React.Fragment>
 	);

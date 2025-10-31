@@ -15,6 +15,17 @@ export default defineConfig({
 			usePolling: true,
 		},
 	},
+	build: {
+		rollupOptions: {
+			output: {
+				manualChunks(id) {
+					if (id.includes('src/hooks')) {
+						return 'hooks'; // Group all hooks modules into a 'hooks' chunk
+					}
+				},
+			},
+		},
+	},
 	publicDir: 'public',
 	plugins: [react()],
 	resolve: {

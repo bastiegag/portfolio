@@ -16,30 +16,19 @@ const CustomSvg = styled('g', {
 		mixBlend: 'multiply',
 		opacity: 0.15,
 	},
-	'.firecamp-smoke': {
-		mixBlend: 'overlay',
-		fill: '#fff',
-		opacity: 0.5,
-	},
 }));
 
 export const Firecamp = ({ params, invert }: SceneComponentProps) => {
 	const id = React.useId();
 	const colors = useTheme().palette.scene;
 
-	const posY = invert ? params.y + 90 : params.y;
-
-	useParallax(`#${CSS.escape(id)}`, params.x, posY, params.m);
+	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.m);
 
 	return (
 		<CustomSvg
 			id={id}
 			className="firecamp animate-color"
-			transform={
-				invert
-					? `translate(${params.x},${posY}) scale(1,-1)`
-					: `translate(${params.x},${posY})`
-			}
+			transform={`translate(${params.x},${params.y})`}
 		>
 			<g className="firecamp-wood">
 				<path
