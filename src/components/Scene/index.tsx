@@ -62,61 +62,6 @@ export const Scene = () => {
 				<Sky />
 			</g>
 			<g className="island">
-				<g filter="url(#waterReflection)">
-					<g className="reflections" opacity="0.2">
-						<PalmTrees
-							params={{
-								x: 0,
-								y: 640,
-							}}
-							invert={true}
-						/>
-						<Clothesline
-							params={{
-								x: 656,
-								y: 240,
-								m: { x: 16, y: 12 },
-								scale: 1.1,
-							}}
-							invert={true}
-						/>
-						<Rock7
-							params={{
-								x: 356,
-								y: 171,
-								m: { x: 14, y: 10 },
-								distance: 0,
-							}}
-							invert={true}
-						/>
-						<Rock6
-							params={{
-								x: 304,
-								y: 230,
-								m: { x: 14, y: 10 },
-								distance: 0,
-							}}
-							invert={true}
-						/>
-						<Rock5
-							params={{
-								x: 600,
-								y: 245,
-								m: { x: 14, y: 10 },
-								distance: 0,
-							}}
-							invert={true}
-						/>
-						<Rock4
-							params={{ x: 400, y: 146, m: { x: 14, y: 10 } }}
-							invert={true}
-						/>
-						<Firecamp
-							params={{ x: 157, y: 119, m: { x: 15, y: 10 } }}
-							invert={true}
-						/>
-					</g>
-				</g>
 				<Island params={{ x: 17, y: 286, m: { x: 15, y: 10 } }} />
 				<Ripples
 					params={{
@@ -126,7 +71,7 @@ export const Scene = () => {
 					}}
 				/>
 
-				<PalmTrees params={{ x: 0, y: 0 }} />
+				<PalmTrees />
 				<Rocks />
 				<Foliages />
 				<Objects />

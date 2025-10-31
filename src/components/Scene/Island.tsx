@@ -59,7 +59,7 @@ export const Island = ({ params }: SceneComponentProps) => {
 					d="M64.7,29L0,40.9s191,45.6,356.5,50c189.2,5,442.4-11,506.4-39.4,0,0-10-10.1-78.8-17.6-63.3-6.1-719.3-4.8-719.3-4.8h-.1Z"
 				/>
 				<Fire
-					params={{ x: 180, y: -100, m: { x: 0, y: 0 } }}
+					params={{ x: 180, y: -120, m: { x: 0, y: 0 } }}
 					invert={true}
 				/>
 			</g>

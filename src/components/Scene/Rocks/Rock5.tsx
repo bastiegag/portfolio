@@ -13,20 +13,14 @@ export const Rock5 = ({ params, invert }: IRockProps) => {
 	const id = React.useId();
 	const colors = useTheme().palette.scene;
 
-	const posY = invert ? params.y + 110 : params.y;
-
-	useParallax(`#${CSS.escape(id)}`, params.x, posY, params.m);
+	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.m);
 
 	return (
 		<React.Fragment>
 			<CustomSvg
 				id={id}
 				className="rock rock-5 animate-color"
-				transform={
-					invert
-						? `translate(${params.x},${posY}) scale(1,-1)`
-						: `translate(${params.x},${posY})`
-				}
+				transform={`translate(${params.x},${params.y})`}
 			>
 				<path
 					fill={colors.rock[500]}
