@@ -4,7 +4,6 @@ import { useGSAP } from '@gsap/react';
 
 import Routes from 'routes';
 import {
-	ThemeProvider,
 	PopperProvider,
 	ModalProvider,
 	OffsetProvider,
@@ -16,17 +15,15 @@ const App = () => {
 
 	return (
 		<Suspense>
-			<ThemeProvider>
-				<CursorProvider>
-					<OffsetProvider>
-						<PopperProvider>
-							<ModalProvider>
-								<Routes />
-							</ModalProvider>
-						</PopperProvider>
-					</OffsetProvider>
-				</CursorProvider>
-			</ThemeProvider>
+			<CursorProvider>
+				<OffsetProvider>
+					<PopperProvider>
+						<ModalProvider>
+							<Routes />
+						</ModalProvider>
+					</PopperProvider>
+				</OffsetProvider>
+			</CursorProvider>
 		</Suspense>
 	);
 };

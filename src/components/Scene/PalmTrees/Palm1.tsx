@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { styled, useTheme } from '@mui/system';
 
-import { useParallax, useThemeOptions } from 'hooks';
+import { useParallax } from 'hooks';
 import { IPalmProps } from './';
 
 const CustomSvg = styled('g', {

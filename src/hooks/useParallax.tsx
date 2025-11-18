@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { useMediaQuery, useTheme } from '@mui/material';
 
-import { useOffset, useThemeOptions } from 'hooks';
+import { useOffset } from 'hooks';
 
 export const useParallax = (
 	element: string,
@@ -21,7 +21,6 @@ export const useParallax = (
 ) => {
 	const theme = useTheme();
 	const isLargeScreen = useMediaQuery(theme.breakpoints.up('lg'));
-	const { themeOptions, setThemeOptions } = useThemeOptions();
 	const { offset, setOffset } = useOffset();
 	const xTo = React.useRef<Function>(null);
 	const yTo = React.useRef<Function>(null);
@@ -29,7 +28,7 @@ export const useParallax = (
 	const scaleTo = React.useRef<Function>(null);
 
 	React.useEffect(() => {
-		if (themeOptions.parallax && isLargeScreen) {
+		if (isLargeScreen) {
 			if (pos == true || pos == 'x') {
 				const posX = x - (offset.dist.x * m.x) / 300;
 				if (xTo.current) xTo.current(posX);

@@ -1,12 +1,4 @@
 import {
-	IconMoon,
-	IconSun,
-	IconPlayerPlay,
-	IconPlayerPause,
-	IconLayersIntersect,
-	IconLayersSubtract,
-} from '@tabler/icons-react';
-import {
 	Box,
 	useColorScheme,
 	IconButton,
@@ -15,12 +7,11 @@ import {
 } from '@mui/material';
 
 import { MoonIcon, SunIcon } from 'components/Icons';
-import { useThemeOptions, useCursor } from 'hooks';
+import { useCursor } from 'hooks';
 
 export const Footer = () => {
 	const theme = useTheme();
 	const { mode, setMode } = useColorScheme();
-	const { themeOptions, setThemeOptions } = useThemeOptions();
 	const { cursor, setCursor } = useCursor();
 
 	if (!mode) {
@@ -38,66 +29,22 @@ export const Footer = () => {
 				zIndex: theme.zIndex.modal + 2,
 			}}
 		>
-			{/* <Tooltip
-				title={
-					themeOptions.animate ? 'Stop animation' : 'Play animation'
-				}
-			>
+			<Tooltip title="Dark mode">
 				<IconButton
 					size="large"
+					onMouseEnter={() => setCursor({ hover: true })}
+					onMouseLeave={() => setCursor({ hover: false })}
 					onClick={() => {
-						setThemeOptions({
-							...themeOptions,
-							animate: themeOptions.animate ? false : true,
-						});
+						setMode(mode === 'dark' ? 'light' : 'dark');
 					}}
 				>
-					{themeOptions.animate ? (
-						<IconPlayerPause />
+					{mode == 'dark' ? (
+						<SunIcon size={32} />
 					) : (
-						<IconPlayerPlay />
+						<MoonIcon size={32} />
 					)}
 				</IconButton>
-			</Tooltip> */}
-			{/* <Tooltip
-				title={
-					themeOptions.parallax
-						? 'Deactivate parallax'
-						: 'Activate parallax'
-				}
-			>
-				<IconButton
-					size="large"
-					onClick={() => {
-						setThemeOptions({
-							...themeOptions,
-							parallax: themeOptions.parallax ? false : true,
-						});
-					}}
-				>
-					{themeOptions.parallax ? (
-						<IconLayersSubtract />
-					) : (
-						<IconLayersIntersect />
-					)}
-				</IconButton>
-			</Tooltip> */}
-			{/* <Tooltip title="Dark mode"> */}
-			<IconButton
-				size="large"
-				onMouseEnter={() => setCursor({ hover: true })}
-				onMouseLeave={() => setCursor({ hover: false })}
-				onClick={() => {
-					setMode(mode === 'dark' ? 'light' : 'dark');
-				}}
-			>
-				{mode == 'dark' ? (
-					<SunIcon size={32} />
-				) : (
-					<MoonIcon size={32} />
-				)}
-			</IconButton>
-			{/* </Tooltip> */}
+			</Tooltip>
 		</Box>
 	);
 };
