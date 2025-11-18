@@ -45,7 +45,6 @@ export const components = (colors: Colors) => {
 				root: {
 					fontFamily: `"Chelsea Market", system-ui`,
 					fontSize: '5rem',
-					// textShadow: '2px 4px 0 rgba(0,0,0,0.15)',
 					textAlign: 'center',
 					color: colors.primary,
 					justifyContent: 'center',
