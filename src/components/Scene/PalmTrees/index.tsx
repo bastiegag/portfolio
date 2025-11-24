@@ -1,4 +1,3 @@
-import React from 'react';
 import { gsap } from 'gsap';
 
 import { Palm1 } from './Palm1';
@@ -28,7 +27,7 @@ export const PalmTrees = () => {
 	};
 
 	return (
-		<React.Fragment>
+		<>
 			<Palm1
 				params={{
 					...palmAnimation,
@@ -53,6 +52,6 @@ export const PalmTrees = () => {
 					m: { x: 13, y: 10 },
 				}}
 			/>
-		</React.Fragment>
+		</>
 	);
 };

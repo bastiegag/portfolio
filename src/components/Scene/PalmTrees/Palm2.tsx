@@ -1,7 +1,7 @@
 import React from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { styled, useTheme } from '@mui/system';
+import { styled, useTheme } from '@mui/material';
 
 import { useParallax } from 'hooks';
 import { IPalmProps } from './';
@@ -23,7 +23,7 @@ const CustomSvg = styled('g', {
 
 export const Palm2 = ({ params }: IPalmProps) => {
 	const id = React.useId();
-	const colors = useTheme().palette.scene;
+	const colors = useTheme().vars.palette;
 
 	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.m);
 
@@ -68,7 +68,7 @@ export const Palm2 = ({ params }: IPalmProps) => {
 				/>
 				<path
 					className="leaf-dark"
-					fill={colors.black}
+					fill={colors.base.black}
 					d="M65.7,37.3l4-9.4s1.5,1.4,5.9,8c4.4,6.6,8.1,17.1,8.1,17.1v-15.5l-4.2-1.6,4.2.8-1.7-11.1-10.9-9.4-15.6,2.1c3.8,10.3,10.2,19,10.2,19Z"
 				/>
 			</g>
@@ -97,7 +97,7 @@ export const Palm2 = ({ params }: IPalmProps) => {
 				/>
 				<path
 					className="leaf-dark"
-					fill={colors.black}
+					fill={colors.base.black}
 					d="M103.9,15.4l.5-8.3s-1.1-.3-2.8-.5l-3.1,9s5.4-.2,5.4-.2Z"
 				/>
 				<path
@@ -128,12 +128,12 @@ export const Palm2 = ({ params }: IPalmProps) => {
 				/>
 				<path
 					className="leaf-dark"
-					fill={colors.black}
+					fill={colors.base.black}
 					d="M26.7,19.9l3.6-16.5s2.5-1.4,5.8-1l-1.2,17.7s-8.2-.2-8.2-.2Z"
 				/>
 				<path
 					className="leaf-light"
-					fill={colors.white}
+					fill={colors.base.white}
 					d="M20.7,7.5l-3.5,12.5h6.7c0-.2,4.1-5.8,4.1-5.8l1.1-10.3-8.4,3.6Z"
 				/>
 				<path
@@ -153,12 +153,12 @@ export const Palm2 = ({ params }: IPalmProps) => {
 				/>
 				<path
 					className="leaf-dark"
-					fill={colors.black}
+					fill={colors.base.black}
 					d="M92.5,26.7l-1,14.3,3-.2-.4-12.4-1.6-1.7ZM75.5,26.2v-8.3c0,0,2.5-4.2,2.5-4.2h-.9s-8.3,9-8.3,9c0,0,3.8,1.2,4.5,1.6s2.2,1.9,2.2,1.9ZM100.4,25l-10.2-.8-2.3-2h13.3l3.7,2.6-4.4.2Z"
 				/>
 				<path
 					className="leaf-light"
-					fill={colors.white}
+					fill={colors.base.white}
 					d="M105.8,27.2h-12.4l8.4,9.2,8.1,1.1s-1.8-5.7-4-10.3Z"
 				/>
 				<path
@@ -177,12 +177,12 @@ export const Palm2 = ({ params }: IPalmProps) => {
 				/>
 				<path
 					className="leaf-dark"
-					fill={colors.black}
+					fill={colors.base.black}
 					d="M58.4,33.4l-8.6-9.1,3.2-3.9,9.7,8.4-4.2,4.5ZM42.9,13.5l11.2,5,5.8-2.4-14.7-5.9s-1.3,1.6-2.3,3.3Z"
 				/>
 				<path
 					className="leaf-light"
-					fill={colors.white}
+					fill={colors.base.white}
 					d="M35.7,35.4l5.5.9,8.8-13.5-10.6-.2s-3.5,8.7-3.6,12.9Z"
 				/>
 				<path

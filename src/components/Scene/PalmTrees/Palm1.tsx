@@ -1,7 +1,7 @@
 import React from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { styled, useTheme } from '@mui/system';
+import { styled, useTheme } from '@mui/material';
 
 import { useParallax } from 'hooks';
 import { IPalmProps } from './';
@@ -23,7 +23,7 @@ const CustomSvg = styled('g', {
 
 export const Palm1 = ({ params }: IPalmProps) => {
 	const id = React.useId();
-	const colors = useTheme().palette.scene;
+	const colors = useTheme().vars.palette;
 
 	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.m);
 
@@ -68,7 +68,7 @@ export const Palm1 = ({ params }: IPalmProps) => {
 				/>
 				<path
 					className="leaf-dark"
-					fill={colors.black}
+					fill={colors.base.black}
 					d="M68.3,28.2l-9.8-2.8s0,2,2.3,9.7,7.9,17,7.9,17l-11.9-10,1.5-4.2-2.1,3.7-12.7-10.3,10.6-12.2,7.4,1.5,6.3,5.8.5,1.8Z"
 				/>
 			</g>
@@ -97,7 +97,7 @@ export const Palm1 = ({ params }: IPalmProps) => {
 				/>
 				<path
 					className="leaf-dark"
-					fill={colors.black}
+					fill={colors.base.black}
 					d="M9.7,26.7l-2.1-7.6s.5-1,2.7-1.6l4.9,8.4s-5.5.9-5.5.9Z"
 				/>
 				<path
@@ -128,12 +128,12 @@ export const Palm1 = ({ params }: IPalmProps) => {
 				/>
 				<path
 					className="leaf-light"
-					fill={colors.white}
+					fill={colors.base.white}
 					d="M89.9,3l5.7,11.3-6.4,1.2-5.1-4.8-3.8-9.9s5.8.4,9.6,2.2Z"
 				/>
 				<path
 					className="leaf-dark"
-					fill={colors.black}
+					fill={colors.base.black}
 					d="M86.5,16l-6.8-15.1s-2.7-.9-5.8,0l4.7,16.8s7.9-1.7,7.9-1.7ZM62,21l-5.8-9.2-1.4,1.2s.8,6,.3,8.2c0,0,4.2,0,6.8-.1Z"
 				/>
 				<path
@@ -153,12 +153,12 @@ export const Palm1 = ({ params }: IPalmProps) => {
 				/>
 				<path
 					className="leaf-light"
-					fill={colors.white}
+					fill={colors.base.white}
 					d="M22.3,36.1l-6.5,10.6-7.7,2.4s.6-6.5,2.1-10.6l12.1-2.4Z"
 				/>
 				<path
 					className="leaf-dark"
-					fill={colors.black}
+					fill={colors.base.black}
 					d="M23.2,35.8l3.5,13.3-3,.4-1.8-11.8,1.3-1.9ZM15.2,35.2l9.3-2.6,2-2.4-12.4,2.4-3.3,3.2,4.4-.6ZM29.7,44.9l-1.3-15.9-3.1-6.3s.8-.8,5.3-1.7c0,0-1.4,12.4-.8,23.7l-.2.3Z"
 				/>
 				<path
@@ -177,12 +177,12 @@ export const Palm1 = ({ params }: IPalmProps) => {
 				/>
 				<polygon
 					className="leaf-dark"
-					fill={colors.black}
+					fill={colors.base.black}
 					points="46.1 42 35.7 32.6 37.6 28 49.1 36.5 46.1 42"
 				/>
 				<path
 					className="leaf-light"
-					fill={colors.white}
+					fill={colors.base.white}
 					d="M36.6,27.5l2.9-4-9.1.6s-.4,5.2-.4,7.2l6.7-3.8Z"
 				/>
 				<path

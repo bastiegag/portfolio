@@ -1,23 +1,19 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import {
-	CssBaseline,
-	StyledEngineProvider,
-	ThemeProvider,
-} from '@mui/material';
+import { CssBaseline, StyledEngineProvider } from '@mui/material';
 
+import { SettingsProvider } from 'context';
 import App from './App';
-import theme from 'theme';
 
 createRoot(document.getElementById('root')!, {
 	identifierPrefix: 'seb-',
 }).render(
 	<React.StrictMode>
 		<StyledEngineProvider injectFirst>
-			<ThemeProvider theme={theme()}>
+			<SettingsProvider>
 				<CssBaseline />
 				<App />
-			</ThemeProvider>
+			</SettingsProvider>
 		</StyledEngineProvider>
 	</React.StrictMode>
 );

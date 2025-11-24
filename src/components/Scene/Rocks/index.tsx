@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Rock1 } from './Rock1';
 import { Rock2 } from './Rock2';
 import { Rock3 } from './Rock3';
@@ -20,7 +18,7 @@ export interface IRockProps {
 
 export const Rocks = () => {
 	return (
-		<React.Fragment>
+		<>
 			<Rock7
 				params={{ x: 356, y: 171, m: { x: 14, y: 10 }, distance: 0 }}
 			/>
@@ -36,7 +34,7 @@ export const Rocks = () => {
 				params={{ x: 284, y: 274, m: { x: 14, y: 10 }, distance: 0 }}
 			/>
 			<Rock1 params={{ x: 404, y: 278, m: { x: 14, y: 10 } }} />
-		</React.Fragment>
+		</>
 	);
 };
 

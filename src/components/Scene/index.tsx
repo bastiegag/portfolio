@@ -3,9 +3,9 @@ import { styled, useTheme } from '@mui/material';
 
 import { useParallax } from 'hooks';
 import { Sky } from './Sky';
-import { Ocean } from './Ocean';
+import { Water } from './Water';
 import { Island } from './Island';
-import { Ripples } from './Ripples';
+//import { Ripples } from './Ripples';
 import { PalmTrees } from './PalmTrees';
 import { Rocks } from './Rocks';
 import { Foliages } from './Foliages';
@@ -44,7 +44,7 @@ export interface SceneComponentProps {
 }
 
 export const Scene = () => {
-	const colors = useTheme().palette.scene;
+	const colors = useTheme().palette;
 
 	useMousePosition();
 	useParallax('#background', 0, 0, { x: 0, y: 1 });
@@ -58,23 +58,23 @@ export const Scene = () => {
 			preserveAspectRatio="xMidYMid slice"
 		>
 			<g id="background">
-				<Ocean />
+				<Water />
 				<Sky />
 			</g>
 			<g className="island">
 				<Island params={{ x: 17, y: 286, m: { x: 15, y: 10 } }} />
-				<Ripples
+				{/*<Ripples
 					params={{
 						x: -25,
 						y: 325,
 						m: { x: 15, y: 10 },
 					}}
-				/>
+				/>*/}
 
 				<PalmTrees />
 				<Rocks />
-				<Foliages />
-				<Objects />
+				{/*<Foliages />*/}
+				{/*<Objects />*/}
 			</g>
 		</CustomSvg>
 	);

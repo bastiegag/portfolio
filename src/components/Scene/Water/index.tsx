@@ -1,22 +1,24 @@
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { styled, useTheme } from '@mui/system';
+import { styled, useTheme } from '@mui/material';
 
 import { Horizon } from './Horizon';
 import { Waves } from './Waves';
 import { GroundWaves } from './GroundWaves';
+import { Ripples } from './Ripples';
 
-const CustomSvg = styled('g', {
-	name: 'ocean',
-	slot: 'Root',
-})(() => ({
-	'.ocean-shape': {
-		fill: 'url(#ocean-gradient)',
-	},
-}));
+const WaterRoot = styled('g', {
+	name: 'water',
+	slot: 'root',
+})();
 
-export const Ocean = () => {
-	const colors = useTheme().palette.scene;
+const Background = styled('rect', {
+	name: 'water',
+	slot: 'background',
+})(() => ({ fill: 'url(#water-gradient)' }));
+
+export const Water = () => {
+	const colors = useTheme().vars.palette;
 
 	useGSAP(() => {
 		const timeline = gsap.timeline({
@@ -38,7 +40,10 @@ export const Ocean = () => {
 	});
 
 	return (
-		<CustomSvg className="animate-gradient" transform={`translate(0,280)`}>
+		<WaterRoot
+			className="water animate-gradient"
+			transform={`translate(0,280)`}
+		>
 			<filter
 				id="waterReflection"
 				x="0%"
@@ -93,7 +98,7 @@ export const Ocean = () => {
 			</filter>
 			<defs>
 				<radialGradient
-					id="ocean-gradient"
+					id="water-gradient"
 					cx="499.1"
 					cy="121.3"
 					fx="499.1"
@@ -106,7 +111,7 @@ export const Ocean = () => {
 					<stop offset="1" stopColor={colors.water.dark} />
 				</radialGradient>
 				<linearGradient
-					id="wave-gradient"
+					id="water-wave-gradient"
 					x1="0%"
 					x2="0%"
 					y1="0%"
@@ -116,13 +121,17 @@ export const Ocean = () => {
 					<stop offset="100%" stopColor={colors.water.light} />
 				</linearGradient>
 			</defs>
-			<rect className="ocean-shape" width="1000" height="125" />
+			<Background
+				className="water-background"
+				width="1000"
+				height="125"
+			/>
 			<Horizon
 				params={{ x: 0, y: 2, m: { x: 2, y: 1 }, opacity: 0.75 }}
 			/>
 			<g filter="url(#waterFilter)">
-				<rect
-					className="ocean-shape"
+				<Background
+					className="water-background"
 					width="1000"
 					height="130"
 					fillOpacity="0.5"
@@ -146,6 +155,13 @@ export const Ocean = () => {
 			<Horizon
 				params={{ x: 0, y: 0, m: { x: 2, y: 1 }, opacity: 0.25 }}
 			/>
-		</CustomSvg>
+			<Ripples
+				params={{
+					x: 0,
+					y: 50,
+					m: { x: 15, y: 15 },
+				}}
+			/>
+		</WaterRoot>
 	);
 };

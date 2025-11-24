@@ -1,4 +1,4 @@
-export { ThemeContext, ThemeProvider } from './ThemeContext';
+export { SettingsContext, SettingsProvider } from './SettingsContext';
 export { PopperContext, PopperProvider } from './PopperContext';
 export { ModalContext, ModalProvider } from './ModalContext';
 export { OffsetContext, OffsetProvider } from './OffsetContext';

@@ -1,5 +1,5 @@
 import React, { useId } from 'react';
-import { styled, useTheme } from '@mui/system';
+import { styled, useTheme } from '@mui/material';
 
 import { IRockProps } from './';
 import { useParallax } from 'hooks';
@@ -15,7 +15,7 @@ const CustomSvg = styled('g', {
 
 export const Rock10 = ({ params }: IRockProps) => {
 	const id = React.useId();
-	const colors = useTheme().palette.scene;
+	const colors = useTheme().vars.palette;
 
 	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.m);
 

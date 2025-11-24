@@ -5,3 +5,4 @@ export { useParallax } from './useParallax';
 export { useMousePosition } from './useMousePosition';
 export { useOffset } from './useOffset';
 export { useCursor } from './useCursor';
+export { useSettings } from './useSettings';

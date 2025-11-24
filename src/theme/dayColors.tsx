@@ -1,0 +1,115 @@
+export const dayColors = {
+	base: {
+		black: '#000000',
+		white: '#ffffff',
+		primary: '#fff7a6',
+		light: '#cccccc',
+	},
+	sky: {
+		light: '#c5e7f3',
+		main: '#48a6d9',
+		dark: '#0162b1',
+	},
+	cloud: {
+		light: '#fbfbfb',
+		dark: '#d8e6f3',
+	},
+	water: {
+		light: '#c9eee0',
+		dark: '#1992b4',
+	},
+	sand: {
+		light: '#faeebe',
+		dark: '#f4dea2',
+		darker: '#eacb88',
+	},
+	rock: {
+		100: '#fbf0eb',
+		200: '#e4d9d5',
+		300: '#d0c6c3',
+		400: '#bbb1ae',
+		500: '#a69f9e',
+		600: '#807e7f',
+		700: '#68696c',
+		800: '#585a5f',
+		900: '#4b5973',
+	},
+	palm: {
+		lighter: '#e1e93e',
+		light: '#a4b833',
+		main: '#91a22f',
+		dark: '#819029',
+		darker: '#6f8230',
+	},
+	foliage: {
+		lighter: '#e1e93e',
+		light: '#a4b833',
+		main: '#91a22f',
+		dark: '#819029',
+		darker: '#6f8230',
+	},
+	trunk: {
+		light: '#ac7f5e',
+		dark: '#73472c',
+	},
+	wood: {
+		lighter: '#f3a76b',
+		light: '#df9345',
+		lightless: '#cc8750',
+		main: '#965628',
+		dark: '#783e26',
+		darker: '#663026',
+	},
+	fire: {
+		light: '#ffd57c',
+		dark: '#f4850e',
+	},
+	rope: {
+		light: '#fae08c',
+		dark: '#a37c3e',
+	},
+	towel: {
+		light: '#fffef8',
+		dark: '#9cbab8',
+		icon: '#698696',
+	},
+	bottle: {
+		light: '#35925c',
+		main: '#2d764c',
+		dark: '#1f5435',
+	},
+	cap: {
+		light: '#fdd07f',
+		dark: '#eb8f3c',
+	},
+	paper: {
+		lighter: '#faeddb',
+		light: '#f3e5ce',
+		main: '#f2e0c6',
+		dark: '#efdcc2',
+		darker: '#e7cfb6',
+		text: '#43362e',
+	},
+	mug: {
+		lighter: '#a7815a',
+		light: '#8f796c',
+		main: '#766055',
+		dark: '#5f4d41',
+		darker: '#43362e',
+	},
+	popper: {
+		bg: 'rgba(0, 0, 0, 0.5)',
+		text: '#fff7a6',
+	},
+	red: {
+		light: '#d42a0f',
+		dark: '#711a1a',
+	},
+	about: {
+		bg: '#f2e0c6',
+		text: '#43362e',
+	},
+	inset: {
+		light: 'rgba(255, 255, 255, 0)',
+	},
+};

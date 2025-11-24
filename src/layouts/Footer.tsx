@@ -1,22 +1,12 @@
-import {
-	Box,
-	useColorScheme,
-	IconButton,
-	useTheme,
-	Tooltip,
-} from '@mui/material';
+import { Box, IconButton, useTheme, Tooltip } from '@mui/material';
 
 import { MoonIcon, SunIcon } from 'components/Icons';
-import { useCursor } from 'hooks';
+import { useCursor, useSettings } from 'hooks';
 
 export const Footer = () => {
 	const theme = useTheme();
-	const { mode, setMode } = useColorScheme();
-	const { cursor, setCursor } = useCursor();
-
-	if (!mode) {
-		return null;
-	}
+	const { settings, setSettings } = useSettings();
+	const { setCursor } = useCursor();
 
 	return (
 		<Box
@@ -35,10 +25,13 @@ export const Footer = () => {
 					onMouseEnter={() => setCursor({ hover: true })}
 					onMouseLeave={() => setCursor({ hover: false })}
 					onClick={() => {
-						setMode(mode === 'dark' ? 'light' : 'dark');
+						setSettings({
+							...settings,
+							time: settings.time === 'night' ? 'day' : 'night',
+						});
 					}}
 				>
-					{mode == 'dark' ? (
+					{settings.time == 'night' ? (
 						<SunIcon size={32} />
 					) : (
 						<MoonIcon size={32} />

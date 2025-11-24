@@ -1,12 +1,12 @@
-import React from 'react';
-import { styled } from '@mui/system';
+import { useId } from 'react';
+import { styled } from '@mui/material';
 
 import { useParallax } from 'hooks';
 import { SceneComponentProps } from 'components/Scene';
 
 const CustomSvg = styled('g', {
-	name: 'ground-waves',
-	slot: 'Root',
+	name: 'water',
+	slot: 'ground-waves',
 })(() => ({ mixBlendMode: 'multiply' }));
 
 export interface GroundWavesProps {
@@ -18,7 +18,7 @@ export interface GroundWavesProps {
 }
 
 export const GroundWaves = ({ params }: SceneComponentProps) => {
-	const id = React.useId();
+	const id = useId();
 
 	useParallax(`#${CSS.escape(id)}`, 0, params.y, params.m, {
 		skew: true,
@@ -28,8 +28,8 @@ export const GroundWaves = ({ params }: SceneComponentProps) => {
 		<CustomSvg
 			id={id}
 			transform={`translate(0,${params.y})`}
-			className="animate"
-			fill="url(#wave-gradient)"
+			className="water-ground-waves animate"
+			fill="url(#water-wave-gradient)"
 			fillOpacity={params.opacity && params.opacity}
 		>
 			<path d="M875.7,64.8s-185.6-4.9-297.1-11.7C404.9,42.5,363.6,10.8,267.7,2.4,171.8-5.9,0,9.9,0,9.9v9.1s129.1-10.4,277.6,3.8c148.5,14.1,306.9,42,397,42h201.2Z" />

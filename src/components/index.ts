@@ -8,3 +8,4 @@ export { Scene } from './Scene';
 export { Content } from './Content';
 export { Container } from './Container';
 export { Cursor } from './Cursor';
+export { Customizer } from './Customizer';
