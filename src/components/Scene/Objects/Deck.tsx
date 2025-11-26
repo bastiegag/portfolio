@@ -89,7 +89,7 @@ export const Deck = ({ params }: SceneComponentProps) => {
 						<g
 							className="lower-right-stud "
 							clipPath={`url(#${id}-top-mask)`}
-							filter="url(#waterFilter)"
+							filter="url(#water-filter)"
 							opacity="0.35"
 						>
 							<path
@@ -151,7 +151,7 @@ export const Deck = ({ params }: SceneComponentProps) => {
 						<g
 							className="lower-left-stud"
 							clipPath={`url(#${id}-top-mask)`}
-							filter="url(#waterFilter)"
+							filter="url(#water-filter)"
 							opacity="0.35"
 						>
 							<path

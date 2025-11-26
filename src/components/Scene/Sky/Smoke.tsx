@@ -6,9 +6,9 @@ import { styled, useTheme } from '@mui/material';
 import { useParallax, useSettings } from 'hooks';
 import { SceneComponentProps } from 'components/Scene';
 
-const SkySmoke = styled('g', {
-	name: 'sky',
-	slot: 'smoke',
+const SmokeRoot = styled('g', {
+	name: 'Smoke',
+	slot: 'root',
 })(() => {
 	const { settings } = useSettings();
 
@@ -27,11 +27,21 @@ const SkySmoke = styled('g', {
 	};
 });
 
+const SmokeSmall = styled('path', {
+	name: 'Smoke',
+	slot: 'small',
+})();
+
+const SmokeLarge = styled('path', {
+	name: 'Smoke',
+	slot: 'large',
+})();
+
 export const Smoke = ({ params }: SceneComponentProps) => {
-	const id = useId();
+	const id = CSS.escape(useId());
 	const colors = useTheme().vars.palette;
 
-	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.m);
+	useParallax(`#${id}`, params.x, params.y, params.m);
 
 	useGSAP(() => {
 		const timeline = gsap.timeline({
@@ -39,18 +49,18 @@ export const Smoke = ({ params }: SceneComponentProps) => {
 			repeatRefresh: true,
 		});
 
-		timeline.to('#sky-smoke', {
+		timeline.to(`#${id}`, {
 			duration: gsap.utils.random(2, 5, true),
-			skewX: gsap.utils.random(-2, 2, true),
+			skewX: gsap.utils.random(-4, 4, true),
 			ease: 'power1.inOut',
 			svgOrigin: '120 280',
 		});
 	});
 
 	return (
-		<SkySmoke
+		<SmokeRoot
 			id={id}
-			className="sky-smoke animate"
+			className="Smoke-root"
 			transform={`translate(${params.x},${params.y})`}
 		>
 			<svg width="60" height="140" viewBox="0 0 240 560">
@@ -59,7 +69,7 @@ export const Smoke = ({ params }: SceneComponentProps) => {
 						repeatCount="indefinite"
 						dur="8s"
 						begin="0s"
-						href="#smoke-small"
+						href="#Smoke-small"
 						fill="freeze"
 						attributeName="d"
 						attributeType="XML"
@@ -74,7 +84,7 @@ export const Smoke = ({ params }: SceneComponentProps) => {
 						repeatCount="indefinite"
 						dur="8s"
 						begin="0s"
-						href="#smoke-large"
+						href="#Smoke-large"
 						fill="freeze"
 						attributeName="d"
 						attributeType="XML"
@@ -86,21 +96,21 @@ export const Smoke = ({ params }: SceneComponentProps) => {
 						calcMode="spline"
 					/>
 				</defs>
-				<path
-					id="smoke-small"
+				<SmokeSmall
+					id="Smoke-small"
 					fill={colors.base.light}
-					className="smoke-shape"
+					className="Smoke-small"
 					transform="translate(114, 253) translate(0, 0)"
 					d=" M24.5 -246 C24.5,-246 8.77,-220.74 -0.61,-206.12 C-10,-191.5 -33.99,-158.27 -33.99,-123.88 C-33.99,-89.5 -17.54,-64.1 -2.02,-38.05 C13.5,-12 31.25,21.1 32.25,53.75 C33.11,81.91 13.41,117.28 3.21,133.14 C-7,149 -20.75,166.97 -20.75,194 C-20.75,226 7,299.5 7,299.5 C7,299.5 -8.75,229.58 -5.37,194.5 C-3.22,172.03 9.99,153.02 23,133.01 C36,113 53.5,87 52.75,54 C52,21 32.5,-6.49 12.25,-38 C-8,-69.5 -23.55,-90.27 -26.27,-123.88 C-29,-157.5 -8.62,-188.21 1.69,-205.35 C12,-222.5 24.5,-246 24.5,-246z "
 				/>
-				<path
-					id="smoke-large"
+				<SmokeLarge
+					id="Smoke-large"
 					fill={colors.base.light}
-					className="smoke-shape"
+					className="Smoke-large"
 					transform="translate(114, 253) translate(0, 0)"
 					d=" M-33.5 -246 C-37,-239 -46,-225.5 -44.61,-206.24 C-42.43,-175.82 -26,-150.5 -4.99,-123.77 C14.62,-98.82 41.14,-69.56 36.48,-38.1 C31.5,-4.5 -14.5,24.5 -46.25,53.5 C-70.18,75.36 -85.5,101.5 -70.29,133.28 C-59.94,154.9 -47,173.09 -30.25,194 C-1,230.5 13.5,261.5 7,299.5 C23.5,256.5 7.61,217.33 -6.87,194.5 C-24,167.5 -29.5,149 -12,133.02 C16.52,106.97 50.35,84.89 72.75,54 C94.5,24 89,-12 75.25,-37.99 C58.28,-70.06 32.5,-99.5 8.23,-123.77 C-14.12,-146.11 -38.31,-173.67 -40.31,-205.21 C-41.5,-224 -35.5,-234 -33.5,-246z "
 				/>
 			</svg>
-		</SkySmoke>
+		</SmokeRoot>
 	);
 };

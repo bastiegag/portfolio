@@ -4,9 +4,9 @@ import { styled, useTheme } from '@mui/material';
 import { useParallax, useSettings } from 'hooks';
 import { SceneComponentProps } from 'components/Scene';
 
-const SkyMoon = styled('g', {
-	name: 'sky',
-	slot: 'moon',
+const MoonRoot = styled('g', {
+	name: 'Moon',
+	slot: 'root',
 })(() => {
 	const { settings } = useSettings();
 
@@ -19,20 +19,20 @@ const SkyMoon = styled('g', {
 });
 
 export const Moon = ({ params }: SceneComponentProps) => {
-	const id = useId();
+	const id = CSS.escape(useId());
 	const colors = useTheme().vars.palette;
 	const size = 20;
 
-	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.m);
+	useParallax(`#${id}`, params.x, params.y, params.m);
 
 	return (
-		<SkyMoon
+		<MoonRoot
 			id={id}
-			className="sky-moon animate"
+			className="Moon-root"
 			transform={`translate(${params.x},${params.y})`}
 			strokeWidth="0"
 		>
 			<circle cx={size} cy={size} r={size} fill={colors.base.white} />
-		</SkyMoon>
+		</MoonRoot>
 	);
 };

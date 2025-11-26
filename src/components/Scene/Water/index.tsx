@@ -1,23 +1,25 @@
+import { useId } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { styled, useTheme } from '@mui/material';
 
-import { Horizon } from './Horizon';
-import { Waves } from './Waves';
 import { GroundWaves } from './GroundWaves';
+import { Horizon } from './Horizon';
 import { Ripples } from './Ripples';
+import { Waves } from './Waves';
 
 const WaterRoot = styled('g', {
-	name: 'water',
+	name: 'Water',
 	slot: 'root',
 })();
 
-const Background = styled('rect', {
-	name: 'water',
+const WaterBackground = styled('rect', {
+	name: 'Water',
 	slot: 'background',
 })(() => ({ fill: 'url(#water-gradient)' }));
 
 export const Water = () => {
+	const id = CSS.escape(useId());
 	const colors = useTheme().vars.palette;
 
 	useGSAP(() => {
@@ -41,39 +43,11 @@ export const Water = () => {
 
 	return (
 		<WaterRoot
-			className="water animate-gradient"
+			id={id}
+			className="Water-root animate-gradient animate-color"
 			transform={`translate(0,280)`}
 		>
-			<filter
-				id="waterReflection"
-				x="0%"
-				y="0%"
-				width="100%"
-				height="100%"
-			>
-				<feTurbulence
-					baseFrequency="0.02 0.6"
-					type="turbulence"
-					result="noise"
-					seed="3"
-					numOctaves="10"
-					stitchTiles="noStitch"
-				/>
-				<feColorMatrix
-					type="hueRotate"
-					className="turbulence"
-					values="0"
-				/>
-				<feColorMatrix
-					type="matrix"
-					values="0 0 0 0 0
-               0 0 0 0 0
-               0 0 0 0 0
-               1 0 0 0 0"
-				/>
-				<feDisplacementMap in="SourceGraphic" scale="15" />
-			</filter>
-			<filter id="waterFilter" x="0%" y="0%" width="100%" height="100%">
+			<filter id="water-filter" x="0%" y="0%" width="100%" height="100%">
 				<feTurbulence
 					baseFrequency="0.015 0.25"
 					type="turbulence"
@@ -110,28 +84,18 @@ export const Water = () => {
 					<stop offset=".2" stopColor={colors.water.light} />
 					<stop offset="1" stopColor={colors.water.dark} />
 				</radialGradient>
-				<linearGradient
-					id="water-wave-gradient"
-					x1="0%"
-					x2="0%"
-					y1="0%"
-					y2="100%"
-				>
-					<stop offset="0%" stopColor={colors.water.dark} />
-					<stop offset="100%" stopColor={colors.water.light} />
-				</linearGradient>
 			</defs>
-			<Background
-				className="water-background"
+			<WaterBackground
+				className="Water-background"
 				width="1000"
 				height="125"
 			/>
 			<Horizon
 				params={{ x: 0, y: 2, m: { x: 2, y: 1 }, opacity: 0.75 }}
 			/>
-			<g filter="url(#waterFilter)">
-				<Background
-					className="water-background"
+			<g filter="url(#water-filter)">
+				<WaterBackground
+					className="Water-background"
 					width="1000"
 					height="130"
 					fillOpacity="0.5"

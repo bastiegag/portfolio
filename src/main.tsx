@@ -1,4 +1,4 @@
-import React from 'react';
+import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { CssBaseline, StyledEngineProvider } from '@mui/material';
 
@@ -8,12 +8,12 @@ import App from './App';
 createRoot(document.getElementById('root')!, {
 	identifierPrefix: 'seb-',
 }).render(
-	<React.StrictMode>
+	<StrictMode>
 		<StyledEngineProvider injectFirst>
 			<SettingsProvider>
 				<CssBaseline />
 				<App />
 			</SettingsProvider>
 		</StyledEngineProvider>
-	</React.StrictMode>
+	</StrictMode>
 );

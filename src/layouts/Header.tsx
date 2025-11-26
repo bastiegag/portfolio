@@ -7,14 +7,14 @@ import { useCursor } from 'hooks';
 import { MenuIcon, CloseIcon } from 'components/Icons';
 
 const menuContainer = {
+	alignItems: 'center',
+	display: 'flex',
+	height: '100%',
+	justifyContent: 'center',
+	left: 0,
 	position: 'absolute',
 	top: 0,
-	left: 0,
 	width: '100%',
-	height: '100%',
-	display: 'flex',
-	alignItems: 'center',
-	justifyContent: 'center',
 };
 
 export const Header = () => {

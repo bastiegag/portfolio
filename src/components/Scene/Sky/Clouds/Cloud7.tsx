@@ -1,6 +1,7 @@
+import { useId } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { styled, useTheme } from '@mui/system';
+import { styled, useTheme } from '@mui/material';
 
 import { CloudProps } from './';
 import config from '@/config';
@@ -12,13 +13,14 @@ const animation = {
 	start: 7,
 };
 
-const CustomSvg = styled('g', {
-	name: 'cloud7',
-	slot: 'Root',
+const Cloud7Root = styled('g', {
+	name: 'Cloud7',
+	slot: 'root',
 })(() => ({ position: 'relative' }));
 
 export const Cloud7 = ({ params }: CloudProps) => {
-	const colors = useTheme().palette.scene;
+	const id = CSS.escape(useId());
+	const colors = useTheme().vars.palette;
 
 	useGSAP(() => {
 		const timeline = gsap.timeline({
@@ -27,7 +29,7 @@ export const Cloud7 = ({ params }: CloudProps) => {
 		});
 
 		timeline.fromTo(
-			'.cloud-7',
+			`#${id}`,
 			{ x: animation.width * -1 },
 			{
 				x: config.sceneWidth,
@@ -36,25 +38,24 @@ export const Cloud7 = ({ params }: CloudProps) => {
 			}
 		);
 
-		!config.debug && timeline.seek(animation.start * config.cloudsSpeed);
+		timeline.seek(animation.start * config.cloudsSpeed);
 	});
 
 	return (
-		<CustomSvg
-			className="cloud cloud-7 animate-color"
+		<Cloud7Root
+			id={id}
+			className="Cloud7-root"
 			transform={`translate(0,${params.y})`}
 		>
 			<path
-				className="cloud-light"
 				fill={colors.cloud.light}
 				d="M2.8,38.6C7.6,18.1,20.2.7,53.3,0c33.1-.7,55.6,53.9,55.6,53.9,0,0-1-16.4,7-13.9,5.3,1.7,9.9,10.5,9.9,10.5,0,0,10.4-6.4,28.3-5.6,29.9,1.3,47.3,26.2,58.7,33.5,0,0,20.7-7.9,34.6-4.4,13.9,3.5,12.1,4.4,28.6,7.7,16.4,3.3,69.5,8,69.5,8H12.5S-7.1,71.9,2.8,38.6Z"
 			/>
 			<path
-				className="cloud-fade"
 				fill={colors.sky.main}
 				fillOpacity={params.distance ? `${params.distance}%` : '0'}
 				d="M2.8,38.6C7.6,18.1,20.2.7,53.3,0c33.1-.7,55.6,53.9,55.6,53.9,0,0-1-16.4,7-13.9,5.3,1.7,9.9,10.5,9.9,10.5,0,0,10.4-6.4,28.3-5.6,29.9,1.3,47.3,26.2,58.7,33.5,0,0,20.7-7.9,34.6-4.4,13.9,3.5,12.1,4.4,28.6,7.7,16.4,3.3,69.5,8,69.5,8H12.5S-7.1,71.9,2.8,38.6Z"
 			/>
-		</CustomSvg>
+		</Cloud7Root>
 	);
 };

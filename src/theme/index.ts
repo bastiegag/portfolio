@@ -18,6 +18,10 @@ declare module '@mui/material/styles' {
 			main: string;
 			dark: string;
 		};
+		cloud: {
+			light: string;
+			dark: string;
+		};
 		water: {
 			light: string;
 			dark: string;
@@ -55,6 +59,10 @@ declare module '@mui/material/styles' {
 			700: string;
 			800: string;
 			900: string;
+		};
+		cursor: {
+			light: string;
+			dark: string;
 		};
 	}
 	interface PaletteOptions {
@@ -69,6 +77,10 @@ declare module '@mui/material/styles' {
 			main: string;
 			dark: string;
 		};
+		cloud: {
+			light: string;
+			dark: string;
+		};
 		water: {
 			light: string;
 			dark: string;
@@ -107,28 +119,41 @@ declare module '@mui/material/styles' {
 			800: string;
 			900: string;
 		};
+		cursor: {
+			light: string;
+			dark: string;
+		};
+	}
+	interface Components {
+		Scene?: {
+			styleOverrides?: {
+				root?: any;
+				[key: string]: any;
+			};
+			[key: string]: any;
+		};
 	}
 }
 
-const theme = createTheme({
+export const dayTheme = createTheme({
 	typography: {
 		fontFamily: '"Chelsea Market", system-ui',
 		fontSize: 16,
 	},
-	//components: components,
-});
-
-export const dayTheme = createTheme({
 	palette: dayColors,
-	cssVariables: { cssVarPrefix: 'sg', disableCssColorScheme: true },
-	//components: components,
+	cssVariables: { cssVarPrefix: 'seb', disableCssColorScheme: true },
+	components: components,
 });
 
 export const nightTheme = createTheme({
+	typography: {
+		fontFamily: '"Chelsea Market", system-ui',
+		fontSize: 16,
+	},
 	palette: nightColors,
-	cssVariables: { cssVarPrefix: 'sg', disableCssColorScheme: true },
+	cssVariables: { cssVarPrefix: 'seb', disableCssColorScheme: true },
+	components: components,
 });
 
-export default theme;
 export { dayColors } from './dayColors';
 export { nightColors } from './nightColors';

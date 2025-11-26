@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Cloud1 } from './Cloud1';
 import { Cloud2 } from './Cloud2';
 import { Cloud3 } from './Cloud3';
@@ -17,7 +15,7 @@ export interface CloudProps {
 
 export const Clouds = () => {
 	return (
-		<React.Fragment>
+		<>
 			<Cloud7 params={{ y: 140, distance: 40 }} />
 			<Cloud6 params={{ y: 160, distance: 40 }} />
 			<Cloud5 params={{ y: 120, distance: 50 }} />
@@ -25,6 +23,6 @@ export const Clouds = () => {
 			<Cloud3 params={{ y: 175, distance: 20 }} />
 			<Cloud2 params={{ y: 150 }} />
 			<Cloud1 params={{ y: 190 }} />
-		</React.Fragment>
+		</>
 	);
 };

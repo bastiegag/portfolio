@@ -4,14 +4,14 @@ import { Box } from '@mui/material';
 
 import { Scene } from 'components';
 
-const Fullscreen = styled(Box, {
-	name: 'fullscreen',
-	slot: 'Root',
+const ContainerRoot = styled(Box, {
+	name: 'container',
+	slot: 'root',
 })(() => ({
-	width: '100%',
 	height: '100vh',
-	position: 'relative',
 	overflow: 'hidden',
+	position: 'relative',
+	width: '100%',
 }));
 
 export interface ContainerPropsType {
@@ -22,20 +22,20 @@ export const Container = ({ children }: ContainerPropsType) => {
 	return (
 		<>
 			{children}
-			<Fullscreen>
+			<ContainerRoot>
 				<Box
 					sx={{
-						minWidth: '100%',
 						height: '100%',
+						left: '50%',
+						minWidth: '100%',
 						position: 'absolute',
 						top: '50%',
-						left: '50%',
 						transform: 'translateX(-50%) translateY(-50%)',
 					}}
 				>
 					<Scene />
 				</Box>
-			</Fullscreen>
+			</ContainerRoot>
 		</>
 	);
 };

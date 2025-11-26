@@ -101,7 +101,7 @@ export const dayColors = {
 		bg: 'rgba(0, 0, 0, 0.5)',
 		text: '#fff7a6',
 	},
-	red: {
+	cursor: {
 		light: '#d42a0f',
 		dark: '#711a1a',
 	},

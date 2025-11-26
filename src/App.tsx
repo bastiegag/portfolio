@@ -1,14 +1,14 @@
-import { Suspense, useState } from 'react';
+import { Suspense } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { ThemeProvider, Button } from '@mui/material';
+import { ThemeProvider } from '@mui/material';
 
 import Routes from 'routes';
 import {
-	PopperProvider,
+	CursorProvider,
 	ModalProvider,
 	OffsetProvider,
-	CursorProvider,
+	PopperProvider,
 } from 'context';
 import { useSettings } from 'hooks';
 

@@ -20,13 +20,13 @@ export const Rocks = () => {
 	return (
 		<>
 			<Rock7
-				params={{ x: 356, y: 171, m: { x: 14, y: 10 }, distance: 0 }}
+				params={{ x: 356, y: 171, m: { x: 13, y: 9 }, distance: 20 }}
 			/>
 			<Rock6
-				params={{ x: 304, y: 230, m: { x: 14, y: 10 }, distance: 0 }}
+				params={{ x: 304, y: 230, m: { x: 13, y: 9 }, distance: 20 }}
 			/>
 			<Rock5
-				params={{ x: 600, y: 245, m: { x: 14, y: 10 }, distance: 0 }}
+				params={{ x: 600, y: 245, m: { x: 13, y: 9 }, distance: 20 }}
 			/>
 			<Rock4 params={{ x: 400, y: 146, m: { x: 14, y: 10 } }} />
 			<Rock3 params={{ x: 329, y: 261, m: { x: 14, y: 10 } }} />

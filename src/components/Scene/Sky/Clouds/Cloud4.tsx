@@ -1,6 +1,7 @@
+import { useId } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { styled, useTheme } from '@mui/system';
+import { styled, useTheme } from '@mui/material';
 
 import { CloudProps } from './';
 import config from '@/config';
@@ -12,13 +13,14 @@ const animation = {
 	start: 4,
 };
 
-const CustomSvg = styled('g', {
-	name: 'cloud4',
-	slot: 'Root',
+const Cloud4Root = styled('g', {
+	name: 'Cloud4',
+	slot: 'root',
 })(() => ({ position: 'relative' }));
 
 export const Cloud4 = ({ params }: CloudProps) => {
-	const colors = useTheme().palette.scene;
+	const id = CSS.escape(useId());
+	const colors = useTheme().vars.palette;
 
 	useGSAP(() => {
 		const timeline = gsap.timeline({
@@ -27,7 +29,7 @@ export const Cloud4 = ({ params }: CloudProps) => {
 		});
 
 		timeline.fromTo(
-			'.cloud-4',
+			`#${id}`,
 			{ x: animation.width * -1 },
 			{
 				x: config.sceneWidth,
@@ -36,26 +38,26 @@ export const Cloud4 = ({ params }: CloudProps) => {
 			}
 		);
 
-		!config.debug && timeline.seek(animation.start * config.cloudsSpeed);
+		timeline.seek(animation.start * config.cloudsSpeed);
 	});
 
 	return (
-		<CustomSvg
-			className="cloud cloud-4"
+		<Cloud4Root
+			id={id}
+			className="Cloud4-root"
 			transform={`translate(0,${params.y})`}
 		>
-			<g className="cloud-light animate" fill={colors.cloud.light}>
+			<g fill={colors.cloud.light}>
 				<path d="M6.7,50.8c-10.3,3.8-5.6,10.5-5.6,10.5h296.8s-.3-6.5-.6-8.4c-1.6-7.8-9.3-25.8-31.7-28.4-22.4-2.6-21.6,31.8-21.6,31.8,0,0-14.6-20-28.6-8.5,0,0-7.5-42.8-29.6-47.3s-28.8,20.3-28.8,20.3c0,0-27.1-15.6-54.3-4.4-27.3,11.2-28.1,32.9-28.1,32.9,0,0-13.1-17.4-26.3-15.3-13.2,2.1-12.6,17-12.6,17,0,0-18.5-4.1-28.8-.3h-.2,0Z" />
 				<path d="M309.9,44.6c1.5.5,5.4,3.3,6.1,6.2.4,1.7-.8,2.3-2.2,2.5-2,.3-3.2.2-5.2-.4-1.4-.5-3-.9-4.1-1.8-1.4-1.3-2.6-4.3-.9-5.8.8-.6,2.1-1.4,3.1-1.4s1.8.2,3.3.8h0Z" />
 			</g>
 			<g
-				className="cloud-fade animate"
 				fill={colors.sky.main}
 				fillOpacity={params.distance ? `${params.distance}%` : '0'}
 			>
 				<path d="M6.7,50.8c-10.3,3.8-5.6,10.5-5.6,10.5h296.8s-.3-6.5-.6-8.4c-1.6-7.8-9.3-25.8-31.7-28.4-22.4-2.6-21.6,31.8-21.6,31.8,0,0-14.6-20-28.6-8.5,0,0-7.5-42.8-29.6-47.3s-28.8,20.3-28.8,20.3c0,0-27.1-15.6-54.3-4.4-27.3,11.2-28.1,32.9-28.1,32.9,0,0-13.1-17.4-26.3-15.3-13.2,2.1-12.6,17-12.6,17,0,0-18.5-4.1-28.8-.3h-.2,0Z" />
 				<path d="M309.9,44.6c1.5.5,5.4,3.3,6.1,6.2.4,1.7-.8,2.3-2.2,2.5-2,.3-3.2.2-5.2-.4-1.4-.5-3-.9-4.1-1.8-1.4-1.3-2.6-4.3-.9-5.8.8-.6,2.1-1.4,3.1-1.4s1.8.2,3.3.8h0Z" />
 			</g>
-		</CustomSvg>
+		</Cloud4Root>
 	);
 };

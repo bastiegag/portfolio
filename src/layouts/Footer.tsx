@@ -1,4 +1,4 @@
-import { Box, IconButton, useTheme, Tooltip } from '@mui/material';
+import { Box, IconButton, useTheme } from '@mui/material';
 
 import { MoonIcon, SunIcon } from 'components/Icons';
 import { useCursor, useSettings } from 'hooks';
@@ -19,25 +19,23 @@ export const Footer = () => {
 				zIndex: theme.zIndex.modal + 2,
 			}}
 		>
-			<Tooltip title="Dark mode">
-				<IconButton
-					size="large"
-					onMouseEnter={() => setCursor({ hover: true })}
-					onMouseLeave={() => setCursor({ hover: false })}
-					onClick={() => {
-						setSettings({
-							...settings,
-							time: settings.time === 'night' ? 'day' : 'night',
-						});
-					}}
-				>
-					{settings.time == 'night' ? (
-						<SunIcon size={32} />
-					) : (
-						<MoonIcon size={32} />
-					)}
-				</IconButton>
-			</Tooltip>
+			<IconButton
+				size="large"
+				onMouseEnter={() => setCursor({ hover: true })}
+				onMouseLeave={() => setCursor({ hover: false })}
+				onClick={() => {
+					setSettings({
+						...settings,
+						time: settings.time === 'night' ? 'day' : 'night',
+					});
+				}}
+			>
+				{settings.time == 'night' ? (
+					<SunIcon size={32} />
+				) : (
+					<MoonIcon size={32} />
+				)}
+			</IconButton>
 		</Box>
 	);
 };
