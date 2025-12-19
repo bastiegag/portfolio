@@ -1,16 +1,16 @@
-import React, { ReactNode } from 'react';
+import { JSX, useState, ReactNode } from 'react';
 import { useNavigate } from 'react-router';
 import { Dialog, Slide } from '@mui/material';
 
 import { Paper, Content } from 'components';
 
-export interface PagePropsType {
+export interface PageProps {
 	children: ReactNode;
 }
 
-export const Page = ({ children }: PagePropsType) => {
+export const Page = ({ children }: PageProps): JSX.Element => {
 	const navigate = useNavigate();
-	const [open, setOpen] = React.useState<boolean>(true);
+	const [open, setOpen] = useState<boolean>(true);
 
 	const handleClose = () => {
 		navigate('/');

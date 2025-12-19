@@ -1,38 +1,49 @@
-import { useId } from 'react';
+import { JSX, useId } from 'react';
 import { styled, useTheme } from '@mui/material';
 
 import { useParallax, useSettings } from 'hooks';
-import { SceneComponentProps } from 'components/Scene';
+
+const MOON_SIZE = 20;
+
+export interface MoonProps {
+	modifier: {
+		x: number;
+		y: number;
+	};
+	x: number;
+	y: number;
+}
 
 const MoonRoot = styled('g', {
 	name: 'Moon',
 	slot: 'root',
-})(() => {
+})<{ 'data-night': boolean }>(({ 'data-night': isNight }) => ({
+	opacity: isNight ? 1 : 0,
+	transition: 'opacity 0.3s ease',
+	width: MOON_SIZE * 2,
+	height: MOON_SIZE * 2,
+}));
+
+export const Moon = ({ modifier, x, y }: MoonProps): JSX.Element => {
+	const id = useId();
 	const { settings } = useSettings();
-
-	return {
-		opacity: 0,
-		...(settings.time === 'night' && {
-			opacity: 1,
-		}),
-	};
-});
-
-export const Moon = ({ params }: SceneComponentProps) => {
-	const id = CSS.escape(useId());
 	const colors = useTheme().vars.palette;
-	const size = 20;
 
-	useParallax(`#${id}`, params.x, params.y, params.m);
+	useParallax(`#${id}`, x, y, modifier);
 
 	return (
 		<MoonRoot
 			id={id}
 			className="Moon-root"
-			transform={`translate(${params.x},${params.y})`}
+			data-night={settings.time === 'night'}
 			strokeWidth="0"
 		>
-			<circle cx={size} cy={size} r={size} fill={colors.base.white} />
+			<circle
+				cx={MOON_SIZE}
+				cy={MOON_SIZE}
+				r={MOON_SIZE}
+				fill={colors.base.white}
+			/>
 		</MoonRoot>
 	);
 };

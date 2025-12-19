@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { JSX } from 'react';
 import { Link } from 'react-router';
 import {
 	IconBrandGithub,
@@ -13,21 +13,16 @@ import {
 	ListItem,
 	ListItemButton,
 	Slide,
-	Tooltip,
 } from '@mui/material';
 
 import { useCursor } from 'hooks';
 import { openLink } from 'utils';
 import config from '@/config';
 
-const menu = [
+const MENU = [
 	{
 		title: 'À propos',
 		url: '/a-propos',
-	},
-	{
-		title: 'Projets',
-		url: '/projets',
 	},
 	{
 		title: 'Contact',
@@ -35,7 +30,7 @@ const menu = [
 	},
 ];
 
-const icons = [
+const ICONS = [
 	{ title: 'Github', icon: IconBrandGithub, url: config.github },
 	{ title: 'Vimeo', icon: IconBrandVimeo, url: config.vimeo },
 	{ title: 'Instagram', icon: IconBrandInstagram, url: config.instagram },
@@ -49,18 +44,18 @@ const socialContainer = {
 	p: 3,
 };
 
-interface MenuPropsType {
+interface MenuProps {
 	open: boolean;
 	setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const Menu = ({ open, setOpen }: MenuPropsType) => {
+export const Menu = ({ open, setOpen }: MenuProps): JSX.Element => {
 	const { cursor, setCursor } = useCursor();
 
 	return (
 		<>
 			<List>
-				{menu.map((item, i) => {
+				{MENU.map((item, i) => {
 					return (
 						<Slide
 							key={i}
@@ -71,6 +66,7 @@ export const Menu = ({ open, setOpen }: MenuPropsType) => {
 							<ListItem disablePadding>
 								<ListItemButton
 									component={Link}
+									color="black"
 									to={item.url}
 									onMouseEnter={() =>
 										setCursor({ hover: true })
@@ -97,10 +93,9 @@ export const Menu = ({ open, setOpen }: MenuPropsType) => {
 
 			<Box sx={socialContainer}>
 				<Box sx={{ flexGrow: 1 }} />
-				{icons.map((item, i) => {
+				{ICONS.map((item, i) => {
 					const Icon = item.icon;
 					return (
-						// <Tooltip key={i} title={item.title}>
 						<IconButton
 							key={i}
 							size="large"
@@ -112,7 +107,6 @@ export const Menu = ({ open, setOpen }: MenuPropsType) => {
 						>
 							<Icon size={32} />
 						</IconButton>
-						// </Tooltip>
 					);
 				})}
 			</Box>

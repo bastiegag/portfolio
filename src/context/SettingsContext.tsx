@@ -1,15 +1,21 @@
-import React, { createContext, useMemo, useEffect, useState } from 'react';
+import {
+	createContext,
+	useMemo,
+	useEffect,
+	useState,
+	ReactNode,
+	Dispatch,
+	SetStateAction,
+} from 'react';
 
 import { dayTheme, nightTheme } from 'theme';
 
-interface ISettingsContext {
+interface SettingsContext {
 	settings: {
 		time: keyof typeof themes;
 		theme: typeof dayTheme;
 	};
-	setSettings: React.Dispatch<
-		React.SetStateAction<ISettingsContext['settings']>
-	>;
+	setSettings: Dispatch<SetStateAction<SettingsContext['settings']>>;
 }
 
 const themes = {
@@ -17,10 +23,10 @@ const themes = {
 	night: nightTheme,
 };
 
-export const SettingsContext = createContext<ISettingsContext | null>(null);
+export const SettingsContext = createContext<SettingsContext | null>(null);
 
-export const SettingsProvider = ({ children }: React.PropsWithChildren<{}>) => {
-	const [settings, setSettings] = useState<ISettingsContext['settings']>({
+export const SettingsProvider = ({ children }: { children: ReactNode }) => {
+	const [settings, setSettings] = useState<SettingsContext['settings']>({
 		time: 'day',
 		theme: dayTheme,
 	});

@@ -1,11 +1,11 @@
-import React, { ReactNode } from 'react';
+import { JSX, ReactNode } from 'react';
 import { styled } from '@mui/system';
 import { Box } from '@mui/material';
 
 import { Scene } from 'components';
 
 const ContainerRoot = styled(Box, {
-	name: 'container',
+	name: 'Container',
 	slot: 'root',
 })(() => ({
 	height: '100vh',
@@ -14,15 +14,15 @@ const ContainerRoot = styled(Box, {
 	width: '100%',
 }));
 
-export interface ContainerPropsType {
+export interface ContainerProps {
 	children: ReactNode;
 }
 
-export const Container = ({ children }: ContainerPropsType) => {
+export const Container = ({ children }: ContainerProps): JSX.Element => {
 	return (
 		<>
 			{children}
-			<ContainerRoot>
+			<ContainerRoot className="Container-root">
 				<Box
 					sx={{
 						height: '100%',

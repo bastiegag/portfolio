@@ -1,36 +1,41 @@
-import React from 'react';
-import { styled, useTheme } from '@mui/system';
+import { JSX, useId } from 'react';
+import { styled, useTheme } from '@mui/material';
 
 import { useParallax } from 'hooks';
-import { SceneComponentProps } from 'components/Scene';
 
-const CustomSvg = styled('g', {
-	name: 'firecamp',
-	slot: 'Root',
+export interface CampfireProps {
+	x: number;
+	y: number;
+	modifier: { x: number; y: number };
+}
+
+const CampfireRoot = styled('g', {
+	name: 'Campfire',
+	slot: 'root',
 })(() => ({
 	'.wood-shadow': {
 		mixBlend: 'multiply',
 		opacity: 0.25,
 	},
-	'.firecamp-shadow': {
+	'.campfire-shadow': {
 		mixBlend: 'multiply',
 		opacity: 0.15,
 	},
 }));
 
-export const Firecamp = ({ params, invert }: SceneComponentProps) => {
-	const id = React.useId();
-	const colors = useTheme().palette.scene;
+export const Campfire = ({ x, y, modifier }: CampfireProps): JSX.Element => {
+	const id = useId();
+	const colors = useTheme().vars.palette;
 
-	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.m);
+	useParallax(`#${id}`, x, y, modifier);
 
 	return (
-		<CustomSvg
+		<CampfireRoot
 			id={id}
-			className="firecamp animate-color"
-			transform={`translate(${params.x},${params.y})`}
+			className="Campfire-root animate-color"
+			transform={`translate(${x},${y})`}
 		>
-			<g className="firecamp-wood">
+			<g className="campfire-wood">
 				<path
 					fill={colors.wood.darker}
 					d="M36,178.9s6.8-10.9,10.7-12.1c3.9-1.3,23.2-1,25.2.2,2,1.2,2.9,4.5,2.9,4.5,0,0,16.4-1.5,18.4-.7,2.1.8,4.8,8.9,4.8,8.9l-16.4,3.4-26.1.6h-18.3l-1.3-4.9Z"
@@ -69,9 +74,9 @@ export const Firecamp = ({ params, invert }: SceneComponentProps) => {
 				/>
 			</g>
 			<polygon
-				className="firecamp-shadow"
+				className="campfire-shadow"
 				points="3.6 189.7 35 191.9 83.5 191.9 130.3 190.3 131.8 189.3 127.5 187.3 136 186.8 108.5 184.7 113.6 179 3.6 189.7"
 			/>
-		</CustomSvg>
+		</CampfireRoot>
 	);
 };

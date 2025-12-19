@@ -90,9 +90,7 @@ export const Water = () => {
 				width="1000"
 				height="125"
 			/>
-			<Horizon
-				params={{ x: 0, y: 2, m: { x: 2, y: 1 }, opacity: 0.75 }}
-			/>
+			<Horizon x={0} y={2} modifier={{ x: 2, y: 1 }} opacity={0.75} />
 			<g filter="url(#water-filter)">
 				<WaterBackground
 					className="Water-background"
@@ -100,32 +98,29 @@ export const Water = () => {
 					height="130"
 					fillOpacity="0.5"
 				/>
-				<Waves
-					params={{ x: 0, y: 0, m: { x: 8, y: 8 }, opacity: 0.75 }}
+				<Waves x={0} y={0} modifier={{ x: 8, y: 8 }} opacity={0.75} />
+				<GroundWaves
+					x={0}
+					y={45}
+					modifier={{ x: 13, y: 13 }}
+					opacity={0.25}
 				/>
 				<GroundWaves
-					params={{ x: 0, y: 45, m: { x: 13, y: 13 }, opacity: 0.25 }}
+					x={0}
+					y={60}
+					modifier={{ x: 16, y: 16 }}
+					opacity={0.5}
 				/>
-				<GroundWaves
-					params={{ x: 0, y: 60, m: { x: 16, y: 16 }, opacity: 0.5 }}
-				/>
+				<Horizon x={0} y={0} modifier={{ x: 2, y: 1 }} opacity={0.25} />
 				<Horizon
-					params={{ x: 0, y: 0, m: { x: 2, y: 1 }, opacity: 0.25 }}
-				/>
-				<Horizon
-					params={{ x: 0, y: 15, m: { x: 2, y: 1 }, opacity: 0.15 }}
+					x={0}
+					y={15}
+					modifier={{ x: 2, y: 1 }}
+					opacity={0.15}
 				/>
 			</g>
-			<Horizon
-				params={{ x: 0, y: 0, m: { x: 2, y: 1 }, opacity: 0.25 }}
-			/>
-			<Ripples
-				params={{
-					x: 0,
-					y: 50,
-					m: { x: 15, y: 15 },
-				}}
-			/>
+			<Horizon x={0} y={0} modifier={{ x: 2, y: 1 }} opacity={0.25} />
+			<Ripples x={0} y={50} modifier={{ x: 15, y: 15 }} />
 		</WaterRoot>
 	);
 };

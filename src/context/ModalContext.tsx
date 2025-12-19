@@ -1,14 +1,22 @@
-import React, { createContext, useMemo, useState } from 'react';
+import {
+	createContext,
+	useMemo,
+	useState,
+	ReactNode,
+	Dispatch,
+	SetStateAction,
+	ComponentType,
+} from 'react';
 import { Modal, Box, Fade } from '@mui/material';
 
-interface IModalContext {
+interface ModalContext {
 	modal: {
 		open: boolean;
-		component?: React.ComponentType;
+		component?: ComponentType;
 	};
-	setModal: React.Dispatch<React.SetStateAction<IModalContext['modal']>>;
+	setModal: Dispatch<SetStateAction<ModalContext['modal']>>;
 }
-export const ModalContext = createContext<IModalContext | null>(null);
+export const ModalContext = createContext<ModalContext | null>(null);
 
 const container = {
 	position: 'absolute',
@@ -21,8 +29,8 @@ const container = {
 	justifyContent: 'center',
 };
 
-export const ModalProvider = ({ children }: React.PropsWithChildren<{}>) => {
-	const [modal, setModal] = useState<IModalContext['modal']>({
+export const ModalProvider = ({ children }: { children: ReactNode }) => {
+	const [modal, setModal] = useState<ModalContext['modal']>({
 		open: false,
 	});
 	const handleClose = () => setModal({ ...modal, open: false });

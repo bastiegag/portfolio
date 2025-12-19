@@ -1,4 +1,4 @@
-import React from 'react';
+import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { useMediaQuery, useTheme } from '@mui/material';
@@ -21,13 +21,13 @@ export const useParallax = (
 ) => {
 	const theme = useTheme();
 	const isLargeScreen = useMediaQuery(theme.breakpoints.up('lg'));
-	const { offset, setOffset } = useOffset();
-	const xTo = React.useRef<Function>(null);
-	const yTo = React.useRef<Function>(null);
-	const skewTo = React.useRef<Function>(null);
-	const scaleTo = React.useRef<Function>(null);
+	const { offset } = useOffset();
+	const xTo = useRef<Function>(null);
+	const yTo = useRef<Function>(null);
+	const skewTo = useRef<Function>(null);
+	const scaleTo = useRef<Function>(null);
 
-	React.useEffect(() => {
+	useEffect(() => {
 		if (isLargeScreen) {
 			if (pos == true || pos == 'x') {
 				const posX = x - (offset.dist.x * m.x) / 300;
@@ -49,9 +49,9 @@ export const useParallax = (
 			if (scaleTo.current) scaleTo.current(1);
 			if (skewTo.current) skewTo.current(0);
 		}
-	}, [offset]);
+	}, [offset, isLargeScreen, pos, scale, skew, x, y, m]);
 
-	const { context, contextSafe } = useGSAP(() => {
+	useGSAP(() => {
 		(xTo.current = gsap.quickTo(element, 'x', {
 			duration: 0.75,
 			ease: 'power3',
@@ -68,5 +68,5 @@ export const useParallax = (
 		// 	duration: 0.75,
 		// 	ease: 'power3',
 		// });
-	});
+	}, [element]);
 };

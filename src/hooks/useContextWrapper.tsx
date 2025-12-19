@@ -1,13 +1,13 @@
-import React, { useContext } from 'react';
+import { useContext, Context } from 'react';
 
-interface IConfig {
+interface Config {
 	contextName: string;
 	providerName: string;
 }
 
 export const useContextWrapper = <T,>(
-	ReactContext: React.Context<T>,
-	config: IConfig
+	ReactContext: Context<T>,
+	config: Config
 ) => {
 	const context = useContext(ReactContext);
 	const { contextName, providerName } = config;

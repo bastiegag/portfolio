@@ -20,11 +20,11 @@ const Routes = () => {
 					element: <About />,
 					errorElement: <Error />,
 				},
-				{
-					path: '/projets',
-					element: <Projects />,
-					errorElement: <Error />,
-				},
+				//{
+				//	path: '/projets',
+				//	element: <Projects />,
+				//	errorElement: <Error />,
+				//},
 			],
 		},
 	]);

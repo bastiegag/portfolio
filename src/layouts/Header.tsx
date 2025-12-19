@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { IconMenu2, IconX } from '@tabler/icons-react';
+import { JSX, useState } from 'react';
 import { Stack, IconButton, Modal, Box, Fade } from '@mui/material';
 
 import { Logo, Menu } from 'components';
@@ -17,9 +16,9 @@ const menuContainer = {
 	width: '100%',
 };
 
-export const Header = () => {
+export const Header = (): JSX.Element => {
 	const [open, setOpen] = useState<boolean>(false);
-	const { cursor, setCursor } = useCursor();
+	const { setCursor } = useCursor();
 
 	const toggleMenu = () => {
 		setOpen((value) => !value);

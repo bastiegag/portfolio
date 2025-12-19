@@ -1,32 +1,37 @@
-import React from 'react';
-import { styled, useTheme } from '@mui/system';
+import { JSX, useId } from 'react';
+import { styled, useTheme } from '@mui/material';
 
 import { useParallax } from 'hooks';
 import { Link } from 'components';
-import { SceneComponentProps } from 'components/Scene';
 
-const width = 40;
-const height = 40;
+const WIDTH = 40;
+const HEIGHT = 40;
 
-const CustomSvg = styled('g', {
-	name: 'mug',
-	slot: 'Root',
-})(({ theme }) => ({}));
+export interface MugProps {
+	x: number;
+	y: number;
+	modifier: { x: number; y: number };
+}
 
-export const Mug = ({ params }: SceneComponentProps) => {
-	const id = React.useId();
-	const colors = useTheme().palette.scene;
+const MugRoot = styled('g', {
+	name: 'Mug',
+	slot: 'root',
+})();
 
-	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.m);
+export const Mug = ({ x, y, modifier }: MugProps): JSX.Element => {
+	const id = useId();
+	const colors = useTheme().vars.palette;
+
+	useParallax(`#${id}`, x, y, modifier);
 
 	return (
-		<CustomSvg
+		<MugRoot
 			id={id}
-			className="mug animate-all"
-			transform={`translate(${params.x},${params.y})`}
+			className="Mug-root animate-all"
+			transform={`translate(${x},${y})`}
 			strokeWidth="0"
 		>
-			<rect fill="transparent" width="40" height="40" />
+			<rect fill="transparent" width={WIDTH} height={HEIGHT} />
 			<path
 				fill={colors.mug.main}
 				className="main"
@@ -72,6 +77,6 @@ export const Mug = ({ params }: SceneComponentProps) => {
 				strokeWidth="1"
 				d="M30,16.1c-.1-.3-1.2-1.1-1.7-1.1-.5,0-1.9,0-2.3.2,0,0-1.5-1.5-6-1.5s-6.5.9-6.7,1.9c0,0-.3,1,1.1,1.8,0,0-.2,4.8-.2,5.4s0,1.8.2,2c.4.7,3.7,1.5,5.6,1.5s4.8-.7,5.1-.8c.2-.1.5-.3.5-.7s0-.9,0-.9c0,0,.5.3,1,.1.4-.2.3-.4.2-.5,0-.2-.3-.6.1-.6s1.2,0,1.8-.3c.6-.4,1-2.4,1.2-3.3.2-.9.4-2.7.2-3.1ZM27.8,18.3c-.1.9-.4,2.8-.6,3-.3.2-1,.1-1.8.2v-2.2c0,0,.6.1.7,0,.1,0,.1-.3.1-.4,0-.1,0-1.4.2-1.7.2-.3.6-.6,1.5-.6,0,0,0,.7-.1,1.6Z"
 			/>
-		</CustomSvg>
+		</MugRoot>
 	);
 };

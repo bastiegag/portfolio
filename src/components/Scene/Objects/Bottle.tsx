@@ -1,20 +1,26 @@
-import React from 'react';
+import { JSX, useId } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { styled, useTheme } from '@mui/system';
+import { styled, useTheme } from '@mui/material';
 
-import { useParallax } from 'hooks';
+import { useParallax, useSettings } from 'hooks';
 import { Link } from 'components';
-import { SceneComponentProps } from 'components/Scene';
 import config from '@/config';
 
-const width = 60;
-const height = 90;
+const WIDTH = 60;
+const HEIGHT = 90;
 
-const CustomSvg = styled('g', {
-	name: 'bottle',
-	slot: 'Root',
-})(({ theme }) => ({
+export interface BottleProps {
+	x: number;
+	y: number;
+	modifier: { x: number; y: number };
+	scale: number;
+}
+
+const BottleRoot = styled('g', {
+	name: 'Bottle',
+	slot: 'root',
+})<{ 'data-night': boolean }>(({ theme, 'data-night': isNight }) => ({
 	'.action': {
 		transition: 'all 0.3s ease-out !important',
 	},
@@ -24,14 +30,14 @@ const CustomSvg = styled('g', {
 	'.bottle-ripple': {
 		mixBlend: 'overlay',
 		opacity: 0.75,
-		...theme.applyStyles('dark', {
+		...(isNight && {
 			opacity: 0.25,
 		}),
 	},
 	'.bottle-white': {
 		mixBlend: 'overlay',
 		opacity: 0.75,
-		...theme.applyStyles('dark', {
+		...(isNight && {
 			opacity: 0.1,
 		}),
 	},
@@ -40,11 +46,12 @@ const CustomSvg = styled('g', {
 	},
 }));
 
-export const Bottle = ({ params }: SceneComponentProps) => {
-	const id = React.useId();
-	const colors = useTheme().palette.scene;
+export const Bottle = ({ x, y, modifier, scale }: BottleProps): JSX.Element => {
+	const id = useId();
+	const { settings } = useSettings();
+	const colors = useTheme().vars.palette;
 
-	useParallax(`#${CSS.escape(id)}`, params.x, params.y, params.m);
+	useParallax(`#${id}`, x, y, modifier);
 
 	useGSAP(() => {
 		const randDur = gsap.utils.random(1.5, 2.5, true);
@@ -66,24 +73,25 @@ export const Bottle = ({ params }: SceneComponentProps) => {
 			},
 		});
 
-		timeline.to(`.${CSS.escape(id)}-water-level`, {
+		timeline.to(`#${id} .${id}-water-level`, {
 			duration: () => newDur,
 			y: () => newY,
 		});
-	});
+	}, [id]);
 
 	return (
-		<CustomSvg
+		<BottleRoot
 			id={id}
-			className="bottle link animate-all "
-			transform={`translate(${params.x},${params.y})`}
+			className="Bottle-root link animate-all "
+			data-night={settings.time === 'night'}
+			transform={`translate(${x},${y})`}
 			strokeWidth="0"
 		>
 			<svg
 				id={`${id}-skew`}
-				width={params.scale ? width * params.scale : width}
-				height={params.scale ? height * params.scale : height}
-				viewBox={`0 0 ${width} ${height}`}
+				width={scale ? WIDTH * scale : WIDTH}
+				height={scale ? HEIGHT * scale : HEIGHT}
+				viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
 			>
 				<Link url={`mailto:${config.mail}`} title="Contact" tab={false}>
 					<defs>
@@ -136,12 +144,12 @@ export const Bottle = ({ params }: SceneComponentProps) => {
 						<g className="action">
 							<polygon
 								className="cap-dark"
-								fill={colors.cap.dark}
+								fill={colors.bottle.capDark}
 								points="29.4 16.1 29.4 5.6 39.2 6.7 36.7 17.1 29.4 16.1"
 							/>
 							<ellipse
 								className="cap-light"
-								fill={colors.cap.light}
+								fill={colors.bottle.capLight}
 								cx="34.2"
 								cy="6"
 								rx=".8"
@@ -160,7 +168,7 @@ export const Bottle = ({ params }: SceneComponentProps) => {
 							/>
 							<path
 								className="bottle-white"
-								fill={colors.white}
+								fill={colors.base.white}
 								d="M20.4,38.7l4.5.5s1.1-4.3,5.2-7.4c-3.5-.4-9.2,2.3-9.7,6.9Z"
 							/>
 							<polygon
@@ -177,6 +185,6 @@ export const Bottle = ({ params }: SceneComponentProps) => {
 					</g>
 				</Link>
 			</svg>
-		</CustomSvg>
+		</BottleRoot>
 	);
 };

@@ -7,10 +7,15 @@ import { Water } from './Water';
 import { Island } from './Island';
 import { PalmTrees } from './PalmTrees';
 import { Rocks } from './Rocks';
-import { Foliages } from './Foliages';
-import { Objects } from './Objects';
-import { Firecamp, Clothesline } from 'components/Scene/Objects';
-import { Rock4, Rock5, Rock6, Rock7 } from 'components/Scene/Rocks';
+import { Foliage } from './Foliage';
+import {
+	Campfire,
+	Fire,
+	Bottle,
+	Map,
+	Mug,
+	Clothesline,
+} from 'components/Scene/Objects';
 
 import { useMousePosition } from 'hooks';
 // import config from '@/config';
@@ -30,17 +35,6 @@ const SceneIsland = styled('g', {
 	slot: 'island',
 })();
 
-export interface SceneComponentProps {
-	params: {
-		x: number;
-		y: number;
-		m: { x: number; y: number };
-		opacity?: number;
-		scale?: number;
-	};
-	invert?: boolean;
-}
-
 export const Scene = () => {
 	useMousePosition();
 	useParallax('#scene-background', 0, 0, { x: 0, y: 1 });
@@ -57,11 +51,26 @@ export const Scene = () => {
 				<Sky />
 			</SceneBackground>
 			<SceneIsland className="Scene-island">
-				<Island params={{ x: 17, y: 286, m: { x: 15, y: 10 } }} />
+				<Island x={17} y={286} modifier={{ x: 15, y: 10 }} />
 				<PalmTrees />
+				<Bottle
+					x={720}
+					y={326}
+					modifier={{ x: 19, y: 13 }}
+					scale={0.75}
+				/>
+				<Campfire x={157} y={119} modifier={{ x: 15, y: 10 }} />
+				<Fire x={200} y={196} modifier={{ x: 15, y: 10 }} />
 				<Rocks />
-				{/*<Foliages />*/}
-				{/*<Objects />*/}
+				<Foliage />
+				<Mug x={158} y={270} modifier={{ x: 15, y: 10 }} />
+				<Map x={244} y={296} modifier={{ x: 15, y: 10 }} scale={0.9} />
+				<Clothesline
+					x={656}
+					y={240}
+					modifier={{ x: 16, y: 12 }}
+					scale={1.1}
+				/>
 			</SceneIsland>
 		</SceneRoot>
 	);

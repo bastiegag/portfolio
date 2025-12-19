@@ -1,4 +1,4 @@
-import React from 'react';
+import { JSX } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { styled, useTheme, Box } from '@mui/material';
@@ -10,7 +10,7 @@ const CursorRoot = styled('svg', {
 	slot: 'root',
 })(() => ({}));
 
-export const Cursor = () => {
+export const Cursor = (): JSX.Element => {
 	const colors = useTheme().vars.palette;
 	const { cursor } = useCursor();
 	const size = 16;

@@ -1,30 +1,26 @@
-import React, { createContext, useMemo, useState } from 'react';
-import { Popper, Box, Slide } from '@mui/material';
-import { useTheme } from '@mui/system';
+import { createContext, useMemo, useState, useEffect, useRef, ReactNode, Dispatch, SetStateAction } from 'react';
+import { Popper, Box, Slide, useTheme } from '@mui/material';
 
-interface IPopperContext {
+interface PopperContext {
 	settings: {
 		anchorEl: HTMLAnchorElement | null;
 		title: string;
 	};
-	setSettings: React.Dispatch<
-		React.SetStateAction<IPopperContext['settings']>
-	>;
+	setSettings: Dispatch<SetStateAction<PopperContext['settings']>>;
 }
 
-export const PopperContext = createContext<IPopperContext | null>(null);
-
-export const PopperProvider = ({ children }: React.PropsWithChildren<{}>) => {
-	const [settings, setSettings] = useState<IPopperContext['settings']>({
+export const PopperContext = createContext<PopperContext | null>(null);
+export const PopperProvider = ({ children }: { children: ReactNode }) => {
+	const [settings, setSettings] = useState<PopperContext['settings']>({
 		anchorEl: null,
 		title: '',
 	});
 	const [mounted, setMounted] = useState(false);
 	const [mousePos, setMousePos] = useState({ x: -9999, y: -9999 });
 	const [animateIn, setAnimateIn] = useState(false);
-	const timeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+	const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-	React.useEffect(() => {
+	useEffect(() => {
 		setMounted(true);
 		const handleMouseMove = (event: MouseEvent) => {
 			setMousePos({ x: event.clientX, y: event.clientY });
@@ -33,7 +29,7 @@ export const PopperProvider = ({ children }: React.PropsWithChildren<{}>) => {
 		return () => window.removeEventListener('mousemove', handleMouseMove);
 	}, []);
 
-	React.useEffect(() => {
+	useEffect(() => {
 		if (timeoutRef.current) clearTimeout(timeoutRef.current);
 		if (settings.anchorEl && mounted) {
 			timeoutRef.current = setTimeout(() => setAnimateIn(true), 0);
@@ -45,7 +41,7 @@ export const PopperProvider = ({ children }: React.PropsWithChildren<{}>) => {
 		};
 	}, [settings.anchorEl, mounted]);
 
-	const colors = useTheme().palette.scene;
+	const colors = useTheme().vars.palette;
 	const value = useMemo(() => ({ settings, setSettings }), [settings]);
 	const isOpen = Boolean(settings.anchorEl && mounted);
 

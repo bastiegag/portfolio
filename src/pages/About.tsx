@@ -1,10 +1,9 @@
-import React from 'react';
-import { Typography } from '@mui/material';
-import { Box } from '@mui/material';
+import { JSX } from 'react';
+import { Typography, Box } from '@mui/material';
 
 import { Page, Photo } from 'components';
 
-export const About = () => {
+export const About = (): JSX.Element => {
 	return (
 		<Page>
 			<Box
@@ -18,16 +17,16 @@ export const About = () => {
 				<Photo src="seb.jpg" />
 			</Box>
 
-			<Typography color="scene.about.text" sx={{ mb: 3 }}>
+			<Typography color="paper.text" sx={{ mb: 3 }}>
 				Hello, je suis <strong>Sébastien!</strong>
 			</Typography>
-			<Typography color="scene.about.text" sx={{ mb: 3 }}>
+			<Typography color="paper.text" sx={{ mb: 3 }}>
 				Développeur <strong>front-end</strong>, je conçois des
 				interfaces dynamiques où le design rencontre la performance.
 				Autodidacte et créatif, je transforme les idées en expériences
 				interactives fluides et immersives.
 			</Typography>
-			<Typography color="scene.about.text">
+			<Typography color="paper.text">
 				En parallèle du code, je m’exprime à travers la musique, la
 				photo et la vidéo — toujours à la croisée des chemins entre
 				technique et esthétique.

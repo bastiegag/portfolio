@@ -33,13 +33,7 @@ export const nightColors = {
 		700: '#09182f',
 		800: '#08172d',
 		900: '#08172d',
-	},
-	palm: {
-		lighter: '#112746',
-		light: '#0c1e39',
-		main: '#0b1d36',
-		dark: '#0a1b33',
-		darker: '#091931',
+		fade: '#184779',
 	},
 	foliage: {
 		lighter: '#112746',
@@ -47,10 +41,10 @@ export const nightColors = {
 		main: '#0b1d36',
 		dark: '#0a1b33',
 		darker: '#091931',
-	},
-	trunk: {
-		light: '#0b1c34',
-		dark: '#07172c',
+		black: '#000000',
+		white: '#ffffff',
+		trunkLight: '#0b1c34',
+		trunkDark: '#07172c',
 	},
 	wood: {
 		lighter: '#0e223f',
@@ -68,27 +62,29 @@ export const nightColors = {
 		light: '#112849',
 		dark: '#0a1b33',
 	},
-	towel: {
+	clothesline: {
 		light: '#173258',
 		dark: '#0d203b',
 		icon: '#7df5e5',
+		poleLight: '#0b1c34',
+		poleDark: '#07172c',
+		rope: '#112849',
 	},
 	bottle: {
-		light: '#091930',
-		main: '#08172d',
+		light: '#14243B',
+		main: '#101D33',
 		dark: '#07152a',
-	},
-	cap: {
-		light: '#112747',
-		dark: '#0c1f3a',
+		capLight: '#1E3454',
+		capDark: '#0a1d38',
 	},
 	paper: {
-		lighter: '#132c4f',
-		light: '#132c4f',
+		lighter: '#233c5f',
+		light: '#233c5f',
 		main: '#12294c',
 		dark: '#112848',
 		darker: '#102644',
 		text: '#7df5e5',
+		icon: '#7df5e5',
 	},
 	mug: {
 		lighter: '#0b1c34',
@@ -104,10 +100,6 @@ export const nightColors = {
 	cursor: {
 		light: '#d42a0f',
 		dark: '#711a1a',
-	},
-	about: {
-		bg: '#f2e0c6',
-		text: '#43362e',
 	},
 	inset: {
 		light: 'rgba(255, 255, 255, 0)',

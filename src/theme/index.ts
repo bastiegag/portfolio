@@ -37,17 +37,10 @@ declare module '@mui/material/styles' {
 			main: string;
 			dark: string;
 			darker: string;
-		};
-		trunk: {
-			light: string;
-			dark: string;
-		};
-		palm: {
-			lighter: string;
-			light: string;
-			main: string;
-			dark: string;
-			darker: string;
+			black: string;
+			white: string;
+			trunkLight: string;
+			trunkDark: string;
 		};
 		rock: {
 			100: string;
@@ -59,10 +52,58 @@ declare module '@mui/material/styles' {
 			700: string;
 			800: string;
 			900: string;
+			fade: string;
+		};
+		wood: {
+			lighter: string;
+			light: string;
+			lightless: string;
+			main: string;
+			dark: string;
+			darker: string;
+		};
+		fire: {
+			light: string;
+			dark: string;
+		};
+		clothesline: {
+			light: string;
+			dark: string;
+			icon: string;
+			poleLight: string;
+			poleDark: string;
+			rope: string;
+		};
+		bottle: {
+			light: string;
+			main: string;
+			dark: string;
+			capLight: string;
+			capDark: string;
+		};
+		mug: {
+			lighter: string;
+			light: string;
+			main: string;
+			dark: string;
+			darker: string;
+		};
+		paper: {
+			lighter: string;
+			light: string;
+			main: string;
+			dark: string;
+			darker: string;
+			text: string;
+			icon: string;
 		};
 		cursor: {
 			light: string;
 			dark: string;
+		};
+		popper: {
+			bg: string;
+			text: string;
 		};
 	}
 	interface PaletteOptions {
@@ -96,17 +137,10 @@ declare module '@mui/material/styles' {
 			main: string;
 			dark: string;
 			darker: string;
-		};
-		trunk: {
-			light: string;
-			dark: string;
-		};
-		palm: {
-			lighter: string;
-			light: string;
-			main: string;
-			dark: string;
-			darker: string;
+			black: string;
+			white: string;
+			trunkLight: string;
+			trunkDark: string;
 		};
 		rock: {
 			100: string;
@@ -118,10 +152,58 @@ declare module '@mui/material/styles' {
 			700: string;
 			800: string;
 			900: string;
+			fade: string;
+		};
+		wood: {
+			lighter: string;
+			light: string;
+			lightless: string;
+			main: string;
+			dark: string;
+			darker: string;
+		};
+		fire: {
+			light: string;
+			dark: string;
+		};
+		clothesline: {
+			light: string;
+			dark: string;
+			icon: string;
+			poleLight: string;
+			poleDark: string;
+			rope: string;
+		};
+		bottle: {
+			light: string;
+			main: string;
+			dark: string;
+			capLight: string;
+			capDark: string;
+		};
+		mug: {
+			lighter: string;
+			light: string;
+			main: string;
+			dark: string;
+			darker: string;
+		};
+		paper: {
+			lighter: string;
+			light: string;
+			main: string;
+			dark: string;
+			darker: string;
+			text: string;
+			icon: string;
 		};
 		cursor: {
 			light: string;
 			dark: string;
+		};
+		popper: {
+			bg: string;
+			text: string;
 		};
 	}
 	interface Components {
