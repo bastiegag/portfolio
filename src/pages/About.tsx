@@ -18,18 +18,31 @@ export const About = (): JSX.Element => {
 			</Box>
 
 			<Typography color="paper.text" sx={{ mb: 3 }}>
-				Hello, je suis <strong>Sébastien!</strong>
+				Hello, I'm <strong>Sébastien!</strong>
 			</Typography>
 			<Typography color="paper.text" sx={{ mb: 3 }}>
-				Développeur <strong>front-end</strong>, je conçois des
-				interfaces dynamiques où le design rencontre la performance.
-				Autodidacte et créatif, je transforme les idées en expériences
-				interactives fluides et immersives.
+				I’m a <strong>Senior Front-End Developer</strong> based in
+				Sherbrooke, Canada, with 13+ years of professional front-end
+				experience building modern, product-oriented web applications.
+			</Typography>
+			<Typography color="paper.text" sx={{ mb: 3 }}>
+				I specialize in <strong>React</strong> and{' '}
+				<strong>JavaScript</strong>, with professional React experience
+				in corporate environments since 2022. My work focuses on
+				front-end architecture, performance and close collaboration with
+				design and product teams to deliver intuitive user experiences.
+			</Typography>
+			<Typography color="paper.text" sx={{ mb: 3 }}>
+				In my current role, I also contribute to{' '}
+				<strong>backend development in Ruby</strong>, which allows me to
+				better understand API design and product constraints. Outside of
+				work, I actively build personal projects using{' '}
+				<strong>React</strong> and <strong>TypeScript</strong>, focusing
+				on clean architecture, maintainability and scalability.
 			</Typography>
 			<Typography color="paper.text">
-				En parallèle du code, je m’exprime à travers la musique, la
-				photo et la vidéo — toujours à la croisée des chemins entre
-				technique et esthétique.
+				I enjoy working at the intersection of design and engineering,
+				and I value code quality, collaboration and continuous learning.
 			</Typography>
 		</Page>
 	);

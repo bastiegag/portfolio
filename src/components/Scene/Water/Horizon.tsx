@@ -27,7 +27,7 @@ export const Horizon = ({
 	x,
 	y,
 }: HorizonProps): JSX.Element => {
-	const id = useId();
+	const id = CSS.escape(useId());
 	const color = useTheme().vars.palette;
 
 	useParallax(`#${id}`, 0, y, modifier);

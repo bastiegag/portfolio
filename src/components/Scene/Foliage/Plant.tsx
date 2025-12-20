@@ -28,7 +28,7 @@ const PlantRoot = styled('g', {
 }));
 
 export const Plant = ({ origin, variant, x, y }: PlantProps): JSX.Element => {
-	const id = useId();
+	const id = CSS.escape(useId());
 	const colors = useTheme().vars.palette;
 
 	useGSAP(() => {
@@ -37,28 +37,35 @@ export const Plant = ({ origin, variant, x, y }: PlantProps): JSX.Element => {
 			repeatRefresh: true,
 		});
 
-		timeline.to(`#${id}`, {
-			duration: gsap.utils.random(1, 3, true),
-			rotation: gsap.utils.random(-3, 3, true),
-			skewX: gsap.utils.random(-4, 4, true),
-			ease: gsap.utils.random(['sine.inOut', 'sine.in', 'sine.out']),
-			transformOrigin: origin,
-		});
-
-		for (let i = 1; i <= 5; i++) {
-			const leafTimeline = gsap.timeline({
-				repeat: -1,
-				repeatRefresh: true,
-			});
-
-			leafTimeline.to(`#${id}-${i}`, {
+		timeline
+			.to(`#${id}`, {
 				duration: gsap.utils.random(1, 2, true),
-				rotation: gsap.utils.random(-3, 3, true),
-				ease: gsap.utils.random(['sine.inOut', 'sine.in', 'sine.out']),
-				svgOrigin: origin,
+				rotation: gsap.utils.random(-2, 2, true),
+				skewX: gsap.utils.random(-4, 4, true),
+				ease: 'sine.inOut',
+				transformOrigin: origin,
+			})
+			.yoyo(true);
+
+		const variantPaths = PLANT_PATHS[variant];
+		if (variantPaths) {
+			variantPaths.forEach((pathGroup, groupIndex) => {
+				const leafTimeline = gsap.timeline({
+					repeat: -1,
+					repeatRefresh: true,
+				});
+
+				leafTimeline
+					.to(`#${id}${groupIndex}`, {
+						duration: gsap.utils.random(1, 1.5, true),
+						rotation: gsap.utils.random(-3, 3, true),
+						ease: 'sine.inOut',
+						svgOrigin: origin,
+					})
+					.yoyo(true);
 			});
 		}
-	}, [id, origin]);
+	}, [id, origin, variant]);
 
 	const plantPaths = useMemo(() => {
 		const variantPaths = PLANT_PATHS[variant];
@@ -67,7 +74,7 @@ export const Plant = ({ origin, variant, x, y }: PlantProps): JSX.Element => {
 		return (
 			<>
 				{variantPaths.map((pathGroup, groupIndex) => (
-					<g id={`${id}-${groupIndex}`} key={groupIndex}>
+					<g id={`${id}${groupIndex}`} key={groupIndex}>
 						{pathGroup.map((path, index) => {
 							const PathElement =
 								path.type === 'polygon' ? 'polygon' : 'path';

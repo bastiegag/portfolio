@@ -25,7 +25,7 @@ const MoonRoot = styled('g', {
 }));
 
 export const Moon = ({ modifier, x, y }: MoonProps): JSX.Element => {
-	const id = useId();
+	const id = CSS.escape(useId());
 	const { settings } = useSettings();
 	const colors = useTheme().vars.palette;
 

@@ -19,7 +19,7 @@ const MugRoot = styled('g', {
 })();
 
 export const Mug = ({ x, y, modifier }: MugProps): JSX.Element => {
-	const id = useId();
+	const id = CSS.escape(useId());
 	const colors = useTheme().vars.palette;
 
 	useParallax(`#${id}`, x, y, modifier);

@@ -1,3 +1,5 @@
+import { useParallax } from './hooks';
+
 const config = {
 	debug: false,
 	basename: '',
@@ -7,6 +9,8 @@ const config = {
 	sceneWidth: 1400,
 	sceneHeight: 400,
 	cloudsSpeed: 40,
+	parallaxEnabled: true,
+	cursorEnabled: false,
 	mail: 'bastiegag@gmail.com',
 	github: 'https://github.com/bastiegag',
 	vimeo: 'https://vimeo.com/bastiegag',

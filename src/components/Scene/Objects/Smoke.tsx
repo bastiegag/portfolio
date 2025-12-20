@@ -41,7 +41,7 @@ const SmokeRoot = styled('g', {
 }));
 
 export const Smoke = ({ modifier, x, y }: SmokeProps): JSX.Element => {
-	const id = useId();
+	const id = CSS.escape(useId());
 	const colors = useTheme().vars.palette;
 	const { settings } = useSettings();
 

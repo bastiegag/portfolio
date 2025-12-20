@@ -32,7 +32,7 @@ const WavesRoot = styled('g', {
 }));
 
 export const Waves = ({ modifier, opacity, x, y }: WavesProps): JSX.Element => {
-	const id = useId();
+	const id = CSS.escape(useId());
 	const colors = useTheme().vars.palette;
 
 	useParallax(`#${id}`, x, y, modifier, {

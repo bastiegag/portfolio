@@ -32,7 +32,7 @@ const MapRoot = styled('g', {
 }));
 
 export const Map = ({ x, y, modifier, scale }: MapProps): JSX.Element => {
-	const id = useId();
+	const id = CSS.escape(useId());
 	const { settings } = useSettings();
 	const colors = useTheme().vars.palette;
 

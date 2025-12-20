@@ -4,16 +4,19 @@ import { useGSAP } from '@gsap/react';
 import { styled, useTheme, Box } from '@mui/material';
 
 import { useCursor } from 'hooks';
+import config from '@/config';
 
 const CursorRoot = styled('svg', {
 	name: 'cursor',
 	slot: 'root',
 })(() => ({}));
 
-export const Cursor = (): JSX.Element => {
+export const Cursor = (): JSX.Element | null => {
 	const colors = useTheme().vars.palette;
 	const { cursor } = useCursor();
 	const size = 16;
+
+	if (!config.cursorEnabled) return null;
 
 	useGSAP(() => {
 		gsap.set('#cursor', { xPercent: -50, yPercent: -50 });

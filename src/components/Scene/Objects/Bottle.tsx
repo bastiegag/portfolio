@@ -47,7 +47,7 @@ const BottleRoot = styled('g', {
 }));
 
 export const Bottle = ({ x, y, modifier, scale }: BottleProps): JSX.Element => {
-	const id = useId();
+	const id = CSS.escape(useId());
 	const { settings } = useSettings();
 	const colors = useTheme().vars.palette;
 

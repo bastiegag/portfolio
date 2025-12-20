@@ -55,7 +55,7 @@ const IslandShadow = styled('path', {
 }));
 
 export const Island = ({ x, y, modifier }: IslandProps): JSX.Element => {
-	const id = useId();
+	const id = CSS.escape(useId());
 	const colors = useTheme().vars.palette;
 
 	useParallax(`#${id}`, x, y, modifier);

@@ -29,7 +29,7 @@ export const GroundWaves = ({
 	x,
 	y,
 }: GroundWavesProps): JSX.Element => {
-	const id = useId();
+	const id = CSS.escape(useId());
 
 	useParallax(`#${id}`, 0, y, modifier, {
 		skew: true,

@@ -17,7 +17,7 @@ export interface PaperProps {
 }
 
 export const Paper = ({ children }: PaperProps): JSX.Element => {
-	const id = useId();
+	const id = CSS.escape(useId());
 	const colors = useTheme().vars.palette;
 
 	return (

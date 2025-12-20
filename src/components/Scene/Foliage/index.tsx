@@ -14,7 +14,7 @@ const FoliageRoot = styled('g', {
 })();
 
 export const Foliage = (): JSX.Element => {
-	const id = useId();
+	const id = CSS.escape(useId());
 
 	useParallax(`#${id}`, 0, 0, FOLIAGE_MODIFIER);
 

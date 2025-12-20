@@ -4,6 +4,7 @@ import { useGSAP } from '@gsap/react';
 import { useMediaQuery, useTheme } from '@mui/material';
 
 import { useOffset } from 'hooks';
+import config from '@/config';
 
 export const useParallax = (
 	element: string,
@@ -26,6 +27,8 @@ export const useParallax = (
 	const yTo = useRef<Function>(null);
 	const skewTo = useRef<Function>(null);
 	const scaleTo = useRef<Function>(null);
+
+	if (!config.parallaxEnabled) return null;
 
 	useEffect(() => {
 		if (isLargeScreen) {

@@ -18,7 +18,7 @@ const GrassRoot = styled('g', {
 })();
 
 export const Grass = ({ origin, variant, x, y }: GrassProps): JSX.Element => {
-	const id = useId();
+	const id = CSS.escape(useId());
 	const colors = useTheme().vars.palette;
 
 	useGSAP(() => {
@@ -27,13 +27,15 @@ export const Grass = ({ origin, variant, x, y }: GrassProps): JSX.Element => {
 			repeatRefresh: true,
 		});
 
-		timeline.to(`#${id}`, {
-			duration: gsap.utils.random(1, 2, true),
-			rotation: gsap.utils.random(-1, 1, true),
-			skewX: gsap.utils.random(-15, 15, true),
-			ease: gsap.utils.random(['sine.inOut', 'sine.in', 'sine.out']),
-			transformOrigin: origin,
-		});
+		timeline
+			.to(`#${id}`, {
+				duration: gsap.utils.random(1, 1.5, true),
+				rotation: gsap.utils.random(-1, 1, true),
+				skewX: gsap.utils.random(-15, 15, true),
+				ease: 'sine.inOut',
+				transformOrigin: origin,
+			})
+			.yoyo(true);
 	}, [id, origin]);
 
 	const grassPaths = useMemo(() => {

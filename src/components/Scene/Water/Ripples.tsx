@@ -30,7 +30,7 @@ const RipplesRoot = styled('g', {
 }));
 
 export const Ripples = ({ modifier, x, y }: RipplesProps): JSX.Element => {
-	const id = useId();
+	const id = CSS.escape(useId());
 	const colors = useTheme().vars.palette;
 	const { settings } = useSettings();
 

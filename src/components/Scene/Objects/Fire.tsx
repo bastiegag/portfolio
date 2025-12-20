@@ -31,7 +31,7 @@ const FireRoot = styled('svg', {
 );
 
 export const Fire = ({ x, y, modifier, invert }: FireProps): JSX.Element => {
-	const id = useId();
+	const id = CSS.escape(useId());
 	const { settings } = useSettings();
 	const colors = useTheme().vars.palette;
 

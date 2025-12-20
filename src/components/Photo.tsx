@@ -11,7 +11,7 @@ export interface PhotoProps {
 }
 
 export const Photo = ({ src }: PhotoProps): JSX.Element => {
-	const id = useId();
+	const id = CSS.escape(useId());
 	const colors = useTheme().vars.palette;
 
 	return (

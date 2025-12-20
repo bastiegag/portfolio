@@ -24,7 +24,7 @@ const CampfireRoot = styled('g', {
 }));
 
 export const Campfire = ({ x, y, modifier }: CampfireProps): JSX.Element => {
-	const id = useId();
+	const id = CSS.escape(useId());
 	const colors = useTheme().vars.palette;
 
 	useParallax(`#${id}`, x, y, modifier);

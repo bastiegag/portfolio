@@ -38,7 +38,7 @@ export const Clothesline = ({
 	modifier,
 	scale,
 }: ClotheslineProps): JSX.Element => {
-	const id = useId();
+	const id = CSS.escape(useId());
 	const { settings } = useSettings();
 	const colors = useTheme().vars.palette;
 

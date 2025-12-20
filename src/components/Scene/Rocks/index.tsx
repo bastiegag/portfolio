@@ -13,7 +13,7 @@ const RocksRoot = styled('g', {
 })();
 
 export const Rocks = (): JSX.Element => {
-	const id = useId();
+	const id = CSS.escape(useId());
 
 	useParallax(`#${id}`, 0, 0, ROCKS_MODIFIER);
 

@@ -30,7 +30,7 @@ export const Cloud = ({
 	width,
 	y,
 }: CloudProps): JSX.Element => {
-	const id = useId();
+	const id = CSS.escape(useId());
 	const colors = useTheme().vars.palette;
 
 	useGSAP(() => {
