@@ -10,7 +10,7 @@ const config = {
 	sceneHeight: 400,
 	cloudsSpeed: 40,
 	parallaxEnabled: true,
-	cursorEnabled: false,
+	cursorEnabled: true,
 	mail: 'bastiegag@gmail.com',
 	github: 'https://github.com/bastiegag',
 	vimeo: 'https://vimeo.com/bastiegag',

@@ -12,6 +12,7 @@ const LogoRoot = styled('svg', {
 })(() => ({
 	width: '100%',
 	height: 'auto',
+	padding: '12px',
 	zIndex: 2,
 	'.logo-dark': {
 		fill: '#d7d7c9',

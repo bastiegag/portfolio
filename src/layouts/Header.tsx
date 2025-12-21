@@ -51,9 +51,9 @@ export const Header = (): JSX.Element => {
 				spacing={3}
 				sx={(theme) => ({
 					position: 'absolute',
-					top: theme.spacing(3),
-					left: theme.spacing(3),
-					right: theme.spacing(3),
+					top: theme.spacing(2),
+					left: theme.spacing(2),
+					right: theme.spacing(2),
 					zIndex: theme.zIndex.modal + 2,
 				})}
 			>
