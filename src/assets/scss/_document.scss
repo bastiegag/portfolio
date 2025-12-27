@@ -1,6 +1,3 @@
-@use 'light.module' as *;
-@use 'dark.module' as *;
-
 html,
 body {
 	overflow: hidden;
@@ -72,6 +69,6 @@ svg:not(.tabler-icon):not(.logo):not(#scene) {
 	cursor: pointer;
 
 	&:hover {
-		stroke: $popperText;
+		stroke: #fff7a6;
 	}
 }

@@ -1,13 +1,12 @@
-import React from 'react';
+import { JSX } from 'react';
 import { Typography } from '@mui/material';
-import { Box } from '@mui/material';
 
-import { Page, Photo } from 'components';
+import { Page } from 'components';
 
-export const Projects = () => {
+export const Projects = (): JSX.Element => {
 	return (
 		<Page>
-			<Typography color="scene.about.text" sx={{ mb: 3 }}>
+			<Typography color="paper.text" sx={{ mb: 3 }}>
 				Projets...
 			</Typography>
 		</Page>

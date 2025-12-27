@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { IconMenu2, IconX } from '@tabler/icons-react';
+import { JSX, useState } from 'react';
 import { Stack, IconButton, Modal, Box, Fade } from '@mui/material';
 
 import { Logo, Menu } from 'components';
@@ -7,19 +6,19 @@ import { useCursor } from 'hooks';
 import { MenuIcon, CloseIcon } from 'components/Icons';
 
 const menuContainer = {
+	alignItems: 'center',
+	display: 'flex',
+	height: '100%',
+	justifyContent: 'center',
+	left: 0,
 	position: 'absolute',
 	top: 0,
-	left: 0,
 	width: '100%',
-	height: '100%',
-	display: 'flex',
-	alignItems: 'center',
-	justifyContent: 'center',
 };
 
-export const Header = () => {
+export const Header = (): JSX.Element => {
 	const [open, setOpen] = useState<boolean>(false);
-	const { cursor, setCursor } = useCursor();
+	const { setCursor } = useCursor();
 
 	const toggleMenu = () => {
 		setOpen((value) => !value);
@@ -51,11 +50,16 @@ export const Header = () => {
 				alignItems="start"
 				spacing={3}
 				sx={(theme) => ({
+					left: 0,
+					p: { xs: 2, md: 3 },
 					position: 'absolute',
-					top: theme.spacing(3),
-					left: theme.spacing(3),
-					right: theme.spacing(3),
+					right: 0,
+					top: 0,
 					zIndex: theme.zIndex.modal + 2,
+					background: {
+						xs: 'linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, transparent 100%)',
+						md: 'transparent',
+					},
 				})}
 			>
 				<Logo />

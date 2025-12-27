@@ -1,9 +1,10 @@
-import React from 'react';
+import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { useMediaQuery, useTheme } from '@mui/material';
 
-import { useOffset, useThemeOptions } from 'hooks';
+import { useOffset } from 'hooks';
+import config from '@/config';
 
 export const useParallax = (
 	element: string,
@@ -21,15 +22,14 @@ export const useParallax = (
 ) => {
 	const theme = useTheme();
 	const isLargeScreen = useMediaQuery(theme.breakpoints.up('lg'));
-	const { themeOptions, setThemeOptions } = useThemeOptions();
-	const { offset, setOffset } = useOffset();
-	const xTo = React.useRef<Function>(null);
-	const yTo = React.useRef<Function>(null);
-	const skewTo = React.useRef<Function>(null);
-	const scaleTo = React.useRef<Function>(null);
+	const { offset } = useOffset();
+	const xTo = useRef<((value: number) => void) | null>(null);
+	const yTo = useRef<((value: number) => void) | null>(null);
+	const skewTo = useRef<((value: number) => void) | null>(null);
+	const scaleTo = useRef<((value: number) => void) | null>(null);
 
-	React.useEffect(() => {
-		if (themeOptions.parallax && isLargeScreen) {
+	useEffect(() => {
+		if (isLargeScreen) {
 			if (pos == true || pos == 'x') {
 				const posX = x - (offset.dist.x * m.x) / 300;
 				if (xTo.current) xTo.current(posX);
@@ -50,24 +50,26 @@ export const useParallax = (
 			if (scaleTo.current) scaleTo.current(1);
 			if (skewTo.current) skewTo.current(0);
 		}
-	}, [offset]);
+	}, [offset, isLargeScreen, pos, scale, skew, x, y, m]);
 
-	const { context, contextSafe } = useGSAP(() => {
-		(xTo.current = gsap.quickTo(element, 'x', {
+	useGSAP(() => {
+		xTo.current = gsap.quickTo(element, 'x', {
 			duration: 0.75,
 			ease: 'power3',
-		})),
-			(yTo.current = gsap.quickTo(element, 'y', {
-				duration: 0.75,
-				ease: 'power3',
-			})),
-			(skewTo.current = gsap.quickTo(element, 'skewX', {
-				duration: 0.75,
-				ease: 'power3',
-			}));
+		});
+		yTo.current = gsap.quickTo(element, 'y', {
+			duration: 0.75,
+			ease: 'power3',
+		});
+		skewTo.current = gsap.quickTo(element, 'skewX', {
+			duration: 0.75,
+			ease: 'power3',
+		});
 		// scaleTo.current = gsap.quickTo(element, 'scaleY', {
 		// 	duration: 0.75,
 		// 	ease: 'power3',
 		// });
-	});
+	}, [element]);
+
+	if (!config.parallaxEnabled) return null;
 };

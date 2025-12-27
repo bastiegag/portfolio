@@ -1,59 +1,72 @@
-import { useId } from 'react';
+import { JSX, useId } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { styled, useTheme } from '@mui/system';
+import { styled, useTheme } from '@mui/material';
 
-import { useParallax } from 'hooks';
-import { SceneComponentProps } from 'components/Scene';
+import { useParallax, useSettings } from 'hooks';
 
-const CustomSvg = styled('svg', {
-	name: 'fire',
-	slot: 'Root',
-})(({ theme }) => ({
-	mixBlendMode: 'plus-lighter',
-	opacity: 0,
-	...theme.applyStyles('dark', {
-		opacity: 1,
-		filter: `drop-shadow(0 0 6px ${theme.palette.scene.fire.dark})`,
-	}),
-}));
+export interface FireProps {
+	x: number;
+	y: number;
+	modifier: { x: number; y: number };
+	invert?: boolean;
+}
 
-export const Fire = ({ params, invert }: SceneComponentProps) => {
-	const id = useId();
-	const colors = useTheme().palette.scene;
+const FireRoot = styled('svg', {
+	name: 'Fire',
+	slot: 'root',
+})<{ 'data-night': boolean; 'data-invert': boolean }>(
+	({ theme, 'data-night': isNight, 'data-invert': isInvert }) => ({
+		mixBlendMode: 'plus-lighter',
+		opacity: 0,
+		...(isNight && {
+			opacity: 1,
+			filter: `drop-shadow(0 0 6px ${theme.vars.palette.fire.dark})`,
+			...(isInvert && {
+				mixBlendMode: 'luminosity',
+				opacity: 0.25,
+			}),
+		}),
+	})
+);
 
-	const posY = invert ? params.y + 210 : params.y;
+export const Fire = ({ x, y, modifier, invert }: FireProps): JSX.Element => {
+	const id = CSS.escape(useId());
+	const { settings } = useSettings();
+	const colors = useTheme().vars.palette;
 
-	useParallax(`#${CSS.escape(id)}`, params.x, posY, params.m);
+	const posY = invert ? y + 210 : y;
+
+	useParallax(`#${id}`, x, posY, modifier);
 
 	useGSAP(() => {
-		const randDur = gsap.utils.random(0.1, 0.75, true);
-		const randOpacity = gsap.utils.random(0.05, 0.15, true);
+		//const randDur = gsap.utils.random(0.1, 0.75, true);
+		//const randOpacity = gsap.utils.random(0.05, 0.15, true);
 
-		let fireDur = randDur();
-		let fireOpacity = randOpacity();
+		//let fireDur = randDur();
+		//let fireOpacity = randOpacity();
 
-		const flickTimeline = gsap.timeline({
-			repeat: -1,
-			repeatRefresh: true,
-			onRepeat: () => {
-				fireDur = randDur();
-				fireOpacity = randOpacity();
-			},
-		});
+		//const flickTimeline = gsap.timeline({
+		//	repeat: -1,
+		//	repeatRefresh: true,
+		//	onRepeat: () => {
+		//		fireDur = randDur();
+		//		fireOpacity = randOpacity();
+		//	},
+		//});
 
-		flickTimeline.to('.flick', {
-			duration: () => fireDur,
-			opacity: () => fireOpacity,
-			ease: 'power1.out',
-		});
+		//flickTimeline.to('.flick', {
+		//	duration: () => fireDur,
+		//	opacity: () => fireOpacity,
+		//	ease: 'power1.out',
+		//});
 
 		const timeline = gsap.timeline({
 			repeat: -1,
 			repeatRefresh: true,
 		});
 
-		const targets = document.querySelectorAll(`#${CSS.escape(id)} .frame`);
+		const targets = document.querySelectorAll(`#${id} .frame`);
 		const frames = targets.length;
 		const duration = 0.12;
 		const repeatDelay = duration * frames;
@@ -83,21 +96,23 @@ export const Fire = ({ params, invert }: SceneComponentProps) => {
 			);
 
 		timeline.seek(frames * duration);
-	});
+	}, [id]);
 
 	return (
-		<CustomSvg
+		<FireRoot
 			id={id}
-			className="fire animate"
+			className="Fire-root animate"
+			data-night={settings.time === 'night'}
+			data-invert={invert === true}
 			transform={
 				invert
-					? `translate(${params.x},${posY}) scale(1,-1)`
-					: `translate(${params.x},${posY})`
+					? `translate(${x},${posY}) scale(1,-1)`
+					: `translate(${x},${posY})`
 			}
 			width="36"
 			height="90"
 			viewBox="0 0 48 119"
-			preserveAspectRatio="xMidyMid slice"
+			preserveAspectRatio="xMidYMid slice"
 		>
 			<defs>
 				<filter id="spotlight">
@@ -409,6 +424,6 @@ export const Fire = ({ params, invert }: SceneComponentProps) => {
 					y="12"
 				></use>
 			</g>
-		</CustomSvg>
+		</FireRoot>
 	);
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { JSX } from 'react';
 import { Link } from 'react-router';
 import {
 	IconBrandGithub,
@@ -7,27 +7,22 @@ import {
 	IconBrandLinkedin,
 } from '@tabler/icons-react';
 import {
-	Box,
 	IconButton,
 	List,
 	ListItem,
 	ListItemButton,
 	Slide,
-	Tooltip,
+	Stack,
 } from '@mui/material';
 
 import { useCursor } from 'hooks';
 import { openLink } from 'utils';
 import config from '@/config';
 
-const menu = [
+const MENU = [
 	{
-		title: 'À propos',
-		url: '/a-propos',
-	},
-	{
-		title: 'Projets',
-		url: '/projets',
+		title: 'About',
+		url: '/about',
 	},
 	{
 		title: 'Contact',
@@ -35,7 +30,7 @@ const menu = [
 	},
 ];
 
-const icons = [
+const ICONS = [
 	{ title: 'Github', icon: IconBrandGithub, url: config.github },
 	{ title: 'Vimeo', icon: IconBrandVimeo, url: config.vimeo },
 	{ title: 'Instagram', icon: IconBrandInstagram, url: config.instagram },
@@ -46,21 +41,21 @@ const socialContainer = {
 	position: 'absolute',
 	bottom: 0,
 	right: 0,
-	p: 3,
+	p: { xs: 2, md: 3 },
 };
 
-interface MenuPropsType {
+interface MenuProps {
 	open: boolean;
 	setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const Menu = ({ open, setOpen }: MenuPropsType) => {
-	const { cursor, setCursor } = useCursor();
+export const Menu = ({ open, setOpen }: MenuProps): JSX.Element => {
+	const { setCursor } = useCursor();
 
 	return (
 		<>
 			<List>
-				{menu.map((item, i) => {
+				{MENU.map((item, i) => {
 					return (
 						<Slide
 							key={i}
@@ -71,6 +66,7 @@ export const Menu = ({ open, setOpen }: MenuPropsType) => {
 							<ListItem disablePadding>
 								<ListItemButton
 									component={Link}
+									color="black"
 									to={item.url}
 									onMouseEnter={() =>
 										setCursor({ hover: true })
@@ -95,12 +91,10 @@ export const Menu = ({ open, setOpen }: MenuPropsType) => {
 				})}
 			</List>
 
-			<Box sx={socialContainer}>
-				<Box sx={{ flexGrow: 1 }} />
-				{icons.map((item, i) => {
+			<Stack spacing={2} direction="row" sx={socialContainer}>
+				{ICONS.map((item, i) => {
 					const Icon = item.icon;
 					return (
-						// <Tooltip key={i} title={item.title}>
 						<IconButton
 							key={i}
 							size="large"
@@ -112,10 +106,9 @@ export const Menu = ({ open, setOpen }: MenuPropsType) => {
 						>
 							<Icon size={32} />
 						</IconButton>
-						// </Tooltip>
 					);
 				})}
-			</Box>
+			</Stack>
 		</>
 	);
 };

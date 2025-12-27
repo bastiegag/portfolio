@@ -1,24 +1,10 @@
-import React, { createContext, useMemo, useState } from 'react';
+import { createContext, Dispatch, SetStateAction } from 'react';
 
-interface ICursorContext {
+export interface CursorContextType {
 	cursor: {
 		hover: boolean;
 	};
-	setCursor: React.Dispatch<React.SetStateAction<ICursorContext['cursor']>>;
+	setCursor: Dispatch<SetStateAction<CursorContextType['cursor']>>;
 }
 
-export const CursorContext = createContext<ICursorContext | null>(null);
-
-export const CursorProvider = ({ children }: React.PropsWithChildren<{}>) => {
-	const [cursor, setCursor] = useState<ICursorContext['cursor']>({
-		hover: false,
-	});
-
-	const value = useMemo(() => ({ cursor, setCursor }), [cursor]);
-
-	return (
-		<CursorContext.Provider value={value}>
-			{children}
-		</CursorContext.Provider>
-	);
-};
+export const CursorContext = createContext<CursorContextType | null>(null);

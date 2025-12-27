@@ -1,6 +1,6 @@
-import React, { createContext, useMemo, useState } from 'react';
+import { createContext, Dispatch, SetStateAction } from 'react';
 
-interface IOffsetContext {
+export interface OffsetContextType {
 	offset: {
 		pos: {
 			x: number;
@@ -13,30 +13,7 @@ interface IOffsetContext {
 		scale: number;
 		skew: number;
 	};
-	setOffset: React.Dispatch<React.SetStateAction<IOffsetContext['offset']>>;
+	setOffset: Dispatch<SetStateAction<OffsetContextType['offset']>>;
 }
 
-export const OffsetContext = createContext<IOffsetContext | null>(null);
-
-export const OffsetProvider = ({ children }: React.PropsWithChildren<{}>) => {
-	const [offset, setOffset] = useState<IOffsetContext['offset']>({
-		pos: {
-			x: 0,
-			y: 0,
-		},
-		dist: {
-			x: 0,
-			y: 0,
-		},
-		scale: 1,
-		skew: 0,
-	});
-
-	const value = useMemo(() => ({ offset, setOffset }), [offset]);
-
-	return (
-		<OffsetContext.Provider value={value}>
-			{children}
-		</OffsetContext.Provider>
-	);
-};
+export const OffsetContext = createContext<OffsetContextType | null>(null);

@@ -1,10 +1,9 @@
-import React from 'react';
-import { Typography } from '@mui/material';
-import { Box } from '@mui/material';
+import { JSX } from 'react';
+import { Typography, Box } from '@mui/material';
 
 import { Page, Photo } from 'components';
 
-export const About = () => {
+export const About = (): JSX.Element => {
 	return (
 		<Page>
 			<Box
@@ -18,19 +17,32 @@ export const About = () => {
 				<Photo src="seb.jpg" />
 			</Box>
 
-			<Typography color="scene.about.text" sx={{ mb: 3 }}>
-				Hello, je suis <strong>Sébastien!</strong>
+			<Typography sx={{ mb: 3 }}>
+				Hello, I'm <strong>Sébastien!</strong>
 			</Typography>
-			<Typography color="scene.about.text" sx={{ mb: 3 }}>
-				Développeur <strong>front-end</strong>, je conçois des
-				interfaces dynamiques où le design rencontre la performance.
-				Autodidacte et créatif, je transforme les idées en expériences
-				interactives fluides et immersives.
+			<Typography sx={{ mb: 3 }}>
+				I’m a <strong>Senior Front-End Developer</strong> focused on
+				building modern, product-oriented web applications. I specialize
+				in <strong>React and JavaScript</strong>, with a strong interest
+				in{' '}
+				<strong>front-end architecture, performance and UI/UX</strong>.
 			</Typography>
-			<Typography color="scene.about.text">
-				En parallèle du code, je m’exprime à travers la musique, la
-				photo et la vidéo — toujours à la croisée des chemins entre
-				technique et esthétique.
+			<Typography sx={{ mb: 3 }}>
+				I currently work in a corporate environment, where I design and
+				develop scalable front-end features and collaborate closely with
+				product, design and backend teams. I also contribute to backend
+				development when needed, which helps me better understand data
+				flows and product constraints.
+			</Typography>
+			<Typography sx={{ mb: 3 }}>
+				Outside of work, I actively build personal projects using{' '}
+				<strong>React and TypeScript</strong>, focusing on clean
+				architecture, maintainability and long-term scalability.
+			</Typography>
+			<Typography>
+				I enjoy working at the intersection of design and engineering,
+				turning complex requirements into clear, intuitive user
+				experiences.
 			</Typography>
 		</Page>
 	);

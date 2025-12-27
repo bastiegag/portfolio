@@ -1,5 +1,14 @@
-export { ThemeContext, ThemeProvider } from './ThemeContext';
-export { PopperContext, PopperProvider } from './PopperContext';
-export { ModalContext, ModalProvider } from './ModalContext';
-export { OffsetContext, OffsetProvider } from './OffsetContext';
-export { CursorContext, CursorProvider } from './CursorContext';
+export {
+	SettingsContext,
+	type SettingsContextType,
+	themes,
+} from './SettingsContext';
+export { SettingsProvider } from './SettingsProvider';
+export { PopperContext, type PopperContextType } from './PopperContext';
+export { PopperProvider } from './PopperProvider';
+export { ModalContext, type ModalContextType } from './ModalContext';
+export { ModalProvider } from './ModalProvider';
+export { OffsetContext, type OffsetContextType } from './OffsetContext';
+export { OffsetProvider } from './OffsetProvider';
+export { CursorContext, type CursorContextType } from './CursorContext';
+export { CursorProvider } from './CursorProvider';

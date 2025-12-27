@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 
 import { useOffset } from 'hooks';
 import config from '@/config';
@@ -6,9 +6,9 @@ import config from '@/config';
 export const useMousePosition = () => {
 	const w = config.sceneWidth;
 	const h = config.sceneHeight;
-	const { offset, setOffset } = useOffset();
+	const { setOffset } = useOffset();
 
-	React.useEffect(() => {
+	useEffect(() => {
 		const updateMousePosition = (e: MouseEvent) => {
 			const scene = document.getElementById('scene');
 			const sw = scene ? scene.getBoundingClientRect().width : 0;
@@ -21,7 +21,7 @@ export const useMousePosition = () => {
 			const sy = y / window.innerHeight;
 
 			setOffset({
-				pos: { x: x, y: y },
+				pos: { x, y },
 				dist: { x: dx, y: dy },
 				scale: sy,
 				skew: sx,
@@ -33,5 +33,5 @@ export const useMousePosition = () => {
 		return () => {
 			window.removeEventListener('mousemove', updateMousePosition);
 		};
-	}, []);
+	}, [w, h, setOffset]);
 };

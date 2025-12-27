@@ -1,9 +1,9 @@
-import React, { ReactNode } from 'react';
-import { styled, useTheme } from '@mui/system';
+import { JSX, useId, ReactNode } from 'react';
+import { styled, useTheme } from '@mui/material';
 
-const CustomSvg = styled('svg', {
-	name: 'paper',
-	slot: 'Root',
+const PaperRoot = styled('svg', {
+	name: 'Paper',
+	slot: 'root',
 })(() => ({
 	position: 'absolute',
 	top: 0,
@@ -12,29 +12,29 @@ const CustomSvg = styled('svg', {
 	height: '100%',
 }));
 
-export interface PaperPropsType {
+export interface PaperProps {
 	children: ReactNode;
 }
 
-export const Paper = ({ children }: PaperPropsType) => {
-	const id = React.useId();
-	const colors = useTheme().palette.scene;
+export const Paper = ({ children }: PaperProps): JSX.Element => {
+	const id = CSS.escape(useId());
+	const colors = useTheme().vars.palette;
 
 	return (
 		<>
 			{children}
-			<CustomSvg
+			<PaperRoot
 				id={id}
-				className="animate-all"
+				className="Paper-root animate-all"
 				viewBox="0 0 246.7 239.8"
 				preserveAspectRatio="none"
 			>
 				<polygon
 					className="main"
-					fill={colors.about.bg}
+					fill={colors.paper.main}
 					points="3.5 4.6 2.9 91.2 3.5 101.7 0 235.2 72.5 238.3 168.9 235.9 246.7 236.5 241.7 145.1 243 137.6 245.2 2.7 155.4 0 139.3 1.5 3.5 4.6"
 				/>
-			</CustomSvg>
+			</PaperRoot>
 		</>
 	);
 };

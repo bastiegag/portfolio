@@ -1,22 +1,24 @@
 import { Suspense } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
+import { ThemeProvider } from '@mui/material';
 
 import Routes from 'routes';
 import {
-	ThemeProvider,
-	PopperProvider,
+	CursorProvider,
 	ModalProvider,
 	OffsetProvider,
-	CursorProvider,
+	PopperProvider,
 } from 'context';
+import { useSettings } from 'hooks';
 
 const App = () => {
 	gsap.registerPlugin(useGSAP);
+	const { settings } = useSettings();
 
 	return (
 		<Suspense>
-			<ThemeProvider>
+			<ThemeProvider theme={settings.theme}>
 				<CursorProvider>
 					<OffsetProvider>
 						<PopperProvider>

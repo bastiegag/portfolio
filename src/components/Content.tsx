@@ -1,11 +1,11 @@
-import React, { ReactNode } from 'react';
+import { JSX, ReactNode } from 'react';
 import { Box } from '@mui/material';
 
-export interface ContentPropsType {
+export interface ContentProps {
 	children: ReactNode;
 }
 
-export const Content = ({ children }: ContentPropsType) => {
+export const Content = ({ children }: ContentProps): JSX.Element => {
 	return (
 		<Box
 			className="animate-all clearfix"
