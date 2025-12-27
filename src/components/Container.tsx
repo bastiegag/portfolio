@@ -6,11 +6,18 @@ import { Scene } from 'components';
 const ContainerRoot = styled(Box, {
 	name: 'Container',
 	slot: 'root',
-})(() => ({
+})(({ theme }) => ({
 	height: '100vh',
 	overflow: 'hidden',
 	position: 'relative',
+	display: 'flex',
+	justifyContent: 'center',
+	alignItems: 'center',
 	width: '100%',
+	[theme.breakpoints.down('md')]: {
+		overflowX: 'auto',
+		overflowY: 'hidden',
+	},
 }));
 
 export interface ContainerProps {
@@ -22,18 +29,7 @@ export const Container = ({ children }: ContainerProps): JSX.Element => {
 		<>
 			{children}
 			<ContainerRoot className="Container-root">
-				<Box
-					sx={{
-						height: '100%',
-						left: '50%',
-						minWidth: '100%',
-						position: 'absolute',
-						top: '50%',
-						transform: 'translateX(-50%) translateY(-50%)',
-					}}
-				>
-					<Scene />
-				</Box>
+				<Scene />
 			</ContainerRoot>
 		</>
 	);

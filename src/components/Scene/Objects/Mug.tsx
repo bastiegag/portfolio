@@ -2,7 +2,6 @@ import { JSX, useId } from 'react';
 import { styled, useTheme } from '@mui/material';
 
 import { useParallax } from 'hooks';
-import { Link } from 'components';
 
 const WIDTH = 40;
 const HEIGHT = 40;

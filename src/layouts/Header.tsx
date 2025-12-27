@@ -50,11 +50,16 @@ export const Header = (): JSX.Element => {
 				alignItems="start"
 				spacing={3}
 				sx={(theme) => ({
+					left: 0,
+					p: { xs: 2, md: 3 },
 					position: 'absolute',
-					top: theme.spacing(2),
-					left: theme.spacing(2),
-					right: theme.spacing(2),
+					right: 0,
+					top: 0,
 					zIndex: theme.zIndex.modal + 2,
+					background: {
+						xs: 'linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, transparent 100%)',
+						md: 'transparent',
+					},
 				})}
 			>
 				<Logo />

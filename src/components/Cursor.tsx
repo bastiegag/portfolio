@@ -16,19 +16,19 @@ export const Cursor = (): JSX.Element | null => {
 	const { cursor } = useCursor();
 	const size = 16;
 
-	if (!config.cursorEnabled) return null;
-
 	useGSAP(() => {
 		gsap.set('#cursor', { xPercent: -50, yPercent: -50 });
 
-		let xSetter = gsap.quickSetter('#cursor', 'x', 'px');
-		let ySetter = gsap.quickSetter('#cursor', 'y', 'px');
+		const xSetter = gsap.quickSetter('#cursor', 'x', 'px');
+		const ySetter = gsap.quickSetter('#cursor', 'y', 'px');
 
 		window.addEventListener('mousemove', (e) => {
 			xSetter(e.x);
 			ySetter(e.y);
 		});
 	});
+
+	if (!config.cursorEnabled) return null;
 
 	return (
 		<Box

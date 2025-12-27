@@ -1,10 +1,10 @@
-import { styled } from '@mui/system';
+import { styled, useTheme } from '@mui/system';
+import { useMediaQuery } from '@mui/material';
 
 import { Link } from 'components';
 
 const WIDTH = 268.6;
 const HEIGHT = 66;
-const MODIFIER = 1.5;
 
 const LogoRoot = styled('svg', {
 	name: 'Logo',
@@ -12,7 +12,7 @@ const LogoRoot = styled('svg', {
 })(() => ({
 	width: '100%',
 	height: 'auto',
-	padding: '12px',
+	padding: 0,
 	zIndex: 2,
 	'.logo-dark': {
 		fill: '#d7d7c9',
@@ -38,6 +38,10 @@ const LogoRoot = styled('svg', {
 }));
 
 export const Logo = () => {
+	const theme = useTheme();
+	const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+	const MODIFIER = isMobile ? 1 : 1.5;
+
 	return (
 		<Link to="/" title="" tab={false}>
 			<LogoRoot

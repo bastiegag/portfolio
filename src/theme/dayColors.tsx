@@ -83,7 +83,8 @@ export const dayColors = {
 		main: '#f2e0c6',
 		dark: '#efdcc2',
 		darker: '#e7cfb6',
-		text: '#43362e',
+		lightText: '#7e695b',
+		darkText: '#43362e',
 		icon: '#698696',
 	},
 	mug: {

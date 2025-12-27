@@ -14,7 +14,7 @@ export const Footer = (): JSX.Element => {
 				position: 'absolute',
 				bottom: 0,
 				left: 0,
-				p: 2,
+				p: { xs: 2, md: 3 },
 				color: 'white',
 				zIndex: theme.zIndex.modal + 2,
 			})}

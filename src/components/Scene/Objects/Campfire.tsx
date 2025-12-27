@@ -1,7 +1,26 @@
 import { JSX, useId } from 'react';
 import { styled, useTheme } from '@mui/material';
 
+import { RockProps, Rock } from 'components/Scene/Rocks/Rock';
 import { useParallax } from 'hooks';
+
+const ROCKS_DATA: RockProps[] = [
+	{
+		variant: 9,
+		x: 1,
+		y: 170,
+	},
+	{
+		variant: 8,
+		x: 83,
+		y: 166,
+	},
+	{
+		variant: 10,
+		x: 39,
+		y: 175,
+	},
+];
 
 export interface CampfireProps {
 	x: number;
@@ -77,6 +96,9 @@ export const Campfire = ({ x, y, modifier }: CampfireProps): JSX.Element => {
 				className="campfire-shadow"
 				points="3.6 189.7 35 191.9 83.5 191.9 130.3 190.3 131.8 189.3 127.5 187.3 136 186.8 108.5 184.7 113.6 179 3.6 189.7"
 			/>
+			{ROCKS_DATA.map((props, index) => (
+				<Rock key={index} {...props} />
+			))}
 		</CampfireRoot>
 	);
 };

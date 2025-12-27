@@ -1,3 +1,5 @@
+import { dayTheme, nightTheme } from 'theme';
+
 export const components = {
 	Scene: {
 		styleOverrides: {
@@ -10,6 +12,24 @@ export const components = {
 				transform: 'scale(0.85) translateY(12px) translateX(2%)',
 				transformOrigin: '50% 50%',
 			},
+		},
+	},
+	MuiDialog: {
+		styleOverrides: {
+			root: ({
+				theme,
+			}: {
+				theme: typeof dayTheme | typeof nightTheme;
+			}) => ({
+				'.MuiDialog-scrollBody > .MuiDialog-paper': {
+					maxWidth: 'calc(100% - 32px)',
+					width: '100%',
+					[theme.breakpoints.up('md')]: {
+						maxWidth: '900px',
+						width: 'calc(100% - 48px)',
+					},
+				},
+			}),
 		},
 	},
 	MuiListItemText: {
@@ -32,6 +52,7 @@ export const components = {
 			root: {
 				justifyContent: 'center !important',
 				color: 'inherit',
+				padding: 0,
 				'&:hover': {
 					color: 'white',
 				},
@@ -50,7 +71,11 @@ export const components = {
 			disableRipple: true,
 		},
 		styleOverrides: {
-			root: ({ theme }: { theme: any }) => ({
+			root: ({
+				theme,
+			}: {
+				theme: typeof dayTheme | typeof nightTheme;
+			}) => ({
 				fontFamily: 'Chelsea Market, system-ui',
 				fontSize: '5rem',
 				color: theme.vars.palette.base.primary,

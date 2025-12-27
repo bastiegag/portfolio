@@ -83,7 +83,8 @@ export const nightColors = {
 		main: '#12294c',
 		dark: '#112848',
 		darker: '#102644',
-		text: '#7df5e5',
+		lightText: '#7df5e5',
+		darkText: '#7df5e5',
 		icon: '#7df5e5',
 	},
 	mug: {

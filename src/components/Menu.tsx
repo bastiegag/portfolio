@@ -7,12 +7,12 @@ import {
 	IconBrandLinkedin,
 } from '@tabler/icons-react';
 import {
-	Box,
 	IconButton,
 	List,
 	ListItem,
 	ListItemButton,
 	Slide,
+	Stack,
 } from '@mui/material';
 
 import { useCursor } from 'hooks';
@@ -21,8 +21,8 @@ import config from '@/config';
 
 const MENU = [
 	{
-		title: 'À propos',
-		url: '/a-propos',
+		title: 'About',
+		url: '/about',
 	},
 	{
 		title: 'Contact',
@@ -41,7 +41,7 @@ const socialContainer = {
 	position: 'absolute',
 	bottom: 0,
 	right: 0,
-	p: 3,
+	p: { xs: 2, md: 3 },
 };
 
 interface MenuProps {
@@ -50,7 +50,7 @@ interface MenuProps {
 }
 
 export const Menu = ({ open, setOpen }: MenuProps): JSX.Element => {
-	const { cursor, setCursor } = useCursor();
+	const { setCursor } = useCursor();
 
 	return (
 		<>
@@ -91,8 +91,7 @@ export const Menu = ({ open, setOpen }: MenuProps): JSX.Element => {
 				})}
 			</List>
 
-			<Box sx={socialContainer}>
-				<Box sx={{ flexGrow: 1 }} />
+			<Stack spacing={2} direction="row" sx={socialContainer}>
 				{ICONS.map((item, i) => {
 					const Icon = item.icon;
 					return (
@@ -109,7 +108,7 @@ export const Menu = ({ open, setOpen }: MenuProps): JSX.Element => {
 						</IconButton>
 					);
 				})}
-			</Box>
+			</Stack>
 		</>
 	);
 };

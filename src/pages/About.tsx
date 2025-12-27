@@ -17,32 +17,32 @@ export const About = (): JSX.Element => {
 				<Photo src="seb.jpg" />
 			</Box>
 
-			<Typography color="paper.text" sx={{ mb: 3 }}>
+			<Typography sx={{ mb: 3 }}>
 				Hello, I'm <strong>Sébastien!</strong>
 			</Typography>
-			<Typography color="paper.text" sx={{ mb: 3 }}>
-				I’m a <strong>Senior Front-End Developer</strong> based in
-				Sherbrooke, Canada, with 13+ years of professional front-end
-				experience building modern, product-oriented web applications.
+			<Typography sx={{ mb: 3 }}>
+				I’m a <strong>Senior Front-End Developer</strong> focused on
+				building modern, product-oriented web applications. I specialize
+				in <strong>React and JavaScript</strong>, with a strong interest
+				in{' '}
+				<strong>front-end architecture, performance and UI/UX</strong>.
 			</Typography>
-			<Typography color="paper.text" sx={{ mb: 3 }}>
-				I specialize in <strong>React</strong> and{' '}
-				<strong>JavaScript</strong>, with professional React experience
-				in corporate environments since 2022. My work focuses on
-				front-end architecture, performance and close collaboration with
-				design and product teams to deliver intuitive user experiences.
+			<Typography sx={{ mb: 3 }}>
+				I currently work in a corporate environment, where I design and
+				develop scalable front-end features and collaborate closely with
+				product, design and backend teams. I also contribute to backend
+				development when needed, which helps me better understand data
+				flows and product constraints.
 			</Typography>
-			<Typography color="paper.text" sx={{ mb: 3 }}>
-				In my current role, I also contribute to{' '}
-				<strong>backend development in Ruby</strong>, which allows me to
-				better understand API design and product constraints. Outside of
-				work, I actively build personal projects using{' '}
-				<strong>React</strong> and <strong>TypeScript</strong>, focusing
-				on clean architecture, maintainability and scalability.
+			<Typography sx={{ mb: 3 }}>
+				Outside of work, I actively build personal projects using{' '}
+				<strong>React and TypeScript</strong>, focusing on clean
+				architecture, maintainability and long-term scalability.
 			</Typography>
-			<Typography color="paper.text">
+			<Typography>
 				I enjoy working at the intersection of design and engineering,
-				and I value code quality, collaboration and continuous learning.
+				turning complex requirements into clear, intuitive user
+				experiences.
 			</Typography>
 		</Page>
 	);

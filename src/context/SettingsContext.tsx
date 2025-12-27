@@ -1,48 +1,18 @@
-import {
-	createContext,
-	useMemo,
-	useEffect,
-	useState,
-	ReactNode,
-	Dispatch,
-	SetStateAction,
-} from 'react';
+import { createContext, Dispatch, SetStateAction } from 'react';
 
 import { dayTheme, nightTheme } from 'theme';
 
-interface SettingsContext {
+export interface SettingsContextType {
 	settings: {
 		time: keyof typeof themes;
 		theme: typeof dayTheme;
 	};
-	setSettings: Dispatch<SetStateAction<SettingsContext['settings']>>;
+	setSettings: Dispatch<SetStateAction<SettingsContextType['settings']>>;
 }
 
-const themes = {
+export const themes = {
 	day: dayTheme,
 	night: nightTheme,
 };
 
-export const SettingsContext = createContext<SettingsContext | null>(null);
-
-export const SettingsProvider = ({ children }: { children: ReactNode }) => {
-	const [settings, setSettings] = useState<SettingsContext['settings']>({
-		time: 'day',
-		theme: dayTheme,
-	});
-
-	const value = useMemo(() => ({ settings, setSettings }), [settings]);
-
-	useEffect(() => {
-		setSettings((prev) => ({
-			...prev,
-			theme: themes[settings.time],
-		}));
-	}, [settings.time]);
-
-	return (
-		<SettingsContext.Provider value={value}>
-			{children}
-		</SettingsContext.Provider>
-	);
-};
+export const SettingsContext = createContext<SettingsContextType | null>(null);

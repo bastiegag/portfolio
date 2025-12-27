@@ -3,7 +3,7 @@ import { styled, useTheme } from '@mui/material';
 
 import { CLOUDS_DATA } from './cloudsData';
 import { Cloud } from './Cloud';
-import { Moon } from './Moon';
+//import { Moon } from './Moon';
 import { Smoke } from 'components/Scene/Objects';
 import { useSettings } from 'hooks';
 

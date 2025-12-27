@@ -1,5 +1,3 @@
-import { useParallax } from './hooks';
-
 const config = {
 	debug: false,
 	basename: '',

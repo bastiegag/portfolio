@@ -24,7 +24,6 @@ const HorizonRoot = styled('g', {
 export const Horizon = ({
 	modifier,
 	opacity,
-	x,
 	y,
 }: HorizonProps): JSX.Element => {
 	const id = CSS.escape(useId());

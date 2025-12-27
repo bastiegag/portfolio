@@ -6,7 +6,7 @@ import config from '@/config';
 export const useMousePosition = () => {
 	const w = config.sceneWidth;
 	const h = config.sceneHeight;
-	const { offset, setOffset } = useOffset();
+	const { setOffset } = useOffset();
 
 	useEffect(() => {
 		const updateMousePosition = (e: MouseEvent) => {

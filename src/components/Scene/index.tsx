@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled, useTheme } from '@mui/material';
+import { styled } from '@mui/material';
 
 import { useParallax } from 'hooks';
 import { Sky } from './Sky';
@@ -23,7 +23,22 @@ import { useMousePosition } from 'hooks';
 const SceneRoot = styled('svg', {
 	name: 'Scene',
 	slot: 'root',
-})();
+})(({ theme }) => ({
+	width: '100%',
+	minHeight: '100%',
+	position: 'absolute',
+	top: '50%',
+	left: '50%',
+	transform: 'translate(-50%, -50%)',
+	objectFit: 'cover',
+	[theme.breakpoints.down('md')]: {
+		position: 'relative',
+		top: '50%',
+		left: '0',
+		transform: 'translate(0, -50%)',
+		minWidth: '100%',
+	},
+}));
 
 const SceneBackground = styled('g', {
 	name: 'Scene',

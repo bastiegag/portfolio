@@ -38,7 +38,7 @@ export const Map = ({ x, y, modifier, scale }: MapProps): JSX.Element => {
 
 	useParallax(`#${id}`, x, y, modifier);
 	return (
-		<Link to="/a-propos" title="À propos" tab={false}>
+		<Link to="/about" title="About" tab={false}>
 			<MapRoot
 				id={id}
 				className="Map-root link animate-all"

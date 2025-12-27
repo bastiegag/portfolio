@@ -20,7 +20,7 @@ export const Link = ({
 	children,
 }: LinkProps): JSX.Element => {
 	const { settings, setSettings } = usePopper();
-	const { cursor, setCursor } = useCursor();
+	const { setCursor } = useCursor();
 
 	const handlePopoverOpen = (
 		event: React.MouseEvent<HTMLAnchorElement>,

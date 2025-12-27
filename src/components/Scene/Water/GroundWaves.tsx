@@ -26,7 +26,6 @@ const GroundWavesRoot = styled('g', {
 export const GroundWaves = ({
 	modifier,
 	opacity,
-	x,
 	y,
 }: GroundWavesProps): JSX.Element => {
 	const id = CSS.escape(useId());

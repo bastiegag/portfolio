@@ -94,7 +94,8 @@ declare module '@mui/material/styles' {
 			main: string;
 			dark: string;
 			darker: string;
-			text: string;
+			lightText: string;
+			darkText: string;
 			icon: string;
 		};
 		cursor: {
@@ -194,7 +195,8 @@ declare module '@mui/material/styles' {
 			main: string;
 			dark: string;
 			darker: string;
-			text: string;
+			lightText: string;
+			darkText: string;
 			icon: string;
 		};
 		cursor: {
@@ -209,10 +211,10 @@ declare module '@mui/material/styles' {
 	interface Components {
 		Scene?: {
 			styleOverrides?: {
-				root?: any;
-				[key: string]: any;
+				root?: React.CSSProperties;
+				island?: React.CSSProperties;
+				[key: string]: React.CSSProperties | undefined;
 			};
-			[key: string]: any;
 		};
 	}
 }

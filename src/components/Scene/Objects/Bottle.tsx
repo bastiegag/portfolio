@@ -20,7 +20,7 @@ export interface BottleProps {
 const BottleRoot = styled('g', {
 	name: 'Bottle',
 	slot: 'root',
-})<{ 'data-night': boolean }>(({ theme, 'data-night': isNight }) => ({
+})<{ 'data-night': boolean }>(({ 'data-night': isNight }) => ({
 	'.action': {
 		transition: 'all 0.3s ease-out !important',
 	},

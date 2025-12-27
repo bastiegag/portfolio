@@ -23,12 +23,10 @@ export const useParallax = (
 	const theme = useTheme();
 	const isLargeScreen = useMediaQuery(theme.breakpoints.up('lg'));
 	const { offset } = useOffset();
-	const xTo = useRef<Function>(null);
-	const yTo = useRef<Function>(null);
-	const skewTo = useRef<Function>(null);
-	const scaleTo = useRef<Function>(null);
-
-	if (!config.parallaxEnabled) return null;
+	const xTo = useRef<((value: number) => void) | null>(null);
+	const yTo = useRef<((value: number) => void) | null>(null);
+	const skewTo = useRef<((value: number) => void) | null>(null);
+	const scaleTo = useRef<((value: number) => void) | null>(null);
 
 	useEffect(() => {
 		if (isLargeScreen) {
@@ -55,21 +53,23 @@ export const useParallax = (
 	}, [offset, isLargeScreen, pos, scale, skew, x, y, m]);
 
 	useGSAP(() => {
-		(xTo.current = gsap.quickTo(element, 'x', {
+		xTo.current = gsap.quickTo(element, 'x', {
 			duration: 0.75,
 			ease: 'power3',
-		})),
-			(yTo.current = gsap.quickTo(element, 'y', {
-				duration: 0.75,
-				ease: 'power3',
-			})),
-			(skewTo.current = gsap.quickTo(element, 'skewX', {
-				duration: 0.75,
-				ease: 'power3',
-			}));
+		});
+		yTo.current = gsap.quickTo(element, 'y', {
+			duration: 0.75,
+			ease: 'power3',
+		});
+		skewTo.current = gsap.quickTo(element, 'skewX', {
+			duration: 0.75,
+			ease: 'power3',
+		});
 		// scaleTo.current = gsap.quickTo(element, 'scaleY', {
 		// 	duration: 0.75,
 		// 	ease: 'power3',
 		// });
 	}, [element]);
+
+	if (!config.parallaxEnabled) return null;
 };

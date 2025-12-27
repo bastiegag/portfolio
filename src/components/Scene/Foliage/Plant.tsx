@@ -98,7 +98,7 @@ export const Plant = ({ origin, variant, x, y }: PlantProps): JSX.Element => {
 				))}
 			</>
 		);
-	}, [variant, colors]);
+	}, [id, variant, colors]);
 
 	return (
 		<PlantRoot

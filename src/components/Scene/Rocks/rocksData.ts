@@ -38,19 +38,19 @@ export const ROCKS_DATA: RockProps[] = [
 		x: 404,
 		y: 278,
 	},
-	{
-		variant: 9,
-		x: 160,
-		y: 289,
-	},
-	{
-		variant: 8,
-		x: 242,
-		y: 285,
-	},
-	{
-		variant: 10,
-		x: 198,
-		y: 294,
-	},
+	//{
+	//	variant: 9,
+	//	x: 160,
+	//	y: 289,
+	//},
+	//{
+	//	variant: 8,
+	//	x: 242,
+	//	y: 285,
+	//},
+	//{
+	//	variant: 10,
+	//	x: 198,
+	//	y: 294,
+	//},
 ];
