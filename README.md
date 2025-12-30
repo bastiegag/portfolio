@@ -198,7 +198,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **Sébastien Gagné**
 
--   Portfolio: [https://sebastiengagne.ca]
+-   Portfolio: [sebastiengagne.ca](https://sebastiengagne.ca)
 -   GitHub: [@bastiegag](https://github.com/bastiegag)
 -   LinkedIn: [Sébastien Gagné](https://linkedin.com/in/bastiegag)
 
