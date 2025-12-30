@@ -2,6 +2,8 @@
 
 A modern, interactive portfolio website featuring a custom-built 3D island scene with parallax effects, smooth animations, and a beautiful day/night theme system.
 
+🔗 **[View Live Demo](https://sebastiengagne.ca)**
+
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)
