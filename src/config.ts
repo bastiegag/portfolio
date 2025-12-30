@@ -1,9 +1,4 @@
 const config = {
-	debug: false,
-	basename: '',
-	defaultPath: '',
-	fontFamily: `'Montserrat', sans-serif`,
-	borderRadius: 4,
 	sceneWidth: 1400,
 	sceneHeight: 400,
 	cloudsSpeed: 40,

@@ -1,6 +1,11 @@
 import { JSX, useId, ReactNode } from 'react';
 import { styled, useTheme } from '@mui/material';
 
+/**
+ * Styled SVG root element for the paper background
+ * - Absolutely positioned to fill container
+ * - Non-interactive background layer
+ */
 const PaperRoot = styled('svg', {
 	name: 'Paper',
 	slot: 'root',
@@ -12,10 +17,36 @@ const PaperRoot = styled('svg', {
 	height: '100%',
 }));
 
+/**
+ * Props for the Paper component
+ */
 export interface PaperProps {
+	/** Child elements to render above the paper background */
 	children: ReactNode;
 }
 
+/**
+ * SVG viewBox coordinates for the paper shape
+ */
+const VIEWBOX = '0 0 246.7 239.8';
+
+/**
+ * Polygon points defining the irregular paper shape
+ */
+const PAPER_POINTS =
+	'3.5 4.6 2.9 91.2 3.5 101.7 0 235.2 72.5 238.3 168.9 235.9 246.7 236.5 241.7 145.1 243 137.6 245.2 2.7 155.4 0 139.3 1.5 3.5 4.6';
+
+/**
+ * Decorative paper background component with irregular edges
+ *
+ * Renders an SVG polygon that creates a hand-drawn paper effect
+ * beneath content. The shape stretches to fill its container while
+ * maintaining the irregular edge aesthetic. Uses theme colors for
+ * consistent styling and includes animation classes for theme transitions.
+ *
+ * @param props - Paper component props
+ * @returns SVG paper background with children layered on top
+ */
 export const Paper = ({ children }: PaperProps): JSX.Element => {
 	const id = CSS.escape(useId());
 	const colors = useTheme().vars.palette;
@@ -26,13 +57,13 @@ export const Paper = ({ children }: PaperProps): JSX.Element => {
 			<PaperRoot
 				id={id}
 				className="Paper-root animate-all"
-				viewBox="0 0 246.7 239.8"
+				viewBox={VIEWBOX}
 				preserveAspectRatio="none"
 			>
 				<polygon
 					className="main"
 					fill={colors.paper.main}
-					points="3.5 4.6 2.9 91.2 3.5 101.7 0 235.2 72.5 238.3 168.9 235.9 246.7 236.5 241.7 145.1 243 137.6 245.2 2.7 155.4 0 139.3 1.5 3.5 4.6"
+					points={PAPER_POINTS}
 				/>
 			</PaperRoot>
 		</>

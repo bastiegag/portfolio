@@ -5,6 +5,12 @@ import { components } from './components';
 import { dayColors } from './dayColors';
 import { nightColors } from './nightColors';
 
+/**
+ * MUI theme augmentation
+ *
+ * Extends Material-UI's theme types to include custom palette colors for the portfolio.
+ * Defines color palettes for various scene elements (sky, water, foliage, etc.) and UI components.
+ */
 declare module '@mui/material/styles' {
 	interface Palette {
 		base: {
@@ -208,6 +214,7 @@ declare module '@mui/material/styles' {
 			text: string;
 		};
 	}
+	// Custom Scene component type definition
 	interface Components {
 		Scene?: {
 			styleOverrides?: {
@@ -219,6 +226,7 @@ declare module '@mui/material/styles' {
 	}
 }
 
+/** Day theme with light color palette */
 export const dayTheme = createTheme({
 	typography: {
 		fontFamily: '"Chelsea Market", system-ui',
@@ -229,6 +237,7 @@ export const dayTheme = createTheme({
 	components: components,
 });
 
+/** Night theme with dark color palette */
 export const nightTheme = createTheme({
 	typography: {
 		fontFamily: '"Chelsea Market", system-ui',
