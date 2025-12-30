@@ -18,8 +18,12 @@ import {
 } from 'components/Scene/Objects';
 
 import { useMousePosition } from 'hooks';
-// import config from '@/config';
 
+/**
+ * Styled SVG root element for the entire scene
+ * - Centered and covers viewport
+ * - Responsive positioning for mobile
+ */
 const SceneRoot = styled('svg', {
 	name: 'Scene',
 	slot: 'root',
@@ -40,25 +44,53 @@ const SceneRoot = styled('svg', {
 	},
 }));
 
+/**
+ * Container for background elements (water and sky)
+ */
 const SceneBackground = styled('g', {
 	name: 'Scene',
 	slot: 'background',
 })();
 
+/**
+ * Container for island and foreground elements
+ */
 const SceneIsland = styled('g', {
 	name: 'Scene',
 	slot: 'island',
 })();
 
+/**
+ * SVG viewBox coordinates for the scene
+ */
+const VIEWBOX = '0 0 1000 400';
+
+/**
+ * Main decorative scene component for portfolio background
+ *
+ * Renders an illustrated island scene with parallax effects and multiple
+ * layered elements including sky, water, island, palm trees, rocks, foliage,
+ * and various objects (campfire, bottle, map, etc.). Uses mouse position
+ * tracking and parallax to create depth and interactivity.
+ *
+ * Elements are organized in layers:
+ * - Background: Water and sky with subtle parallax
+ * - Foreground: Island with objects and vegetation
+ *
+ * @returns SVG scene with parallax-enabled background illustration
+ */
 export const Scene = () => {
+	// Track mouse position for parallax effects
 	useMousePosition();
+
+	// Apply parallax effect to background layer
 	useParallax('#scene-background', 0, 0, { x: 0, y: 1 });
 
 	return (
 		<SceneRoot
 			id="scene"
 			className="Scene-root"
-			viewBox="0 0 1000 400"
+			viewBox={VIEWBOX}
 			preserveAspectRatio="xMidYMid slice"
 		>
 			<SceneBackground className="Scene-background" id="scene-background">

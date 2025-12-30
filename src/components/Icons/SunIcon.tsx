@@ -3,17 +3,42 @@ import { styled } from '@mui/system';
 
 import { IconProps } from './';
 
+/**
+ * Styled SVG root element for the sun icon
+ */
 const SunIconRoot = styled('svg', {
 	name: 'SunIcon',
 	slot: 'root',
 })();
 
+/**
+ * SVG viewBox coordinates for the sun icon
+ */
+const VIEWBOX = '0 0 162.17 162.17';
+
+/**
+ * Default fill color for the icon
+ */
+const DEFAULT_FILL = '#fff';
+
+/**
+ * Hand-drawn style sun icon component
+ *
+ * Renders an SVG icon depicting a sun with rays and a circular center
+ * with an irregular, hand-drawn appearance that matches the overall
+ * aesthetic of the portfolio. Used for theme switching to indicate
+ * light/day mode. Size is customizable via props while maintaining
+ * aspect ratio.
+ *
+ * @param props - Icon component props
+ * @returns SVG sun icon element
+ */
 export const SunIcon = ({ size }: IconProps): JSX.Element => {
 	return (
 		<SunIconRoot
 			className="SunIcon-root"
-			viewBox="0 0 162.17 162.17"
-			fill="#fff"
+			viewBox={VIEWBOX}
+			fill={DEFAULT_FILL}
 			{...(size && { height: size, width: size })}
 		>
 			<path d="M77.68,24.85l-4.45-17.26,12.29-7.59,3.4,10.99-4.97,13.86h-6.28ZM122.88,43.35l13.32-6.29,5.36-10.17-14.06-3.33-9.06,15.35,4.44,4.44ZM137.32,83.96l13.86,4.97,10.99-3.4-7.59-12.29-17.26,4.45v6.28ZM118.81,122.88l6.29,13.32,10.17,5.36,3.33-14.06-15.35-9.06-4.44,4.44ZM78.21,137.32l-4.97,13.86,3.4,10.99,12.29-7.59-4.45-17.26h-6.28ZM39.28,118.81l-13.32,6.29-5.36,10.17,14.06,3.33,9.06-15.35-4.44-4.44ZM24.85,78.21l-13.86-4.97-10.99,3.4,7.59,12.29,17.26-4.45v-6.28ZM43.35,39.28l-6.29-13.32-10.17-5.36-3.33,14.06,15.35,9.06,4.44-4.44Z" />

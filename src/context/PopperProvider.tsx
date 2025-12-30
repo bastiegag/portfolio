@@ -3,20 +3,36 @@ import { Popper, Box, Slide, useTheme } from '@mui/material';
 
 import { PopperContext, type PopperContextType } from 'context';
 
+/**
+ * Provider component for the Popper context
+ *
+ * Manages popper state and renders a tooltip that follows the mouse cursor.
+ * Provides smooth animations and positioning with MUI Popper and Slide components.
+ *
+ * @param children - React components that need access to popper context
+ */
 export const PopperProvider = ({
 	children,
 }: {
 	children: ReactNode;
 }): JSX.Element => {
+	// Initialize popper settings with anchor and title
 	const [settings, setSettings] = useState<PopperContextType['settings']>({
 		anchorEl: null,
 		title: '',
 	});
+
+	// Track mount state to prevent SSR issues
 	const [mounted, setMounted] = useState(false);
+
+	// Track current mouse position for tooltip positioning
 	const [mousePos, setMousePos] = useState({ x: -9999, y: -9999 });
+
+	// Control slide animation timing
 	const [animateIn, setAnimateIn] = useState(false);
 	const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+	// Initialize mouse tracking after mount
 	useEffect(() => {
 		queueMicrotask(() => setMounted(true));
 		const handleMouseMove = (event: MouseEvent) => {
@@ -26,9 +42,11 @@ export const PopperProvider = ({
 		return () => window.removeEventListener('mousemove', handleMouseMove);
 	}, []);
 
+	// Handle animation timing when popper opens/closes
 	useEffect(() => {
 		if (timeoutRef.current) clearTimeout(timeoutRef.current);
 		if (settings.anchorEl && mounted) {
+			// Delay animation to ensure smooth transition
 			timeoutRef.current = setTimeout(() => {
 				setAnimateIn(true);
 			}, 50);
@@ -44,6 +62,7 @@ export const PopperProvider = ({
 	const value = useMemo(() => ({ settings, setSettings }), [settings]);
 	const isOpen = Boolean(settings.anchorEl && mounted);
 
+	// Create virtual element that follows mouse cursor
 	const virtualElement = {
 		getBoundingClientRect: () => ({
 			top: mousePos.y,

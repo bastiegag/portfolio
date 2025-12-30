@@ -1,5 +1,9 @@
 import { createContext, Dispatch, SetStateAction } from 'react';
 
+/**
+ * Context for managing mouse position offset data for parallax effects
+ * Use via the useOffset hook.
+ */
 export interface OffsetContextType {
 	offset: {
 		pos: {
