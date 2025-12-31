@@ -1,9 +1,11 @@
-// import { useRouteError } from 'react-router-dom';
+import { useRouteError } from 'react-router-dom';
 
 import 'assets/scss/_document.scss';
 
 export const Error = () => {
-	// const error = useRouteError();
+	const error = useRouteError();
+
+	console.error('Route Error:', error);
 
 	return null;
 };

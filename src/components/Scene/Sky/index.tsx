@@ -3,7 +3,6 @@ import { styled, useTheme } from '@mui/material';
 
 import { CLOUDS_DATA } from './cloudsData';
 import { Cloud } from './Cloud';
-//import { Moon } from './Moon';
 import { Smoke } from 'components/Scene/Objects';
 import { useSettings } from 'hooks';
 
@@ -80,7 +79,6 @@ export const Sky = (): JSX.Element => {
 					<Cloud key={index} {...props} />
 				))}
 			</SkyClouds>
-			{/*<Moon x={200} y={65} modifier={{ x: 0, y: 0 }} />*/}
 			<Smoke x={250} y={115} modifier={{ x: 13, y: 10 }} />
 		</SkyRoot>
 	);

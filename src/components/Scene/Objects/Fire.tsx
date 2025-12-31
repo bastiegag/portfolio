@@ -40,27 +40,6 @@ export const Fire = ({ x, y, modifier, invert }: FireProps): JSX.Element => {
 	useParallax(`#${id}`, x, posY, modifier);
 
 	useGSAP(() => {
-		//const randDur = gsap.utils.random(0.1, 0.75, true);
-		//const randOpacity = gsap.utils.random(0.05, 0.15, true);
-
-		//let fireDur = randDur();
-		//let fireOpacity = randOpacity();
-
-		//const flickTimeline = gsap.timeline({
-		//	repeat: -1,
-		//	repeatRefresh: true,
-		//	onRepeat: () => {
-		//		fireDur = randDur();
-		//		fireOpacity = randOpacity();
-		//	},
-		//});
-
-		//flickTimeline.to('.flick', {
-		//	duration: () => fireDur,
-		//	opacity: () => fireOpacity,
-		//	ease: 'power1.out',
-		//});
-
 		const timeline = gsap.timeline({
 			repeat: -1,
 			repeatRefresh: true,
