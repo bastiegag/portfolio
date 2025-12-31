@@ -5,7 +5,6 @@ import { Theme } from '@mui/material/styles';
 import { MoonIcon, SunIcon } from 'components/Icons';
 import { useCursor, useSettings } from 'hooks';
 
-// Footer container styling
 const footerBoxStyles = (theme: Theme) => ({
 	position: 'absolute',
 	bottom: 0,
@@ -15,17 +14,10 @@ const footerBoxStyles = (theme: Theme) => ({
 	zIndex: theme.zIndex.modal + 2,
 });
 
-/**
- * Footer component with theme toggle button
- *
- * Displays a fixed position button in the bottom-left corner to toggle
- * between day and night themes. Updates custom cursor state on hover.
- */
 export const Footer = (): JSX.Element => {
 	const { settings, setSettings } = useSettings();
 	const { setCursor } = useCursor();
 
-	// Memoize handlers to prevent recreating on every render
 	const handleMouseEnter = useCallback(
 		() => setCursor({ hover: true }),
 		[setCursor]
@@ -49,7 +41,6 @@ export const Footer = (): JSX.Element => {
 				onMouseLeave={handleMouseLeave}
 				onClick={handleToggleTheme}
 			>
-				{/* Show sun icon for night mode (to switch to day) and moon for day mode */}
 				{settings.time === 'night' ? (
 					<SunIcon size={32} />
 				) : (

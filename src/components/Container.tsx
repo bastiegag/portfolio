@@ -3,12 +3,6 @@ import { Box, styled } from '@mui/material';
 
 import { Scene } from 'components';
 
-/**
- * Styled root container component
- * - Full viewport height with centered content
- * - Hidden overflow on desktop, horizontal scroll on mobile
- * - Serves as backdrop for the Scene component
- */
 const ContainerRoot = styled(Box, {
 	name: 'Container',
 	slot: 'root',
@@ -26,23 +20,10 @@ const ContainerRoot = styled(Box, {
 	},
 }));
 
-/**
- * Props for the Container component
- */
 export interface ContainerProps {
-	/** Child elements to render above the scene */
 	children: ReactNode;
 }
 
-/**
- * Main container component that wraps the application layout
- *
- * Renders children first (allowing content to appear above the scene),
- * followed by the decorative Scene component in the background.
- *
- * @param props - Component props
- * @returns Container with children and background scene
- */
 export const Container = ({ children }: ContainerProps): JSX.Element => {
 	return (
 		<>

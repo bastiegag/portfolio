@@ -1,13 +1,6 @@
 import { dayTheme, nightTheme } from 'theme';
 
-/**
- * MUI theme component overrides
- *
- * Defines custom styling and default props for MUI components and custom Scene component.
- * These overrides are applied globally across the application.
- */
 export const components = {
-	// Custom Scene component styling
 	Scene: {
 		styleOverrides: {
 			root: {
@@ -21,7 +14,6 @@ export const components = {
 			},
 		},
 	},
-	// Dialog modal styling with responsive max-width
 	MuiDialog: {
 		styleOverrides: {
 			root: ({
@@ -40,7 +32,6 @@ export const components = {
 			}),
 		},
 	},
-	// List item text with custom font and styling
 	MuiListItemText: {
 		styleOverrides: {
 			root: {
@@ -53,7 +44,6 @@ export const components = {
 			},
 		},
 	},
-	// Icon button with disabled ripple effect and hover state
 	MuiIconButton: {
 		defaultProps: {
 			disableRipple: true,
@@ -69,7 +59,6 @@ export const components = {
 			},
 		},
 	},
-	// Transparent paper background
 	MuiPaper: {
 		styleOverrides: {
 			root: {
@@ -77,7 +66,6 @@ export const components = {
 			},
 		},
 	},
-	// List item button with custom font and theme-aware colors
 	MuiListItemButton: {
 		defaultProps: {
 			disableRipple: true,
@@ -99,7 +87,6 @@ export const components = {
 			}),
 		},
 	},
-	// Tooltip with dark background
 	MuiTooltip: {
 		styleOverrides: {
 			tooltip: {
@@ -107,7 +94,6 @@ export const components = {
 			},
 		},
 	},
-	// Popper with custom z-index
 	MuiPopper: {
 		styleOverrides: {
 			root: {

@@ -4,65 +4,35 @@ import { styled, useTheme } from '@mui/material';
 import { useParallax } from 'hooks';
 import { Fire } from 'components/Scene/Objects';
 
-/**
- * CSS gradient for masking the underwater portion
- */
 const MASK_GRADIENT =
 	'linear-gradient(0deg, transparent 75%, rgba(0,0,0,1) 100%)';
 
-/**
- * SVG path data for underwater island silhouette
- */
 const UNDERWATER_PATH =
 	'M64.7,29L0,40.9s191,45.6,356.5,50c189.2,5,442.4-11,506.4-39.4,0,0-10-10.1-78.8-17.6-63.3-6.1-719.3-4.8-719.3-4.8h-.1Z';
 
-/**
- * SVG path data for main sand surface
- */
 const SAND_PATH =
 	'M801.2,48.7c0,8.4-183.7,23.1-391.5,20.5-198.8-2.5-150.1-23.2-150.3-26.5-.3-4.5-100.5-2.2-217.4-9.6h-.2.2c2.5-.5,27.3-5.3,73.4-10.7h0c53.9-6.4,137-13.6,247.7-15.9,188-3.9,370.1,19.9,444.1,30.9,9,1.3,16.3,2.5,22,3.4-1.7-.2-36-3.8-40.4-.8-3.1,2.1,12.5,3,12.5,8.9v-.2Z';
 
-/**
- * SVG path data for darker wet sand
- */
 const WET_SAND_PATH =
 	'M801.2,48.7c0,8.4-183.7,23.1-391.5,20.5-198.8-2.5-150.1-23.2-150.3-26.5-.3-4.5-100.5-2.2-217.4-9.6h0s42.6-7.8,73.4-10.8c0,0-35.4,6.6-39.5,9-4.2,2.5,188.8,7.4,189.3,9.1,1.1,3.3-8.6,9-5.8,11.8,6.9,7,119.5,22.2,300.4,12,80.3-4.5,233-15.6,234.7-16.9,1.7-1.3-13.3-7-13.8-8.4-.4-1.1,19.3-1.5,26.5-1.6,9,1.3,16.3,2.5,22,3.4-1.7-.2-36-3.8-40.4-.8-3.1,2.1,12.5,3,12.5,8.9h-.1Z';
 
-/**
- * SVG path data for grass line on island
- */
 const GRASS_PATH =
 	'M219.4,12.4s51.4-3.7,54.1-3.2c2.6.6-5.5,4.5-4.6,5.5s66.8-1.3,120-.5c0,0,20.5.3,20.2,1.2-.4,1.2-27.5.1-28.8,3.1s131,6.8,155.5,3.7c3.9-.5-18.6-2.3-16.4-3.6s54.1-2.1,86.2-1.7c27.7.4,38.2-.4,38.2-.4,0,0-88.2-12-197.6-14.5C338.9-.3,219.4,12.4,219.4,12.4Z';
 
-/**
- * SVG path data for island shadow
- */
 const SHADOW_PATH =
 	'M267.6,9.5l90.6,2.6,27.2-5.2s150.3,10.1,214,14.9,80.1-.6,80.1-.6c0,0-74.6-10.5-118.5-13.4C517.1,4.8,401.2,0,401.2,0h-30.8l-90.4,7.8-12.3,1.7h-.1Z';
 
-/**
- * Props for the Island component
- */
 export interface IslandProps {
-	/** X position offset */
 	x: number;
-	/** Y position offset */
 	y: number;
-	/** Parallax modifier values for mouse movement */
 	modifier: { x: number; y: number };
 }
 
-/**
- * Styled root container for island group
- */
 const IslandRoot = styled('g', {
 	name: 'Island',
 	slot: 'root',
 })();
 
-/**
- * Container for underwater portion with blur and mask effects
- */
 const IslandUnderwater = styled('g', {
 	name: 'Island',
 	slot: 'underwater',
@@ -73,25 +43,16 @@ const IslandUnderwater = styled('g', {
 	},
 }));
 
-/**
- * Container for sand layers
- */
 const IslandSand = styled('g', {
 	name: 'Island',
 	slot: 'sand',
 })();
 
-/**
- * Grass path element
- */
 const IslandGrass = styled('path', {
 	name: 'Island',
 	slot: 'grass',
 })();
 
-/**
- * Shadow path with multiply blend mode
- */
 const IslandShadow = styled('path', {
 	name: 'Island',
 	slot: 'shadow',
@@ -100,27 +61,10 @@ const IslandShadow = styled('path', {
 	mixBlendMode: 'multiply',
 }));
 
-/**
- * Main island scene element with parallax effect
- *
- * Renders a multi-layered island illustration with:
- * - Underwater silhouette with blur and gradient mask
- * - Sand surface with gradient shading
- * - Wet sand darker layer
- * - Grass detail line
- * - Subtle shadow for depth
- *
- * Includes a reflected fire effect underwater for visual interest.
- * Position and parallax movement are controlled by props.
- *
- * @param props - Island component props
- * @returns SVG group containing layered island illustration
- */
 export const Island = ({ x, y, modifier }: IslandProps): JSX.Element => {
 	const id = CSS.escape(useId());
 	const colors = useTheme().vars.palette;
 
-	// Apply parallax effect based on mouse movement
 	useParallax(`#${id}`, x, y, modifier);
 
 	return (

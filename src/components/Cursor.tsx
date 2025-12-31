@@ -6,30 +6,15 @@ import { styled, useTheme, Box, SxProps, Theme } from '@mui/material';
 import { useCursor } from 'hooks';
 import config from '@/config';
 
-/**
- * Styled SVG root element for the custom cursor
- */
 const CursorRoot = styled('svg', {
 	name: 'cursor',
 	slot: 'root',
 })(() => ({}));
 
-/**
- * Cursor size in pixels
- */
 const CURSOR_SIZE = 16;
 
-/**
- * SVG viewBox for cursor path
- */
 const CURSOR_VIEWBOX = '0 0 86.75 84.53';
 
-/**
- * Styles for cursor container
- * - Hidden on mobile/tablet, shown on large screens
- * - Positioned absolutely with high z-index
- * - Pointer events disabled to avoid interfering with interactions
- */
 const cursorSx: SxProps<Theme> = {
 	display: { xs: 'none', lg: 'block' },
 	height: 32,
@@ -39,15 +24,6 @@ const cursorSx: SxProps<Theme> = {
 	zIndex: 5000,
 };
 
-/**
- * Custom cursor component with hover state and mouse tracking
- *
- * Renders an SVG cursor that follows the mouse position using GSAP
- * for smooth animation. The cursor changes color based on hover state
- * from the cursor context. Only displayed on large screens when enabled.
- *
- * @returns Custom cursor element or null if disabled
- */
 export const Cursor = (): JSX.Element | null => {
 	const colors = useTheme().vars.palette;
 	const { cursor } = useCursor();
@@ -60,9 +36,6 @@ export const Cursor = (): JSX.Element | null => {
 		const xSetter = gsap.quickSetter('#cursor', 'x', 'px');
 		const ySetter = gsap.quickSetter('#cursor', 'y', 'px');
 
-		/**
-		 * Track mouse movement and update cursor position
-		 */
 		const handleMouseMove = (e: MouseEvent) => {
 			xSetter(e.x);
 			ySetter(e.y);
@@ -70,7 +43,6 @@ export const Cursor = (): JSX.Element | null => {
 
 		window.addEventListener('mousemove', handleMouseMove);
 
-		// Cleanup event listener on unmount
 		return () => {
 			window.removeEventListener('mousemove', handleMouseMove);
 		};

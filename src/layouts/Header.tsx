@@ -6,7 +6,6 @@ import { Logo, Menu } from 'components';
 import { useCursor } from 'hooks';
 import { MenuIcon, CloseIcon } from 'components/Icons';
 
-// Styling for centering menu content in modal
 const menuContainer = {
 	alignItems: 'center',
 	display: 'flex',
@@ -18,7 +17,6 @@ const menuContainer = {
 	width: '100%',
 } as const;
 
-// Modal styling with backdrop blur
 const modalStyles = (theme: Theme) => ({
 	color: 'white',
 	zIndex: theme.zIndex.modal + 1,
@@ -27,7 +25,6 @@ const modalStyles = (theme: Theme) => ({
 	},
 });
 
-// Header bar positioning and responsive background
 const headerStackStyles = (theme: Theme) => ({
 	left: 0,
 	p: { xs: 2, md: 3 },
@@ -41,20 +38,12 @@ const headerStackStyles = (theme: Theme) => ({
 	},
 });
 
-// Icon button styling
 const iconButtonStyles = { color: 'white' } as const;
 
-/**
- * Header component with logo and menu toggle
- *
- * Displays a fixed position header with the portfolio logo and a button to
- * toggle the navigation menu modal. Features blur backdrop and smooth transitions.
- */
 export const Header = (): JSX.Element => {
 	const [open, setOpen] = useState(false);
 	const { setCursor } = useCursor();
 
-	// Memoize handlers to prevent recreating on every render
 	const handleClose = useCallback(() => setOpen(false), []);
 	const toggleMenu = useCallback(() => setOpen((prev) => !prev), []);
 	const handleMouseEnter = useCallback(
@@ -68,7 +57,6 @@ export const Header = (): JSX.Element => {
 
 	return (
 		<>
-			{/* Full-screen modal overlay for navigation menu */}
 			<Modal
 				sx={modalStyles}
 				open={open}
@@ -82,7 +70,6 @@ export const Header = (): JSX.Element => {
 				</Fade>
 			</Modal>
 
-			{/* Header bar with logo and menu toggle button */}
 			<Stack
 				direction="row"
 				justifyContent="space-between"
@@ -99,7 +86,6 @@ export const Header = (): JSX.Element => {
 					onClick={toggleMenu}
 					sx={iconButtonStyles}
 				>
-					{/* Toggle between close and menu icons based on state */}
 					{open ? <CloseIcon size={32} /> : <MenuIcon size={32} />}
 				</IconButton>
 			</Stack>

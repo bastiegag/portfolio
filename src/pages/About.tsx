@@ -3,7 +3,6 @@ import { Typography, Box } from '@mui/material';
 
 import { Page, Photo } from 'components';
 
-// Extract sx props to prevent object recreation on every render
 const photoBoxStyles = {
 	float: 'left',
 	width: { xs: '100%', sm: '50%', md: '32%' },
@@ -13,13 +12,6 @@ const photoBoxStyles = {
 
 const paragraphStyles = { mb: 3 } as const;
 
-/**
- * About page component
- *
- * Displays personal information and professional introduction with a photo.
- * Features responsive layout with the photo floating left on larger screens
- * and stacking on mobile devices.
- */
 export const About = (): JSX.Element => {
 	return (
 		<Page>
