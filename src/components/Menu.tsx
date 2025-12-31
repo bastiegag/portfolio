@@ -1,11 +1,6 @@
 import React, { JSX, useCallback } from 'react';
 import { Link } from 'react-router';
-import {
-	IconBrandGithub,
-	IconBrandVimeo,
-	IconBrandInstagram,
-	IconBrandLinkedin,
-} from '@tabler/icons-react';
+import { IconBrandGithub, IconBrandLinkedin } from '@tabler/icons-react';
 import {
 	IconButton,
 	List,
@@ -33,8 +28,6 @@ const MENU = [
 ];
 const ICONS = [
 	{ title: 'Github', icon: IconBrandGithub, url: config.github },
-	{ title: 'Vimeo', icon: IconBrandVimeo, url: config.vimeo },
-	{ title: 'Instagram', icon: IconBrandInstagram, url: config.instagram },
 	{ title: 'LinkedIn', icon: IconBrandLinkedin, url: config.linkedin },
 ];
 const ICON_SIZE = 32;

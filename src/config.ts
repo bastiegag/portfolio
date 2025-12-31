@@ -6,8 +6,6 @@ const config = {
 	cursorEnabled: true,
 	mail: 'bastiegag@gmail.com',
 	github: 'https://github.com/bastiegag',
-	vimeo: 'https://vimeo.com/bastiegag',
-	instagram: 'https://www.instagram.com/bastiegag',
 	linkedin: 'https://www.linkedin.com/in/bastiegag',
 };
 
