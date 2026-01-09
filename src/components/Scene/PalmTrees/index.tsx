@@ -1,4 +1,4 @@
-import { JSX, useId } from 'react';
+import { useId } from 'react';
 import { styled } from '@mui/material';
 
 import { PalmTree } from './PalmTree';
@@ -12,7 +12,7 @@ const PalmTreesRoot = styled('g', {
 	slot: 'root',
 })();
 
-export const PalmTrees = (): JSX.Element => {
+export const PalmTrees = () => {
 	const id = CSS.escape(useId());
 
 	useParallax(`#${id}`, 0, 0, PALM_TREES_MODIFIER);

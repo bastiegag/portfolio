@@ -1,38 +1,16 @@
-import { JSX } from 'react';
 import { styled } from '@mui/system';
 
 import { IconProps } from './';
 
-/**
- * Styled SVG root element for the menu icon
- */
 const MenuIconRoot = styled('svg', {
 	name: 'MenuIcon',
 	slot: 'root',
 })();
 
-/**
- * SVG viewBox coordinates for the menu icon
- */
 const VIEWBOX = '0 0 141.3 111.82';
-
-/**
- * Default fill color for the icon
- */
 const DEFAULT_FILL = '#fff';
 
-/**
- * Hand-drawn style hamburger menu icon component
- *
- * Renders an SVG icon with three horizontal lines forming a hamburger
- * menu. The lines have an irregular, hand-drawn appearance that matches
- * the overall aesthetic of the portfolio. Size is customizable via props
- * while maintaining aspect ratio.
- *
- * @param props - Icon component props
- * @returns SVG menu icon element
- */
-export const MenuIcon = ({ size }: IconProps): JSX.Element => {
+export const MenuIcon = ({ size }: IconProps) => {
 	return (
 		<MenuIconRoot
 			className="MenuIcon-root"

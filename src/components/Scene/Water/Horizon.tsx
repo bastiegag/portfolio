@@ -1,4 +1,4 @@
-import { JSX, useId } from 'react';
+import { useId } from 'react';
 import { styled, useTheme } from '@mui/material';
 
 import { useParallax } from 'hooks';
@@ -21,11 +21,7 @@ const HorizonRoot = styled('g', {
 	slot: 'root',
 })(() => ({ mixBlendMode: 'multiply' }));
 
-export const Horizon = ({
-	modifier,
-	opacity,
-	y,
-}: HorizonProps): JSX.Element => {
+export const Horizon = ({ modifier, opacity, y }: HorizonProps) => {
 	const id = CSS.escape(useId());
 	const color = useTheme().vars.palette;
 

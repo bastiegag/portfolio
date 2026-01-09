@@ -1,39 +1,16 @@
-import { JSX } from 'react';
 import { styled } from '@mui/system';
 
 import { IconProps } from './';
 
-/**
- * Styled SVG root element for the sun icon
- */
 const SunIconRoot = styled('svg', {
 	name: 'SunIcon',
 	slot: 'root',
 })();
 
-/**
- * SVG viewBox coordinates for the sun icon
- */
 const VIEWBOX = '0 0 162.17 162.17';
-
-/**
- * Default fill color for the icon
- */
 const DEFAULT_FILL = '#fff';
 
-/**
- * Hand-drawn style sun icon component
- *
- * Renders an SVG icon depicting a sun with rays and a circular center
- * with an irregular, hand-drawn appearance that matches the overall
- * aesthetic of the portfolio. Used for theme switching to indicate
- * light/day mode. Size is customizable via props while maintaining
- * aspect ratio.
- *
- * @param props - Icon component props
- * @returns SVG sun icon element
- */
-export const SunIcon = ({ size }: IconProps): JSX.Element => {
+export const SunIcon = ({ size }: IconProps) => {
 	return (
 		<SunIconRoot
 			className="SunIcon-root"

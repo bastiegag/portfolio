@@ -1,13 +1,9 @@
-import { useMemo, useState, useEffect, useRef, ReactNode, JSX } from 'react';
+import { useMemo, useState, useEffect, useRef, ReactNode } from 'react';
 import { Popper, Box, Slide, useTheme } from '@mui/material';
 
 import { PopperContext, type PopperContextType } from 'context';
 
-export const PopperProvider = ({
-	children,
-}: {
-	children: ReactNode;
-}): JSX.Element => {
+export const PopperProvider = ({ children }: { children: ReactNode }) => {
 	const [settings, setSettings] = useState<PopperContextType['settings']>({
 		anchorEl: null,
 		title: '',

@@ -1,12 +1,8 @@
-import { JSX, useMemo, useState, ReactNode } from 'react';
+import { useMemo, useState, ReactNode } from 'react';
 
 import { CursorContext, type CursorContextType } from 'context';
 
-export const CursorProvider = ({
-	children,
-}: {
-	children: ReactNode;
-}): JSX.Element => {
+export const CursorProvider = ({ children }: { children: ReactNode }) => {
 	const [cursor, setCursor] = useState<CursorContextType['cursor']>({
 		hover: false,
 	});

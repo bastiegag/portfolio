@@ -1,4 +1,4 @@
-import { JSX, useId } from 'react';
+import { useId } from 'react';
 import { styled, useTheme } from '@mui/material';
 
 import { CLOUDS_DATA } from './cloudsData';
@@ -30,7 +30,7 @@ const SkyStarfield = styled('g', {
 	height: 280,
 }));
 
-export const Sky = (): JSX.Element => {
+export const Sky = () => {
 	const id = useId();
 	const { settings } = useSettings();
 	const colors = useTheme().vars.palette;

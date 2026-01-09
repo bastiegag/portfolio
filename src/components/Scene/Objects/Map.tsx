@@ -1,4 +1,4 @@
-import { JSX, useId } from 'react';
+import { useId } from 'react';
 import { styled, useTheme } from '@mui/material';
 
 import { Link } from 'components';
@@ -31,7 +31,7 @@ const MapRoot = styled('g', {
 	},
 }));
 
-export const Map = ({ x, y, modifier, scale }: MapProps): JSX.Element => {
+export const Map = ({ x, y, modifier, scale }: MapProps) => {
 	const id = CSS.escape(useId());
 	const { settings } = useSettings();
 	const colors = useTheme().vars.palette;

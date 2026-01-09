@@ -1,4 +1,3 @@
-import { JSX } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { styled, useTheme, Box, SxProps, Theme } from '@mui/material';
@@ -24,7 +23,7 @@ const cursorSx: SxProps<Theme> = {
 	zIndex: 5000,
 };
 
-export const Cursor = (): JSX.Element | null => {
+export const Cursor = () => {
 	const colors = useTheme().vars.palette;
 	const { cursor } = useCursor();
 

@@ -1,12 +1,8 @@
-import { useMemo, useState, ReactNode, JSX } from 'react';
+import { useMemo, useState, ReactNode } from 'react';
 
 import { OffsetContext, type OffsetContextType } from 'context';
 
-export const OffsetProvider = ({
-	children,
-}: {
-	children: ReactNode;
-}): JSX.Element => {
+export const OffsetProvider = ({ children }: { children: ReactNode }) => {
 	const [offset, setOffset] = useState<OffsetContextType['offset']>({
 		pos: {
 			x: 0,

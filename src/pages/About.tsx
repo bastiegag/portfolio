@@ -1,4 +1,3 @@
-import { JSX } from 'react';
 import { Typography, Box } from '@mui/material';
 
 import { Page, Photo } from 'components';
@@ -12,7 +11,7 @@ const photoBoxStyles = {
 
 const paragraphStyles = { mb: 3 } as const;
 
-export const About = (): JSX.Element => {
+export const About = () => {
 	return (
 		<Page>
 			<Box sx={photoBoxStyles}>

@@ -1,4 +1,4 @@
-import { JSX, useId, useMemo } from 'react';
+import { useId, useMemo } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { styled, useTheme } from '@mui/material';
@@ -29,7 +29,7 @@ export const Cloud = ({
 	variant,
 	width,
 	y,
-}: CloudProps): JSX.Element => {
+}: CloudProps) => {
 	const id = CSS.escape(useId());
 	const colors = useTheme().vars.palette;
 

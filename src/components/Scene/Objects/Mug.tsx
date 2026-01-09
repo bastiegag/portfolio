@@ -1,4 +1,4 @@
-import { JSX, useId } from 'react';
+import { useId } from 'react';
 import { styled, useTheme } from '@mui/material';
 
 import { useParallax } from 'hooks';
@@ -17,7 +17,7 @@ const MugRoot = styled('g', {
 	slot: 'root',
 })();
 
-export const Mug = ({ x, y, modifier }: MugProps): JSX.Element => {
+export const Mug = ({ x, y, modifier }: MugProps) => {
 	const id = CSS.escape(useId());
 	const colors = useTheme().vars.palette;
 

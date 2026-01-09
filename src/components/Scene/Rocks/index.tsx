@@ -1,4 +1,4 @@
-import { JSX, useId } from 'react';
+import { useId } from 'react';
 import { styled } from '@mui/material';
 
 import { Rock } from './Rock';
@@ -12,7 +12,7 @@ const RocksRoot = styled('g', {
 	slot: 'root',
 })();
 
-export const Rocks = (): JSX.Element => {
+export const Rocks = () => {
 	const id = CSS.escape(useId());
 
 	useParallax(`#${id}`, 0, 0, ROCKS_MODIFIER);

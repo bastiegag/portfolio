@@ -1,4 +1,4 @@
-import React, { JSX, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { Link } from 'react-router';
 import { IconBrandGithub, IconBrandLinkedin } from '@tabler/icons-react';
 import {
@@ -52,7 +52,7 @@ interface MenuProps {
 	setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const Menu = ({ open, setOpen }: MenuProps): JSX.Element => {
+export const Menu = ({ open, setOpen }: MenuProps) => {
 	const { setCursor } = useCursor();
 
 	const handleMenuClick = useCallback(() => {

@@ -1,4 +1,4 @@
-import { JSX, useId } from 'react';
+import { useId } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { styled, useTheme } from '@mui/material';
@@ -46,7 +46,7 @@ const BottleRoot = styled('g', {
 	},
 }));
 
-export const Bottle = ({ x, y, modifier, scale }: BottleProps): JSX.Element => {
+export const Bottle = ({ x, y, modifier, scale }: BottleProps) => {
 	const id = CSS.escape(useId());
 	const { settings } = useSettings();
 	const colors = useTheme().vars.palette;

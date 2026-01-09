@@ -1,4 +1,4 @@
-import { JSX, useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import { Stack, IconButton, Modal, Box, Fade } from '@mui/material';
 import { Theme } from '@mui/material/styles';
 
@@ -40,7 +40,7 @@ const headerStackStyles = (theme: Theme) => ({
 
 const iconButtonStyles = { color: 'white' } as const;
 
-export const Header = (): JSX.Element => {
+export const Header = () => {
 	const [open, setOpen] = useState(false);
 	const { setCursor } = useCursor();
 

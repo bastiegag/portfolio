@@ -1,4 +1,4 @@
-import { JSX, useId, useMemo } from 'react';
+import { useId, useMemo } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { styled, useTheme } from '@mui/material';
@@ -27,7 +27,7 @@ const PlantRoot = styled('g', {
 	},
 }));
 
-export const Plant = ({ origin, variant, x, y }: PlantProps): JSX.Element => {
+export const Plant = ({ origin, variant, x, y }: PlantProps) => {
 	const id = CSS.escape(useId());
 	const colors = useTheme().vars.palette;
 

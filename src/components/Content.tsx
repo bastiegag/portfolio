@@ -1,4 +1,4 @@
-import { JSX, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { Box, SxProps, Theme } from '@mui/material';
 
 export interface ContentProps {
@@ -11,7 +11,7 @@ const contentSx: SxProps<Theme> = {
 	p: 2,
 };
 
-export const Content = ({ children }: ContentProps): JSX.Element => {
+export const Content = ({ children }: ContentProps) => {
 	return (
 		<Box className="animate-all clearfix" sx={contentSx}>
 			{children}

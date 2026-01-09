@@ -1,4 +1,4 @@
-import { JSX, useId } from 'react';
+import { useId } from 'react';
 import { styled, useTheme } from '@mui/material';
 
 import { useParallax } from 'hooks';
@@ -31,7 +31,7 @@ const WavesRoot = styled('g', {
 	mixBlendMode: 'multiply',
 }));
 
-export const Waves = ({ modifier, opacity, x, y }: WavesProps): JSX.Element => {
+export const Waves = ({ modifier, opacity, x, y }: WavesProps) => {
 	const id = CSS.escape(useId());
 	const colors = useTheme().vars.palette;
 

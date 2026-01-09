@@ -1,4 +1,4 @@
-import { JSX, useId } from 'react';
+import { useId } from 'react';
 import { styled } from '@mui/material';
 
 import { Grass } from './Grass';
@@ -13,7 +13,7 @@ const FoliageRoot = styled('g', {
 	slot: 'root',
 })();
 
-export const Foliage = (): JSX.Element => {
+export const Foliage = () => {
 	const id = CSS.escape(useId());
 
 	useParallax(`#${id}`, 0, 0, FOLIAGE_MODIFIER);

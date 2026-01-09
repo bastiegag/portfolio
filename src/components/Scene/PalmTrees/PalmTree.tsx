@@ -1,4 +1,4 @@
-import { JSX, useId, useMemo } from 'react';
+import { useId, useMemo } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { styled, useTheme } from '@mui/material';
@@ -27,12 +27,7 @@ const PalmTreeRoot = styled('g', {
 	},
 }));
 
-export const PalmTree = ({
-	origins,
-	variant,
-	x,
-	y,
-}: PalmTreeProps): JSX.Element => {
+export const PalmTree = ({ origins, variant, x, y }: PalmTreeProps) => {
 	const id = CSS.escape(useId());
 	const colors = useTheme().vars.palette;
 

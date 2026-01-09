@@ -1,4 +1,4 @@
-import { JSX, useId } from 'react';
+import { useId } from 'react';
 import { styled, useTheme } from '@mui/material';
 
 import { useParallax, useSettings } from 'hooks';
@@ -24,7 +24,7 @@ const MoonRoot = styled('g', {
 	height: MOON_SIZE * 2,
 }));
 
-export const Moon = ({ modifier, x, y }: MoonProps): JSX.Element => {
+export const Moon = ({ modifier, x, y }: MoonProps) => {
 	const id = CSS.escape(useId());
 	const { settings } = useSettings();
 	const colors = useTheme().vars.palette;

@@ -1,4 +1,4 @@
-import { JSX, useId } from 'react';
+import { useId } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { styled, useTheme } from '@mui/material';
@@ -40,7 +40,7 @@ const SmokeRoot = styled('g', {
 	opacity: isNight ? 0 : 1,
 }));
 
-export const Smoke = ({ modifier, x, y }: SmokeProps): JSX.Element => {
+export const Smoke = ({ modifier, x, y }: SmokeProps) => {
 	const id = CSS.escape(useId());
 	const colors = useTheme().vars.palette;
 	const { settings } = useSettings();

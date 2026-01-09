@@ -1,38 +1,16 @@
-import { JSX } from 'react';
 import { styled } from '@mui/system';
 
 import { IconProps } from './';
 
-/**
- * Styled SVG root element for the moon icon
- */
 const MoonIconRoot = styled('svg', {
 	name: 'MoonIcon',
 	slot: 'root',
 })();
 
-/**
- * SVG viewBox coordinates for the moon icon
- */
 const VIEWBOX = '0 0 148.95 158.43';
-
-/**
- * Default fill color for the icon
- */
 const DEFAULT_FILL = '#fff';
 
-/**
- * Hand-drawn style crescent moon icon component
- *
- * Renders an SVG icon depicting a crescent moon with an irregular,
- * hand-drawn appearance that matches the overall aesthetic of the
- * portfolio. Used for theme switching to indicate dark/night mode.
- * Size is customizable via props while maintaining aspect ratio.
- *
- * @param props - Icon component props
- * @returns SVG moon icon element
- */
-export const MoonIcon = ({ size }: IconProps): JSX.Element => {
+export const MoonIcon = ({ size }: IconProps) => {
 	return (
 		<MoonIconRoot
 			className="MoonIcon-root"

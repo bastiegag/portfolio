@@ -1,4 +1,4 @@
-import { JSX, useCallback } from 'react';
+import { useCallback } from 'react';
 import { Box, IconButton } from '@mui/material';
 import { Theme } from '@mui/material/styles';
 
@@ -14,7 +14,7 @@ const footerBoxStyles = (theme: Theme) => ({
 	zIndex: theme.zIndex.modal + 2,
 });
 
-export const Footer = (): JSX.Element => {
+export const Footer = () => {
 	const { settings, setSettings } = useSettings();
 	const { setCursor } = useCursor();
 

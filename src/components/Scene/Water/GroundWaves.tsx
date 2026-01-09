@@ -1,4 +1,4 @@
-import { JSX, useId } from 'react';
+import { useId } from 'react';
 import { styled } from '@mui/material';
 
 import { useParallax } from 'hooks';
@@ -23,11 +23,7 @@ const GroundWavesRoot = styled('g', {
 	slot: 'root',
 })(() => ({ mixBlendMode: 'multiply' }));
 
-export const GroundWaves = ({
-	modifier,
-	opacity,
-	y,
-}: GroundWavesProps): JSX.Element => {
+export const GroundWaves = ({ modifier, opacity, y }: GroundWavesProps) => {
 	const id = CSS.escape(useId());
 
 	useParallax(`#${id}`, 0, y, modifier, {

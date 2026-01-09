@@ -1,4 +1,4 @@
-import { JSX, useId } from 'react';
+import { useId } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { styled, useTheme } from '@mui/material';
@@ -32,12 +32,7 @@ const ClotheslineRoot = styled('g', {
 	}),
 }));
 
-export const Clothesline = ({
-	x,
-	y,
-	modifier,
-	scale,
-}: ClotheslineProps): JSX.Element => {
+export const Clothesline = ({ x, y, modifier, scale }: ClotheslineProps) => {
 	const id = CSS.escape(useId());
 	const { settings } = useSettings();
 	const colors = useTheme().vars.palette;

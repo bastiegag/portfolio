@@ -1,7 +1,9 @@
-import { JSX, useId } from 'react';
+import { useId } from 'react';
+import { gsap } from 'gsap';
+import { useGSAP } from '@gsap/react';
 import { styled, useTheme } from '@mui/material';
 
-import { useParallax } from 'hooks';
+import { useParallax, useSettings } from 'hooks';
 import { Fire } from 'components/Scene/Objects';
 
 const MASK_GRADIENT =
@@ -21,6 +23,33 @@ const GRASS_PATH =
 
 const SHADOW_PATH =
 	'M267.6,9.5l90.6,2.6,27.2-5.2s150.3,10.1,214,14.9,80.1-.6,80.1-.6c0,0-74.6-10.5-118.5-13.4C517.1,4.8,401.2,0,401.2,0h-30.8l-90.4,7.8-12.3,1.7h-.1Z';
+
+const RIPPLES = [
+	{
+		transform: 'translate(60 35)',
+		x: 50,
+		y: 38,
+		d: 'M0,0s152.58,6.47,178.67,6.19c-35.85,1.23-76.47-.34-99.27-.96C56.12,4.59,26.58,2.37,0,0Z',
+	},
+	{
+		transform: 'translate(259 57)',
+		x: 244,
+		y: 60,
+		d: 'M211.4,14.2s-76.76,0-112.47-1.42C15.99,9.47,0,0,0,0c0,0,19.49,13.07,98.67,14.68,47.08.95,112.73-.38,112.73-.38v-.1Z',
+	},
+	{
+		transform: 'translate(523 57)',
+		x: 545,
+		y: 60,
+		d: 'M0,12.88s89.94-2.12,126.32-3.81C181.98,6.47,249.76,0,249.76,0c0,0-61,8.06-123.36,10.88C55.52,14.08,0,12.88,0,12.88Z',
+	},
+	{
+		transform: 'translate(778 46)',
+		x: 786,
+		y: 47,
+		d: 'M22.69,0s2.73,1.83,2.42,3.7C24.61,6.66,0,9.71,0,9.71c0,0,24.33-1.51,26.83-5.47,1.18-1.86-4.14-4.24-4.14-4.24Z',
+	},
+];
 
 export interface IslandProps {
 	x: number;
@@ -61,11 +90,42 @@ const IslandShadow = styled('path', {
 	mixBlendMode: 'multiply',
 }));
 
-export const Island = ({ x, y, modifier }: IslandProps): JSX.Element => {
+const IslandRipples = styled('g', {
+	name: 'Island',
+	slot: 'ripples',
+})<{ 'data-night': boolean }>(({ 'data-night': isNight }) => ({
+	opacity: isNight ? 0.25 : 1,
+	filter: 'blur(0.2px)',
+	mixBlendMode: 'overlay',
+}));
+
+export const Island = ({ x, y, modifier }: IslandProps) => {
 	const id = CSS.escape(useId());
 	const colors = useTheme().vars.palette;
+	const { settings } = useSettings();
 
 	useParallax(`#${id}`, x, y, modifier);
+
+	useGSAP(() => {
+		if (RIPPLES) {
+			RIPPLES.forEach((ripple, index) => {
+				const timeline = gsap.timeline({
+					repeat: -1,
+					repeatRefresh: true,
+				});
+
+				timeline
+					.to(`#${id}-ripples-${index}`, {
+						duration: gsap.utils.random(1.5, 2, true),
+						x: ripple.x,
+						y: ripple.y,
+						opacity: 0,
+						ease: 'sine.inOut',
+					})
+					.yoyo(true);
+			});
+		}
+	}, [id]);
 
 	return (
 		<IslandRoot
@@ -125,6 +185,18 @@ export const Island = ({ x, y, modifier }: IslandProps): JSX.Element => {
 				d={GRASS_PATH}
 			/>
 			<IslandShadow className="island-shadow" d={SHADOW_PATH} />
+
+			<IslandRipples data-night={settings.time === 'night'}>
+				{RIPPLES.map((ripple, index) => (
+					<path
+						key={index}
+						id={`${id}-ripples-${index}`}
+						transform={ripple.transform}
+						fill={colors.base.white}
+						d={ripple.d}
+					/>
+				))}
+			</IslandRipples>
 		</IslandRoot>
 	);
 };

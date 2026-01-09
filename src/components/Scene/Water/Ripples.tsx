@@ -1,4 +1,4 @@
-import { JSX, useId } from 'react';
+import { useId } from 'react';
 import { styled, useTheme } from '@mui/material';
 
 import { useParallax, useSettings } from 'hooks';
@@ -29,7 +29,7 @@ const RipplesRoot = styled('g', {
 	mixBlendMode: 'soft-light',
 }));
 
-export const Ripples = ({ modifier, x, y }: RipplesProps): JSX.Element => {
+export const Ripples = ({ modifier, x, y }: RipplesProps) => {
 	const id = CSS.escape(useId());
 	const colors = useTheme().vars.palette;
 	const { settings } = useSettings();

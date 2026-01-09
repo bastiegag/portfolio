@@ -1,4 +1,4 @@
-import { JSX, useState, ReactNode, useCallback } from 'react';
+import { useState, ReactNode, useCallback } from 'react';
 import { useNavigate } from 'react-router';
 import { Dialog, Slide, SxProps, Theme } from '@mui/material';
 
@@ -26,7 +26,7 @@ const backdropSx: SxProps<Theme> = {
 	backdropFilter: 'blur(4px)',
 };
 
-export const Page = ({ children }: PageProps): JSX.Element => {
+export const Page = ({ children }: PageProps) => {
 	const navigate = useNavigate();
 	const [open, setOpen] = useState<boolean>(true);
 

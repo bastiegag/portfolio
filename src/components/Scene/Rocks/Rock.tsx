@@ -1,4 +1,4 @@
-import { JSX, useId, useMemo } from 'react';
+import { useId, useMemo } from 'react';
 import { styled, useTheme } from '@mui/material';
 
 import { ROCK_PATHS } from './rockPaths';
@@ -15,7 +15,7 @@ const RockRoot = styled('g', {
 	slot: 'root',
 })();
 
-export const Rock = ({ variant, x, y, distance }: RockProps): JSX.Element => {
+export const Rock = ({ variant, x, y, distance }: RockProps) => {
 	const id = useId();
 	const colors = useTheme().vars.palette;
 

@@ -1,4 +1,4 @@
-import { JSX, useId, useMemo } from 'react';
+import { useId, useMemo } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { styled, useTheme } from '@mui/material';
@@ -17,7 +17,7 @@ const GrassRoot = styled('g', {
 	slot: 'root',
 })();
 
-export const Grass = ({ origin, variant, x, y }: GrassProps): JSX.Element => {
+export const Grass = ({ origin, variant, x, y }: GrassProps) => {
 	const id = CSS.escape(useId());
 	const colors = useTheme().vars.palette;
 

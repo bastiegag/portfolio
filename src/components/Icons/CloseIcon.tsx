@@ -1,38 +1,16 @@
-import { JSX } from 'react';
 import { styled } from '@mui/material';
 
 import { IconProps } from './';
 
-/**
- * Styled SVG root element for the close icon
- */
 const CloseIconRoot = styled('svg', {
 	name: 'CloseIcon',
 	slot: 'root',
 })();
 
-/**
- * SVG viewBox coordinates for the close icon
- */
 const VIEWBOX = '0 0 101.08 104.71';
-
-/**
- * Default fill color for the icon
- */
 const DEFAULT_FILL = '#fff';
 
-/**
- * Hand-drawn style close (X) icon component
- *
- * Renders an SVG icon with two intersecting diagonal lines forming
- * an X shape. The lines have an irregular, hand-drawn appearance that
- * matches the overall aesthetic of the portfolio. Size is customizable
- * via props while maintaining aspect ratio.
- *
- * @param props - Icon component props
- * @returns SVG close icon element
- */
-export const CloseIcon = ({ size }: IconProps): JSX.Element => {
+export const CloseIcon = ({ size }: IconProps) => {
 	return (
 		<CloseIconRoot
 			className="CloseIcon-root"

@@ -1,4 +1,4 @@
-import { JSX, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { Box, styled } from '@mui/material';
 
 import { Scene } from 'components';
@@ -24,7 +24,7 @@ export interface ContainerProps {
 	children: ReactNode;
 }
 
-export const Container = ({ children }: ContainerProps): JSX.Element => {
+export const Container = ({ children }: ContainerProps) => {
 	return (
 		<>
 			{children}

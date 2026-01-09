@@ -1,4 +1,4 @@
-import { JSX, useId } from 'react';
+import { useId } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { styled, useTheme } from '@mui/material';
@@ -30,7 +30,7 @@ const FireRoot = styled('svg', {
 	})
 );
 
-export const Fire = ({ x, y, modifier, invert }: FireProps): JSX.Element => {
+export const Fire = ({ x, y, modifier, invert }: FireProps) => {
 	const id = CSS.escape(useId());
 	const { settings } = useSettings();
 	const colors = useTheme().vars.palette;

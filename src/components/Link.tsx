@@ -1,4 +1,4 @@
-import { JSX, ReactNode, useCallback } from 'react';
+import { ReactNode, useCallback } from 'react';
 import { Link as RouterLink } from 'react-router';
 
 import { usePopper, useCursor } from 'hooks';
@@ -12,13 +12,7 @@ export interface LinkProps {
 	children: ReactNode;
 }
 
-export const Link = ({
-	url,
-	to,
-	title,
-	tab,
-	children,
-}: LinkProps): JSX.Element => {
+export const Link = ({ url, to, title, tab, children }: LinkProps) => {
 	const { settings, setSettings } = usePopper();
 	const { setCursor } = useCursor();
 

@@ -1,4 +1,4 @@
-import { JSX, useId } from 'react';
+import { useId } from 'react';
 import { styled, useTheme } from '@mui/material';
 
 import { RockProps, Rock } from 'components/Scene/Rocks/Rock';
@@ -42,7 +42,7 @@ const CampfireRoot = styled('g', {
 	},
 }));
 
-export const Campfire = ({ x, y, modifier }: CampfireProps): JSX.Element => {
+export const Campfire = ({ x, y, modifier }: CampfireProps) => {
 	const id = CSS.escape(useId());
 	const colors = useTheme().vars.palette;
 

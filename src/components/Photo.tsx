@@ -1,4 +1,4 @@
-import { JSX, useId, useMemo } from 'react';
+import { useId, useMemo } from 'react';
 import { styled, useTheme } from '@mui/material';
 
 const PhotoRoot = styled('svg', {
@@ -19,7 +19,7 @@ const MASK_POINTS =
 	'3.4 6.1 23.2 4.9 27.3 4.3 64.1 3 65.7 57.5 47 58.4 5.1 60.1 4.8 27.1 3.4 6.1';
 const SHADOW_OPACITY = 0.15;
 
-export const Photo = ({ src }: PhotoProps): JSX.Element => {
+export const Photo = ({ src }: PhotoProps) => {
 	const id = CSS.escape(useId());
 	const colors = useTheme().vars.palette;
 	const maskId = useMemo(() => `svgmask-${id}`, [id]);
