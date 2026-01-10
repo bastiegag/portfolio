@@ -142,8 +142,8 @@ This is a modern, interactive portfolio website featuring a custom-built 3D isla
 ### Key Configuration Files
 
 **TypeScript Configuration** (`tsconfig.json`):
-- Target: ESNext
-- Module: ESNext with Node resolution
+- Target: esnext
+- Module: esnext with Node resolution
 - Base URL: `./src` with path aliases:
   - `@/*` → `src/*`
   - `assets/*` → `src/assets/*`
@@ -192,7 +192,7 @@ This is a modern, interactive portfolio website featuring a custom-built 3D isla
 
 **Steps**:
 1. Checkout repository
-2. Setup Node.js 24.8.0
+2. Setup Node.js 24.8.0 (Note: CI uses v24, local dev tested with v20.19.6 - both work)
 3. Run `npm install`
 4. Run `npm run build`
 5. FTP deploy `dist/` folder to GoDaddy hosting
