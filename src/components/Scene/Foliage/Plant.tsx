@@ -2,7 +2,6 @@ import { useId, useMemo } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { styled, useTheme } from '@mui/material';
-
 import { PLANT_PATHS } from './plantPaths';
 
 export interface PlantProps {
@@ -12,7 +11,7 @@ export interface PlantProps {
 	y: number;
 }
 
-const PlantRoot = styled('g', {
+const StyledPlantGroup = styled('g', {
 	name: 'Plant',
 	slot: 'root',
 })(() => ({
@@ -28,17 +27,16 @@ const PlantRoot = styled('g', {
 }));
 
 export const Plant = ({ origin, variant, x, y }: PlantProps) => {
-	const id = CSS.escape(useId());
-	const colors = useTheme().vars.palette;
+	const plantId = CSS.escape(useId());
+	const palette = useTheme().vars.palette;
 
 	useGSAP(() => {
 		const timeline = gsap.timeline({
 			repeat: -1,
 			repeatRefresh: true,
 		});
-
 		timeline
-			.to(`#${id}`, {
+			.to(`#${plantId}`, {
 				duration: gsap.utils.random(1, 2, true),
 				rotation: gsap.utils.random(-2, 2, true),
 				skewX: gsap.utils.random(-4, 4, true),
@@ -54,9 +52,8 @@ export const Plant = ({ origin, variant, x, y }: PlantProps) => {
 					repeat: -1,
 					repeatRefresh: true,
 				});
-
 				leafTimeline
-					.to(`#${id}${groupIndex}`, {
+					.to(`#${plantId}${groupIndex}`, {
 						duration: gsap.utils.random(1, 1.5, true),
 						rotation: gsap.utils.random(-3, 3, true),
 						ease: 'sine.inOut',
@@ -65,30 +62,28 @@ export const Plant = ({ origin, variant, x, y }: PlantProps) => {
 					.yoyo(true);
 			});
 		}
-	}, [id, origin, variant]);
+	}, [plantId, origin, variant]);
 
-	const plantPaths = useMemo(() => {
+	const plantElements = useMemo(() => {
 		const variantPaths = PLANT_PATHS[variant];
 		if (!variantPaths) return null;
-
 		return (
 			<>
 				{variantPaths.map((pathGroup, groupIndex) => (
-					<g id={`${id}${groupIndex}`} key={groupIndex}>
+					<g id={`${plantId}${groupIndex}`} key={groupIndex}>
 						{pathGroup.map((path, index) => {
-							const PathElement =
+							const ElementType =
 								path.type === 'polygon' ? 'polygon' : 'path';
-
 							return (
-								<PathElement
+								<ElementType
 									key={index}
 									className={path.color}
 									fill={
-										colors.foliage[
-											path.color as unknown as keyof typeof colors.foliage
+										palette.foliage[
+											path.color as unknown as keyof typeof palette.foliage
 										]
 									}
-									{...(PathElement === 'polygon'
+									{...(ElementType === 'polygon'
 										? { points: path.d }
 										: { d: path.d })}
 								/>
@@ -98,17 +93,17 @@ export const Plant = ({ origin, variant, x, y }: PlantProps) => {
 				))}
 			</>
 		);
-	}, [id, variant, colors]);
+	}, [plantId, variant, palette]);
 
 	return (
-		<PlantRoot
-			id={id}
+		<StyledPlantGroup
+			id={plantId}
 			className="Plant-root animate-color"
 			transform={`translate(${x},${y})`}
 		>
-			<g id={`${id}-skew`} className="animate-color">
-				{plantPaths}
+			<g id={`${plantId}-skew`} className="animate-color">
+				{plantElements}
 			</g>
-		</PlantRoot>
+		</StyledPlantGroup>
 	);
 };

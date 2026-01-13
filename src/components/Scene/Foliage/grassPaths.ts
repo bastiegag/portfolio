@@ -1,10 +1,11 @@
-interface GrassPath {
+// Describes a single SVG path or polygon for a grass variant
+export interface GrassShape {
 	type: 'polygon' | 'path';
 	d: string;
 	color: 'main' | 'light' | 'dark';
 }
 
-export const GRASS_PATHS: Record<number, GrassPath[]> = {
+export const GRASS_PATHS: Record<number, GrassShape[]> = {
 	1: [
 		{
 			type: 'path',

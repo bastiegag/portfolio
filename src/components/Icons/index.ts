@@ -1,8 +1,10 @@
+// Central export for all icon components
 export { CloseIcon } from './CloseIcon';
 export { MenuIcon } from './MenuIcon';
-export { SunIcon } from './SunIcon';
 export { MoonIcon } from './MoonIcon';
+export { SunIcon } from './SunIcon';
 
+// Common props for all icon components
 export interface IconProps {
 	size?: number;
 }

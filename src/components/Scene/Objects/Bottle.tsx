@@ -47,18 +47,21 @@ const BottleRoot = styled('g', {
 }));
 
 export const Bottle = ({ x, y, modifier, scale }: BottleProps) => {
-	const id = CSS.escape(useId());
+	// Generate a unique, CSS-safe ID for this bottle instance
+	const bottleId = CSS.escape(useId());
 	const { settings } = useSettings();
 	const colors = useTheme().vars.palette;
 
-	useParallax(`#${id}`, x, y, modifier);
+	// Attach GSAP-based parallax effect to the bottle group
+	useParallax(`#${bottleId}`, x, y, modifier);
 
+	// Animate the water level inside the bottle with random duration and Y offset
 	useGSAP(() => {
-		const randDur = gsap.utils.random(1.5, 2.5, true);
-		const randY = gsap.utils.random(-2, 2, true);
+		const randomDuration = gsap.utils.random(1.5, 2.5, true);
+		const randomY = gsap.utils.random(-2, 2, true);
 
-		let newDur = randDur();
-		let newY = randY();
+		let duration = randomDuration();
+		let yOffset = randomY();
 
 		const timeline = gsap.timeline({
 			repeat: -1,
@@ -68,57 +71,63 @@ export const Bottle = ({ x, y, modifier, scale }: BottleProps) => {
 				duration: 1.5,
 			},
 			onRepeat: () => {
-				newDur = randDur();
-				newY = randY();
+				duration = randomDuration();
+				yOffset = randomY();
 			},
 		});
 
-		timeline.to(`#${id} .${id}-water-level`, {
-			duration: () => newDur,
-			y: () => newY,
+		timeline.to(`#${bottleId} .${bottleId}-water-level`, {
+			duration: () => duration,
+			y: () => yOffset,
 		});
-	}, [id]);
+	}, [bottleId]);
 
 	return (
 		<BottleRoot
-			id={id}
-			className="Bottle-root link animate-all "
+			id={bottleId}
+			className="Bottle-root link animate-all"
 			data-night={settings.time === 'night'}
 			transform={`translate(${x},${y})`}
 			strokeWidth="0"
 		>
 			<svg
-				id={`${id}-skew`}
+				id={`${bottleId}-skew`}
 				width={scale ? WIDTH * scale : WIDTH}
 				height={scale ? HEIGHT * scale : HEIGHT}
 				viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
 			>
+				{/* The bottle is a clickable mailto link */}
 				<Link url={`mailto:${config.mail}`} title="Contact" tab={false}>
 					<defs>
+						{/* Top mask for animating water level */}
 						<clipPath
-							id={`${id}-top-mask`}
-							className={`${id}-water-level animate`}
+							id={`${bottleId}-top-mask`}
+							className={`${bottleId}-water-level animate`}
 						>
 							<path d="M11.1,48.9c4.1,4.1,9.9,6,19,6s15.2-2.8,18.4-6h11.5s0,41.1,0,41.1H0v-41.1h11.1Z" />
 						</clipPath>
+						{/* Bottom mask for animating water level */}
 						<clipPath
-							id={`${id}-bottom-mask`}
-							className={`${id}-water-level animate`}
+							id={`${bottleId}-bottom-mask`}
+							className={`${bottleId}-water-level animate`}
 						>
 							<path d="M0,0v48.9h11.1c4.1,4.1,9.9,6,19,6s15.2-2.8,18.4-6h11.5V0H0Z" />
 						</clipPath>
 					</defs>
-					<filter id={`${id}-blur`}>
+					{/* Blur filter for glass effect */}
+					<filter id={`${bottleId}-blur`}>
 						<feGaussianBlur
 							in="SourceGraphic"
 							stdDeviation="0.35"
 							result="blurred"
 						/>
 					</filter>
+					{/* Transparent rect for click area */}
 					<rect fill="transparent" width="60" height="90" />
+					{/* Bottom part of the bottle, masked and filtered */}
 					<g
-						id={`${id}-bottom`}
-						clipPath={`url(#${id}-top-mask)`}
+						id={`${bottleId}-bottom`}
+						clipPath={`url(#${bottleId}-top-mask)`}
 						filter="url(#water-filter)"
 						opacity="0.35"
 					>
@@ -140,7 +149,11 @@ export const Bottle = ({ x, y, modifier, scale }: BottleProps) => {
 							/>
 						</g>
 					</g>
-					<g id={`${id}-top`} clipPath={`url(#${id}-bottom-mask)`}>
+					{/* Top part of the bottle, masked */}
+					<g
+						id={`${bottleId}-top`}
+						clipPath={`url(#${bottleId}-bottom-mask)`}
+					>
 						<g className="action">
 							<polygon
 								className="cap-dark"

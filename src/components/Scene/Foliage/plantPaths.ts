@@ -1,10 +1,11 @@
-interface PlantPath {
+// Describes a single SVG path or polygon for a plant variant
+export interface PlantShape {
 	type: 'polygon' | 'path';
 	d: string;
 	color: 'main' | 'light' | 'lighter' | 'dark' | 'darker' | 'black' | 'white';
 }
 
-export const PLANT_PATHS: Record<number, PlantPath[][]> = {
+export const PLANT_PATHS: Record<number, PlantShape[][]> = {
 	1: [
 		[
 			{

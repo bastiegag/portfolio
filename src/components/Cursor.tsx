@@ -11,16 +11,17 @@ const CursorRoot = styled('svg', {
 })(() => ({}));
 
 const CURSOR_SIZE = 16;
-
+const CURSOR_CONTAINER_SIZE = CURSOR_SIZE * 2;
 const CURSOR_VIEWBOX = '0 0 86.75 84.53';
+const CURSOR_Z_INDEX = 5000;
 
 const cursorSx: SxProps<Theme> = {
 	display: { xs: 'none', lg: 'block' },
-	height: 32,
+	height: CURSOR_CONTAINER_SIZE,
 	pointerEvents: 'none',
 	position: 'absolute',
-	width: 32,
-	zIndex: 5000,
+	width: CURSOR_CONTAINER_SIZE,
+	zIndex: CURSOR_Z_INDEX,
 };
 
 export const Cursor = () => {

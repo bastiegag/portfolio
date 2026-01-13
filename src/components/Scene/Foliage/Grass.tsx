@@ -2,7 +2,6 @@ import { useId, useMemo } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { styled, useTheme } from '@mui/material';
-
 import { GRASS_PATHS } from './grassPaths';
 
 export interface GrassProps {
@@ -12,23 +11,22 @@ export interface GrassProps {
 	y: number;
 }
 
-const GrassRoot = styled('g', {
+const StyledGrassGroup = styled('g', {
 	name: 'Grass',
 	slot: 'root',
 })();
 
 export const Grass = ({ origin, variant, x, y }: GrassProps) => {
-	const id = CSS.escape(useId());
-	const colors = useTheme().vars.palette;
+	const grassId = CSS.escape(useId());
+	const palette = useTheme().vars.palette;
 
 	useGSAP(() => {
 		const timeline = gsap.timeline({
 			repeat: -1,
 			repeatRefresh: true,
 		});
-
 		timeline
-			.to(`#${id}`, {
+			.to(`#${grassId}`, {
 				duration: gsap.utils.random(1, 1.5, true),
 				rotation: gsap.utils.random(-1, 1, true),
 				skewX: gsap.utils.random(-15, 15, true),
@@ -36,27 +34,25 @@ export const Grass = ({ origin, variant, x, y }: GrassProps) => {
 				transformOrigin: origin,
 			})
 			.yoyo(true);
-	}, [id, origin]);
+	}, [grassId, origin]);
 
-	const grassPaths = useMemo(() => {
+	const grassElements = useMemo(() => {
 		const variantPaths = GRASS_PATHS[variant];
 		if (!variantPaths) return null;
-
 		return (
 			<>
-				{variantPaths.map((path, index) => {
-					const PathElement =
+				{variantPaths.map((path, idx) => {
+					const ElementType =
 						path.type === 'polygon' ? 'polygon' : 'path';
-
 					return (
-						<PathElement
-							key={index}
+						<ElementType
+							key={idx}
 							fill={
-								colors.foliage[
-									path.color as keyof typeof colors.foliage
+								palette.foliage[
+									path.color as keyof typeof palette.foliage
 								]
 							}
-							{...(PathElement === 'polygon'
+							{...(ElementType === 'polygon'
 								? { points: path.d }
 								: { d: path.d })}
 						/>
@@ -64,15 +60,15 @@ export const Grass = ({ origin, variant, x, y }: GrassProps) => {
 				})}
 			</>
 		);
-	}, [variant, colors]);
+	}, [variant, palette]);
 
 	return (
-		<GrassRoot
-			id={id}
+		<StyledGrassGroup
+			id={grassId}
 			className="Grass-root animate-color"
 			transform={`translate(${x},${y})`}
 		>
-			{grassPaths}
-		</GrassRoot>
+			{grassElements}
+		</StyledGrassGroup>
 	);
 };

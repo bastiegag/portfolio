@@ -4,6 +4,7 @@ import { CssBaseline, StyledEngineProvider } from '@mui/material';
 
 import { SettingsProvider } from 'context';
 import App from './App';
+import 'assets/scss/_document.scss';
 
 createRoot(document.getElementById('root')!, {
 	identifierPrefix: 'seb-',
