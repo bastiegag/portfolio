@@ -1,63 +1,32 @@
-# Portfolio - Interactive 3D Island Scene
+# Portfolio
 
-A modern, interactive portfolio website featuring a custom-built 3D island scene with parallax effects, smooth animations, and a beautiful day/night theme system.
+A modern, interactive portfolio website featuring a custom-built 3D island scene with parallax effects and day/night themes. Built with React 19, TypeScript, and Material UI.
 
-🔗 **[View Live Demo](https://sebastiengagne.ca)**
+## 🌟 Features
 
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)
-![Vitest](https://img.shields.io/badge/Vitest-6E9F18?style=flat&logo=vitest&logoColor=white)
+-   **Interactive 3D Island Scene**: Custom SVG-based 3D island with animated elements (campfire, clouds, water ripples)
+-   **Day/Night Theme**: Smooth theme transitions with custom color palettes
+-   **Parallax Effects**: GSAP-powered parallax scrolling for depth and immersion
+-   **Responsive Design**: Fully responsive layout optimized for all devices
+-   **Custom Cursor**: Interactive cursor with context-aware states
+-   **Smooth Animations**: GSAP-powered animations throughout
+-   **Accessible**: Built with accessibility best practices
+-   **Type-Safe**: 100% TypeScript codebase
 
-## ✨ Features
-
--   **🏝️ Custom SVG Island Scene** - Hand-crafted vector graphics with detailed elements (palm trees, rocks, foliage, campfire)
--   **🎭 Parallax Effects** - Mouse-driven parallax animations using GSAP
--   **🌓 Day/Night Theme** - Seamless theme switching with smooth color transitions
--   **📱 Fully Responsive** - Optimized for mobile, tablet, and desktop
--   **⚡ Performance Optimized** - Built with Vite, React 19, and modern best practices
--   **🎨 Material UI v7** - Custom-themed components with CSS variables
--   **♿ TypeScript** - Fully typed for better DX and maintainability
-
-## 🛠️ Tech Stack
-
-### Core
-
--   **React 19** - Latest React with concurrent features
--   **TypeScript 5** - Type safety and better IDE support
--   **Vite 7** - Fast build tool and dev server
-
-### UI & Styling
-
--   **Material UI v7** - Component library with custom theme
--   **Emotion** - CSS-in-JS styling
--   **GSAP 3** - Professional-grade animations
--   **Sass** - Enhanced CSS preprocessing
-
-### Routing & State
-
--   **React Router v7** - Client-side routing
--   **Context API** - Global state management
-
-### Code Quality
-
--   **ESLint 9** - Linting with React rules
--   **TypeScript ESLint** - TypeScript-specific linting
--   **Vitest** - Fast unit testing with React Testing Library
-
-## 🚀 Getting Started
+## 🚀 Quick Start
 
 ### Prerequisites
 
--   Node.js 18+ and npm
+-   Node.js 18+ (tested with v20.19.6)
+-   npm 10+
 
 ### Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/bastiegag/portfolio.git
+git clone https://github.com/yourusername/portfolio.git
 
-# Navigate to project directory
+# Navigate to the project
 cd portfolio
 
 # Install dependencies
@@ -67,149 +36,135 @@ npm install
 npm run dev
 ```
 
-The app will be available at `http://localhost:5173`
+The app will open automatically at http://localhost:5182
 
-## 📜 Available Scripts
+## 📦 Available Scripts
+
+-   `npm run dev` - Start development server
+-   `npm run build` - Build for production
+-   `npm run preview` - Preview production build
+-   `npm run lint` - Run ESLint
+-   `npm run test` - Run tests in watch mode
+-   `npm run test:ui` - Open interactive test UI
+-   `npm run test:coverage` - Generate coverage report
+
+## 🏗️ Build for Production
 
 ```bash
-# Start development server
-npm run dev
+# Install dependencies (if not already done)
+npm install
 
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-
-# Run ESLint
+# Lint code
 npm run lint
 
-# Run tests
-npm run test
+# Build
+npm run build
 
-# Run tests with UI
-npm run test:ui
-
-# Run tests with coverage
-npm run test:coverage
+# Preview build
+npm run preview
 ```
+
+The production-ready files will be in the `dist/` directory.
+
+## 🛠️ Tech Stack
+
+### Core
+
+-   **React 19** - UI library
+-   **TypeScript 5** - Type safety
+-   **Vite 7** - Build tool and dev server
+-   **React Router 7** - Client-side routing
+
+### Styling & Animation
+
+-   **Material UI 7** - Component library
+-   **Emotion** - CSS-in-JS
+-   **GSAP 3** - Animation library
+-   **Sass** - CSS preprocessing
+
+### Testing
+
+-   **Vitest** - Test runner
+-   **React Testing Library** - Component testing
+-   **jsdom** - DOM simulation
+
+### Development
+
+-   **ESLint 9** - Code linting
+-   **Prettier** - Code formatting
+-   **TypeScript ESLint** - TypeScript linting rules
 
 ## 📁 Project Structure
 
 ```
 src/
-├── assets/          # Images and SCSS modules
-├── components/      # Reusable UI components
-│   ├── Scene/       # Island scene components
-│   ├── Icons/       # Custom icon components
-│   └── ...
-├── context/         # React Context providers
-├── hooks/           # Custom React hooks
-├── layouts/         # Layout components (Header, Footer, Main)
-├── pages/           # Page components
-├── routes/          # Route configuration
-├── theme/           # MUI theme configuration
-└── utils/           # Utility functions
+├── assets/              # Images, SCSS modules
+├── components/          # Reusable UI components
+│   ├── Scene/          # 3D island scene components
+│   ├── Icons/          # Custom icon components
+│   └── ...             # Other components (Logo, Link, etc.)
+├── context/            # React Context providers
+├── hooks/              # Custom React hooks
+├── layouts/            # Layout components (Header, Footer, Main)
+├── pages/              # Page components
+├── routes/             # React Router configuration
+├── theme/              # Material UI theming (day/night)
+├── utils/              # Utility functions
+├── test/               # Test setup
+├── App.tsx             # Main app component
+└── main.tsx            # Application entry point
 ```
 
-## 🎨 Key Components
+## 🎨 Theme System
 
-### Custom Hooks
+The app supports day and night themes with custom color palettes:
 
--   **useParallax** - GSAP-powered parallax effects
--   **useMousePosition** - Track mouse position for interactions
--   **useCursor** - Custom cursor state management
--   **useSettings** - Theme and settings management
--   **usePopper** - Tooltip positioning
+-   Modify day theme: [src/theme/dayColors.tsx](src/theme/dayColors.tsx)
+-   Modify night theme: [src/theme/nightColors.tsx](src/theme/nightColors.tsx)
+-   Theme toggle managed via `useSettings` hook
 
-### Scene Components
-
--   **Island** - Main island SVG with gradient sand and grass
--   **PalmTrees** - Animated palm trees with parallax
--   **Rocks** - Various rock formations
--   **Foliage** - Plants and grass
--   **Sky** - Clouds and moon with animations
--   **Water** - Waves, ripples, and horizon effects
--   **Objects** - Campfire, bottle, mug, clothesline, map
-
-## 🎯 Theme System
-
-The project includes a sophisticated theme system with:
-
--   **Custom color palettes** for day and night modes
--   **CSS variables** for dynamic theming
--   **Smooth transitions** between themes
--   **Extended MUI components** with custom styling
-
-## Testing
-
-This project uses Vitest and React Testing Library for testing. Example tests are included for:
-
--   **Utils** - Unit tests for utility functions
--   **Hooks** - Tests for custom React hooks
--   **Components** - Component integration tests
-
-Run tests with:
+## 🧪 Testing
 
 ```bash
-npm run test          # Run in watch mode
-npm run test:ui       # Interactive UI
-npm run test:coverage # With coverage report
+# Run tests once
+npm run test -- --run
+
+# Run tests in watch mode
+npm run test
+
+# Open test UI
+npm run test:ui
+
+# Generate coverage report
+npm run test:coverage
 ```
 
-### 🌐 Browser Support
+## 🚢 Deployment
 
--   Chrome (latest)
--   Firefox (latest)
--   Safari (latest)
--   Edge (latest)
+The project includes a GitHub Actions workflow that automatically builds and deploys to GoDaddy hosting on every push to the `main` branch.
 
-## 📝 Development Notes
+See [.github/workflows/deploy.yml](.github/workflows/deploy.yml) for CI/CD configuration.
 
-### Adding New Components
+## 📝 Code Style
 
-Components follow Material UI's styling patterns:
+-   **TypeScript** for all new files
+-   **Tabs** for indentation (width: 4)
+-   **Single quotes** for strings
+-   **ESLint** configuration enforces consistent style
 
-```tsx
-import { styled } from '@mui/material';
-
-const MyComponent = styled('div', {
-	name: 'MyComponent',
-	slot: 'root',
-})(({ theme }) => ({
-	color: theme.vars.palette.base.primary,
-}));
-```
-
-### Creating Custom Hooks
-
-Hooks are located in `src/hooks/` and follow naming convention `use[Name].tsx`
-
-### Theme Customization
-
-Modify theme colors in:
-
--   `src/theme/dayColors.tsx`
--   `src/theme/nightColors.tsx`
+Run `npm run lint` before committing to ensure code quality.
 
 ## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
-
-## 👤 Author
-
-**Sébastien Gagné**
-
--   Portfolio: [sebastiengagne.ca](https://sebastiengagne.ca)
--   GitHub: [@bastiegag](https://github.com/bastiegag)
--   LinkedIn: [Sébastien Gagné](https://linkedin.com/in/bastiegag)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
--   Inspired by creative portfolio designs
--   GSAP for amazing animation capabilities
--   Material UI team for the excellent component library
+-   Material UI for the component library
+-   GSAP for powerful animation capabilities
+-   React Testing Library for testing utilities
+-   Vite for blazing fast development experience
 
 ---
 
-Made with ❤️ and ☕
+Built with ❤️ using React and TypeScript
