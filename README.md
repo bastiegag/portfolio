@@ -2,6 +2,12 @@
 
 A modern, interactive portfolio website featuring a custom-built 3D island scene with parallax effects and day/night themes. Built with React 19, TypeScript, and Material UI.
 
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![React](https://img.shields.io/badge/React-19.2-blue.svg)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.5-blue.svg)](https://typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-7.3-646CFF.svg)](https://vitejs.dev/)
+[![Material UI](https://img.shields.io/badge/Material_UI-7.3-007FFF.svg)](https://mui.com/)
+
 ## 🌟 Features
 
 -   **Interactive 3D Island Scene**: Custom SVG-based 3D island with animated elements (campfire, clouds, water ripples)
