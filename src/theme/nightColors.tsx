@@ -49,7 +49,6 @@ export const nightColors = {
 	wood: {
 		lighter: '#0e223f',
 		light: '#0c1e39',
-		lightless: '#0c1e37',
 		main: '#08182f',
 		dark: '#07162b',
 		darker: '#071529',

@@ -25,7 +25,12 @@ export const Photo = ({ src }: PhotoProps) => {
 	const maskId = useMemo(() => `svgmask-${id}`, [id]);
 
 	return (
-		<PhotoRoot id={id} viewBox={VIEWBOX}>
+		<PhotoRoot
+			id={id}
+			viewBox={VIEWBOX}
+			strokeWidth="0"
+			className="Photo-root link animate-all"
+		>
 			<polygon
 				fill={colors.base.black}
 				fillOpacity={SHADOW_OPACITY}

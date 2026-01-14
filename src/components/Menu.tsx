@@ -22,6 +22,10 @@ const MENU = [
 		url: '/about',
 	},
 	{
+		title: 'Projects',
+		url: '/projects',
+	},
+	{
 		title: 'Contact',
 		url: `mailto:${config.mail}`,
 	},

@@ -1,4 +1,3 @@
-import React from 'react';
 import { styled } from '@mui/material';
 
 import { useParallax } from 'hooks';
@@ -9,12 +8,13 @@ import { PalmTrees } from './PalmTrees';
 import { Rocks } from './Rocks';
 import { Foliage } from './Foliage';
 import {
-	Campfire,
-	Fire,
 	Bottle,
+	Campfire,
+	Clothesline,
+	Fire,
 	Map,
 	Mug,
-	Clothesline,
+	Plank,
 } from 'components/Scene/Objects';
 
 import { useMousePosition } from 'hooks';
@@ -86,6 +86,12 @@ export const Scene = () => {
 					y={240}
 					modifier={{ x: 16, y: 12 }}
 					scale={1.1}
+				/>
+				<Plank
+					x={380}
+					y={350}
+					modifier={{ x: 18, y: 11 }}
+					scale={1.6}
 				/>
 			</SceneIsland>
 		</SceneRoot>

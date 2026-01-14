@@ -67,6 +67,7 @@ svg:not(.tabler-icon):not(.logo):not(#scene) {
 
 .link {
 	cursor: pointer;
+	text-decoration: none;
 
 	&:hover {
 		stroke: #fff7a6;
