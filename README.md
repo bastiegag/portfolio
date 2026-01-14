@@ -164,7 +164,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 -   GSAP for powerful animation capabilities
 -   React Testing Library for testing utilities
 -   Vite for blazing fast development experience
-
----
-
-Built with ❤️ using React and TypeScript
