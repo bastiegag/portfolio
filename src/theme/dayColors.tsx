@@ -49,7 +49,6 @@ export const dayColors = {
 	wood: {
 		lighter: '#f3a76b',
 		light: '#df9345',
-		lightless: '#cc8750',
 		main: '#965628',
 		dark: '#783e26',
 		darker: '#663026',

@@ -57,7 +57,6 @@ declare module '@mui/material/styles' {
 		wood: {
 			lighter: string;
 			light: string;
-			lightless: string;
 			main: string;
 			dark: string;
 			darker: string;
@@ -158,7 +157,6 @@ declare module '@mui/material/styles' {
 		wood: {
 			lighter: string;
 			light: string;
-			lightless: string;
 			main: string;
 			dark: string;
 			darker: string;

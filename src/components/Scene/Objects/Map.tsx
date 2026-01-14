@@ -37,6 +37,7 @@ export const Map = ({ x, y, modifier, scale }: MapProps) => {
 	const colors = useTheme().vars.palette;
 
 	useParallax(`#${id}`, x, y, modifier);
+
 	return (
 		<Link to="/about" title="About" tab={false}>
 			<MapRoot

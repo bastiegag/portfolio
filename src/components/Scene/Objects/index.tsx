@@ -5,4 +5,4 @@ export { Fire } from './Fire';
 export { Map } from './Map';
 export { Mug } from './Mug';
 export { Smoke } from './Smoke';
-export { Planks } from './Planks';
+export { Plank } from './Plank';
