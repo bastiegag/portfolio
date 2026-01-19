@@ -17,32 +17,32 @@ export const About = () => {
 			<Box sx={photoBoxStyles}>
 				<Photo src="seb.jpg" />
 			</Box>
-
 			<Typography sx={paragraphStyles}>
 				Hello, I'm <strong>Sébastien!</strong>
 			</Typography>
 			<Typography sx={paragraphStyles}>
-				I focus on building{' '}
-				<strong>modern, product-oriented web applications</strong>, with
-				an emphasis on{' '}
-				<strong>clarity, maintainability and user experience</strong>.
+				I’m a <strong>Senior Full Stack Developer</strong> with a strong
+				front-end background, building modern, product-oriented web
+				applications.
 			</Typography>
 			<Typography sx={paragraphStyles}>
-				My work is driven by <strong>pragmatic decisions</strong> and
-				clean front-end architecture. I care about building interfaces
-				that are easy to understand, evolve and maintain over time.
+				I work across the stack, combining{' '}
+				<strong>React and TypeScript</strong> on the front end with{' '}
+				<strong>backend contributions in Ruby and APIs</strong>, to
+				deliver maintainable, scalable solutions. My approach focuses on{' '}
+				<strong>
+					clean architecture, UI/UX, performance, and accessibility
+				</strong>
+				, always aiming for pragmatic technical decisions that support
+				long-term product quality.
 			</Typography>
 			<Typography sx={paragraphStyles}>
-				I work closely with{' '}
-				<strong>product, design and backend teams</strong>, and I value
-				clear communication and thoughtful trade-offs. I also contribute
-				to backend development when needed, which helps me better
-				understand product constraints and data flows.
+				Outside of coding, I enjoy activities that help me stay creative
+				and focused, including music and outdoor sports.
 			</Typography>
 			<Typography>
-				Outside of work, I build personal projects using{' '}
-				<strong>React and TypeScript</strong>, where I explore
-				architecture, tooling and UI patterns in a practical way.
+				I care about building software that is simple to use, easy to
+				maintain, and built to last.
 			</Typography>
 		</Page>
 	);
