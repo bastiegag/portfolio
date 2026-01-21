@@ -1,0 +1,26 @@
+{
+	"menu": {
+		"about": "À propos",
+		"projects": "Projets",
+		"contact": "Contact"
+	},
+	"about": {
+		"greeting": "Bonjour, je suis",
+		"role": "Développeur Full Stack Sénior",
+		"intro": "Je suis un <strong>Développeur Full Stack Sénior</strong> avec une solide expertise en développement front-end, créant des applications web modernes et orientées produit.",
+		"stack": "Je travaille sur toute la pile technologique, combinant <strong>React et TypeScript</strong> côté front-end avec des <strong>contributions backend en Ruby et APIs</strong>, pour livrer des solutions maintenables et évolutives. Mon approche se concentre sur l'<strong>architecture propre, l'UI/UX, la performance et l'accessibilité</strong>, visant toujours des décisions techniques pragmatiques qui soutiennent la qualité du produit à long terme.",
+		"hobbies": "En dehors du code, j'apprécie les activités qui m'aident à rester créatif et concentré, notamment la musique et les sports de plein air.",
+		"values": "Je me soucie de créer des logiciels simples à utiliser, faciles à maintenir et conçus pour durer."
+	},
+	"projects": {
+		"dwmc": {
+			"title": "Dude, Where's My Cash?",
+			"viewOnGithub": "Voir le projet sur Github",
+			"github": "Github",
+			"description1": "Une application web moderne de gestion des finances personnelles conçue pour aider les utilisateurs à suivre leurs dépenses, gérer plusieurs portefeuilles, catégoriser les transactions et surveiller les budgets en temps réel.",
+			"description2": "Développée avec React et TypeScript, l'application utilise Firebase pour l'authentification, le stockage des données et la synchronisation en temps réel. L'architecture se concentre sur la maintenabilité, l'évolutivité et la performance, en utilisant TanStack Query pour une gestion efficace de l'état serveur et Vite pour un développement rapide et des builds optimisés.",
+			"description3": "L'interface est entièrement responsive et met l'accent sur l'utilisabilité et la clarté, avec des analyses visuelles qui aident les utilisateurs à mieux comprendre leurs habitudes de dépenses. Le projet démontre une approche orientée produit du développement front-end, avec une attention particulière à l'architecture propre, la gestion d'état et l'expérience utilisateur.",
+			"techStack": "Stack technique :"
+		}
+	}
+}

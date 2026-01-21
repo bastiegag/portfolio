@@ -1,5 +1,6 @@
 import { useId } from 'react';
 import { styled, useTheme } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
 import { Link } from 'components';
 import { useParallax, useSettings } from 'hooks';
@@ -32,6 +33,7 @@ const MapRoot = styled('g', {
 }));
 
 export const Map = ({ x, y, modifier, scale }: MapProps) => {
+	const { t } = useTranslation();
 	const id = CSS.escape(useId());
 	const { settings } = useSettings();
 	const colors = useTheme().vars.palette;
@@ -39,7 +41,7 @@ export const Map = ({ x, y, modifier, scale }: MapProps) => {
 	useParallax(`#${id}`, x, y, modifier);
 
 	return (
-		<Link to="/about" title="About" tab={false}>
+		<Link to="/about" title={t('menu.about')} tab={false}>
 			<MapRoot
 				id={id}
 				className="Map-root link animate-all"

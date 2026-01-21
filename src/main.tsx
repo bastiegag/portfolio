@@ -4,6 +4,7 @@ import { CssBaseline, StyledEngineProvider } from '@mui/material';
 
 import { SettingsProvider } from 'context';
 import App from './App';
+import './i18n';
 import 'assets/scss/_document.scss';
 
 createRoot(document.getElementById('root')!, {
@@ -16,5 +17,5 @@ createRoot(document.getElementById('root')!, {
 				<App />
 			</SettingsProvider>
 		</StyledEngineProvider>
-	</StrictMode>
+	</StrictMode>,
 );

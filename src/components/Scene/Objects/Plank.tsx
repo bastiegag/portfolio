@@ -2,6 +2,7 @@ import { useId } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { styled, useTheme } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
 import { Link } from 'components';
 import { useParallax, useSettings } from 'hooks';
@@ -22,6 +23,7 @@ const PlanksRoot = styled('g', {
 })(() => ({}));
 
 export const Plank = ({ x, y, modifier, scale }: PlanksProps) => {
+	const { t } = useTranslation();
 	const id = CSS.escape(useId());
 	const { settings } = useSettings();
 	const colors = useTheme().vars.palette;
@@ -55,7 +57,7 @@ export const Plank = ({ x, y, modifier, scale }: PlanksProps) => {
 	}, [id]);
 
 	return (
-		<Link to="/projects" title="Projects" tab={false}>
+		<Link to="/projects" title={t('menu.projects')} tab={false}>
 			<PlanksRoot
 				id={id}
 				className="Planks-root link animate-all"

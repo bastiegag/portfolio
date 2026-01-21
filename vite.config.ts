@@ -20,12 +20,20 @@ export default defineConfig({
 		rollupOptions: {
 			output: {
 				manualChunks(id) {
-					if (id.includes('src/hooks')) {
-						return 'hooks'; // Group all hooks modules into a 'hooks' chunk
+					if (id.includes('src/hooks')) return 'hooks';
+					if (
+						id.includes('node_modules/react') ||
+						id.includes('node_modules/react-dom') ||
+						id.includes('node_modules/@mui/')
+					) {
+						return 'vendor';
 					}
+					if (id.includes('src/components/Scene/')) return 'scene';
+					if (id.includes('node_modules/gsap')) return 'gsap';
 				},
 			},
 		},
+		chunkSizeWarningLimit: 1024, // Suppress warning for large vendor chunk
 	},
 	publicDir: 'public',
 	plugins: [react()],

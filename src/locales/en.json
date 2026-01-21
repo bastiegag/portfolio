@@ -1,0 +1,26 @@
+{
+	"menu": {
+		"about": "About",
+		"projects": "Projects",
+		"contact": "Contact"
+	},
+	"about": {
+		"greeting": "Hello, I'm",
+		"role": "Senior Full Stack Developer",
+		"intro": "I'm a <strong>Senior Full Stack Developer</strong> with a strong front-end background, building modern, product-oriented web applications.",
+		"stack": "I work across the stack, combining <strong>React and TypeScript</strong> on the front end with <strong>backend contributions in Ruby and APIs</strong>, to deliver maintainable, scalable solutions. My approach focuses on <strong>clean architecture, UI/UX, performance, and accessibility</strong>, always aiming for pragmatic technical decisions that support long-term product quality.",
+		"hobbies": "Outside of coding, I enjoy activities that help me stay creative and focused, including music and outdoor sports.",
+		"values": "I care about building software that is simple to use, easy to maintain, and built to last."
+	},
+	"projects": {
+		"dwmc": {
+			"title": "Dude, Where's My Cash?",
+			"viewOnGithub": "View project on Github",
+			"github": "Github",
+			"description1": "A modern personal finance management web application designed to help users track expenses, manage multiple wallets, categorize transactions, and monitor budgets in real time.",
+			"description2": "Built with React and TypeScript, the application leverages Firebase for authentication, data storage, and real-time synchronization. The architecture focuses on maintainability, scalability, and performance, using TanStack Query for efficient server-state management and Vite for fast development and optimized builds.",
+			"description3": "The interface is fully responsive and emphasizes usability and clarity, with visual analytics that help users better understand their spending habits. The project demonstrates a product-oriented approach to front-end development, with attention to clean architecture, state management, and user experience.",
+			"techStack": "Tech stack:"
+		}
+	}
+}
