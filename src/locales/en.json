@@ -12,10 +12,6 @@
 		"hobbies": "Outside of coding, I enjoy activities that help me stay creative and focused, including music and outdoor sports.",
 		"values": "I care about building software that is simple to use, easy to maintain, and built to last."
 	},
-	"language": {
-		"en": "English",
-		"fr": "Français"
-	},
 	"projects": {
 		"dwmc": {
 			"title": "Dude, Where's My Cash?",

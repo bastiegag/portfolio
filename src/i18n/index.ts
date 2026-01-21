@@ -13,14 +13,42 @@ const resources = {
 	},
 };
 
-const browserLanguage = navigator.language.split('-')[0];
-const defaultLanguage = ['en', 'fr'].includes(browserLanguage)
-	? browserLanguage
-	: 'en';
+const getDefaultLanguage = (): string => {
+	const supportedLanguages = ['en', 'fr'] as const;
+
+	if (
+		typeof navigator !== 'undefined' &&
+		typeof navigator.language === 'string'
+	) {
+		const browserLanguage = navigator.language.split('-')[0];
+
+		if (
+			supportedLanguages.includes(
+				browserLanguage as (typeof supportedLanguages)[number],
+			)
+		) {
+			return browserLanguage;
+		}
+	}
+
+	return 'en';
+};
+
+const getInitialLanguage = (): string => {
+	if (typeof window !== 'undefined' && window.localStorage) {
+		const storedLanguage = window.localStorage.getItem('language');
+
+		if (storedLanguage) {
+			return storedLanguage;
+		}
+	}
+
+	return getDefaultLanguage();
+};
 
 i18n.use(initReactI18next).init({
 	resources,
-	lng: localStorage.getItem('language') || defaultLanguage,
+	lng: getInitialLanguage(),
 	fallbackLng: 'en',
 	interpolation: {
 		escapeValue: false,

@@ -66,6 +66,7 @@ This is a modern, interactive portfolio website featuring a custom-built 3D isla
     - Ensure no NEW test failures are introduced
 
 5. **Preview Production Build** (optional):
+
     ```bash
     npm run preview
     ```
@@ -104,17 +105,22 @@ This is a modern, interactive portfolio website featuring a custom-built 3D isla
 │   │   ├── Link.tsx
 │   │   └── Content.tsx
 │   ├── context/                # React Context providers (8 files)
-│   │   ├── SettingsProvider.tsx    # Theme settings
-│   │   ├── CursorProvider.tsx      # Custom cursor state
-│   │   ├── OffsetProvider.tsx      # Scroll offset tracking
-│   │   └── PopperProvider.tsx      # Tooltip positioning
+│   │   ├── SettingsProvider.tsx
+│   │   ├── CursorProvider.tsx
+│   │   ├── OffsetProvider.tsx
+│   │   └── PopperProvider.tsx
 │   ├── hooks/                  # Custom React hooks (10 files)
-│   │   ├── useSettings.tsx     # Theme management
-│   │   ├── useParallax.tsx     # GSAP parallax effects
-│   │   ├── useMousePosition.tsx # Mouse tracking
+│   │   ├── useSettings.tsx
+│   │   ├── useParallax.tsx
+│   │   ├── useMousePosition.tsx
 │   │   ├── useCursor.tsx
 │   │   ├── usePopper.tsx
 │   │   └── useOffset.tsx
+│   ├── i18n/                   # Internationalization config
+│   │   └── index.ts            # i18next setup and configuration
+│   ├── locales/                # Translation files
+│   │   ├── en.json             # English translations
+│   │   └── fr.json             # French translations
 │   ├── layouts/                # Layout components
 │   │   ├── Header.tsx
 │   │   ├── Footer.tsx
@@ -126,19 +132,19 @@ This is a modern, interactive portfolio website featuring a custom-built 3D isla
 │   ├── routes/                 # React Router configuration
 │   │   └── index.tsx
 │   ├── theme/                  # Material UI theming
-│   │   ├── dayColors.tsx       # Day mode palette
-│   │   ├── nightColors.tsx     # Night mode palette
-│   │   ├── components.ts       # MUI component overrides
+│   │   ├── dayColors.tsx
+│   │   ├── nightColors.tsx
+│   │   ├── components.ts
 │   │   └── index.ts
 │   ├── utils/                  # Utility functions
 │   │   ├── link.ts
 │   │   └── index.ts
 │   ├── test/                   # Test setup
-│   │   └── setup.ts            # Testing Library config
-│   ├── App.tsx                 # Main app component
-│   ├── main.tsx                # Application entry point
-│   ├── config.ts               # App configuration
-│   └── config.test.ts          # Config tests
+│   │   └── setup.ts
+│   ├── App.tsx
+│   ├── main.tsx
+│   ├── config.ts
+│   └── config.test.ts
 ├── public/                     # Static assets
 ├── index.html                  # HTML template
 ├── package.json                # Dependencies & scripts
