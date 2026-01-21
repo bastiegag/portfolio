@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
 import { Link } from 'react-router';
+import { useTranslation } from 'react-i18next';
 import { IconBrandGithub, IconBrandLinkedin } from '@tabler/icons-react';
 import {
 	IconButton,
@@ -14,19 +15,20 @@ import {
 
 import { useCursor } from 'hooks';
 import { openLink } from 'utils';
+import { LanguageSwitcher } from 'components';
 import config from '@/config';
 
 const MENU = [
 	{
-		title: 'About',
+		title: 'menu.about',
 		url: '/about',
 	},
 	{
-		title: 'Projects',
+		title: 'menu.projects',
 		url: '/projects',
 	},
 	{
-		title: 'Contact',
+		title: 'menu.contact',
 		url: `mailto:${config.mail}`,
 	},
 ];
@@ -57,6 +59,7 @@ interface MenuProps {
 }
 
 export const Menu = ({ open, setOpen }: MenuProps) => {
+	const { t } = useTranslation();
 	const { setCursor } = useCursor();
 
 	const handleMenuClick = useCallback(() => {
@@ -92,7 +95,7 @@ export const Menu = ({ open, setOpen }: MenuProps) => {
 									onClick={handleMenuClick}
 									sx={menuItemSx}
 								>
-									{item.title}
+									{t(item.title)}
 								</ListItemButton>
 							</ListItem>
 						</Slide>
@@ -101,6 +104,7 @@ export const Menu = ({ open, setOpen }: MenuProps) => {
 			</List>
 
 			<Stack spacing={2} direction="row" sx={socialContainer}>
+				<LanguageSwitcher />
 				{ICONS.map((item, i) => {
 					const Icon = item.icon;
 					return (

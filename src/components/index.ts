@@ -1,5 +1,6 @@
 export { Logo } from './Logo';
 export { Link } from './Link';
+export { LanguageSwitcher } from './LanguageSwitcher';
 export { Menu } from './Menu';
 export { Page } from './Page';
 export { Paper } from './Paper';

@@ -2,6 +2,7 @@ import { useId } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { styled, useTheme } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
 import { useParallax, useSettings } from 'hooks';
 import { Link } from 'components';
@@ -47,6 +48,7 @@ const BottleRoot = styled('g', {
 }));
 
 export const Bottle = ({ x, y, modifier, scale }: BottleProps) => {
+	const { t } = useTranslation();
 	const id = CSS.escape(useId());
 	const { settings } = useSettings();
 	const colors = useTheme().vars.palette;
@@ -93,7 +95,11 @@ export const Bottle = ({ x, y, modifier, scale }: BottleProps) => {
 				height={scale ? HEIGHT * scale : HEIGHT}
 				viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
 			>
-				<Link url={`mailto:${config.mail}`} title="Contact" tab={false}>
+				<Link
+					url={`mailto:${config.mail}`}
+					title={t('menu.contact')}
+					tab={false}
+				>
 					<defs>
 						<clipPath
 							id={`${id}-top-mask`}
