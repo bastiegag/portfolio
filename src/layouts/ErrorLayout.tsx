@@ -1,15 +1,14 @@
-import { Outlet } from 'react-router-dom';
-
 import { Container, Cursor } from 'components';
 import { Header, Footer } from 'layouts';
+import { Error } from 'pages';
 import { useSettings } from 'hooks';
 
-export const Main = () => {
+export const ErrorLayout = () => {
 	const { settings, setSettings } = useSettings();
 
 	// Ensure that hasError is true in settings
-	if (settings.hasError) {
-		setSettings({ ...settings, hasError: false });
+	if (!settings.hasError) {
+		setSettings({ ...settings, hasError: true });
 	}
 
 	return (
@@ -18,7 +17,7 @@ export const Main = () => {
 			<Header />
 
 			<Container>
-				<Outlet />
+				<Error />
 			</Container>
 
 			<Footer />

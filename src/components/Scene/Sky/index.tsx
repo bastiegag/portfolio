@@ -79,7 +79,9 @@ export const Sky = () => {
 					<Cloud key={index} {...props} />
 				))}
 			</SkyClouds>
-			<Smoke x={250} y={115} modifier={{ x: 13, y: 10 }} />
+			{!settings.hasError && (
+				<Smoke x={250} y={115} modifier={{ x: 13, y: 10 }} />
+			)}
 		</SkyRoot>
 	);
 };

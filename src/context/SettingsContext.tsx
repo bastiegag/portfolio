@@ -6,6 +6,7 @@ export interface SettingsContextType {
 	settings: {
 		time: keyof typeof themes;
 		theme: typeof dayTheme;
+		hasError?: boolean;
 	};
 	setSettings: Dispatch<SetStateAction<SettingsContextType['settings']>>;
 }
