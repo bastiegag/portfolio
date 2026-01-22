@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Container, Cursor } from 'components';
 import { Header, Footer } from 'layouts';
 import { Error } from 'pages';
@@ -7,9 +8,11 @@ export const ErrorLayout = () => {
 	const { settings, setSettings } = useSettings();
 
 	// Ensure that hasError is true in settings
-	if (!settings.hasError) {
-		setSettings({ ...settings, hasError: true });
-	}
+	useEffect(() => {
+		if (!settings.hasError) {
+			setSettings({ ...settings, hasError: true });
+		}
+	}, [settings, setSettings]);
 
 	return (
 		<>

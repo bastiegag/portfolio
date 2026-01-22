@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import { Container, Cursor } from 'components';
@@ -8,9 +9,11 @@ export const Main = () => {
 	const { settings, setSettings } = useSettings();
 
 	// Ensure that hasError is true in settings
-	if (settings.hasError) {
-		setSettings({ ...settings, hasError: false });
-	}
+	useEffect(() => {
+		if (settings.hasError) {
+			setSettings({ ...settings, hasError: false });
+		}
+	}, [settings, setSettings]);
 
 	return (
 		<>
