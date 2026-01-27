@@ -8,7 +8,7 @@ A modern, interactive portfolio website featuring a custom-built 3D island scene
 [![Vite](https://img.shields.io/badge/Vite-7.3-646CFF.svg)](https://vitejs.dev/)
 [![Material UI](https://img.shields.io/badge/Material_UI-7.3-007FFF.svg)](https://mui.com/)
 
-## 🌟 Features
+## Features
 
 -   **Interactive 3D Island Scene**: Custom SVG-based 3D island with animated elements (campfire, clouds, water ripples)
 -   **Day/Night Theme**: Smooth theme transitions with custom color palettes
@@ -19,7 +19,7 @@ A modern, interactive portfolio website featuring a custom-built 3D island scene
 -   **Accessible**: Built with accessibility best practices
 -   **Type-Safe**: 100% TypeScript codebase
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -44,7 +44,7 @@ npm run dev
 
 The app will open automatically at http://localhost:5182
 
-## 📦 Available Scripts
+## Available Scripts
 
 -   `npm run dev` - Start development server
 -   `npm run build` - Build for production
@@ -54,7 +54,7 @@ The app will open automatically at http://localhost:5182
 -   `npm run test:ui` - Open interactive test UI
 -   `npm run test:coverage` - Generate coverage report
 
-## 🏗️ Build for Production
+## Build for Production
 
 ```bash
 # Install dependencies (if not already done)
@@ -72,7 +72,7 @@ npm run preview
 
 The production-ready files will be in the `dist/` directory.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Core
 
@@ -100,7 +100,7 @@ The production-ready files will be in the `dist/` directory.
 -   **Prettier** - Code formatting
 -   **TypeScript ESLint** - TypeScript linting rules
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 src/
@@ -121,7 +121,7 @@ src/
 └── main.tsx            # Application entry point
 ```
 
-## 🎨 Theme System
+## Theme System
 
 The app supports day and night themes with custom color palettes:
 
@@ -129,7 +129,7 @@ The app supports day and night themes with custom color palettes:
 -   Modify night theme: [src/theme/nightColors.tsx](src/theme/nightColors.tsx)
 -   Theme toggle managed via `useSettings` hook
 
-## 🧪 Testing
+## Testing
 
 ```bash
 # Run tests once
@@ -145,13 +145,13 @@ npm run test:ui
 npm run test:coverage
 ```
 
-## 🚢 Deployment
+## Deployment
 
 The project includes a GitHub Actions workflow that automatically builds and deploys to GoDaddy hosting on every push to the `main` branch.
 
 See [.github/workflows/deploy.yml](.github/workflows/deploy.yml) for CI/CD configuration.
 
-## 📝 Code Style
+## Code Style
 
 -   **TypeScript** for all new files
 -   **Tabs** for indentation (width: 4)
@@ -160,11 +160,11 @@ See [.github/workflows/deploy.yml](.github/workflows/deploy.yml) for CI/CD confi
 
 Run `npm run lint` before committing to ensure code quality.
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 -   Material UI for the component library
 -   GSAP for powerful animation capabilities
