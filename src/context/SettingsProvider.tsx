@@ -7,6 +7,7 @@ export const SettingsProvider = ({ children }: { children: ReactNode }) => {
 	const [settings, setSettings] = useState<SettingsContextType['settings']>({
 		time: 'day',
 		theme: dayTheme,
+		hasError: false,
 	});
 
 	const value = useMemo(() => ({ settings, setSettings }), [settings]);

@@ -4,13 +4,13 @@ import { Link as RouterLink } from 'react-router';
 import { usePopper, useCursor } from 'hooks';
 import { openLink } from 'utils';
 
-export interface LinkProps {
-	url?: string;
-	to?: string;
+type ExternalLinkProps = { url: string; to?: never };
+type InternalLinkProps = { to: string; url?: never };
+export type LinkProps = (ExternalLinkProps | InternalLinkProps) & {
 	title: string;
 	tab?: boolean;
 	children: ReactNode;
-}
+};
 
 export const Link = ({ url, to, title, tab, children }: LinkProps) => {
 	const { settings, setSettings } = usePopper();
@@ -25,7 +25,7 @@ export const Link = ({ url, to, title, tab, children }: LinkProps) => {
 				title: title,
 			});
 		},
-		[settings, setCursor, setSettings]
+		[settings, setCursor, setSettings],
 	);
 
 	const handlePopoverClose = useCallback(() => {

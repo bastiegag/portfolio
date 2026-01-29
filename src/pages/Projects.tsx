@@ -57,3 +57,5 @@ export const Projects = () => {
 		</Page>
 	);
 };
+
+export default Projects;

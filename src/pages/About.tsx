@@ -34,3 +34,5 @@ export const About = () => {
 		</Page>
 	);
 };
+
+export default About;
