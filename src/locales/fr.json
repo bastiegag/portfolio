@@ -6,11 +6,11 @@
 	},
 	"about": {
 		"greeting": "Bonjour, je suis",
-		"role": "Développeur Full Stack Sénior",
-		"intro": "Je suis un <strong>Développeur Full Stack Sénior</strong> avec une solide expertise en développement front-end, créant des applications web modernes et orientées produit.",
-		"stack": "Je travaille sur toute la pile technologique, combinant <strong>React et TypeScript</strong> côté front-end avec des <strong>contributions backend en Ruby et APIs</strong>, pour livrer des solutions maintenables et évolutives. Mon approche se concentre sur l'<strong>architecture propre, l'UI/UX, la performance et l'accessibilité</strong>, visant toujours des décisions techniques pragmatiques qui soutiennent la qualité du produit à long terme.",
+		"role": "Développeur Full Stack Senior",
+		"intro": "Je suis un <strong>Développeur Full Stack Senior</strong> avec plus de 13 ans d’expérience dans la conception et le développement d’applications web orientées produit. Mon travail est principalement axé sur le front-end, avec React, TypeScript et JavaScript, et j’accorde une grande importance à l’UI/UX, à la performance et à l’accessibilité.",
+		"stack": "J’ai surtout travaillé sur des produits SaaS, où je conçois et livre des fonctionnalités de bout en bout, contribue aux décisions techniques et collabore étroitement avec les gestionnaires de produit et les designers. J’ai également une expérience concrète en backend avec Ruby et le développement d’API, ce qui me permet de bâtir des solutions pragmatiques et équilibrées.",
 		"hobbies": "En dehors du code, j'apprécie les activités qui m'aident à rester créatif et concentré, notamment la musique et les sports de plein air.",
-		"values": "Je me soucie de créer des logiciels simples à utiliser, faciles à maintenir et conçus pour durer."
+		"values": "J’aime travailler sur des produits qui répondent à de vrais besoins utilisateurs, améliorer des systèmes existants dans la durée et écrire du code propre et maintenable, capable d’évoluer avec le produit et l’équipe."
 	},
 	"projects": {
 		"dwmc": {

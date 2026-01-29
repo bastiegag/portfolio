@@ -7,10 +7,10 @@
 	"about": {
 		"greeting": "Hello, I'm",
 		"role": "Senior Full Stack Developer",
-		"intro": "I'm a <strong>Senior Full Stack Developer</strong> with a strong front-end background, building modern, product-oriented web applications.",
-		"stack": "I work across the stack, combining <strong>React and TypeScript</strong> on the front end with <strong>backend contributions in Ruby and APIs</strong>, to deliver maintainable, scalable solutions. My approach focuses on <strong>clean architecture, UI/UX, performance, and accessibility</strong>, always aiming for pragmatic technical decisions that support long-term product quality.",
+		"intro": "I'm a <strong>Senior Full Stack Developer</strong> with over 13 years of experience building product-driven web applications. My work is front-end focused, primarily with React, TypeScript, and JavaScript, and I care deeply about UI/UX, performance, and accessibility.",
+		"stack": "I’ve worked mainly on SaaS products, where I design and deliver features end to end, contribute to technical decisions, and collaborate closely with product managers and designers. I also have hands-on backend experience with Ruby and API development, which helps me build pragmatic, well-rounded solutions.",
 		"hobbies": "Outside of coding, I enjoy activities that help me stay creative and focused, including music and outdoor sports.",
-		"values": "I care about building software that is simple to use, easy to maintain, and built to last."
+		"values": "I enjoy working on products that solve real user problems, improving existing systems over time, and writing clean, maintainable code that scales with the product and the team."
 	},
 	"projects": {
 		"dwmc": {
