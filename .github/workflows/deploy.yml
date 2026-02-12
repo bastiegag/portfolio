@@ -1,0 +1,46 @@
+name: Build and Deploy to GoDaddy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js (if applicable)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24.8.0'
+
+      - name: Install dependencies (if applicable)
+        run: npm install
+
+      - name: Lint code
+        run: npm run lint
+
+      - name: Run tests
+        run: npm run test -- --run
+
+      - name: Build project (if applicable)
+        run: npm run build
+
+      - name: FTP Deploy to GoDaddy
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/
+          server-dir: /
+          protocol: ftps
+          port: 21
+          exclude: |
+            **/.map$

@@ -1,0 +1,18 @@
+# <type>: <subject>
+#
+# <body>
+#
+# <footer>
+
+# Types: feat, fix, docs, style, refactor, perf, test, chore, ci
+# Subject: imperative mood, lowercase, no period, max 50 chars
+# Body: explain what and why (not how), wrap at 72 chars
+# Footer: BREAKING CHANGE: description, or issue references
+
+# Examples:
+# feat: add user authentication
+# fix: resolve navigation bug on mobile
+# docs: update installation instructions
+# feat!: redesign theme system
+#
+# BREAKING CHANGE: complete API redesign

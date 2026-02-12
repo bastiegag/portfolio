@@ -1,0 +1,26 @@
+{
+	"menu": {
+		"about": "About",
+		"projects": "Projects",
+		"contact": "Contact"
+	},
+	"about": {
+		"greeting": "Hello, I'm",
+		"role": "Senior Full Stack Developer",
+		"intro": "I'm a <strong>Senior Full Stack Developer</strong> with over 13 years of experience building product-driven web applications. My work is front-end focused, primarily with React, TypeScript, and JavaScript, and I care deeply about UI/UX, performance, and accessibility.",
+		"stack": "I’ve worked mainly on SaaS products, where I design and deliver features end to end, contribute to technical decisions, and collaborate closely with product managers and designers. I also have hands-on backend experience with Ruby and API development, which helps me build pragmatic, well-rounded solutions.",
+		"hobbies": "Outside of coding, I enjoy activities that help me stay creative and focused, including music and outdoor sports.",
+		"values": "I enjoy working on products that solve real user problems, improving existing systems over time, and writing clean, maintainable code that scales with the product and the team."
+	},
+	"projects": {
+		"dwmc": {
+			"title": "Dude, Where's My Cash?",
+			"viewOnGithub": "View project on Github",
+			"github": "Github",
+			"description1": "A modern personal finance management web application designed to help users track expenses, manage multiple wallets, categorize transactions, and monitor budgets in real time.",
+			"description2": "Built with React and TypeScript, the application leverages Firebase for authentication, data storage, and real-time synchronization. The architecture focuses on maintainability, scalability, and performance, using TanStack Query for efficient server-state management and Vite for fast development and optimized builds.",
+			"description3": "The interface is fully responsive and emphasizes usability and clarity, with visual analytics that help users better understand their spending habits. The project demonstrates a product-oriented approach to front-end development, with attention to clean architecture, state management, and user experience.",
+			"techStack": "Tech stack:"
+		}
+	}
+}

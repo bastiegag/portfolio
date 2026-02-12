@@ -1,0 +1,26 @@
+{
+	"menu": {
+		"about": "À propos",
+		"projects": "Projets",
+		"contact": "Contact"
+	},
+	"about": {
+		"greeting": "Bonjour, je suis",
+		"role": "Développeur Full Stack Senior",
+		"intro": "Je suis un <strong>Développeur Full Stack Senior</strong> avec plus de 13 ans d’expérience dans la conception et le développement d’applications web orientées produit. Mon travail est principalement axé sur le front-end, avec React, TypeScript et JavaScript, et j’accorde une grande importance à l’UI/UX, à la performance et à l’accessibilité.",
+		"stack": "J’ai surtout travaillé sur des produits SaaS, où je conçois et livre des fonctionnalités de bout en bout, contribue aux décisions techniques et collabore étroitement avec les gestionnaires de produit et les designers. J’ai également une expérience concrète en backend avec Ruby et le développement d’API, ce qui me permet de bâtir des solutions pragmatiques et équilibrées.",
+		"hobbies": "En dehors du code, j'apprécie les activités qui m'aident à rester créatif et concentré, notamment la musique et les sports de plein air.",
+		"values": "J’aime travailler sur des produits qui répondent à de vrais besoins utilisateurs, améliorer des systèmes existants dans la durée et écrire du code propre et maintenable, capable d’évoluer avec le produit et l’équipe."
+	},
+	"projects": {
+		"dwmc": {
+			"title": "Dude, Where's My Cash?",
+			"viewOnGithub": "Voir le projet sur Github",
+			"github": "Github",
+			"description1": "Une application web moderne de gestion des finances personnelles conçue pour aider les utilisateurs à suivre leurs dépenses, gérer plusieurs portefeuilles, catégoriser les transactions et surveiller les budgets en temps réel.",
+			"description2": "Développée avec React et TypeScript, l'application utilise Firebase pour l'authentification, le stockage des données et la synchronisation en temps réel. L'architecture se concentre sur la maintenabilité, l'évolutivité et la performance, en utilisant TanStack Query pour une gestion efficace de l'état serveur et Vite pour un développement rapide et des builds optimisés.",
+			"description3": "L'interface est entièrement responsive et met l'accent sur l'utilisabilité et la clarté, avec des analyses visuelles qui aident les utilisateurs à mieux comprendre leurs habitudes de dépenses. Le projet démontre une approche orientée produit du développement front-end, avec une attention particulière à l'architecture propre, la gestion d'état et l'expérience utilisateur.",
+			"techStack": "Stack technique :"
+		}
+	}
+}

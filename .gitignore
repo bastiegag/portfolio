@@ -1,0 +1,62 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+.env
+.env.*
+!.env.example
+.firebase
+.firebaserc
+
+# TypeScript
+*.tsbuildinfo
+.tsbuildinfo
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Optional: macOS
+.AppleDouble
+.LSOverride
+
+# Optional: Windows
+Thumbs.db
+ehthumbs.db
+
+# Optional: Vite cache
+.vite
+
+# Test coverage
+coverage/
+.nyc_output/
+.coverage
+
+# Cache and build artifacts
+.cache/
+.parcel-cache/
+.sass-cache/
+
+# Tooling
+.eslintcache
+.turbo/
+
+# OS & Editor
+.idea/
+.vscode/.history
