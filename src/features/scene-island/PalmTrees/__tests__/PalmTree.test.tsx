@@ -1,6 +1,7 @@
-import { describe, it, expect, beforeEach, afterEach } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import React from 'react';
 import { renderWithProviders } from '@tests/helpers/render-with-providers';
+import { waitFor } from '@testing-library/react';
 import { PALM_TREE_PATHS } from '../palmTreePaths';
 import { setupGsapMocks, resetGsapMocks } from '@tests/helpers/gsap-mock';
 import {
@@ -11,6 +12,11 @@ import {
 beforeEach(() => {
 	setupGsapMocks();
 	setupComponentMocks();
+
+	// Mock useLazyLoad to always render content immediately
+	vi.mock('@shared/hooks/intersection', () => ({
+		useLazyLoad: () => [vi.fn(), true], // Always return shouldRender=true
+	}));
 });
 
 afterEach(() => {
@@ -22,7 +28,7 @@ describe('PalmTree component', () => {
 	it('should be importable', async () => {
 		const module = await import('../PalmTree');
 		expect(module.PalmTree).toBeDefined();
-		expect(typeof module.PalmTree).toBe('function');
+		expect(typeof module.PalmTree).toBe('object'); // memo() returns an object
 	});
 
 	it('renders expected groups and paths for a variant', async () => {

@@ -5,14 +5,12 @@ import { useTranslation } from 'react-i18next';
 import { Link } from '@features/navigation';
 import { useParallax } from '@shared/hooks/parallax/useParallax';
 import { useSettings } from '@features/settings';
+import type { PositionedWithModifier } from '@shared/types';
 
 const WIDTH = 39;
 const HEIGHT = 25;
 
-export interface MapProps {
-	x: number;
-	y: number;
-	modifier: { x: number; y: number };
+export interface MapProps extends PositionedWithModifier {
 	scale: number;
 }
 

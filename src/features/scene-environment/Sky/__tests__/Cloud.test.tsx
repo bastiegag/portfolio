@@ -22,7 +22,7 @@ describe('Cloud component', () => {
 	it('should be importable', async () => {
 		const module = await import('../Cloud');
 		expect(module.Cloud).toBeDefined();
-		expect(typeof module.Cloud).toBe('function');
+		expect(typeof module.Cloud).toBe('object'); // memo() returns an object
 	});
 
 	it('renders correct number of path elements for a variant', async () => {

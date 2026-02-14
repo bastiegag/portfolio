@@ -1,7 +1,7 @@
-import { ReactNode } from 'react';
 import { Box, styled } from '@mui/material';
 
 import { Scene } from './Scene';
+import type { WithChildren } from '@shared/types';
 
 const ContainerRoot = styled(Box, {
 	name: 'Container',
@@ -20,9 +20,7 @@ const ContainerRoot = styled(Box, {
 	},
 }));
 
-export interface ContainerProps {
-	children: ReactNode;
-}
+export type ContainerProps = WithChildren;
 
 export const Container = ({ children }: ContainerProps) => {
 	return (

@@ -3,12 +3,10 @@ import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { styled, useTheme } from '@mui/material';
 import { GRASS_PATHS } from './grassPaths';
+import type { PositionedVariant } from '@shared/types';
 
-export interface GrassProps {
+export interface GrassProps extends PositionedVariant {
 	origin: string;
-	variant: number;
-	x: number;
-	y: number;
 }
 
 const StyledGrassGroup = styled('g', {

@@ -1,21 +1,22 @@
-import { ReactNode, useCallback } from 'react';
+import { useCallback } from 'react';
 import { Link as RouterLink } from 'react-router';
 
 import { usePopper } from '@shared/hooks/popper/popper.state';
 import { useCursor } from '@shared/components/cursor/cursor.state';
-import { openLink } from '@shared/utils';
+import { useNavigation } from '@shared/services/navigation';
+import type { WithChildren } from '@shared/types';
 
-export interface LinkProps {
+export interface LinkProps extends WithChildren {
 	url?: string;
 	to?: string;
 	title: string;
 	tab?: boolean;
-	children: ReactNode;
 }
 
 export const Link = ({ url, to, title, tab, children }: LinkProps) => {
 	const { popper, setPopper } = usePopper();
 	const { setCursor } = useCursor();
+	const navigation = useNavigation();
 
 	const handlePopoverOpen = useCallback(
 		(event: React.MouseEvent<HTMLAnchorElement>, title: string) => {
@@ -40,9 +41,16 @@ export const Link = ({ url, to, title, tab, children }: LinkProps) => {
 
 	const handleClick = useCallback(() => {
 		if (url) {
-			openLink(url, tab);
+			navigation.openLink(url, {
+				newTab: tab,
+				trackingEvent: {
+					category: 'navigation',
+					action: 'external-link',
+					label: url,
+				},
+			});
 		}
-	}, [url, tab]);
+	}, [url, tab, navigation]);
 
 	return (
 		<RouterLink

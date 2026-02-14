@@ -1,5 +1,6 @@
-import { useId, ReactNode } from 'react';
+import { useId } from 'react';
 import { styled, useTheme } from '@mui/material';
+import type { WithChildren } from '@shared/types';
 
 const PaperRoot = styled('svg', {
 	name: 'Paper',
@@ -12,9 +13,7 @@ const PaperRoot = styled('svg', {
 	height: '100%',
 }));
 
-export interface PaperProps {
-	children: ReactNode;
-}
+export type PaperProps = WithChildren;
 
 const VIEWBOX = '0 0 246.7 239.8';
 const PAPER_POINTS =

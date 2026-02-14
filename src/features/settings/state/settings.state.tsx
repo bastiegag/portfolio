@@ -7,7 +7,6 @@ import {
 	createContext,
 	useContext,
 	useMemo,
-	useEffect,
 	useState,
 	ReactNode,
 	Dispatch,
@@ -16,40 +15,73 @@ import {
 
 import { dayTheme, nightTheme } from '@shared/ui/theme';
 
-// Types
-export interface SettingsContextType {
-	settings: {
-		time: keyof typeof themes;
-		theme: typeof dayTheme;
-	};
-	setSettings: Dispatch<SetStateAction<SettingsContextType['settings']>>;
-}
-
 export const themes = {
 	day: dayTheme,
 	night: nightTheme,
+} as const;
+
+// Types - Using discriminated unions for better type safety
+export type TimeOfDay = keyof typeof themes;
+
+// Discriminated union types - TypeScript knows which theme corresponds to which time
+export type DaySettings = {
+	time: 'day';
+	theme: typeof dayTheme;
 };
+
+export type NightSettings = {
+	time: 'night';
+	theme: typeof nightTheme;
+};
+
+// Discriminated union - ensures time and theme are always in sync
+export type SettingsState = DaySettings | NightSettings;
+
+export interface SettingsContextType {
+	settings: SettingsState;
+	setTime: Dispatch<SetStateAction<TimeOfDay>>;
+}
+
+// Type guard to check if settings are day settings
+export function isDaySettings(
+	settings: SettingsState,
+): settings is DaySettings {
+	return settings.time === 'day';
+}
+
+// Type guard to check if settings are night settings
+export function isNightSettings(
+	settings: SettingsState,
+): settings is NightSettings {
+	return settings.time === 'night';
+}
 
 // Context
 const SettingsContext = createContext<SettingsContextType | null>(null);
 
 // Provider
 export const SettingsProvider = ({ children }: { children: ReactNode }) => {
-	const [settings, setSettings] = useState<SettingsContextType['settings']>({
-		time: 'day',
-		theme: dayTheme,
-	});
+	const [time, setTime] = useState<TimeOfDay>('day');
 
-	const value = useMemo(() => ({ settings, setSettings }), [settings]);
+	// Derive theme from time - no separate state needed
+	const theme = useMemo(() => themes[time], [time]);
 
-	useEffect(() => {
-		queueMicrotask(() => {
-			setSettings((prev) => ({
-				...prev,
-				theme: themes[settings.time],
-			}));
-		});
-	}, [settings.time]);
+	// Memoize settings object to prevent unnecessary re-renders
+	const settings = useMemo<SettingsState>(
+		() => ({
+			time,
+			theme,
+		}),
+		[time, theme],
+	);
+
+	const value = useMemo(
+		() => ({
+			settings,
+			setTime,
+		}),
+		[settings],
+	);
 
 	return (
 		<SettingsContext.Provider value={value}>

@@ -1,12 +1,10 @@
-import { useId, useMemo } from 'react';
+import { useId, useMemo, memo } from 'react';
 import { styled, useTheme } from '@mui/material';
 
 import { ROCK_PATHS } from './rockPaths';
+import type { PositionedVariant } from '@shared/types';
 
-export interface RockProps {
-	variant: number;
-	x: number;
-	y: number;
+export interface RockProps extends PositionedVariant {
 	distance?: number;
 }
 
@@ -15,7 +13,7 @@ const RockRoot = styled('g', {
 	slot: 'root',
 })();
 
-export const Rock = ({ variant, x, y, distance }: RockProps) => {
+const RockComponent = ({ variant, x, y, distance }: RockProps) => {
 	const id = useId();
 	const colors = useTheme().vars.palette;
 
@@ -62,3 +60,5 @@ export const Rock = ({ variant, x, y, distance }: RockProps) => {
 		</RockRoot>
 	);
 };
+
+export const Rock = memo(RockComponent);

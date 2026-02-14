@@ -3,6 +3,8 @@ import { styled, useTheme } from '@mui/material';
 
 import { RockProps, Rock } from '@features/scene-island/Rocks/Rock';
 import { useParallax } from '@shared/hooks/parallax/useParallax';
+import { useLazyLoad } from '@shared/hooks/intersection';
+import type { PositionedWithModifier } from '@shared/types';
 
 const ROCKS_DATA: RockProps[] = [
 	{
@@ -22,11 +24,7 @@ const ROCKS_DATA: RockProps[] = [
 	},
 ];
 
-export interface CampfireProps {
-	x: number;
-	y: number;
-	modifier: { x: number; y: number };
-}
+export type CampfireProps = PositionedWithModifier;
 
 const CampfireRoot = styled('g', {
 	name: 'Campfire',
@@ -45,11 +43,25 @@ const CampfireRoot = styled('g', {
 export const Campfire = ({ x, y, modifier }: CampfireProps) => {
 	const id = CSS.escape(useId());
 	const colors = useTheme().vars.palette;
+	const [lazyRef, shouldRender] = useLazyLoad({ rootMargin: '350px' });
 
 	useParallax(`#${id}`, x, y, modifier);
 
+	// Lightweight placeholder while loading
+	if (!shouldRender) {
+		return (
+			<CampfireRoot
+				ref={lazyRef}
+				id={id}
+				transform={`translate(${x},${y})`}
+				aria-label="Campfire loading"
+			/>
+		);
+	}
+
 	return (
 		<CampfireRoot
+			ref={lazyRef}
 			id={id}
 			className="Campfire-root animate-color"
 			transform={`translate(${x},${y})`}

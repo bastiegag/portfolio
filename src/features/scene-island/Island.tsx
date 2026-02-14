@@ -1,11 +1,13 @@
-import { useId } from 'react';
+import { useId, memo } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { styled, useTheme } from '@mui/material';
 
 import { useParallax } from '@shared/hooks/parallax/useParallax';
+import { useLazyLoad } from '@shared/hooks/intersection';
 import { useSettings } from '@features/settings';
 import { Fire } from '@features/scene-interactive';
+import type { PositionedWithModifier } from '@shared/types';
 
 const MASK_GRADIENT =
 	'linear-gradient(0deg, transparent 75%, rgba(0,0,0,1) 100%)';
@@ -52,11 +54,7 @@ const RIPPLES = [
 	},
 ];
 
-export interface IslandProps {
-	x: number;
-	y: number;
-	modifier: { x: number; y: number };
-}
+export type IslandProps = PositionedWithModifier;
 
 const IslandRoot = styled('g', {
 	name: 'Island',
@@ -100,15 +98,16 @@ const IslandRipples = styled('g', {
 	mixBlendMode: 'overlay',
 }));
 
-export const Island = ({ x, y, modifier }: IslandProps) => {
+const IslandComponent = ({ x, y, modifier }: IslandProps) => {
 	const id = CSS.escape(useId());
 	const colors = useTheme().vars.palette;
 	const { settings } = useSettings();
+	const [lazyRef, shouldRender] = useLazyLoad({ rootMargin: '300px' });
 
 	useParallax(`#${id}`, x, y, modifier);
 
 	useGSAP(() => {
-		if (RIPPLES) {
+		if (RIPPLES && shouldRender) {
 			RIPPLES.forEach((ripple, index) => {
 				const timeline = gsap.timeline({
 					repeat: -1,
@@ -126,10 +125,23 @@ export const Island = ({ x, y, modifier }: IslandProps) => {
 					.yoyo(true);
 			});
 		}
-	}, [id]);
+	}, [id, shouldRender]);
+
+	// Render lightweight placeholder while loading
+	if (!shouldRender) {
+		return (
+			<IslandRoot
+				ref={lazyRef}
+				id={id}
+				transform={`translate(${x},${y})`}
+				aria-label="Island loading"
+			/>
+		);
+	}
 
 	return (
 		<IslandRoot
+			ref={lazyRef}
 			id={id}
 			className="Island-root animate-gradient animate-color"
 			transform={`translate(${x},${y})`}
@@ -201,3 +213,14 @@ export const Island = ({ x, y, modifier }: IslandProps) => {
 		</IslandRoot>
 	);
 };
+// Custom comparison for modifier object
+const arePropsEqual = (prev: IslandProps, next: IslandProps) => {
+	return (
+		prev.x === next.x &&
+		prev.y === next.y &&
+		prev.modifier.x === next.modifier.x &&
+		prev.modifier.y === next.modifier.y
+	);
+};
+
+export const Island = memo(IslandComponent, arePropsEqual);

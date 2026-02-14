@@ -1,4 +1,4 @@
-import { useId, useMemo } from 'react';
+import { useId, useMemo, memo } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { styled, useTheme } from '@mui/material';
@@ -21,7 +21,7 @@ const CloudRoot = styled('g', {
 	slot: 'root',
 })();
 
-export const Cloud = ({
+const CloudComponent = ({
 	distance,
 	duration,
 	repeatDelay,
@@ -88,3 +88,5 @@ export const Cloud = ({
 		</CloudRoot>
 	);
 };
+
+export const Cloud = memo(CloudComponent);

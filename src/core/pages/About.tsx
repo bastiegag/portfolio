@@ -13,7 +13,7 @@ const photoBoxStyles = {
 
 const paragraphStyles = { mb: 3 } as const;
 
-export const About = () => {
+const About = () => {
 	const { t } = useTranslation();
 
 	return (
@@ -35,3 +35,5 @@ export const About = () => {
 		</Page>
 	);
 };
+export { About };
+export default About;

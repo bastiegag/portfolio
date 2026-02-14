@@ -7,14 +7,12 @@ import { useTranslation } from 'react-i18next';
 import { Link } from '@features/navigation';
 import { useParallax } from '@shared/hooks/parallax/useParallax';
 import { useSettings } from '@features/settings';
+import type { PositionedWithModifier } from '@shared/types';
 
 const WIDTH = 82.4;
 const HEIGHT = 10.2;
 
-export interface PlanksProps {
-	x: number;
-	y: number;
-	modifier: { x: number; y: number };
+export interface PlanksProps extends PositionedWithModifier {
 	scale: number;
 }
 

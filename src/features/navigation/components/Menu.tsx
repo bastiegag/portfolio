@@ -14,7 +14,7 @@ import {
 } from '@mui/material';
 
 import { useCursor } from '@shared/components/cursor/cursor.state';
-import { openLink } from '@shared/utils';
+import { useNavigation } from '@shared/services/navigation';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import config from '@shared/data/config';
 
@@ -61,6 +61,7 @@ interface MenuProps {
 export const Menu = ({ open, setOpen }: MenuProps) => {
 	const { t } = useTranslation();
 	const { setCursor } = useCursor();
+	const navigation = useNavigation();
 
 	const handleMenuClick = useCallback(() => {
 		setOpen(false);
@@ -73,6 +74,19 @@ export const Menu = ({ open, setOpen }: MenuProps) => {
 	const handleMouseLeave = useCallback(() => {
 		setCursor({ hover: false });
 	}, [setCursor]);
+
+	const handleSocialClick = useCallback(
+		(url: string, label: string) => {
+			navigation.openLink(url, {
+				trackingEvent: {
+					category: 'social',
+					action: 'click',
+					label,
+				},
+			});
+		},
+		[navigation],
+	);
 
 	return (
 		<>
@@ -113,7 +127,9 @@ export const Menu = ({ open, setOpen }: MenuProps) => {
 							size="large"
 							onMouseEnter={handleMouseEnter}
 							onMouseLeave={handleMouseLeave}
-							onClick={() => openLink(item.url)}
+							onClick={() =>
+								handleSocialClick(item.url, item.title)
+							}
 						>
 							<Icon size={ICON_SIZE} />
 						</IconButton>

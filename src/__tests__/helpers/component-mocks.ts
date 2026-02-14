@@ -5,6 +5,11 @@ import { vi } from 'vitest';
  * Call `setupComponentMocks()` in tests' beforeEach and `resetComponentMocks()` in afterEach
  */
 export const setupComponentMocks = () => {
+	// Mock document.querySelector for useParallax element verification
+	const mockElement = document.createElement('div');
+	vi.spyOn(document, 'querySelector').mockReturnValue(mockElement);
+	vi.spyOn(document, 'getElementById').mockReturnValue(mockElement);
+
 	vi.mock('@shared/hooks/offset/offset.state', async (importOriginal) => {
 		const actual = (await importOriginal()) as Record<string, unknown>;
 		return {

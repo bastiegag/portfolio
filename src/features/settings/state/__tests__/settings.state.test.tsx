@@ -1,6 +1,11 @@
 import { describe, it, expect } from 'vitest';
 import { renderHook, act } from '@testing-library/react';
-import { useSettings, themes } from '../settings.state';
+import {
+	useSettings,
+	themes,
+	isDaySettings,
+	isNightSettings,
+} from '../settings.state';
 import { renderHookWithProviders } from '../../../../__tests__/helpers/render-with-providers';
 
 describe('Settings State Management', () => {
@@ -28,22 +33,19 @@ describe('Settings State Management', () => {
 			);
 
 			act(() => {
-				result.current.setSettings({
-					time: 'night',
-					theme: result.current.settings.theme,
-				});
+				result.current.setTime('night');
 			});
 
-			// Wait for useEffect to run
 			expect(result.current.settings.time).toBe('night');
+			expect(result.current.settings.theme).toBe(themes.night);
 		});
 
-		it('should provide setSettings function', async () => {
+		it('should provide setTime function', async () => {
 			const { result } = await renderHookWithProviders(() =>
 				useSettings(),
 			);
 
-			expect(typeof result.current.setSettings).toBe('function');
+			expect(typeof result.current.setTime).toBe('function');
 		});
 	});
 
@@ -60,7 +62,7 @@ describe('Settings State Management', () => {
 			);
 
 			expect(result.current).toHaveProperty('settings');
-			expect(result.current).toHaveProperty('setSettings');
+			expect(result.current).toHaveProperty('setTime');
 		});
 
 		it('should have valid theme objects', async () => {
@@ -82,6 +84,30 @@ describe('Settings State Management', () => {
 		it('should have valid theme structures', () => {
 			expect(themes.day).toHaveProperty('palette');
 			expect(themes.night).toHaveProperty('palette');
+		});
+	});
+
+	describe('Type guards', () => {
+		it('should correctly identify day settings', async () => {
+			const { result } = await renderHookWithProviders(() =>
+				useSettings(),
+			);
+
+			expect(isDaySettings(result.current.settings)).toBe(true);
+			expect(isNightSettings(result.current.settings)).toBe(false);
+		});
+
+		it('should correctly identify night settings', async () => {
+			const { result } = await renderHookWithProviders(() =>
+				useSettings(),
+			);
+
+			act(() => {
+				result.current.setTime('night');
+			});
+
+			expect(isNightSettings(result.current.settings)).toBe(true);
+			expect(isDaySettings(result.current.settings)).toBe(false);
 		});
 	});
 });

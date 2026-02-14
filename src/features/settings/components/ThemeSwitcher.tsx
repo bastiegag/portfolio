@@ -6,7 +6,7 @@ import { useCursor } from '@shared/components/cursor/cursor.state';
 import { useSettings } from '../state/settings.state';
 
 export const ThemeSwitcher = () => {
-	const { settings, setSettings } = useSettings();
+	const { settings, setTime } = useSettings();
 	const { setCursor } = useCursor();
 
 	const handleMouseEnter = useCallback(
@@ -20,11 +20,8 @@ export const ThemeSwitcher = () => {
 	);
 
 	const handleToggleTheme = useCallback(() => {
-		setSettings((prev) => ({
-			...prev,
-			time: prev.time === 'night' ? 'day' : 'night',
-		}));
-	}, [setSettings]);
+		setTime((prev) => (prev === 'night' ? 'day' : 'night'));
+	}, [setTime]);
 
 	return (
 		<IconButton
